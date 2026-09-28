@@ -1,6 +1,6 @@
 # Milestone 2 — reference semantics PASS
 
-Date: 2026-09-29. M1.5 passed first. Event semantics were committed at `4c2e91f` before implementation. Development verification: **92 tests pass**; analytical and independent SimPy harness passes. Clean-commit raw results follow in an evidence commit.
+Date: 2026-09-29. M1.5 passed first. Event semantics were committed at `4c2e91f` before implementation. **92 tests pass**; analytical and independent SimPy harness passes. [Raw clean-commit results](../benchmarks/results/m2-validation.json) identify `d42f5e8`, exact configuration, environment, source/lock/harness hashes and all five seeds/20 independent cases.
 
 Implemented: integer heap time, microstep/phase/sequence ordering; explicit DAG templates/arrivals; finite FIFO pools and bounded queues; empirical distributions plus explicitly selected exponential mathematical cases; named SplitMix64 streams; occupied service versus external wait; failures/bounded retries/backoff; timeout/cancellation/release lag; horizon censoring; all-session outcome denominators; utilization, queue integrals, throughput and completed-only latency quantiles; library and JSON CLI. No real tool execution.
 
