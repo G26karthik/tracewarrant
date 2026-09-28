@@ -1,6 +1,6 @@
 # Contributing
 
-Read [PROJECT_STATUS.md](PROJECT_STATUS.md) and [PROJECT_V2.md](PROJECT_V2.md) before changing scope. Public name remains undecided. Each milestone requires evidence; native/cloud/optimization work must earn its gate. Preserve both historical handoffs and frozen prediction artifacts.
+Read [PROJECT_STATUS.md](PROJECT_STATUS.md) and [PROJECT_V3.md](PROJECT_V3.md) before changing scope. V2 and `research-pilot-1` are frozen research history. Public name remains undecided. Native/cloud/optimization work must earn a measured V3 requirement. Preserve historical handoffs, frozen predictions and failed observations. The preservation test checks the 64-file V2 manifest.
 
 Use Python 3.11+ and `uv sync --locked`. Run `uv run ruff check .`, `uv run ruff format --check .`, and `uv run pytest`. The runtime has no third-party dependencies. Dev dependencies are locked in `uv.lock`. Keep changes small; add a dependency only with alternatives and a measured requirement. Do not commit environments, raw user traces, credentials or generated private reports.
 

@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "workload-lab-internal"
-version = "0.2.0"
-description = "Experimental workload trace analysis, simulation and validation"
+version = "0.3.0"
+description = "Observation conformance and simulator-neutral performance-model validation"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "Apache-2.0"

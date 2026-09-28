@@ -1,6 +1,6 @@
 # Architecture
 
-Canonical scope: [PROJECT_V2.md](PROJECT_V2.md); evidence: [PROJECT_STATUS.md](PROJECT_STATUS.md). Core boundary: offline analysis, explicit simulation and narrow cohort calibration. Example applications execute local workloads for measurement; the simulator never executes them.
+Active scope: [PROJECT_V3.md](PROJECT_V3.md); evidence: [PROJECT_STATUS.md](PROJECT_STATUS.md). The product boundary is offline observation conformance and model-neutral prediction evaluation. The V2 simulator remains an optional reference backend. Example applications execute explicitly requested measurement workloads; core inspection/validation executes none.
 
 ```text
 src/workload_lab/
@@ -8,6 +8,10 @@ src/workload_lab/
   ingest.py      bounded OTLP JSON/JSONL importer and allowlist
   graph.py       DAG ordering and longest path
   analysis.py    interval coverage, contributions and evidence
+  conformance.py claim support, missing instrumentation and contradiction reports
+  artifact_schema.py open prediction/measurement/protocol/freeze JSON Schema
+  artifacts.py   bounded validation, semantic checks and exact-byte integrity receipts
+  validation.py  independent error, interval, ranking, baseline and envelope comparisons
   simulation.py  explicit templates, FIFO pools, stable events and termination accounting
   calibration.py complete fixed-DAG empirical cohorts; refuses missing/failing inputs
   cli.py         file IO, text/JSON formatting and exit codes
@@ -23,4 +27,6 @@ TraceImporter and WorkloadCompiler are small Python Protocol boundaries. Scenari
 
 Containment is not causality. Container nodes establish observed envelopes; only atomic work nodes receive DAG weight. Explicit edges describe completed prerequisites, not parent nesting. Missing synchronization disables complete-graph claims. No unknown wait becomes a measured queue. Source IDs, method and origin accompany analysis.
 
-The simulator receives a workload template, deployment and arrivals, not a raw trace tree. Calibration owns identified parameters; frozen experiment manifests own the operating envelope and held-out score. Optimization is gated on useful real-workload validity and decision value. External runtimes execute applications; the core library does not.
+V3 artifact schemas contain no DES types. Library imports load the simulator lazily only when its V2 API is used. Independent SimPy, fixed-delay and ordinal utilization producers pass through identical validation. `inspect` emits no application labels; legacy `ingest`/`analyze` retain their documented safe-field metadata contract.
+
+The reference simulator receives a workload template, deployment and arrivals, not a raw trace tree. Calibration owns identified parameters; frozen artifacts own the operating envelope and held-out score. Optimizers, C++, CUDA and cloud deployment require a measured V3 requirement. External runtimes execute applications; the core library does not. See [ADR-0016](docs/adr/ADR-0016-validation-toolkit.md) and [ADR-0017](docs/adr/ADR-0017-neutral-artifact-integrity.md).

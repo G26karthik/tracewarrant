@@ -2,11 +2,41 @@
 
 Status: Experimental / Research Prototype
 
-This prototype imports local OTLP traces, builds explicit workload graphs, simulates finite resources and tests narrow empirical models against held-out interventions. It preserves unknown semantics and separates measured, calibrated and simulated evidence. There is no validated general infrastructure recommendation or production release. Start with [PROJECT_STATUS.md](PROJECT_STATUS.md).
+Workload Lab checks whether observations support a performance model and whether frozen predictions survive real interventions. Use its trace conformance checker and simulator-neutral validator without adopting our simulator. UNKNOWN, unsupported claims and a simple baseline beating a complex model are useful results. Start with [PROJECT_V3.md](PROJECT_V3.md) and [PROJECT_STATUS.md](PROJECT_STATUS.md).
 
-The research question is whether calibrated non-LLM resource contention can improve agent capacity decisions. The broad idea has close competitors; see the [research](docs/research/competitive-landscape.md), [adversarial review](docs/research/adversarial-review.md) and [canonical V2](PROJECT_V2.md).
+V3 accepts the pilot's **PIVOT RECOMMENDED** conclusion. [V2](PROJECT_V2.md), [its final report](FINAL_PROJECT_REPORT.md), `research-pilot-1` and all frozen evidence remain unchanged. This is a local research prototype, not a capacity planner or production release. [Refreshed research](docs/v3/research.md) establishes substantial overlap; no uniqueness is claimed.
 
-## Run the working slice
+## Inspect and validate without a simulator
+
+Python 3.11+; core runtime has no third-party dependencies, service or GPU requirement.
+
+```sh
+uv sync --locked
+uv run workload-lab inspect examples/traces/pydantic-ai-2.51.0.otlp.json
+uv run workload-lab inspect examples/v3/frames-heldout-base.otlp.json
+uv run workload-lab schema
+uv run workload-lab check docs/v3/frames-frozen/simpy.json
+```
+
+The framework capture cannot identify queue/service boundaries. The external FRAMES capture exposes a misspelled completeness binding; inspection refuses it. [An explicit adapter and the retained failure](docs/v3/results.md) show how to fix an existing assertion without guessing topology.
+
+Re-evaluate the frozen external experiment entirely offline:
+
+```sh
+uv run workload-lab evaluate --protocol docs/v3/frames-frozen/protocol.json --freeze docs/v3/frames-frozen/freeze.json --prediction docs/v3/frames-frozen/simpy.json --prediction docs/v3/frames-frozen/fixed.json --prediction docs/v3/frames-frozen/utilization.json --measurement docs/v3/frames-evaluation/measured-r0.json --measurement docs/v3/frames-evaluation/measured-r1.json
+```
+
+In that study, SimPy and the utilization heuristic selected the same intervention. Exact-answer quality failed, so measured speedups do not establish a useful agent. [Results and limits](docs/v3/results.md), [reproduction](docs/v3/reproduce.md), [observation contract](docs/v3/observation-contract.md), [artifact schema/evaluation](docs/v3/artifacts-and-validation.md).
+
+```python
+from workload_lab.conformance import inspect_observations
+from workload_lab.ingest import ingest
+
+report = inspect_observations(ingest("traces.json"))
+print(report["claims"]["inference_service_demand"])  # UNKNOWN, with required instruments
+```
+
+## Preserved reference backend
 
 Python 3.11+; no database, GPU, model, agent framework or server needed. From this directory:
 

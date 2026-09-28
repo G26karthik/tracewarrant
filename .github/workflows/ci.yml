@@ -22,6 +22,8 @@ jobs:
       - run: uv build --no-build-isolation
       - run: uv run workload-lab analyze examples/research-workflow.otlp.json --origin synthetic --format json
       - run: uv run workload-lab simulate examples/scenario.json --output simulation-smoke.json
+      - run: uv run workload-lab inspect examples/v3/frames-heldout-base.otlp.json --output conformance-smoke.json
+      - run: uv run workload-lab evaluate --protocol docs/v3/frames-frozen/protocol.json --freeze docs/v3/frames-frozen/freeze.json --prediction docs/v3/frames-frozen/simpy.json --prediction docs/v3/frames-frozen/fixed.json --prediction docs/v3/frames-frozen/utilization.json --measurement docs/v3/frames-evaluation/measured-r0.json --measurement docs/v3/frames-evaluation/measured-r1.json --output evaluation-smoke.json
   analytic:
     runs-on: ubuntu-latest
     steps:

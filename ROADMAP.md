@@ -1,25 +1,17 @@
-# Gated roadmap
+# V3 evidence-gated roadmap
 
-Continuation authorization permits autonomous progress through evidence gates. Status is updated by validation records, not aspirations.
+Active direction: [PROJECT_V3.md](PROJECT_V3.md). The standalone planner roadmap is superseded. Its full historical state remains in V2 and tag `research-pilot-1`; this roadmap does not resume M3/M5/M7/M8/M9.
 
-Current delivery: M0/M1, [M1.5](docs/validation/milestone-1.5.md) and [M2](docs/validation/milestone-2.md) pass locally. [M3](docs/validation/milestone-3.md) defers native work on measurements. [M4](docs/validation/milestone-4.md) passes a controlled pilot but general calibration is partial; [M6](docs/validation/milestone-6.md) is a real-model applicability probe. The [narrowing decision](docs/adr/ADR-0015-narrow-to-validation.md) recommends instrumentation/validation rather than expanding the planner. See [current status](PROJECT_STATUS.md).
-
-| Milestone | Deliverable | Exit gate |
+| Stage | Deliverable | Evidence / status |
 | --- | --- | --- |
-| M0 | Research, adversarial review, V2, 12 ADRs, repo conventions, CI, benchmark methodology | Sources linked, old files preserved, unsupported claims removed, reproducible environment |
-| M1 | Local OTLP -> typed IR -> explicit DAG -> critical path/contribution report | Hand-solvable serial/fork/join/nesting cases; malformed/cyclic/partial/privacy tests; deterministic JSON; bounded parser |
-| M1.5 | Actual controlled and PydanticAI traces, observed lifecycle contract | PASS: explicit joins, real queueing, unknown missing components, privacy and semantic tests |
-| M2 | Python DES with pools, queues, distributions, retry/failure/branch semantics | Event/conservation invariants, D/D/1 and M/M/1 validation, SimPy cross-check, deterministic seeds |
-| M3 | Conditional C++20 engine/bindings | Python semantic parity, measured speed/memory benefit on a declared event workload; reconsider using upstream engine first |
-| M4 | Calibration and held-out replay | Envelope, missingness/censoring, uncertainty, calibration cost and validation errors published; narrow thesis reassessed |
-| M5 | Exact tiny replica planning then heuristics | Exhaustive oracle agreement, constraints/abstention, independent finalist validation, Pareto candidates |
-| M6 | One non-coding real agent workload adapter | Model/retrieval/browser/API steps, branch/retry examples, framework-neutral export, quality floor |
-| M7 | Conditional CUDA hardware characterization | Service-model need demonstrated, real-serving anchors, profile provenance, CPU/vendor baselines |
-| M8 | Small Azure experiment | Preregistered prediction, held-out concurrency/resource intervention, measured effect, costs and teardown evidence |
-| M9 | Capacity regression CI | Validated performance model, uncertainty-aware diffs, version/mix control and controlled false-positive rate |
+| V3-A | Preserve pilot; refresh primary-source overlap; observation contract and ADRs | 64-file preservation manifest; V3 research; ADR-0016/0017 |
+| V3-B | Runnable content-free conformance and explicit refusals | Controlled, PydanticAI and external FRAMES sources; real binding defect detected |
+| V3-C | Model-neutral schema, freeze, evaluation, first-class baselines | Independent SimPy, fixed-delay and ordinal utilization producers; integrity/unit/provenance tests |
+| V3-D | Preregistered external workload/intervention study | Executed: 16 calibration + 48 held-out sessions. Heuristic matches model; exact-answer gate fails. Hard-decision workload remains unestablished. |
+| V3-E | Reproduction, package and evidence audit | Offline byte-exact evaluation; preservation/trace audit; local tests/build; see final V3 report |
 
-M5/M7/M8/M9 remain gated, not completed. M6 was brought forward to test whether the controlled M4 result had a suitable real application. No optimizer, CUDA calibration or cloud template is added simply to populate a milestone. The next reversal gate is a real tool-heavy workload with independently identified inference behavior and measurable value beyond a simple utilization heuristic.
+Next research is an independently motivated application with a defensible quality measure and a nontrivial intervention choice, or upstream integration of the already useful conformance/validation interfaces. Do not select by whether simulation wins. Preserve failed studies and include a cheap baseline. External adoption is not established by running our executor on external tasks.
 
-M1 tasks: define execution semantics before schema; import safe fields; validate graph; implement deterministic algorithms; add representative fixtures and CLI; test edge cases; run CPU harness and publish raw measurements with limitations. No simulate/plan command stubs implying working features.
+C++, CUDA, optimization and cloud deployment require a measured V3 product need. None is queued. Public naming/contact and release qualification remain maintainer decisions; local validation needs no authorization or paid resources.
 
-Success requires the full measurement -> model -> simulated intervention -> real intervention -> verified improvement loop. M1 is a useful analytical foundation, not proof of that thesis. A local controlled service experiment may precede formal M6 if required to invalidate assumptions early; no multi-framework expansion is authorized by this roadmap.
+[External results](docs/v3/results.md), [reproduction](docs/v3/reproduce.md), [current status](PROJECT_STATUS.md), [frozen V2 conclusion](FINAL_PROJECT_REPORT.md).
