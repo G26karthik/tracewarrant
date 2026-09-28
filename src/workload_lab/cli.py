@@ -10,8 +10,9 @@ from pathlib import Path
 
 from .analysis import AnalysisReport, analyze
 from .graph import compile_workload
-from .ingest import DEFAULT_MAX_BYTES, DEFAULT_MAX_SPANS, ingest
+from .ingest import DEFAULT_MAX_BYTES, DEFAULT_MAX_SPANS, _decode, ingest
 from .ir import SCHEMA_VERSION, ValidationError
+from .simulation import scenario_from_dict, simulate
 
 
 def _text(report: AnalysisReport) -> str:
@@ -56,6 +57,9 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="workload-lab", description=__doc__)
     parser.add_argument("--version", action="version", version="workload-lab 0.1.0 (internal)")
     commands = parser.add_subparsers(dest="command", required=True)
+    simulation = commands.add_parser("simulate", help="run an explicit offline scenario")
+    simulation.add_argument("input", type=Path)
+    simulation.add_argument("--output", type=Path)
     for command in ("ingest", "analyze"):
         sub = commands.add_parser(command)
         sub.add_argument("input", type=Path, help="local OTLP JSON or JSONL envelopes")
@@ -69,6 +73,31 @@ def main(argv: list[str] | None = None) -> int:
             sub.add_argument("--format", choices=("text", "json"), default="text")
     args = parser.parse_args(argv)
     try:
+        if args.command == "simulate":
+            with args.input.open("rb") as stream:
+                chunks, remaining = [], DEFAULT_MAX_BYTES + 1
+                while remaining:
+                    chunk = stream.read(min(65536, remaining))
+                    if not chunk:
+                        break
+                    chunks.append(chunk)
+                    remaining -= len(chunk)
+            raw = b"".join(chunks)
+            if len(raw) > DEFAULT_MAX_BYTES:
+                raise ValidationError("scenario exceeds byte limit")
+            try:
+                data = _decode(raw.decode("utf-8-sig"))
+            except UnicodeError:
+                raise ValidationError("scenario must be UTF-8") from None
+            result = simulate(scenario_from_dict(data))
+            result["scenario"] = data
+            output = json.dumps(result, indent=2, sort_keys=True, allow_nan=False)
+            if args.output:
+                with args.output.open("x", encoding="utf-8", newline="\n") as stream:
+                    stream.write(output + "\n")
+            else:
+                print(output)
+            return 0
         dataset = ingest(
             args.input, origin=args.origin, max_bytes=args.max_bytes, max_spans=args.max_spans
         )

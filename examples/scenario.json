@@ -1,0 +1,14 @@
+{
+  "schema_version": "1",
+  "input_provenance": "ESTIMATED",
+  "seed": 42,
+  "horizon_ns": 1000000000,
+  "pools": [{"id": "model", "capacity": 2}, {"id": "tool", "capacity": 1}],
+  "tasks": [
+    {"id": "plan", "service_ns": [1000000], "pool": "model"},
+    {"id": "tool", "service_ns": [5000000], "pool": "tool", "predecessors": ["plan"]},
+    {"id": "external", "external_ns": [3000000], "predecessors": ["plan"]},
+    {"id": "synthesis", "service_ns": [1000000], "pool": "model", "predecessors": ["tool", "external"]}
+  ],
+  "arrivals": [{"id": "a", "at_ns": 0}, {"id": "b", "at_ns": 1000000}, {"id": "c", "at_ns": 2000000}]
+}
