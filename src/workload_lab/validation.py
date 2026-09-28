@@ -2,8 +2,9 @@
 
 from collections import defaultdict
 from itertools import combinations
+from math import isfinite
 from pathlib import Path
-from statistics import median
+from statistics import median_high, median_low
 
 from .artifacts import load_artifact, parse_time, validate_bundle
 from .ir import ValidationError
@@ -56,12 +57,21 @@ def metric_error(predicted: dict, observed: dict | None, minimum_samples: int) -
             absolute_error=abs(error),
             relative_error=abs(error) / abs(observed["value"]) if observed["value"] else None,
         )
+        overflow = row["relative_error"] is not None and not isfinite(row["relative_error"])
+        if overflow:
+            row["relative_error"] = None
         if predicted["interval"]:
             interval = predicted["interval"]
             row["interval_contains_observed_point"] = (
                 interval["lower"] <= observed["value"] <= interval["upper"]
             )
-        row["relative_error_reason"] = None if observed["value"] else "zero_observed_denominator"
+        row["relative_error_reason"] = (
+            "relative_error_overflow"
+            if overflow
+            else None
+            if observed["value"]
+            else "zero_observed_denominator"
+        )
     row["status"] = "compared" if reason is None else "unsupported"
     row["reason"] = reason
     return row
@@ -277,7 +287,9 @@ def evaluate(protocol_path, freeze_path, prediction_paths, measurement_paths) ->
                     "population": key[3],
                     "offered_comparisons": len(items),
                     "compared": sum(r["status"] == "compared" for r in items),
-                    "median_relative_error": median(errors) if errors else None,
+                    "median_relative_error": (
+                        median_low(errors) / 2 + median_high(errors) / 2 if errors else None
+                    ),
                     "interval_comparisons": len(coverage),
                     "interval_point_coverage": sum(coverage) / len(coverage) if coverage else None,
                 }

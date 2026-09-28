@@ -35,7 +35,7 @@ This exercises independent SimPy, fixed-delay and utilization producers. Do not 
 
 Requires an already installed local Ollama server with cached `llama3.1:8b`; no model is pulled. Read [the preregistration](frames-preregistration.md) and [negative results](results.md) first. Fresh public network fetches are bounded to two concurrent requests and access denials halt the study. The application performs real inference on loopback, not a paid provider.
 
-Download the public dataset from `https://huggingface.co/datasets/google/frames-benchmark/resolve/58d9fb6330f3ab1316d1eca12e5e8ef23dcc22ef/test.tsv` into an ignored local file. Its SHA-256 must be `4255093c93b595b5b04c7c8dde290b48ec87d72ca0fb0b760d9dd02740d669ff`. The collector enforces this digest and fixed selection. Dataset card is Apache-2.0; webpage contents have their own licenses. Neither is redistributed in our telemetry.
+Download the [pinned public dataset](https://huggingface.co/datasets/google/frames-benchmark/resolve/58d9fb6330f3ab1316d1eca12e5e8ef23dcc22ef/test.tsv) into an ignored local file. Its SHA-256 must be `4255093c93b595b5b04c7c8dde290b48ec87d72ca0fb0b760d9dd02740d669ff`. The collector enforces this digest and fixed selection. Dataset card is Apache-2.0; webpage contents have their own licenses. Neither is redistributed in our telemetry.
 
 ```sh
 uv run python -m examples.frames_workload feasibility --dataset artifacts/v3/frames-test.tsv --output artifacts/v3-reproduction/feasibility.json

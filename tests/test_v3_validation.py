@@ -287,7 +287,9 @@ def test_frozen_history_preserved():
     root = Path(__file__).parents[1]
     manifest = json.loads((root / "docs/v3/preservation.json").read_text())
     for path, digest in manifest["files"].items():
-        assert sha256((root / path).read_bytes()) == digest, path
+        assert sha256((root / path).read_bytes()) in {digest, manifest["git_blob_sha256"][path]}, (
+            path
+        )
 
 
 def test_missing_envelope_is_unknown_and_bottleneck_supported(bundle):
@@ -334,3 +336,22 @@ def test_predicted_bottleneck_never_measured():
     pred["scenarios"][0]["bottleneck"].update(resources=["gpu"], provenance="MEASURED")
     with pytest.raises(ValidationError, match="bottleneck cannot be MEASURED"):
         validate_artifact(pred)
+
+
+def test_other_json_producer_integral_numbers_and_opaque_tokens():
+    data = prediction()
+    data["scenarios"][0]["metrics"][0]["sample_count"] = 100.0
+    Draft202012Validator(SCHEMA).validate(data)
+    validate_artifact(data)
+    data["model"]["id"] = "secret\n"
+    assert not Draft202012Validator(SCHEMA).is_valid(data)
+    with pytest.raises(ValidationError):
+        validate_artifact(data)
+
+
+def test_extreme_relative_error_remains_json_safe():
+    row = metric_error(metric(1e30), metric(1e-320, "MEASURED"), 1)
+    assert row["relative_error"] is None
+    assert row["relative_error_reason"] == "relative_error_overflow"
+    assert row["absolute_error"] == 1e30
+    json.dumps(row, allow_nan=False)

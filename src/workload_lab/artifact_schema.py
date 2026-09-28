@@ -14,7 +14,7 @@ TOKEN = {
     "type": "string",
     "minLength": 1,
     "maxLength": 128,
-    "pattern": r"^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+    "pattern": r"^[A-Za-z0-9][A-Za-z0-9_.:/-]*$(?!\n)",
 }
 NUMBER = {"type": "number", "minimum": 0, "maximum": 1e30}
 COUNT = {"type": "integer", "minimum": 0, "maximum": 1_000_000_000}
@@ -143,7 +143,7 @@ PROTOCOL = obj(
         **BASE,
         "artifact_type": enum(["protocol"]),
         "experiment_id": TOKEN,
-        "scenario_ids": array(TOKEN, 2, 1000),
+        "scenario_ids": array(TOKEN, 1, 1000),
         "primary_metric": TOKEN,
         "direction": enum(["minimize", "maximize"]),
         "material_relative_difference": {"type": "number", "minimum": 0, "maximum": 1},

@@ -1,0 +1,15 @@
+# V3 local verification
+
+2026-09-29, internal package 0.3.0, Windows.
+
+- 139 tests pass on CPython 3.12.12 (3.93 s), isolated Python 3.11 (4.55 s) and isolated Python 3.13 (4.94 s). Development dependencies are locked; Python 3.11's additional backport dependency is resolved by the lock.
+- Ruff lint and formatting pass. No held-out predictions, thresholds or old V2 evidence changed during final verification.
+- sdist/wheel build passes. Isolated wheel-only `evaluate` installs exactly one package, has no `Requires-Dist` entries, includes only package/dist-info members, and reproduces the published validation byte for byte.
+- Reusing a wheel filename initially reused an older uv environment despite refresh. Final verification used a fresh wheel path, matched the installed `validation.py` SHA-256 to the current wheel member, confirmed no simulator import, and reproduced the evaluation again. The current-wheel claim is based on that verified run.
+- Built wheel SHA-256: `d529009cb89e2a6fd5b9ef8dad45032e58b4f99d4a858ecdb086a247aad64fd5`. Wheel is local in ignored `dist/`, not uploaded.
+- JSON Schema is independently checked with `jsonschema`; API accepts mathematically integral JSON numbers and rejects opaque IDs containing trailing newlines. Additional semantic checks reject mismatched units/populations, provenance relabeling, invalid intervals/counts, tampering, and non-post-freeze declared collection. Inputs and comparison cross-products are bounded.
+- [Offline audit](offline-audit.json) validates 64 preserved V2 files and the original tag, three trace sources, 72 original/adapted external traces, and exact evaluation reproduction. It reports the collector defect rather than silently fixing original observations.
+- Preservation is portable across the baseline's pre-existing Git newline normalization: three old metadata JSON files have original CRLF working bytes and LF Git blobs. The manifest records both hashes; tests accept only those original representations. All 64 working files remain byte-exact on this host, and no historical file was rewritten. Frozen predictions and both handoff files have no such representation difference.
+- Optional environment [license metadata](dependency-license-evidence.json) covers 38 installed packages, including the development-only JSON Schema oracle. Core runtime remains standard-library-only. External dataset attribution and acquisition limits are in the study/reproduction documents; no dataset or model weights were redistributed in telemetry.
+
+Hosted CI has not run; Linux remains unverified locally. Installed-wheel verification covers evaluation; complete experimental recollection requires the documented cached model and public Wikipedia access. No release, independent user adoption, semantic task-quality validation or hardware-portable capacity claim is implied.

@@ -19,8 +19,11 @@ ROOT = Path(__file__).parents[1]
 
 def audit():
     preservation = json.loads((ROOT / "docs/v3/preservation.json").read_text())
+    byte_exact = 0
     for name, digest in preservation["files"].items():
-        assert sha(ROOT / name) == digest, "preserved file changed"
+        current = sha(ROOT / name)
+        assert current in {digest, preservation["git_blob_sha256"][name]}, "preserved file changed"
+        byte_exact += current == digest
     resolved = subprocess.check_output(
         ["git", "rev-parse", "research-pilot-1^{}"], cwd=ROOT, text=True
     ).strip()
@@ -65,6 +68,7 @@ def audit():
         "artifact_type": "v3_offline_audit",
         "metadata": metadata(__file__, {"network": False, "model_execution": False}, 0),
         "preserved_file_count": len(preservation["files"]),
+        "original_working_bytes_exact": byte_exact,
         "pilot_tag_unchanged": True,
         "original_frames_complete_graphs": originally_complete,
         "adapted_frames_complete_graphs": complete,

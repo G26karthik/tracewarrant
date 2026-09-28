@@ -49,9 +49,11 @@ def _matches(value, schema) -> bool:
     if kind == "boolean":
         return type(value) is bool
     if kind in ("integer", "number"):
-        if type(value) not in ((int,) if kind == "integer" else (int, float)):
+        if type(value) not in (int, float):
             return False
         if not -1e30 <= value <= 1e30 or not math.isfinite(value):
+            return False
+        if kind == "integer" and value != int(value):
             return False
         return (
             value >= schema.get("minimum", -1e30)

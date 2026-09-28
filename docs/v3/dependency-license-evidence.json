@@ -1,0 +1,230 @@
+[
+  {
+    "name": "annotated-types",
+    "version": "0.8.0",
+    "license_expression": "MIT",
+    "license": null
+  },
+  {
+    "name": "anyio",
+    "version": "4.15.1",
+    "license_expression": "MIT",
+    "license": null
+  },
+  {
+    "name": "attrs",
+    "version": "26.1.0",
+    "license_expression": "MIT",
+    "license": null
+  },
+  {
+    "name": "colorama",
+    "version": "0.4.6",
+    "license_expression": null,
+    "license": null
+  },
+  {
+    "name": "genai-prices",
+    "version": "0.1.9",
+    "license_expression": "MIT",
+    "license": null
+  },
+  {
+    "name": "griffelib",
+    "version": "2.3.0",
+    "license_expression": "ISC",
+    "license": null
+  },
+  {
+    "name": "h11",
+    "version": "0.16.0",
+    "license_expression": null,
+    "license": "MIT"
+  },
+  {
+    "name": "hatchling",
+    "version": "1.27.0",
+    "license_expression": "MIT",
+    "license": null
+  },
+  {
+    "name": "httpcore2",
+    "version": "2.13.1",
+    "license_expression": "BSD-3-Clause",
+    "license": null
+  },
+  {
+    "name": "httpx2",
+    "version": "2.13.1",
+    "license_expression": "BSD-3-Clause",
+    "license": null
+  },
+  {
+    "name": "hypothesis",
+    "version": "6.168.3",
+    "license_expression": "MPL-2.0",
+    "license": null
+  },
+  {
+    "name": "idna",
+    "version": "3.20",
+    "license_expression": "BSD-3-Clause",
+    "license": null
+  },
+  {
+    "name": "iniconfig",
+    "version": "2.3.0",
+    "license_expression": "MIT",
+    "license": null
+  },
+  {
+    "name": "jsonschema",
+    "version": "4.26.0",
+    "license_expression": "MIT",
+    "license": null
+  },
+  {
+    "name": "jsonschema-specifications",
+    "version": "2025.9.1",
+    "license_expression": "MIT",
+    "license": null
+  },
+  {
+    "name": "logfire-api",
+    "version": "5.1.1",
+    "license_expression": "MIT",
+    "license": null
+  },
+  {
+    "name": "opentelemetry-api",
+    "version": "1.45.0",
+    "license_expression": "Apache-2.0",
+    "license": null
+  },
+  {
+    "name": "opentelemetry-sdk",
+    "version": "1.45.0",
+    "license_expression": "Apache-2.0",
+    "license": null
+  },
+  {
+    "name": "opentelemetry-semantic-conventions",
+    "version": "0.66b0",
+    "license_expression": "Apache-2.0",
+    "license": null
+  },
+  {
+    "name": "packaging",
+    "version": "26.3",
+    "license_expression": "Apache-2.0 OR BSD-2-Clause",
+    "license": null
+  },
+  {
+    "name": "pathspec",
+    "version": "1.1.1",
+    "license_expression": null,
+    "license": null
+  },
+  {
+    "name": "pluggy",
+    "version": "1.6.0",
+    "license_expression": null,
+    "license": "MIT"
+  },
+  {
+    "name": "pydantic",
+    "version": "2.13.5",
+    "license_expression": "MIT",
+    "license": null
+  },
+  {
+    "name": "pydantic-ai-slim",
+    "version": "2.51.0",
+    "license_expression": "MIT",
+    "license": null
+  },
+  {
+    "name": "pydantic-graph",
+    "version": "2.51.0",
+    "license_expression": "MIT",
+    "license": null
+  },
+  {
+    "name": "pydantic_core",
+    "version": "2.46.5",
+    "license_expression": "MIT",
+    "license": null
+  },
+  {
+    "name": "Pygments",
+    "version": "2.21.0",
+    "license_expression": "BSD-2-Clause",
+    "license": null
+  },
+  {
+    "name": "pytest",
+    "version": "8.4.2",
+    "license_expression": null,
+    "license": "MIT"
+  },
+  {
+    "name": "referencing",
+    "version": "0.37.0",
+    "license_expression": "MIT",
+    "license": null
+  },
+  {
+    "name": "rpds-py",
+    "version": "2026.6.3",
+    "license_expression": "MIT",
+    "license": null
+  },
+  {
+    "name": "ruff",
+    "version": "0.16.9",
+    "license_expression": "MIT",
+    "license": null
+  },
+  {
+    "name": "simpy",
+    "version": "4.1.1",
+    "license_expression": null,
+    "license": "MIT"
+  },
+  {
+    "name": "sortedcontainers",
+    "version": "2.4.0",
+    "license_expression": null,
+    "license": "Apache 2.0"
+  },
+  {
+    "name": "trove-classifiers",
+    "version": "2026.9.21.13",
+    "license_expression": null,
+    "license": null
+  },
+  {
+    "name": "truststore",
+    "version": "0.10.4",
+    "license_expression": "MIT",
+    "license": null
+  },
+  {
+    "name": "typing-inspection",
+    "version": "0.4.4",
+    "license_expression": "MIT",
+    "license": null
+  },
+  {
+    "name": "typing_extensions",
+    "version": "4.16.0",
+    "license_expression": "PSF-2.0",
+    "license": null
+  },
+  {
+    "name": "workload-lab-internal",
+    "version": "0.3.0",
+    "license_expression": "Apache-2.0",
+    "license": null
+  }
+]

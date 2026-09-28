@@ -2,7 +2,18 @@
 
 Updated: 2026-09-29. Internal codename: Workload Lab.
 
-**Active direction: [PROJECT_V3.md](PROJECT_V3.md)** — simulator-neutral observation and performance-model validation. V3-A/B passed; V3-C interfaces implemented; V3-D external FRAMES study preregistered. Current suite: 131 tests. `inspect`, `schema`, `check`, `freeze`, `evaluate` work without importing the reference simulator. [V3 contracts and evidence](docs/v3/artifacts-and-validation.md), [study design](docs/v3/frames-preregistration.md). Baseline `c0fad29`, tag and 64 historical files are preserved. The entries below describe the frozen V2 pilot; they are not the active roadmap.
+**Active direction: [PROJECT_V3.md](PROJECT_V3.md)** — simulator-neutral observation and performance-model validation. Internal release 0.3.0; [V3 final report](V3_PROJECT_REPORT.md). Local handoff tag: `validation-toolkit-v3`.
+
+- V3-A/B/C/E delivered locally: contract/research, three-source conformance, neutral artifacts, independent validation, baselines, packaging and reproducibility. `inspect`, `schema`, `check`, `freeze`, `evaluate` load no reference simulator.
+- V3-D executed with negative limits: FRAMES 16 calibration + 48 held-out sessions; SimPy median mean-latency error 1.50%, 2/2 material rankings. Utilization selected the same intervention. Strict exact answers passed 0/48 held-out; no useful-agent capacity claim. Hard-decision workload and external adoption remain unestablished.
+- Real conformance finding: incorrect collector completeness key refused; original traces preserved and explicit binding adapter supplied. All 72 feasibility/calibration/holdout graphs validate structurally after adaptation; inference service demand remains UNKNOWN.
+- Frozen V3 experiment: `af36005` / `v3-frames-freeze`. [Results](docs/v3/results.md), [reproduction](docs/v3/reproduce.md), [verification](docs/v3/verification.md).
+- 139 tests on Windows Python 3.11/3.12.12/3.13; lint/format/build; isolated zero-runtime-dependency wheel reproduces evaluation byte for byte. Hosted Linux/Windows CI is configured, not run here.
+- Baseline `c0fad29`, `research-pilot-1`, V2, its final report, all predictions and 64 protected files remain unchanged. No paid calls, cloud provisioning, external messages or publication. No C++/CUDA/optimizer investment justified.
+
+## Frozen V2 pilot summary (historical)
+
+The entries below preserve the prior research state and are not the active roadmap.
 
 - Current milestone: evidence reassessment/local handoff complete; package 0.2.0. No optimizer/cloud deployment queued.
 - Last completed gates: M1.5 and M2. M3 assessed and native deferred. M4 controlled pilot passed; general calibration partial. M6 real-model applicability probe completed; predictive gate partial.
