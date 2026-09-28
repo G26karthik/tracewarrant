@@ -42,11 +42,11 @@ class Pool:
 
 
 class Recorder:
-    def __init__(self, number):
+    def __init__(self, number, clock=None):
         self.trace = f"{number:032x}"
         self.spans = []
         self.counter = 1
-        self.epoch, self.base = time.time_ns(), time.perf_counter_ns()
+        self.epoch, self.base = clock or (time.time_ns(), time.perf_counter_ns())
 
     def now(self):
         return self.epoch + time.perf_counter_ns() - self.base
@@ -139,16 +139,27 @@ class Recorder:
         return identity
 
 
-async def capture(sessions=8, tool_workers=1, model_workers=2, edge_cases=True):
+async def capture(
+    sessions=8,
+    tool_workers=1,
+    model_workers=2,
+    edge_cases=True,
+    retrieval_workers=2,
+    delay_scale=1,
+    arrival_rate=None,
+):
     tools = Pool("tool", tool_workers)
     inference = Pool("stub-model", model_workers)
-    retrieval = Pool("retrieval", 2)
+    retrieval = Pool("retrieval", retrieval_workers)
     database = Pool("database", 1)
+    clock = (time.time_ns(), time.perf_counter_ns())
 
     async def session(number):
-        rec = Recorder(number)
+        if arrival_rate is not None:
+            await asyncio.sleep((number - 1) / arrival_rate)
+        rec = Recorder(number, clock)
         root, start = rec.new_id(), rec.now()
-        plan = await rec.work(root, "llm", 0.003, pool=inference)
+        plan = await rec.work(root, "llm", 0.003 * delay_scale, pool=inference)
         nested, nested_start = rec.new_id(), rec.now()
         with sqlite3.connect(":memory:") as db:
             db.execute("create table evidence (value integer)")
@@ -157,7 +168,7 @@ async def capture(sessions=8, tool_workers=1, model_workers=2, edge_cases=True):
                 rec.work(
                     nested,
                     "retrieval",
-                    0.006,
+                    0.006 * delay_scale,
                     (plan,),
                     retrieval,
                     action=lambda: sorted(["energy", "supply", "risk"]),
@@ -165,7 +176,7 @@ async def capture(sessions=8, tool_workers=1, model_workers=2, edge_cases=True):
                 rec.work(
                     nested,
                     "tool",
-                    0.015,
+                    0.015 * delay_scale,
                     (plan,),
                     tools,
                     action=lambda: "<title>Local evidence</title>".split("<"),
@@ -173,16 +184,16 @@ async def capture(sessions=8, tool_workers=1, model_workers=2, edge_cases=True):
                 rec.work(
                     nested,
                     "database",
-                    0.002,
+                    0.002 * delay_scale,
                     (plan,),
                     database,
                     action=lambda: db.execute("select sum(value) from evidence").fetchone(),
                 ),
-                rec.work(nested, "external_api", 0.005, (plan,)),
+                rec.work(nested, "external_api", 0.005 * delay_scale, (plan,)),
             )
         rec.record(nested, root, nested_start, rec.now(), "workflow")
         join = await rec.work(root, "compute", 0, children)
-        final = await rec.work(root, "llm", 0.003, (join,), inference)
+        final = await rec.work(root, "llm", 0.003 * delay_scale, (join,), inference)
         if edge_cases and number == 1:
             failed = await rec.work(
                 root, "tool", 0.002, (final,), tools, outcome="failed", attempt=1, group="fetch"
@@ -215,7 +226,8 @@ async def capture(sessions=8, tool_workers=1, model_workers=2, edge_cases=True):
         return rec.spans
 
     traces = await asyncio.gather(*(session(i + 1) for i in range(sessions)))
-    return envelope([span for trace in traces for span in trace], "controlled-reference-v1")
+    version = "v2" if delay_scale == 10 else "v1"
+    return envelope([span for trace in traces for span in trace], "controlled-reference-" + version)
 
 
 if __name__ == "__main__":
@@ -226,5 +238,5 @@ if __name__ == "__main__":
     if not 1 <= args.sessions <= 1000:
         parser.error("sessions must be between 1 and 1000")
     data = asyncio.run(capture(args.sessions))
-    with args.output.open("x", encoding="utf-8") as stream:
+    with args.output.open("x", encoding="utf-8", newline="\n") as stream:
         json.dump(data, stream, indent=2)
