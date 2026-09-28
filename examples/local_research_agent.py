@@ -11,6 +11,7 @@ import json
 import sqlite3
 import subprocess
 import time
+import traceback
 import urllib.request
 from pathlib import Path
 
@@ -18,7 +19,7 @@ from benchmarks.provenance import metadata
 from examples.capture_controlled import Pool, Recorder, envelope
 from workload_lab.simulation import percentile
 
-MODEL = "qwen3-vl:4b"
+MODEL = "llama3.1:8b"
 OPTIONS = {"temperature": 0, "seed": 27, "num_predict": 160, "num_ctx": 4096}
 SCHEMA = {
     "type": "object",
@@ -130,7 +131,8 @@ async def batch(tool_count, client_count, number=8):
                                 "role": "user",
                                 "content": (
                                     "Use only these fictional facility records. Return JSON with "
-                                    "site_id, supplier_share, stock_days and one short risk sentence. "
+                                    "site_id, supplier_share, stock_days "
+                                    "and one short risk sentence. "
                                     "Preserve exact facts.\n" + context
                                 ),
                             }
@@ -214,6 +216,7 @@ async def batch(tool_count, client_count, number=8):
             return result
 
         error = None
+        diagnostics = None
         facts_correct = False
         try:
             result = await agent.run("Assess the fictional facility's supplier disruption risk.")
@@ -223,6 +226,17 @@ async def batch(tool_count, client_count, number=8):
             )
         except Exception as exc:
             error = type(exc).__name__  # Never persist exception payload/provider body.
+            diagnostics = {
+                "frames": [
+                    (Path(f.filename).name, f.name, f.lineno)
+                    for f in traceback.extract_tb(exc.__traceback__)[-5:]
+                ],
+                "categories": [
+                    word
+                    for word in ("retries", "empty", "tool", "output", "limit")
+                    if word in str(exc).lower()
+                ],
+            }
         recorder.record(
             root,
             None,
@@ -236,6 +250,7 @@ async def batch(tool_count, client_count, number=8):
             "latency_ns": recorder.now() - start,
             "facts_correct": facts_correct,
             "error_type": error,
+            "error_diagnostics": diagnostics,
             "provider_metrics": provider_metrics,
         }
 

@@ -2,7 +2,7 @@
 
 Status: Experimental / Research Prototype
 
-This prototype converts supported local OTLP execution traces into a framework-neutral workload graph and reports deterministic path and timing contributions. It exposes missing dependencies and keeps observed and synthetic data separate. There is no simulator, optimizer or capacity recommendation yet.
+This prototype imports local OTLP traces, builds explicit workload graphs, simulates finite resources and tests narrow empirical models against held-out interventions. It preserves unknown semantics and separates measured, calibrated and simulated evidence. There is no validated general infrastructure recommendation or production release. Start with [PROJECT_STATUS.md](PROJECT_STATUS.md).
 
 The research question is whether calibrated non-LLM resource contention can improve agent capacity decisions. The broad idea has close competitors; see the [research](docs/research/competitive-landscape.md), [adversarial review](docs/research/adversarial-review.md) and [canonical V2](PROJECT_V2.md).
 
@@ -15,10 +15,11 @@ uv sync --locked
 uv run workload-lab analyze examples/research-workflow.otlp.json --origin synthetic
 uv run workload-lab analyze examples/research-workflow.otlp.json --format json
 uv run workload-lab ingest examples/research-workflow.otlp.json --output workload-ir.json
+uv run workload-lab simulate examples/scenario.json --output simulation.json
 uv run pytest
 ```
 
-`--output` creates a new file and refuses overwrite. `analyze` consumes original OTLP JSON/JSONL, not compiled IR JSON in v0. Runtime-only installation also works with `python -m pip install .`; the distribution name is internal and must not be published.
+`--output` creates a new file and refuses overwrite. `analyze` consumes original OTLP JSON/JSONL, not compiled IR. `simulate` accepts a separate explicit scenario and never executes traced tools. Runtime-only installation works with `python -m pip install .`; the internal distribution must not be published.
 
 ```python
 from workload_lab import analyze, compile_workload, ingest
@@ -44,6 +45,19 @@ Accepts OTLP JSON `resourceSpans/scopeSpans/spans` envelopes, or one envelope pe
 No upload or telemetry. The allowlist removes payload-bearing names, prompts, arguments, messages and events. Selected service/model/tool labels and IDs remain potentially sensitive. [Security](SECURITY.md).
 
 ## Development and direction
+
+The [controlled experiment](docs/experiments/README.md) achieved 1.70% median p95 error across eight frozen held-out cells. A utilization heuristic selected the same useful intervention; the workload uses stub inference. This does not establish real-agent differentiation. See [instrumentation](docs/design/instrumentation-contract.md) and [simulation semantics](docs/design/simulation-semantics.md) before interpreting results.
+
+For fresh artifacts, create `artifacts/` and use new output names:
+
+```sh
+uv run python -m examples.capture_controlled --output artifacts/actual.json
+uv run --group integration python -m examples.capture_pydantic_ai --output artifacts/framework.json
+uv run --group validation python -m benchmarks.validate_simulation --output artifacts/analytic.json
+uv run python -m benchmarks.simulation_benchmark --output artifacts/scale.json
+```
+
+Core tests use the committed content-free framework trace and need no framework. Optional groups isolate PydanticAI/OTel and the independent SimPy baseline. The optional [real-model probe](docs/experiments/real-model-probe-design.md) uses an already-cached local `qwen3-vl:4b`, never a model download or paid provider.
 
 [Architecture](ARCHITECTURE.md), [roadmap](ROADMAP.md), [ADRs](docs/adr/README.md), [contributing](CONTRIBUTING.md), [benchmark methodology](docs/benchmarks/methodology.md), [validation plan](docs/validation/plan.md), [license inventory](docs/dependency-licenses.md).
 

@@ -1,5 +1,7 @@
 # Real-model applicability probe, specified before execution
 
+Exploratory amendment after the first failed warmup: local `qwen3-vl:4b` / Ollama 0.34.0 returned empty `message.content` under the structured-output request despite `think=false`; a direct diagnostic counted zero content characters and nonempty thinking. PydanticAI exhausted its output retries. The failure is preserved in `real-model-probe.json`; reasoning text was not promoted to an answer or persisted. Switch this probe to the already-cached `llama3.1:8b` and preserve a separate artifact. This changes the exploratory probe, not the frozen controlled experiment or its acceptance thresholds.
+
 Date: 2026-09-29. Exploratory M6 probe, **not a new confirmatory holdout** and not permission to reclassify the controlled result. Local discovery found cached `qwen3-vl:4b` in Ollama; no model download, paid provider or cloud deployment is needed. Existing Azure account availability does not authorize spending and does not make cloud useful before a credible workload model.
 
 Use PydanticAI FunctionModel as a bridge to the local Ollama chat endpoint and the same framework already chosen in M1.5. Deterministic workflow planning requests retrieval plus SQLite lookup in parallel; a real model synthesizes a structured facility/supplier-risk report from fictional reference facts. This is a non-coding task. No prompts, evidence text, generated reports, SQL or tool arguments/results are retained in trace artifacts; record only exact-match fact checks, lengths/counts and performance metadata.
