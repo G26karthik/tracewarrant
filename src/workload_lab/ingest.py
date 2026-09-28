@@ -182,7 +182,17 @@ def ingest(
         raise ValidationError("input limits must be positive")
     path = Path(path)
     with path.open("rb") as stream:
-        raw = stream.read(max_bytes + 1)
+        # A single read(limit) may allocate limit bytes even for a tiny file.
+        # Keep the same hard bound without preallocating the full input budget.
+        chunks = []
+        remaining = max_bytes + 1
+        while remaining:
+            chunk = stream.read(min(64 * 1024, remaining))
+            if not chunk:
+                break
+            chunks.append(chunk)
+            remaining -= len(chunk)
+        raw = b"".join(chunks)
     if len(raw) > max_bytes:
         raise ValidationError("input exceeds byte limit; split it or raise the explicit limit")
     try:

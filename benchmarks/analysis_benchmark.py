@@ -112,7 +112,11 @@ def run(path, runs, warmups):
         "cpp_compiler": "not applicable",
         "cuda": "not applicable",
         "dependency_lock_sha256": digest(ROOT / "uv.lock"),
-        "workload_version": "synthetic-fork-join-v1",
+        "workload_version": (
+            "synthetic-fork-join-v1"
+            if path.resolve() == (ROOT / "examples/research-workflow.otlp.json").resolve()
+            else "unspecified; identify this input before publication"
+        ),
         "workload_sha256": digest(path),
         "span_count": len(dataset.spans),
         "seed": 0,

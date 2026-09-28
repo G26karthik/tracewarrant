@@ -1,0 +1,179 @@
+{
+  "benchmark_class": "analysis_microbenchmark",
+  "compiler": "MSC v.1944 64 bit (AMD64)",
+  "cpp_compiler": "not applicable",
+  "cuda": "not applicable",
+  "date_utc": "2026-09-28T18:39:25.604047+00:00",
+  "dependency_lock_sha256": "66e877772febf5c3d000e949ec180a36d5ff2b718e5032f636fbad1b9ab8a8ca",
+  "git_commit": "65a59881789cc3869571997fc909e55114160b74",
+  "git_dirty": false,
+  "hardware": {
+    "cpu": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+    "gpu": "not used",
+    "logical_cpus": 16,
+    "physical_ram_bytes": 16356962304
+  },
+  "harness_sha256": "4c77274996de812d1fb643f0760bc4a0b82c76c90854706d783973d27a86ceb1",
+  "limitations": [
+    "local smoke benchmark; not agent or capacity validation",
+    "tracemalloc peak is not process RSS; measured separately from timing",
+    "publication requires rerun at a clean named commit"
+  ],
+  "median_total_ns": 6515050.0,
+  "os": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.12 (main, Jan 14 2026, 19:30:21) [MSC v.1944 64 bit (AMD64)]",
+  "python_allocation_peak_bytes": 16786663,
+  "raw_samples": [
+    {
+      "analyze_ns": 134100,
+      "compile_ns": 240600,
+      "ingest_ns": 6768100,
+      "run": 0,
+      "total_ns": 7142800
+    },
+    {
+      "analyze_ns": 125000,
+      "compile_ns": 207700,
+      "ingest_ns": 5548700,
+      "run": 1,
+      "total_ns": 5881400
+    },
+    {
+      "analyze_ns": 126200,
+      "compile_ns": 186900,
+      "ingest_ns": 5170600,
+      "run": 2,
+      "total_ns": 5483700
+    },
+    {
+      "analyze_ns": 122100,
+      "compile_ns": 186300,
+      "ingest_ns": 4974200,
+      "run": 3,
+      "total_ns": 5282600
+    },
+    {
+      "analyze_ns": 215900,
+      "compile_ns": 269100,
+      "ingest_ns": 6121400,
+      "run": 4,
+      "total_ns": 6606400
+    },
+    {
+      "analyze_ns": 136000,
+      "compile_ns": 213900,
+      "ingest_ns": 5828000,
+      "run": 5,
+      "total_ns": 6177900
+    },
+    {
+      "analyze_ns": 122500,
+      "compile_ns": 188300,
+      "ingest_ns": 5109800,
+      "run": 6,
+      "total_ns": 5420600
+    },
+    {
+      "analyze_ns": 127100,
+      "compile_ns": 192700,
+      "ingest_ns": 5013600,
+      "run": 7,
+      "total_ns": 5333400
+    },
+    {
+      "analyze_ns": 268100,
+      "compile_ns": 218400,
+      "ingest_ns": 5259500,
+      "run": 8,
+      "total_ns": 5746000
+    },
+    {
+      "analyze_ns": 134400,
+      "compile_ns": 228800,
+      "ingest_ns": 6767600,
+      "run": 9,
+      "total_ns": 7130800
+    },
+    {
+      "analyze_ns": 325500,
+      "compile_ns": 225800,
+      "ingest_ns": 6361500,
+      "run": 10,
+      "total_ns": 6912800
+    },
+    {
+      "analyze_ns": 194900,
+      "compile_ns": 264000,
+      "ingest_ns": 6871800,
+      "run": 11,
+      "total_ns": 7330700
+    },
+    {
+      "analyze_ns": 139000,
+      "compile_ns": 213700,
+      "ingest_ns": 6235300,
+      "run": 12,
+      "total_ns": 6588000
+    },
+    {
+      "analyze_ns": 136000,
+      "compile_ns": 264000,
+      "ingest_ns": 5511900,
+      "run": 13,
+      "total_ns": 5911900
+    },
+    {
+      "analyze_ns": 2326100,
+      "compile_ns": 274900,
+      "ingest_ns": 11193200,
+      "run": 14,
+      "total_ns": 13794200
+    },
+    {
+      "analyze_ns": 133000,
+      "compile_ns": 216700,
+      "ingest_ns": 7323100,
+      "run": 15,
+      "total_ns": 7672800
+    },
+    {
+      "analyze_ns": 153300,
+      "compile_ns": 284400,
+      "ingest_ns": 6635000,
+      "run": 16,
+      "total_ns": 7072700
+    },
+    {
+      "analyze_ns": 128600,
+      "compile_ns": 208800,
+      "ingest_ns": 6104700,
+      "run": 17,
+      "total_ns": 6442100
+    },
+    {
+      "analyze_ns": 136900,
+      "compile_ns": 196800,
+      "ingest_ns": 5539400,
+      "run": 18,
+      "total_ns": 5873100
+    },
+    {
+      "analyze_ns": 133700,
+      "compile_ns": 210900,
+      "ingest_ns": 7024600,
+      "run": 19,
+      "total_ns": 7369200
+    }
+  ],
+  "runs": 20,
+  "schema_version": "1",
+  "seed": 0,
+  "seed_note": "deterministic fixture; no random sampling",
+  "source_tree_sha256": "3b6be6f7855f54c0ab5f686a58017ccfd3ff6a179ed7dda1e2bcb61f15c76bb2",
+  "span_count": 6,
+  "timing_provenance": "MEASURED",
+  "warmups": 3,
+  "workload_origin": "synthetic",
+  "workload_sha256": "89262b9343a686cd96d56a7994d81bac77027dc1a99e7db72ec17d2add6f6a0f",
+  "workload_version": "synthetic-fork-join-v1"
+}

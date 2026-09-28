@@ -167,6 +167,15 @@ def test_limits(tmp_path):
         ingest(write(tmp_path, data), max_spans=1)
 
 
+def test_byte_limit_is_inclusive_for_large_payload(tmp_path):
+    data = envelope([attribute("ignored.content", {"stringValue": "x" * 100_000})])
+    target = write(tmp_path, data)
+    size = target.stat().st_size
+    assert len(ingest(target, max_bytes=size).spans) == 1
+    with pytest.raises(ValidationError, match="byte limit"):
+        ingest(target, max_bytes=size - 1)
+
+
 @pytest.mark.parametrize("loss", ["links", "droppedAttributesCount"])
 def test_completeness_revoked_for_loss(tmp_path, loss):
     data = envelope([attribute("workload_lab.graph.complete", {"boolValue": True})])
