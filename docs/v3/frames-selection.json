@@ -1,0 +1,27 @@
+{
+  "dataset": "google/frames-benchmark",
+  "revision": "58d9fb6330f3ab1316d1eca12e5e8ef23dcc22ef",
+  "dataset_sha256": "4255093c93b595b5b04c7c8dde290b48ec87d72ca0fb0b760d9dd02740d669ff",
+  "license": "apache-2.0",
+  "selection_rule": "first-eight-index-order-with-3-to-5-distinct-English-Wikipedia-sources",
+  "selected_ids": [
+    "0",
+    "1",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "9"
+  ],
+  "source_counts": [
+    5,
+    3,
+    3,
+    4,
+    3,
+    5,
+    4,
+    4
+  ]
+}

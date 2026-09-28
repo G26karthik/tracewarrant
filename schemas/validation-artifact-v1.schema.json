@@ -1,0 +1,800 @@
+{
+  "$defs": {
+    "freeze": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_type": {
+          "enum": [
+            "freeze"
+          ]
+        },
+        "created_at": {
+          "maxLength": 27,
+          "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d\\.\\d{6}Z$",
+          "type": "string"
+        },
+        "integrity_method": {
+          "enum": [
+            "sha256_raw_bytes"
+          ]
+        },
+        "prediction_sha256s": {
+          "items": {
+            "maxLength": 64,
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "maxItems": 32,
+          "minItems": 1,
+          "type": "array"
+        },
+        "protocol_sha256": {
+          "maxLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "schema_version": {
+          "enum": [
+            "1.0"
+          ]
+        }
+      },
+      "required": [
+        "schema_version",
+        "artifact_type",
+        "created_at",
+        "protocol_sha256",
+        "prediction_sha256s",
+        "integrity_method"
+      ],
+      "type": "object"
+    },
+    "measurement": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_type": {
+          "enum": [
+            "measurement"
+          ]
+        },
+        "counts": {
+          "additionalProperties": false,
+          "properties": {
+            "censored": {
+              "maximum": 1000000000,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "completed": {
+              "maximum": 1000000000,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "failed": {
+              "maximum": 1000000000,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "offered": {
+              "maximum": 1000000000,
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "offered",
+            "completed",
+            "failed",
+            "censored"
+          ],
+          "type": "object"
+        },
+        "finished_at": {
+          "maxLength": 27,
+          "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d\\.\\d{6}Z$",
+          "type": "string"
+        },
+        "freeze_sha256": {
+          "maxLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "limitations": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+            "type": "string"
+          },
+          "maxItems": 128,
+          "minItems": 0,
+          "type": "array"
+        },
+        "lineage": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "role": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+                "type": "string"
+              },
+              "sha256": {
+                "maxLength": 64,
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "sha256",
+              "role"
+            ],
+            "type": "object"
+          },
+          "maxItems": 128,
+          "minItems": 1,
+          "type": "array"
+        },
+        "run_id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+          "type": "string"
+        },
+        "scenarios": {
+          "items": {
+            "$ref": "#/$defs/scenario"
+          },
+          "maxItems": 1000,
+          "minItems": 1,
+          "type": "array"
+        },
+        "schema_version": {
+          "enum": [
+            "1.0"
+          ]
+        },
+        "started_at": {
+          "maxLength": 27,
+          "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d\\.\\d{6}Z$",
+          "type": "string"
+        },
+        "workload_id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema_version",
+        "workload_id",
+        "artifact_type",
+        "run_id",
+        "lineage",
+        "freeze_sha256",
+        "started_at",
+        "finished_at",
+        "scenarios",
+        "counts",
+        "limitations"
+      ],
+      "type": "object"
+    },
+    "metric": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+          "type": "string"
+        },
+        "interval": {
+          "anyOf": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "confidence",
+                    "prediction",
+                    "range"
+                  ]
+                },
+                "level": {
+                  "exclusiveMaximum": 1,
+                  "exclusiveMinimum": 0,
+                  "type": "number"
+                },
+                "lower": {
+                  "maximum": 1e+30,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "method": {
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+                  "type": "string"
+                },
+                "upper": {
+                  "maximum": 1e+30,
+                  "minimum": 0,
+                  "type": "number"
+                }
+              },
+              "required": [
+                "lower",
+                "upper",
+                "level",
+                "kind",
+                "method"
+              ],
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "population": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+          "type": "string"
+        },
+        "provenance": {
+          "enum": [
+            "MEASURED",
+            "CALIBRATED",
+            "INTERPOLATED",
+            "EXTRAPOLATED",
+            "SIMULATED",
+            "ESTIMATED",
+            "UNKNOWN"
+          ]
+        },
+        "sample_count": {
+          "maximum": 1000000000,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "statistic": {
+          "enum": [
+            "mean",
+            "p50",
+            "p95",
+            "p99",
+            "rate",
+            "fraction",
+            "count",
+            "value"
+          ]
+        },
+        "unit": {
+          "enum": [
+            "ns",
+            "ms",
+            "s",
+            "requests/s",
+            "ratio",
+            "count"
+          ]
+        },
+        "value": {
+          "anyOf": [
+            {
+              "maximum": 1e+30,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "unit",
+        "statistic",
+        "population",
+        "value",
+        "provenance",
+        "sample_count",
+        "interval"
+      ],
+      "type": "object"
+    },
+    "prediction": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_type": {
+          "enum": [
+            "prediction"
+          ]
+        },
+        "assumptions": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+            "type": "string"
+          },
+          "maxItems": 128,
+          "minItems": 0,
+          "type": "array"
+        },
+        "calibration_envelope": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "maximum": {
+                    "maximum": 1e+30,
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "minimum": {
+                    "maximum": 1e+30,
+                    "minimum": 0,
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "minimum",
+                  "maximum"
+                ],
+                "type": "object"
+              },
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "values": {
+                    "items": {
+                      "maxLength": 128,
+                      "minLength": 1,
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+                      "type": "string"
+                    },
+                    "maxItems": 128,
+                    "minItems": 1,
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "values"
+                ],
+                "type": "object"
+              }
+            ]
+          },
+          "maxProperties": 32,
+          "propertyNames": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "lineage": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "role": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+                "type": "string"
+              },
+              "sha256": {
+                "maxLength": 64,
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "sha256",
+              "role"
+            ],
+            "type": "object"
+          },
+          "maxItems": 128,
+          "minItems": 1,
+          "type": "array"
+        },
+        "model": {
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "maxLength": 128,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+              "type": "string"
+            },
+            "method": {
+              "maxLength": 128,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+              "type": "string"
+            },
+            "role": {
+              "enum": [
+                "model",
+                "baseline"
+              ]
+            },
+            "version": {
+              "maxLength": 128,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "version",
+            "role",
+            "method"
+          ],
+          "type": "object"
+        },
+        "rankings": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "comparison_group": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+                "type": "string"
+              },
+              "metric_id": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+                "type": "string"
+              },
+              "order": {
+                "items": {
+                  "items": {
+                    "maxLength": 128,
+                    "minLength": 1,
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+                    "type": "string"
+                  },
+                  "maxItems": 1000,
+                  "minItems": 1,
+                  "type": "array"
+                },
+                "maxItems": 1000,
+                "minItems": 1,
+                "type": "array"
+              },
+              "provenance": {
+                "enum": [
+                  "MEASURED",
+                  "CALIBRATED",
+                  "INTERPOLATED",
+                  "EXTRAPOLATED",
+                  "SIMULATED",
+                  "ESTIMATED",
+                  "UNKNOWN"
+                ]
+              }
+            },
+            "required": [
+              "comparison_group",
+              "metric_id",
+              "order",
+              "provenance"
+            ],
+            "type": "object"
+          },
+          "maxItems": 128,
+          "minItems": 0,
+          "type": "array"
+        },
+        "scenarios": {
+          "items": {
+            "$ref": "#/$defs/scenario"
+          },
+          "maxItems": 1000,
+          "minItems": 1,
+          "type": "array"
+        },
+        "schema_version": {
+          "enum": [
+            "1.0"
+          ]
+        },
+        "unsupported_dimensions": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+            "type": "string"
+          },
+          "maxItems": 128,
+          "minItems": 0,
+          "type": "array"
+        },
+        "workload_id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema_version",
+        "workload_id",
+        "artifact_type",
+        "model",
+        "lineage",
+        "calibration_envelope",
+        "assumptions",
+        "unsupported_dimensions",
+        "scenarios",
+        "rankings"
+      ],
+      "type": "object"
+    },
+    "protocol": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_type": {
+          "enum": [
+            "protocol"
+          ]
+        },
+        "assumptions": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+            "type": "string"
+          },
+          "maxItems": 128,
+          "minItems": 0,
+          "type": "array"
+        },
+        "direction": {
+          "enum": [
+            "minimize",
+            "maximize"
+          ]
+        },
+        "experiment_id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+          "type": "string"
+        },
+        "material_relative_difference": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "minimum_samples": {
+          "maximum": 1000000000,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "primary_metric": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+          "type": "string"
+        },
+        "require_baseline": {
+          "type": "boolean"
+        },
+        "scenario_ids": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+            "type": "string"
+          },
+          "maxItems": 1000,
+          "minItems": 2,
+          "type": "array"
+        },
+        "schema_version": {
+          "enum": [
+            "1.0"
+          ]
+        },
+        "unsupported_dimensions": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+            "type": "string"
+          },
+          "maxItems": 128,
+          "minItems": 0,
+          "type": "array"
+        },
+        "workload_id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema_version",
+        "workload_id",
+        "artifact_type",
+        "experiment_id",
+        "scenario_ids",
+        "primary_metric",
+        "direction",
+        "material_relative_difference",
+        "minimum_samples",
+        "require_baseline",
+        "assumptions",
+        "unsupported_dimensions"
+      ],
+      "type": "object"
+    },
+    "scenario": {
+      "additionalProperties": false,
+      "properties": {
+        "bottleneck": {
+          "additionalProperties": false,
+          "properties": {
+            "method": {
+              "maxLength": 128,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+              "type": "string"
+            },
+            "provenance": {
+              "enum": [
+                "MEASURED",
+                "CALIBRATED",
+                "INTERPOLATED",
+                "EXTRAPOLATED",
+                "SIMULATED",
+                "ESTIMATED",
+                "UNKNOWN"
+              ]
+            },
+            "resources": {
+              "items": {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+                "type": "string"
+              },
+              "maxItems": 128,
+              "minItems": 0,
+              "type": "array"
+            }
+          },
+          "required": [
+            "resources",
+            "provenance",
+            "method"
+          ],
+          "type": "object"
+        },
+        "comparison_group": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+          "type": "string"
+        },
+        "configuration": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "maximum": 1e+30,
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+                "type": "string"
+              }
+            ]
+          },
+          "maxProperties": 32,
+          "propertyNames": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "environment": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "maximum": 1e+30,
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+                "type": "string"
+              }
+            ]
+          },
+          "maxProperties": 32,
+          "propertyNames": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "extrapolations": {
+          "items": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+            "type": "string"
+          },
+          "maxItems": 128,
+          "minItems": 0,
+          "type": "array"
+        },
+        "id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$",
+          "type": "string"
+        },
+        "metrics": {
+          "items": {
+            "$ref": "#/$defs/metric"
+          },
+          "maxItems": 128,
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "comparison_group",
+        "configuration",
+        "environment",
+        "metrics",
+        "extrapolations",
+        "bottleneck"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "urn:workload-lab:validation-artifact:1.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/prediction"
+    },
+    {
+      "$ref": "#/$defs/measurement"
+    },
+    {
+      "$ref": "#/$defs/protocol"
+    },
+    {
+      "$ref": "#/$defs/freeze"
+    }
+  ],
+  "title": "Workload Lab simulator-neutral validation artifacts 1.0"
+}
