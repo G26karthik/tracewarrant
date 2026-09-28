@@ -1,5 +1,13 @@
 # Adversarial review
 
+## 2026-09-29 evidence reassessment
+
+The controlled frozen experiment passed its preregistered p95/ranking thresholds, but the utilization heuristic made the same material choice. This supports the model arithmetic while weakening a separate planner product. The real-model facility application completed 48 fact checks but was inference dominated; more inference client slots increased per-call occupancy, exposing shared-backend behavior that a naive independent-slot model cannot treat as invariant demand. No real-model predictions were frozen, so no real-agent accuracy claim is made.
+
+Decision: [ADR-0015](../adr/ADR-0015-narrow-to-validation.md) recommends narrowing to content-free instrumentation and model validation, with the reference DES retained as an oracle. This is a conditional product-direction judgment from bounded evidence, not proof that heterogeneous simulation has no value. Existing SimPy/AISimulate/AgentServeSim work makes upstream integration credible. Do not build a standalone optimizer/CUDA/cloud stack before a genuine target workload and comparison justify it.
+
+Earlier numerical targets below are historical proposals. The [committed pilot criteria](../validation/prediction-acceptance-criteria.md) superseded them before confirmatory evaluation; thresholds were not loosened after results.
+
 Date: 2026-09-28. Verdict: **conditional go for a narrower research prototype**. The broad pitch does not establish differentiation. Evidence: [landscape](competitive-landscape.md). No market demand or prediction accuracy has yet been demonstrated.
 
 | Attack | Assessment and consequence |

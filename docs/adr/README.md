@@ -18,3 +18,4 @@ Date: 2026-09-28. ACCEPTED governs the bounded prototype. PROPOSED is not implem
 | [0012 API/CLI](ADR-0012-cli-and-public-api.md) | ACCEPTED |
 | [0013 Observed resource lifecycle](ADR-0013-observed-resource-lifecycle.md) | ACCEPTED (M1.5) |
 | [0014 Reference simulation](ADR-0014-reference-simulation.md) | ACCEPTED (M2) |
+| [0015 Narrow to validation](ADR-0015-narrow-to-validation.md) | ACCEPTED (evidence reassessment) |

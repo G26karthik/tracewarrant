@@ -1,0 +1,131 @@
+{
+  "schema_version": "1",
+  "artifact_type": "real_model_probe_summary",
+  "source_sha256": "f85ddea25e65408cfbd7c430bcad6e5509212d5c2f9b99be9072c238a0c31199",
+  "provenance": "MEASURED",
+  "cells": [
+    {
+      "configuration": "BASELINE",
+      "repetition": 0,
+      "sessions": 8,
+      "valid_complete_graphs": 8,
+      "fact_successes": 8,
+      "errors": 0,
+      "median_latency_ns": 3375431300,
+      "mean_pool_ns_per_session": {
+        "evidence-tool": {
+          "queue_ns": 35231962.5,
+          "occupied_ns": 3544462.5
+        },
+        "inference-client": {
+          "queue_ns": 2891425050.0,
+          "occupied_ns": 831809250.0
+        }
+      }
+    },
+    {
+      "configuration": "TOOL+",
+      "repetition": 0,
+      "sessions": 8,
+      "valid_complete_graphs": 8,
+      "fact_successes": 8,
+      "errors": 0,
+      "median_latency_ns": 3288646800,
+      "mean_pool_ns_per_session": {
+        "evidence-tool": {
+          "queue_ns": 22785237.5,
+          "occupied_ns": 5804025.0
+        },
+        "inference-client": {
+          "queue_ns": 2844886925.0,
+          "occupied_ns": 816193975.0
+        }
+      }
+    },
+    {
+      "configuration": "CLIENT+",
+      "repetition": 0,
+      "sessions": 8,
+      "valid_complete_graphs": 8,
+      "fact_successes": 8,
+      "errors": 0,
+      "median_latency_ns": 3210157200,
+      "mean_pool_ns_per_session": {
+        "evidence-tool": {
+          "queue_ns": 66703000.0,
+          "occupied_ns": 6544737.5
+        },
+        "inference-client": {
+          "queue_ns": 2058258675.0,
+          "occupied_ns": 1487051262.5
+        }
+      }
+    },
+    {
+      "configuration": "CLIENT+",
+      "repetition": 1,
+      "sessions": 8,
+      "valid_complete_graphs": 8,
+      "fact_successes": 8,
+      "errors": 0,
+      "median_latency_ns": 3407765900,
+      "mean_pool_ns_per_session": {
+        "evidence-tool": {
+          "queue_ns": 56123087.5,
+          "occupied_ns": 5719600.0
+        },
+        "inference-client": {
+          "queue_ns": 2183597250.0,
+          "occupied_ns": 1544945350.0
+        }
+      }
+    },
+    {
+      "configuration": "TOOL+",
+      "repetition": 1,
+      "sessions": 8,
+      "valid_complete_graphs": 8,
+      "fact_successes": 8,
+      "errors": 0,
+      "median_latency_ns": 3456849600,
+      "mean_pool_ns_per_session": {
+        "evidence-tool": {
+          "queue_ns": 35389850.0,
+          "occupied_ns": 8492575.0
+        },
+        "inference-client": {
+          "queue_ns": 2982737425.0,
+          "occupied_ns": 869419550.0
+        }
+      }
+    },
+    {
+      "configuration": "BASELINE",
+      "repetition": 1,
+      "sessions": 8,
+      "valid_complete_graphs": 8,
+      "fact_successes": 8,
+      "errors": 0,
+      "median_latency_ns": 3670045500,
+      "mean_pool_ns_per_session": {
+        "evidence-tool": {
+          "queue_ns": 25971400.0,
+          "occupied_ns": 3095000.0
+        },
+        "inference-client": {
+          "queue_ns": 3185437337.5,
+          "occupied_ns": 922811112.5
+        }
+      }
+    }
+  ],
+  "total_sessions": 48,
+  "total_fact_successes": 48,
+  "client_occupancy_ratio_two_vs_one": 1.728007195915578,
+  "limitations": [
+    "48 sessions, exploratory, no p95/p99 accuracy or significance claim",
+    "client occupancy includes unknown backend queue/service components",
+    "no frozen prediction for this workload; no full-thesis validation",
+    "fact extraction checks do not validate reasoning quality"
+  ]
+}
