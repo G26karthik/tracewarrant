@@ -15,3 +15,15 @@ uv run python -m benchmarks.evaluate_controlled --frozen artifacts/frozen.json -
 ```
 
 Use fresh paths, create `artifacts` first. Collection keeps a `.partial.json` checkpoint after each cell and refuses to overwrite a prior partial run. Raw telemetry is generated locally and has no application payloads. This is still a stub workload, not evidence of real LLM inference fidelity, task quality or a steady-state saturation threshold.
+
+## Exploratory real-model probe
+
+The [design and amendment](real-model-probe-design.md), [failed Qwen warmup](real-model-probe.json), [successful Llama observations](real-model-probe-llama.json), [derived summary](real-model-summary.json) and [M6 interpretation](../validation/milestone-6.md) are separate from the controlled holdout. No predictive score is claimed for this probe.
+
+Recompute the summary without running a model:
+
+```sh
+uv run python -m benchmarks.summarize_real_probe --input docs/experiments/real-model-probe-llama.json --output artifacts/new-real-model-summary.json
+```
+
+To collect a new independent probe, use the command in the root README with an existing local Ollama server and cached model. The application never pulls weights. Keep a fresh output path and retain failures; new observations do not replace the published artifacts.
