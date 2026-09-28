@@ -1,0 +1,179 @@
+{
+  "benchmark_class": "analysis_microbenchmark",
+  "compiler": "MSC v.1944 64 bit (AMD64)",
+  "cpp_compiler": "not applicable",
+  "cuda": "not applicable",
+  "date_utc": "2026-09-28T18:40:58.830001+00:00",
+  "dependency_lock_sha256": "66e877772febf5c3d000e949ec180a36d5ff2b718e5032f636fbad1b9ab8a8ca",
+  "git_commit": "e4a1bb0959120749f6ae5a8d1d6e3e7719938f03",
+  "git_dirty": false,
+  "hardware": {
+    "cpu": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+    "gpu": "not used",
+    "logical_cpus": 16,
+    "physical_ram_bytes": 16356962304
+  },
+  "harness_sha256": "7502b3f8bbf52dfddd1560a12088ab41c9ec02f18ef489e6ab869060acb9df94",
+  "limitations": [
+    "local smoke benchmark; not agent or capacity validation",
+    "tracemalloc peak is not process RSS; measured separately from timing",
+    "publication requires rerun at a clean named commit"
+  ],
+  "median_total_ns": 845950.0,
+  "os": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.12 (main, Jan 14 2026, 19:30:21) [MSC v.1944 64 bit (AMD64)]",
+  "python_allocation_peak_bytes": 84860,
+  "raw_samples": [
+    {
+      "analyze_ns": 118800,
+      "compile_ns": 174900,
+      "ingest_ns": 631300,
+      "run": 0,
+      "total_ns": 925000
+    },
+    {
+      "analyze_ns": 153100,
+      "compile_ns": 184300,
+      "ingest_ns": 633500,
+      "run": 1,
+      "total_ns": 970900
+    },
+    {
+      "analyze_ns": 114800,
+      "compile_ns": 171000,
+      "ingest_ns": 608900,
+      "run": 2,
+      "total_ns": 894700
+    },
+    {
+      "analyze_ns": 146300,
+      "compile_ns": 298200,
+      "ingest_ns": 544500,
+      "run": 3,
+      "total_ns": 989000
+    },
+    {
+      "analyze_ns": 114500,
+      "compile_ns": 171900,
+      "ingest_ns": 635400,
+      "run": 4,
+      "total_ns": 921800
+    },
+    {
+      "analyze_ns": 112400,
+      "compile_ns": 163400,
+      "ingest_ns": 573600,
+      "run": 5,
+      "total_ns": 849400
+    },
+    {
+      "analyze_ns": 120300,
+      "compile_ns": 165100,
+      "ingest_ns": 564600,
+      "run": 6,
+      "total_ns": 850000
+    },
+    {
+      "analyze_ns": 110600,
+      "compile_ns": 160300,
+      "ingest_ns": 619100,
+      "run": 7,
+      "total_ns": 890000
+    },
+    {
+      "analyze_ns": 128100,
+      "compile_ns": 164200,
+      "ingest_ns": 552200,
+      "run": 8,
+      "total_ns": 844500
+    },
+    {
+      "analyze_ns": 113700,
+      "compile_ns": 159400,
+      "ingest_ns": 569700,
+      "run": 9,
+      "total_ns": 842800
+    },
+    {
+      "analyze_ns": 109000,
+      "compile_ns": 161600,
+      "ingest_ns": 555900,
+      "run": 10,
+      "total_ns": 826500
+    },
+    {
+      "analyze_ns": 118100,
+      "compile_ns": 168800,
+      "ingest_ns": 554300,
+      "run": 11,
+      "total_ns": 841200
+    },
+    {
+      "analyze_ns": 118600,
+      "compile_ns": 176400,
+      "ingest_ns": 600900,
+      "run": 12,
+      "total_ns": 895900
+    },
+    {
+      "analyze_ns": 110300,
+      "compile_ns": 170000,
+      "ingest_ns": 547000,
+      "run": 13,
+      "total_ns": 827300
+    },
+    {
+      "analyze_ns": 108200,
+      "compile_ns": 160100,
+      "ingest_ns": 547000,
+      "run": 14,
+      "total_ns": 815300
+    },
+    {
+      "analyze_ns": 107900,
+      "compile_ns": 178100,
+      "ingest_ns": 534900,
+      "run": 15,
+      "total_ns": 820900
+    },
+    {
+      "analyze_ns": 111800,
+      "compile_ns": 170300,
+      "ingest_ns": 554600,
+      "run": 16,
+      "total_ns": 836700
+    },
+    {
+      "analyze_ns": 129700,
+      "compile_ns": 164000,
+      "ingest_ns": 543000,
+      "run": 17,
+      "total_ns": 836700
+    },
+    {
+      "analyze_ns": 114700,
+      "compile_ns": 179800,
+      "ingest_ns": 552900,
+      "run": 18,
+      "total_ns": 847400
+    },
+    {
+      "analyze_ns": 115700,
+      "compile_ns": 160300,
+      "ingest_ns": 535800,
+      "run": 19,
+      "total_ns": 811800
+    }
+  ],
+  "runs": 20,
+  "schema_version": "1",
+  "seed": 0,
+  "seed_note": "deterministic fixture; no random sampling",
+  "source_tree_sha256": "ba200c3153f8000851a9433d4c6a099b18e7f9ad9ee13886749a550cdf14774e",
+  "span_count": 6,
+  "timing_provenance": "MEASURED",
+  "warmups": 3,
+  "workload_origin": "synthetic",
+  "workload_sha256": "89262b9343a686cd96d56a7994d81bac77027dc1a99e7db72ec17d2add6f6a0f",
+  "workload_version": "synthetic-fork-join-v1"
+}
