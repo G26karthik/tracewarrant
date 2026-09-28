@@ -4,7 +4,9 @@ Preserves: ContextForge handoff as historical architecture context
 
 # Workload Lab — internal codename
 
-Specification date: 2026-09-28. Status: Experimental / Research Prototype. Public name undecided. Scope authorized now: Milestone 0 and Milestone 1 only. Future features below are proposals, not implemented capabilities.
+Specification date: 2026-09-28; evidence update 2026-09-29. Status: Experimental / Research Prototype. Public name undecided. The continuation brief authorizes gated autonomous work beyond M1. M1.5 passed the bounded trace compatibility gate; future milestones require their own evidence.
+
+Current state takes precedence over the historical proposals below: [PROJECT_STATUS.md](PROJECT_STATUS.md). [M1.5](docs/validation/milestone-1.5.md) adds observed lifecycle fields in schema 0.2, actual concurrent traces and one optional PydanticAI integration. Ordinary framework traces remain incomplete with UNKNOWN queue/service. [ADR-0013](docs/adr/ADR-0013-observed-resource-lifecycle.md) extends ADR-0002/0003/0009 without replacing their containment/privacy principles. [Minimum instrumentation contract](docs/design/instrumentation-contract.md).
 
 ## 1. Executive summary
 
@@ -149,7 +151,7 @@ Default allowlist excludes prompts, messages, retrieved documents, URLs, SQL tex
 
 ## 30. Roadmap
 
-M0 research/spec/ADRs/tooling; M1 trace -> execution IR -> DAG analysis; M2 Python DES; M3 conditional C++ port; M4 calibration; M5 constrained optimization; M6 one real agent adapter; M7 conditional CUDA calibration; M8 Azure validation; M9 capacity regression CI. [ROADMAP.md](ROADMAP.md) gives acceptance gates. Lightweight real measurement planning starts early; no optimization waits until after users have already been told to trust it. Stop this implementation at M1.
+M0 research/spec/ADRs/tooling; M1 trace -> execution IR -> DAG analysis; mandatory M1.5 real trace compatibility; M2 Python DES; M3 conditional C++ port; M4 calibration; M5 constrained optimization; M6 one real agent adapter; M7 conditional CUDA calibration; M8 Azure validation; M9 capacity regression CI. [ROADMAP.md](ROADMAP.md) gives acceptance gates. Measurements and preregistration must precede predictive claims.
 
 ## 31. Risks
 

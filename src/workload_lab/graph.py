@@ -119,9 +119,23 @@ def compile_workload(dataset: Dataset) -> tuple[Workflow, ...]:
                     quantity(
                         span.end_ns - span.start_ns, dataset.origin, "timestamp_difference", sources
                     ),
-                    quantity(span.queue_ns, dataset.origin, "reported_queue_component", sources),
                     quantity(
-                        span.service_ns, dataset.origin, "reported_service_component", sources
+                        span.queue_ns,
+                        dataset.origin,
+                        "acquisition_minus_enqueue"
+                        if span.observation.acquired_ns is not None
+                        and span.observation.enqueued_ns is not None
+                        else "reported_queue_component",
+                        sources,
+                    ),
+                    quantity(
+                        span.service_ns,
+                        dataset.origin,
+                        "release_minus_acquisition"
+                        if span.observation.released_ns is not None
+                        and span.observation.acquired_ns is not None
+                        else "reported_service_component",
+                        sources,
                     ),
                 )
             )

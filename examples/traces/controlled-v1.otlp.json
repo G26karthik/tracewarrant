@@ -1,0 +1,5200 @@
+{
+  "resourceSpans": [
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "controlled-reference-v1"
+            }
+          }
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "workload_lab.controlled",
+            "version": "1"
+          },
+          "spans": [
+            {
+              "traceId": "00000000000000000000000000000001",
+              "spanId": "0000000000000002",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404204927700",
+              "endTimeUnixNano": "1790622404219420400",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "llm"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": []
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "2"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404204928900"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404204933000"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404204933300"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404219411300"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404219413400"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000001",
+              "spanId": "0000000000000006",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404232010900",
+              "endTimeUnixNano": "1790622404234910800",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "database"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "database"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "database"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "1"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404232011200"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404232012500"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404232012900"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404234904900"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404234906400"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000001",
+              "spanId": "0000000000000007",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404232056700",
+              "endTimeUnixNano": "1790622404235506700",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "external_api"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.external_wait_ns",
+                  "value": {
+                    "intValue": "3450000"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000001",
+              "spanId": "0000000000000004",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404231980600",
+              "endTimeUnixNano": "1790622404235561400",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "retrieval"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "retrieval"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "retrieval"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "2"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404231981800"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404231986800"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404231987100"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404235560600"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404235560900"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000001",
+              "spanId": "0000000000000005",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404232000300",
+              "endTimeUnixNano": "1790622404235580300",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "1"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404232001400"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404232002900"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404232003300"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404235576100"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404235576400"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000001",
+              "spanId": "0000000000000003",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404219446600",
+              "endTimeUnixNano": "1790622404235733500",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "workflow"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000001",
+              "spanId": "0000000000000008",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404235742400",
+              "endTimeUnixNano": "1790622404235761000",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "compute"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000004"
+                        },
+                        {
+                          "stringValue": "0000000000000005"
+                        },
+                        {
+                          "stringValue": "0000000000000006"
+                        },
+                        {
+                          "stringValue": "0000000000000007"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.external_wait_ns",
+                  "value": {
+                    "intValue": "18600"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000001",
+              "spanId": "0000000000000009",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404235768400",
+              "endTimeUnixNano": "1790622404236767300",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "llm"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000008"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "2"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404235768800"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404236647500"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404236647800"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404236766100"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404236766300"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000001",
+              "spanId": "000000000000000a",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404236778000",
+              "endTimeUnixNano": "1790622404237246900",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000009"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.attempt_group",
+                  "value": {
+                    "stringValue": "fetch"
+                  }
+                },
+                {
+                  "key": "workload_lab.attempt",
+                  "value": {
+                    "intValue": "1"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "1"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404236778800"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404237214500"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404237214600"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404237246300"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404237246600"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "failed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 2
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000001",
+              "spanId": "000000000000000b",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404237253600",
+              "endTimeUnixNano": "1790622404250578000",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "external_api"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "000000000000000a"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.external_wait_ns",
+                  "value": {
+                    "intValue": "13324400"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000001",
+              "spanId": "000000000000000c",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404250596900",
+              "endTimeUnixNano": "1790622404250645400",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "000000000000000b"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.attempt_group",
+                  "value": {
+                    "stringValue": "fetch"
+                  }
+                },
+                {
+                  "key": "workload_lab.attempt",
+                  "value": {
+                    "intValue": "2"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "1"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404250600000"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404250605800"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404250606200"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404250643500"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404250644500"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000001",
+              "spanId": "000000000000000d",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404250661600",
+              "endTimeUnixNano": "1790622404265799900",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "000000000000000c"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "1"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404250662500"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404250665100"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404250665400"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404265795400"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404265797900"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "timeout"
+                  }
+                }
+              ],
+              "status": {
+                "code": 2
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000001",
+              "spanId": "000000000000000e",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404265876200",
+              "endTimeUnixNano": "1790622404297125300",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "000000000000000d"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "1"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404265877300"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404265883100"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404265883500"
+                  }
+                },
+                {
+                  "key": "workload_lab.cancel_requested_ns",
+                  "value": {
+                    "intValue": "1790622404281307200"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404281309300"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404297113600"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "cancelled"
+                  }
+                }
+              ],
+              "status": {
+                "code": 2
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000001",
+              "spanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404204925600",
+              "endTimeUnixNano": "1790622404297197300",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "workflow"
+                  }
+                },
+                {
+                  "key": "workload_lab.graph.complete",
+                  "value": {
+                    "boolValue": true
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000002",
+              "spanId": "0000000000000002",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404204926500",
+              "endTimeUnixNano": "1790622404229842800",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "llm"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": []
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "2"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404204927200"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404204929700"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404204930100"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404229830400"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404229832300"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000002",
+              "spanId": "0000000000000007",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404232066400",
+              "endTimeUnixNano": "1790622404235501300",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "external_api"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.external_wait_ns",
+                  "value": {
+                    "intValue": "3434900"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000002",
+              "spanId": "0000000000000004",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404232041700",
+              "endTimeUnixNano": "1790622404235514400",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "retrieval"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "retrieval"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "retrieval"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "2"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404232042100"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404232043700"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404232044000"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404235512900"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404235513600"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000002",
+              "spanId": "0000000000000006",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404232058100",
+              "endTimeUnixNano": "1790622404235749600",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "database"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "database"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "database"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "1"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404232058500"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404235576500"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404235576800"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404235747600"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404235748000"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000002",
+              "spanId": "0000000000000005",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404232048300",
+              "endTimeUnixNano": "1790622404236064900",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "1"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404232048600"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404235681900"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404235682200"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404236063600"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404236063800"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000002",
+              "spanId": "0000000000000003",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404229877900",
+              "endTimeUnixNano": "1790622404236175800",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "workflow"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000002",
+              "spanId": "0000000000000008",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404236181300",
+              "endTimeUnixNano": "1790622404236197700",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "compute"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000004"
+                        },
+                        {
+                          "stringValue": "0000000000000005"
+                        },
+                        {
+                          "stringValue": "0000000000000006"
+                        },
+                        {
+                          "stringValue": "0000000000000007"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.external_wait_ns",
+                  "value": {
+                    "intValue": "16400"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000002",
+              "spanId": "0000000000000009",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404236205500",
+              "endTimeUnixNano": "1790622404236757800",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "llm"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000008"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "2"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404236205800"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404236646200"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404236646400"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404236757200"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404236757400"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000002",
+              "spanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404204925200",
+              "endTimeUnixNano": "1790622404236770800",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "workflow"
+                  }
+                },
+                {
+                  "key": "workload_lab.graph.complete",
+                  "value": {
+                    "boolValue": true
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000003",
+              "spanId": "0000000000000002",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404205936600",
+              "endTimeUnixNano": "1790622404236245800",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "llm"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": []
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "2"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404205937000"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404232925400"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404232926800"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404236241800"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404236242600"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000003",
+              "spanId": "0000000000000007",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404236666800",
+              "endTimeUnixNano": "1790622404237025400",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "external_api"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.external_wait_ns",
+                  "value": {
+                    "intValue": "358600"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000003",
+              "spanId": "0000000000000004",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404236650700",
+              "endTimeUnixNano": "1790622404237041200",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "retrieval"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "retrieval"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "retrieval"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "2"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404236651100"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404236652900"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404236653200"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404237040500"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404237040800"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000003",
+              "spanId": "0000000000000006",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404236661800",
+              "endTimeUnixNano": "1790622404237722300",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "database"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "database"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "database"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "1"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404236662200"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404237590200"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404237590900"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404237719700"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404237720300"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000003",
+              "spanId": "0000000000000005",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404236658400",
+              "endTimeUnixNano": "1790622404237804900",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "1"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404236658800"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404237663500"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404237663700"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404237803500"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404237803800"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000003",
+              "spanId": "0000000000000003",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404236265800",
+              "endTimeUnixNano": "1790622404237853200",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "workflow"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000003",
+              "spanId": "0000000000000008",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404237856000",
+              "endTimeUnixNano": "1790622404237864700",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "compute"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000004"
+                        },
+                        {
+                          "stringValue": "0000000000000005"
+                        },
+                        {
+                          "stringValue": "0000000000000006"
+                        },
+                        {
+                          "stringValue": "0000000000000007"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.external_wait_ns",
+                  "value": {
+                    "intValue": "8700"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000003",
+              "spanId": "0000000000000009",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404237871000",
+              "endTimeUnixNano": "1790622404237942300",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "llm"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000008"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "2"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404237871300"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404237872900"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404237873100"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404237941800"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404237942000"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000003",
+              "spanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404205935900",
+              "endTimeUnixNano": "1790622404237950500",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "workflow"
+                  }
+                },
+                {
+                  "key": "workload_lab.graph.complete",
+                  "value": {
+                    "boolValue": true
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000004",
+              "spanId": "0000000000000002",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404205937600",
+              "endTimeUnixNano": "1790622404235919900",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "llm"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": []
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "2"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404205937900"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404233027000"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404233027400"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404235916700"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404235917300"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000004",
+              "spanId": "0000000000000007",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404236630700",
+              "endTimeUnixNano": "1790622404237026000",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "external_api"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.external_wait_ns",
+                  "value": {
+                    "intValue": "395300"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000004",
+              "spanId": "0000000000000004",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404236610200",
+              "endTimeUnixNano": "1790622404237044600",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "retrieval"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "retrieval"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "retrieval"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "2"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404236611000"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404236615000"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404236615200"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404237044100"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404237044300"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000004",
+              "spanId": "0000000000000006",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404236627400",
+              "endTimeUnixNano": "1790622404237200200",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "database"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "database"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "database"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "1"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404236628000"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404237066800"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404237066900"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404237198600"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404237199100"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000004",
+              "spanId": "0000000000000005",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404236622700",
+              "endTimeUnixNano": "1790622404237536900",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "1"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404236623300"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404237145900"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404237146200"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404237535700"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404237535800"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000004",
+              "spanId": "0000000000000003",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404235939900",
+              "endTimeUnixNano": "1790622404237673200",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "workflow"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000004",
+              "spanId": "0000000000000008",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404237677700",
+              "endTimeUnixNano": "1790622404237693600",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "compute"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000004"
+                        },
+                        {
+                          "stringValue": "0000000000000005"
+                        },
+                        {
+                          "stringValue": "0000000000000006"
+                        },
+                        {
+                          "stringValue": "0000000000000007"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.external_wait_ns",
+                  "value": {
+                    "intValue": "15900"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000004",
+              "spanId": "0000000000000009",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404237706900",
+              "endTimeUnixNano": "1790622404237882800",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "llm"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000008"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "2"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404237707400"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404237829800"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404237830100"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404237882400"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404237882500"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000004",
+              "spanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404205935800",
+              "endTimeUnixNano": "1790622404237893900",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "workflow"
+                  }
+                },
+                {
+                  "key": "workload_lab.graph.complete",
+                  "value": {
+                    "boolValue": true
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000005",
+              "spanId": "0000000000000002",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404205936400",
+              "endTimeUnixNano": "1790622404236743800",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "llm"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": []
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "2"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404205936600"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404236594500"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404236595000"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404236742700"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404236742900"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000005",
+              "spanId": "0000000000000007",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404237089800",
+              "endTimeUnixNano": "1790622404237501600",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "external_api"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.external_wait_ns",
+                  "value": {
+                    "intValue": "411800"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000005",
+              "spanId": "0000000000000004",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404237079700",
+              "endTimeUnixNano": "1790622404237519400",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "retrieval"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "retrieval"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "retrieval"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "2"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404237080100"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404237082000"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404237082200"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404237519000"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404237519200"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000005",
+              "spanId": "0000000000000006",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404237088000",
+              "endTimeUnixNano": "1790622404237868800",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "database"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "database"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "database"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "1"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404237088200"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404237803400"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404237803600"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404237867400"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404237867600"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000005",
+              "spanId": "0000000000000005",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404237085600",
+              "endTimeUnixNano": "1790622404237893200",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "1"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404237085900"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404237828700"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404237828900"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404237892200"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404237892400"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000005",
+              "spanId": "0000000000000003",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404236752600",
+              "endTimeUnixNano": "1790622404237921800",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "workflow"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000005",
+              "spanId": "0000000000000008",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404237924400",
+              "endTimeUnixNano": "1790622404237945200",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "compute"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000004"
+                        },
+                        {
+                          "stringValue": "0000000000000005"
+                        },
+                        {
+                          "stringValue": "0000000000000006"
+                        },
+                        {
+                          "stringValue": "0000000000000007"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.external_wait_ns",
+                  "value": {
+                    "intValue": "20800"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000005",
+              "spanId": "0000000000000009",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404237949000",
+              "endTimeUnixNano": "1790622404238012200",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "llm"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000008"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "2"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404237949300"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404237950600"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404237950800"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404238011800"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404238011900"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000005",
+              "spanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404205935800",
+              "endTimeUnixNano": "1790622404238026500",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "workflow"
+                  }
+                },
+                {
+                  "key": "workload_lab.graph.complete",
+                  "value": {
+                    "boolValue": true
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000006",
+              "spanId": "0000000000000002",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404205936500",
+              "endTimeUnixNano": "1790622404236880700",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "llm"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": []
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "2"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404205936800"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404236628900"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404236629200"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404236878500"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404236879000"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000006",
+              "spanId": "0000000000000007",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404237099800",
+              "endTimeUnixNano": "1790622404237491200",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "external_api"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.external_wait_ns",
+                  "value": {
+                    "intValue": "391400"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000006",
+              "spanId": "0000000000000004",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404237092100",
+              "endTimeUnixNano": "1790622404237506300",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "retrieval"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "retrieval"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "retrieval"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "2"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404237092300"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404237093400"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404237093500"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404237505600"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404237505900"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000006",
+              "spanId": "0000000000000006",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404237098000",
+              "endTimeUnixNano": "1790622404237953800",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "database"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "database"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "database"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "1"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404237098200"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404237897900"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404237898100"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404237952500"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404237952700"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000006",
+              "spanId": "0000000000000005",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404237096200",
+              "endTimeUnixNano": "1790622404237962700",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "1"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404237096400"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404237909100"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404237909400"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404237961600"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404237961800"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000006",
+              "spanId": "0000000000000003",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404236892400",
+              "endTimeUnixNano": "1790622404238003100",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "workflow"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000006",
+              "spanId": "0000000000000008",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404238005000",
+              "endTimeUnixNano": "1790622404238057300",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "compute"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000004"
+                        },
+                        {
+                          "stringValue": "0000000000000005"
+                        },
+                        {
+                          "stringValue": "0000000000000006"
+                        },
+                        {
+                          "stringValue": "0000000000000007"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.external_wait_ns",
+                  "value": {
+                    "intValue": "52300"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000006",
+              "spanId": "0000000000000009",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404238064500",
+              "endTimeUnixNano": "1790622404238116700",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "llm"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000008"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "2"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404238064800"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404238066100"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404238066200"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404238116100"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404238116300"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000006",
+              "spanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404205936000",
+              "endTimeUnixNano": "1790622404238124800",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "workflow"
+                  }
+                },
+                {
+                  "key": "workload_lab.graph.complete",
+                  "value": {
+                    "boolValue": true
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000007",
+              "spanId": "0000000000000002",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404205936100",
+              "endTimeUnixNano": "1790622404237197700",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "llm"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": []
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "2"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404205936300"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404237069400"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404237069600"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404237196500"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404237196800"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000007",
+              "spanId": "0000000000000007",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404237618900",
+              "endTimeUnixNano": "1790622404237760300",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "external_api"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.external_wait_ns",
+                  "value": {
+                    "intValue": "141400"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000007",
+              "spanId": "0000000000000004",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404237605800",
+              "endTimeUnixNano": "1790622404237776200",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "retrieval"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "retrieval"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "retrieval"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "2"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404237606400"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404237608800"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404237608900"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404237775700"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404237775900"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000007",
+              "spanId": "0000000000000006",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404237616800",
+              "endTimeUnixNano": "1790622404238069000",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "database"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "database"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "database"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "1"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404237617200"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404237970200"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404237970400"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404238067700"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404238067900"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000007",
+              "spanId": "0000000000000005",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404237613900",
+              "endTimeUnixNano": "1790622404238078400",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "1"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404237614300"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404237989400"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404237989600"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404238077300"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404238077500"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000007",
+              "spanId": "0000000000000003",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404237206200",
+              "endTimeUnixNano": "1790622404238107300",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "workflow"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000007",
+              "spanId": "0000000000000008",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404238109400",
+              "endTimeUnixNano": "1790622404238128000",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "compute"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000004"
+                        },
+                        {
+                          "stringValue": "0000000000000005"
+                        },
+                        {
+                          "stringValue": "0000000000000006"
+                        },
+                        {
+                          "stringValue": "0000000000000007"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.external_wait_ns",
+                  "value": {
+                    "intValue": "18600"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000007",
+              "spanId": "0000000000000009",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404238133000",
+              "endTimeUnixNano": "1790622404238179800",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "llm"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000008"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "2"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404238133300"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404238134500"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404238134600"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404238179400"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404238179600"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000007",
+              "spanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404205935700",
+              "endTimeUnixNano": "1790622404238185000",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "workflow"
+                  }
+                },
+                {
+                  "key": "workload_lab.graph.complete",
+                  "value": {
+                    "boolValue": true
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000008",
+              "spanId": "0000000000000002",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404205936400",
+              "endTimeUnixNano": "1790622404237348800",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "llm"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": []
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "2"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404205936600"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404237083700"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404237083900"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404237346700"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404237347200"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000008",
+              "spanId": "0000000000000007",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404237635600",
+              "endTimeUnixNano": "1790622404237751800",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "external_api"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.external_wait_ns",
+                  "value": {
+                    "intValue": "116200"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000008",
+              "spanId": "0000000000000004",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404237623500",
+              "endTimeUnixNano": "1790622404237762800",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "retrieval"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "retrieval"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "retrieval"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "2"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404237623900"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404237628400"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404237628600"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404237762100"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404237762300"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000008",
+              "spanId": "0000000000000006",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404237633600",
+              "endTimeUnixNano": "1790622404238136700",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "database"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "database"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "database"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "1"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404237633800"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404238086100"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404238086300"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404238136200"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404238136400"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000008",
+              "spanId": "0000000000000005",
+              "parentSpanId": "0000000000000003",
+              "startTimeUnixNano": "1790622404237631600",
+              "endTimeUnixNano": "1790622404238155200",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "1"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404237631800"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404238095900"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404238096100"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404238154000"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404238154200"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000008",
+              "spanId": "0000000000000003",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404237360200",
+              "endTimeUnixNano": "1790622404238171800",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "workflow"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000008",
+              "spanId": "0000000000000008",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404238173700",
+              "endTimeUnixNano": "1790622404238187700",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "compute"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000004"
+                        },
+                        {
+                          "stringValue": "0000000000000005"
+                        },
+                        {
+                          "stringValue": "0000000000000006"
+                        },
+                        {
+                          "stringValue": "0000000000000007"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.external_wait_ns",
+                  "value": {
+                    "intValue": "14000"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000008",
+              "spanId": "0000000000000009",
+              "parentSpanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404238191000",
+              "endTimeUnixNano": "1790622404251465600",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "llm"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000008"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.role",
+                  "value": {
+                    "stringValue": "work"
+                  }
+                },
+                {
+                  "key": "workload_lab.pool",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue",
+                  "value": {
+                    "stringValue": "stub-model"
+                  }
+                },
+                {
+                  "key": "workload_lab.capacity",
+                  "value": {
+                    "intValue": "2"
+                  }
+                },
+                {
+                  "key": "workload_lab.enqueued_ns",
+                  "value": {
+                    "intValue": "1790622404238191300"
+                  }
+                },
+                {
+                  "key": "workload_lab.acquired_ns",
+                  "value": {
+                    "intValue": "1790622404238192200"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_start_ns",
+                  "value": {
+                    "intValue": "1790622404238192300"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_end_ns",
+                  "value": {
+                    "intValue": "1790622404251459400"
+                  }
+                },
+                {
+                  "key": "workload_lab.released_ns",
+                  "value": {
+                    "intValue": "1790622404251462500"
+                  }
+                },
+                {
+                  "key": "workload_lab.outcome",
+                  "value": {
+                    "stringValue": "completed"
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            },
+            {
+              "traceId": "00000000000000000000000000000008",
+              "spanId": "0000000000000001",
+              "startTimeUnixNano": "1790622404205935900",
+              "endTimeUnixNano": "1790622404251503900",
+              "attributes": [
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "workflow"
+                  }
+                },
+                {
+                  "key": "workload_lab.graph.complete",
+                  "value": {
+                    "boolValue": true
+                  }
+                }
+              ],
+              "status": {
+                "code": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

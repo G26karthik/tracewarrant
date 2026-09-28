@@ -17,12 +17,17 @@ workload-lab = "workload_lab.cli:main"
 
 [dependency-groups]
 dev = ["pytest>=8.3,<9", "hypothesis>=6.130,<7", "ruff>=0.11,<1", "hatchling==1.27.0"]
+integration = [
+    "opentelemetry-sdk==1.45.0",
+    "pydantic-ai-slim==2.51.0",
+]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/workload_lab"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["."]
 addopts = "-ra"
 
 [tool.ruff]

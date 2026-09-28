@@ -15,7 +15,7 @@ def test_cli_json_is_deterministic_and_complete():
     assert first.stdout == second.stdout
     assert first.stderr == ""
     data = json.loads(first.stdout)
-    assert data["schema_version"] == "0.1"
+    assert data["schema_version"] == "0.2"
     assert data["reports"][0]["critical_path_elapsed"]["value"] == 11_000_000_000
 
 

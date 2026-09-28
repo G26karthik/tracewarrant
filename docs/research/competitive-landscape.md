@@ -1,5 +1,11 @@
 # Competitive landscape
 
+## 2026-09-29 refresh before M1.5 / reference DES commitment
+
+Reopened primary AgentServeSim v3, AISimulate AgentX guide, Vidur, PerfSim, SimGrid introduction, WRENCH, SimPy scheduling and the OTel GenAI repository. The reviewed boundaries below still apply; this was a capability refresh, not independent reproduction. Prefer established inference engines for any future inference service model. SimPy remains the independent queue baseline; a small explicit reference kernel is justified only to test our termination/event contracts, not as engine novelty. No evidence here establishes a unique product.
+
+[PydanticAI current instrumentation](https://pydantic.dev/docs/ai/integrations/logfire/) supports OTel without a hosted backend and content suppression; [TestModel](https://pydantic.dev/docs/ai/guides/testing/) enables local tool execution with provider requests disabled. Chosen integration: pinned pydantic-ai-slim 2.51.0 plus OTel SDK 1.45.0, optional dependency group. The installed API uses an Instrumentation capability; an older `Agent(instrument=...)` invocation failed and was corrected against installed source. The actual trace has no pool/acquisition/join data, consistent with the minimum-contract gap. No framework internals were patched. See [M1.5 evidence](../validation/milestone-1.5.md).
+
 Research date: 2026-09-28. Scope: primary repositories, papers, maintainer documentation, CNCF/OTel, Hugging Face dataset cards, and commercial product documentation. This is a bounded desk review, not a reproduction of competitors' experiments. Absence below means **not established in reviewed material**, not proof of absence. Repository activity is a snapshot; a recent push is not proof of support. Raw API metadata is in [repository-evidence.json](repository-evidence.json).
 
 ## Finding and change to the thesis

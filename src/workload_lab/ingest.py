@@ -9,10 +9,33 @@ import re
 from pathlib import Path
 from typing import Any
 
-from .ir import MAX_NS, Dataset, Metadata, NodeKind, Span, ValidationError, integer, origin_check
+from .ir import (
+    MAX_NS,
+    Dataset,
+    Metadata,
+    NodeKind,
+    Observation,
+    Span,
+    ValidationError,
+    integer,
+    origin_check,
+)
 
 DEFAULT_MAX_BYTES = 16 * 1024 * 1024
 DEFAULT_MAX_SPANS = 50_000
+MAX_JSON_DEPTH = 64
+OBS_STRINGS = {"pool", "queue", "attempt_group", "outcome"}
+OBS_INTS = {
+    "capacity",
+    "enqueued_ns",
+    "acquired_ns",
+    "service_start_ns",
+    "service_end_ns",
+    "released_ns",
+    "cancel_requested_ns",
+    "external_wait_ns",
+    "attempt",
+}
 _STRING_KEYS = {
     "service.name",
     "gen_ai.operation.name",
@@ -45,6 +68,8 @@ _KINDS = {
     "create_agent": NodeKind.WORKFLOW,
     "plan": NodeKind.WORKFLOW,
 }
+_STRING_KEYS.update("workload_lab." + k for k in OBS_STRINGS)
+_INT_KEYS.update("workload_lab." + k for k in OBS_INTS)
 
 
 def _object(value: Any, label: str) -> dict:
@@ -127,6 +152,24 @@ def _float(value: str) -> float:
 
 
 def _decode(text: str) -> dict:
+    # Bound nesting before recursive JSON decoding, including discarded content.
+    depth, quoted, escaped = 0, False, False
+    for char in text:
+        if quoted:
+            if escaped:
+                escaped = False
+            elif char == "\\":
+                escaped = True
+            elif char == '"':
+                quoted = False
+        elif char == '"':
+            quoted = True
+        elif char in "[{":
+            depth += 1
+            if depth > MAX_JSON_DEPTH:
+                raise ValidationError("JSON exceeds nesting limit")
+        elif char in "]}":
+            depth -= 1
     try:
         return _object(
             json.loads(
@@ -275,6 +318,13 @@ def ingest(
                             ),
                             schema_urls=urls,
                             diagnostics=tuple(diagnostics),
+                            observation=Observation(
+                                **{
+                                    k: attrs["workload_lab." + k]
+                                    for k in OBS_STRINGS | OBS_INTS
+                                    if "workload_lab." + k in attrs
+                                }
+                            ),
                         )
                     )
     return Dataset(hashlib.sha256(raw).hexdigest(), origin, tuple(spans))

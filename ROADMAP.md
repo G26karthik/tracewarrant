@@ -1,13 +1,14 @@
 # Gated roadmap
 
-Only M0 and M1 are in the current implementation scope. Checkbox state is updated by validation records, not aspirations.
+Continuation authorization permits autonomous progress through evidence gates. Status is updated by validation records, not aspirations.
 
-Current delivery: M0 foundation and the bounded M1 slice are implemented. Local checks and remaining limitations are recorded in [Milestone 1 validation](docs/validation/milestone-1.md). M2–M9 remain unimplemented.
+Current delivery: M0/M1 and [M1.5 trace compatibility](docs/validation/milestone-1.5.md) pass locally. M2 is the next gate. See [current status](PROJECT_STATUS.md).
 
 | Milestone | Deliverable | Exit gate |
 | --- | --- | --- |
 | M0 | Research, adversarial review, V2, 12 ADRs, repo conventions, CI, benchmark methodology | Sources linked, old files preserved, unsupported claims removed, reproducible environment |
 | M1 | Local OTLP -> typed IR -> explicit DAG -> critical path/contribution report | Hand-solvable serial/fork/join/nesting cases; malformed/cyclic/partial/privacy tests; deterministic JSON; bounded parser |
+| M1.5 | Actual controlled and PydanticAI traces, observed lifecycle contract | PASS: explicit joins, real queueing, unknown missing components, privacy and semantic tests |
 | M2 | Python DES with pools, queues, distributions, retry/failure/branch semantics | Event/conservation invariants, D/D/1 and M/M/1 validation, SimPy cross-check, deterministic seeds |
 | M3 | Conditional C++20 engine/bindings | Python semantic parity, measured speed/memory benefit on a declared event workload; reconsider using upstream engine first |
 | M4 | Calibration and held-out replay | Envelope, missingness/censoring, uncertainty, calibration cost and validation errors published; narrow thesis reassessed |

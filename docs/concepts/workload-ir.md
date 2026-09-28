@@ -1,6 +1,6 @@
 # Workload IR v0
 
-Schema version: `0.1`. Instance-only, experimental Python API and JSON output. Not a generative workflow standard.
+Schema version: `0.2`. Instance-only, experimental Python API and JSON output. Not a generative workflow standard. Optional [observed lifecycle](../design/instrumentation-contract.md) fields extend 0.1; existing inputs remain supported. Queue/occupied components can be derived only from explicit boundaries. Outcome/attempt metadata describes an execution, never an inferred retry policy.
 
 `Dataset` stores sanitized `Span` records and source evidence. `compile_workload` groups trace IDs into `Workflow` objects with `Node` and `Edge` tuples. Workflows carry source digest/origin, completeness and diagnostics. No caller may add arbitrary attribute bags to the persisted domain objects. Validation applies to library construction as well as importer output.
 

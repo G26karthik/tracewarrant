@@ -1,5 +1,7 @@
 # OTLP import contract
 
+2026-09-29 extension: see [schema 0.2 minimum instrumentation contract](instrumentation-contract.md) and [real compatibility results](../validation/milestone-1.5.md). Resource lifecycle and outcome fields are now imported when explicitly present. Missing values stay unknown. JSON nesting is bounded at 64 before decoding.
+
 Reviewed 2026-09-28. GenAI source snapshot: [e57c543b4889619eb2a05702471937db5119165d](https://github.com/open-telemetry/semantic-conventions-genai/tree/e57c543b4889619eb2a05702471937db5119165d). Agent conventions are development status. The [old OTel GenAI pages](https://opentelemetry.io/docs/specs/semconv/gen-ai/) redirect readers to the separate repository.
 
 Reviewed file SHA-256: agent spans `8363cc776fa9acc09345411bb1e09c162b7df785925f35e072ab6093bd18ba97`; GenAI spans `fee65ca0862b3fcd4254bc57957314e72eaf4399390797e603f7b82be7e5d987`. These pin the research evidence; input schemaUrl is retained, not claimed to be fully supported by version.

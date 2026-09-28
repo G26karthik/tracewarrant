@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from enum import StrEnum
 from typing import Protocol
 
-SCHEMA_VERSION = "0.1"
+SCHEMA_VERSION = "0.2"
 MAX_NS = 2**64 - 1
 
 
@@ -127,13 +127,69 @@ class Metadata:
             self.retrieval_top_k,
         ):
             if value is not None:
-                integer(value, "metadata count")
+                integer(value, "metadata count", MAX_NS)
         if (
             self.input_tokens is not None
             and self.cached_input_tokens is not None
             and self.cached_input_tokens > self.input_tokens
         ):
             raise ValidationError("cached input tokens cannot exceed total input tokens")
+
+
+@dataclass(frozen=True)
+class Observation:
+    """Optional direct instrumentation; absence never identifies a zero."""
+
+    pool: str | None = None
+    queue: str | None = None
+    capacity: int | None = None
+    enqueued_ns: int | None = None
+    acquired_ns: int | None = None
+    service_start_ns: int | None = None
+    service_end_ns: int | None = None
+    released_ns: int | None = None
+    cancel_requested_ns: int | None = None
+    external_wait_ns: int | None = None
+    attempt_group: str | None = None
+    attempt: int | None = None
+    outcome: str = "unknown"
+
+    def __post_init__(self) -> None:
+        for label in (self.pool, self.queue, self.attempt_group):
+            if label is not None and (not isinstance(label, str) or not 1 <= len(label) <= 128):
+                raise ValidationError("observation label must contain 1 to 128 characters")
+        for field in ("capacity", "attempt"):
+            value = getattr(self, field)
+            if value is not None and not 1 <= integer(value, field, 1_000_000):
+                raise ValidationError("capacity and attempt must be positive")
+        for field in (
+            "enqueued_ns",
+            "acquired_ns",
+            "service_start_ns",
+            "service_end_ns",
+            "released_ns",
+            "cancel_requested_ns",
+            "external_wait_ns",
+        ):
+            if getattr(self, field) is not None:
+                integer(getattr(self, field), field, MAX_NS)
+        if self.outcome not in ("unknown", "completed", "failed", "timeout", "cancelled"):
+            raise ValidationError("invalid observed outcome")
+        ordered = [
+            getattr(self, k)
+            for k in (
+                "enqueued_ns",
+                "acquired_ns",
+                "service_start_ns",
+                "service_end_ns",
+                "released_ns",
+            )
+            if getattr(self, k) is not None
+        ]
+        if ordered != sorted(ordered):
+            raise ValidationError("resource lifecycle timestamps are out of order")
+        if self.capacity is not None and self.pool is None:
+            raise ValidationError("capacity requires an explicit pool identity")
 
 
 @dataclass(frozen=True)
@@ -154,6 +210,7 @@ class Span:
     metadata: Metadata = Metadata()
     schema_urls: tuple[str, ...] = ()
     diagnostics: tuple[str, ...] = ()
+    observation: Observation = Observation()
 
     def __post_init__(self) -> None:
         for field, width in (("trace_id", 32), ("span_id", 16)):
@@ -182,6 +239,34 @@ class Span:
                 integer(component, "timing component", MAX_NS)
         if (self.queue_ns or 0) + (self.service_ns or 0) > self.end_ns - self.start_ns:
             raise ValidationError("queue/service components exceed elapsed span time")
+        obs = self.observation
+        if not isinstance(obs, Observation):
+            raise ValidationError("invalid observation")
+        for value in (
+            obs.enqueued_ns,
+            obs.acquired_ns,
+            obs.service_start_ns,
+            obs.service_end_ns,
+            obs.released_ns,
+            obs.cancel_requested_ns,
+        ):
+            if value is not None and not self.start_ns <= value <= self.end_ns:
+                raise ValidationError("resource timestamp outside span")
+        if obs.external_wait_ns is not None and obs.external_wait_ns > self.end_ns - self.start_ns:
+            raise ValidationError("external wait exceeds elapsed span")
+        # These quantities mean waiting for acquisition and occupied worker time,
+        # respectively. They are not CPU time or intrinsic future service demand.
+        for field, left, right in (
+            ("queue_ns", obs.enqueued_ns, obs.acquired_ns),
+            ("service_ns", obs.acquired_ns, obs.released_ns),
+        ):
+            if left is not None and right is not None:
+                supplied = getattr(self, field)
+                if supplied is not None and supplied != right - left:
+                    raise ValidationError("reported component conflicts with lifecycle interval")
+                object.__setattr__(self, field, right - left)
+        if (self.queue_ns or 0) + (self.service_ns or 0) > self.end_ns - self.start_ns:
+            raise ValidationError("identified components exceed span")
 
 
 @dataclass(frozen=True)
