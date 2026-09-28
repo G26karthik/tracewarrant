@@ -1,0 +1,157 @@
+{
+  "metadata": {
+    "date_utc": "2026-09-28T19:22:40.850466+00:00",
+    "git_commit": "06fb97803bed7d12ee9f0a2d855d2eb74f341554",
+    "git_dirty": false,
+    "source_tree_sha256": "5b921439776cc593618a5e60d6ffb598f02dc1dbf4bc2f6032aa500ab460c601",
+    "harness_sha256": "edfbf2db187cd08d2aa10c8735b9fa75da407fb93fd79e415f91e7dc9483b5f2",
+    "dependency_lock_sha256": "7eaeb8506d7f01df383182d6c37cd8667e14a56792b67bb7e7a1f9cc6a272969",
+    "os": "Windows-11-10.0.26200-SP0",
+    "cpu": "AMD Ryzen 9 8945HS w/ Radeon 780M Graphics",
+    "logical_cpus": 16,
+    "ram_bytes": 16356962304,
+    "gpu": "not used",
+    "driver": "not applicable",
+    "cuda": "not applicable",
+    "python": "3.12.12 (main, Jan 14 2026, 19:30:21) [MSC v.1944 64 bit (AMD64)]",
+    "compiler": "MSC v.1944 64 bit (AMD64)",
+    "cpp_compiler": "not applicable",
+    "configuration": {
+      "scales": [
+        1000,
+        100000,
+        1000000
+      ],
+      "repetitions": 3,
+      "workload_version": "dd4-burst-v1",
+      "detail": false,
+      "warmup_events": 100
+    },
+    "seed": 17
+  },
+  "provenance": "MEASURED",
+  "workload_origin": "synthetic",
+  "raw_samples": [
+    {
+      "repetition": 0,
+      "target_events": 1000,
+      "events": 1002,
+      "sessions": 167,
+      "simulation_ns": 2080800,
+      "setup_and_hash_ns": 566400,
+      "events_per_second": 481545.5594002307,
+      "peak_process_bytes": 24358912,
+      "workload_sha256": "411f058f09a488029ecca6a6559acf76bd8d57c95031420162fb0620720af7c2"
+    },
+    {
+      "repetition": 1,
+      "target_events": 1000,
+      "events": 1002,
+      "sessions": 167,
+      "simulation_ns": 2339500,
+      "setup_and_hash_ns": 790000,
+      "events_per_second": 428296.64458217565,
+      "peak_process_bytes": 24125440,
+      "workload_sha256": "411f058f09a488029ecca6a6559acf76bd8d57c95031420162fb0620720af7c2"
+    },
+    {
+      "repetition": 2,
+      "target_events": 1000,
+      "events": 1002,
+      "sessions": 167,
+      "simulation_ns": 2036400,
+      "setup_and_hash_ns": 569400,
+      "events_per_second": 492044.7849145551,
+      "peak_process_bytes": 24309760,
+      "workload_sha256": "411f058f09a488029ecca6a6559acf76bd8d57c95031420162fb0620720af7c2"
+    },
+    {
+      "repetition": 0,
+      "target_events": 100000,
+      "events": 100002,
+      "sessions": 16667,
+      "simulation_ns": 255978500,
+      "setup_and_hash_ns": 59421600,
+      "events_per_second": 390665.6223081235,
+      "peak_process_bytes": 49606656,
+      "workload_sha256": "c9f722ff6a71567f5d111737769c6e9187c20da0a83b8ac2b9b226be29f4553a"
+    },
+    {
+      "repetition": 1,
+      "target_events": 100000,
+      "events": 100002,
+      "sessions": 16667,
+      "simulation_ns": 271769800,
+      "setup_and_hash_ns": 57557800,
+      "events_per_second": 367965.8299045737,
+      "peak_process_bytes": 49623040,
+      "workload_sha256": "c9f722ff6a71567f5d111737769c6e9187c20da0a83b8ac2b9b226be29f4553a"
+    },
+    {
+      "repetition": 2,
+      "target_events": 100000,
+      "events": 100002,
+      "sessions": 16667,
+      "simulation_ns": 251046500,
+      "setup_and_hash_ns": 56589200,
+      "events_per_second": 398340.54647246626,
+      "peak_process_bytes": 49569792,
+      "workload_sha256": "c9f722ff6a71567f5d111737769c6e9187c20da0a83b8ac2b9b226be29f4553a"
+    },
+    {
+      "repetition": 0,
+      "target_events": 1000000,
+      "events": 1000002,
+      "sessions": 166667,
+      "simulation_ns": 3498648300,
+      "setup_and_hash_ns": 607317700,
+      "events_per_second": 285825.24285164644,
+      "peak_process_bytes": 280096768,
+      "workload_sha256": "f92068ead983df812a8c4d0ba32f4ca767eb4a74485fd2ba449ebfe32a9ba08e"
+    },
+    {
+      "repetition": 1,
+      "target_events": 1000000,
+      "events": 1000002,
+      "sessions": 166667,
+      "simulation_ns": 3248017500,
+      "setup_and_hash_ns": 554312500,
+      "events_per_second": 307880.7303224197,
+      "peak_process_bytes": 280010752,
+      "workload_sha256": "f92068ead983df812a8c4d0ba32f4ca767eb4a74485fd2ba449ebfe32a9ba08e"
+    },
+    {
+      "repetition": 2,
+      "target_events": 1000000,
+      "events": 1000002,
+      "sessions": 166667,
+      "simulation_ns": 3361190800,
+      "setup_and_hash_ns": 573799500,
+      "events_per_second": 297514.2024070755,
+      "peak_process_bytes": 280354816,
+      "workload_sha256": "f92068ead983df812a8c4d0ba32f4ca767eb4a74485fd2ba449ebfe32a9ba08e"
+    }
+  ],
+  "summary": [
+    {
+      "target_events": 1000,
+      "median_events_per_second": 481545.5594002307
+    },
+    {
+      "target_events": 100000,
+      "median_events_per_second": 390665.6223081235
+    },
+    {
+      "target_events": 1000000,
+      "median_events_per_second": 297514.2024070755
+    }
+  ],
+  "not_run": {
+    "10000000": "requires 1,666,667 sessions beyond declared 250,000 session bound; not needed for current experiments"
+  },
+  "limitations": [
+    "single FIFO template, not a representative production agent mix",
+    "peak is whole process working-set/RSS high-water, not bytes per heap event",
+    "three repeats on a shared workstation; no native speedup claim"
+  ]
+}
