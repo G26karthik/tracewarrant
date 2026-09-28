@@ -2,7 +2,7 @@
 
 Updated: 2026-09-29. Internal codename: Workload Lab.
 
-**Active direction: [PROJECT_V3.md](PROJECT_V3.md)** — simulator-neutral observation and performance-model validation. Post-pilot implementation has begun under [ADR-0016](docs/adr/ADR-0016-validation-toolkit.md). Baseline `c0fad29` is clean and its 102 tests pass. The entries below describe the preserved V2 pilot; they are not the active roadmap. New V3 stages: contract/research, conformance, neutral artifacts/evaluation, external-workload experiment, verification/handoff.
+**Active direction: [PROJECT_V3.md](PROJECT_V3.md)** — simulator-neutral observation and performance-model validation. V3-A/B passed; V3-C interfaces implemented; V3-D external FRAMES study preregistered. Current suite: 131 tests. `inspect`, `schema`, `check`, `freeze`, `evaluate` work without importing the reference simulator. [V3 contracts and evidence](docs/v3/artifacts-and-validation.md), [study design](docs/v3/frames-preregistration.md). Baseline `c0fad29`, tag and 64 historical files are preserved. The entries below describe the frozen V2 pilot; they are not the active roadmap.
 
 - Current milestone: evidence reassessment/local handoff complete; package 0.2.0. No optimizer/cloud deployment queued.
 - Last completed gates: M1.5 and M2. M3 assessed and native deferred. M4 controlled pilot passed; general calibration partial. M6 real-model applicability probe completed; predictive gate partial.

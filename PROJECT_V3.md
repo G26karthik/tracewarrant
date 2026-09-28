@@ -32,13 +32,15 @@ Claim support and value provenance are separate. Support: directly observable; i
 
 | Stage | Required evidence | Current status |
 | --- | --- | --- |
-| V3-A | frozen-record preservation, refreshed primary-source research, contract/ADRs | in progress |
-| V3-B | multi-source conformance, missingness/contradiction/privacy checks | pending |
-| V3-C | simulator-neutral schemas; independent model sources; freeze/evaluate CLI; baseline comparisons | pending |
-| V3-D | external workload feasibility, preregistration, frozen models, real intervention measurements and all-result report | pending |
+| V3-A | frozen-record preservation, refreshed primary-source research, contract/ADRs | passed; 64 preserved files |
+| V3-B | multi-source conformance, missingness/contradiction/privacy checks | passed on controlled/PydanticAI captures |
+| V3-C | simulator-neutral schemas; independent model sources; freeze/evaluate CLI; baseline comparisons | interfaces tested; real producer exercise next |
+| V3-D | external workload feasibility, preregistration, frozen models, real intervention measurements and all-result report | FRAMES selection and protocol committed before collection |
 | V3-E | reproducible examples, tests/build, limitations, final status and coherent commits | pending |
 
 No stage requires a complex model to win. Scientific success requires honest held-out evidence, not planner expansion. Stronger evidence would be a material decision improvement over the cheapest reasonable baseline. Do not claim uniqueness from an incomplete literature search.
+
+Current interfaces and evidence: [observation contract](docs/v3/observation-contract.md), [artifact/evaluation contract](docs/v3/artifacts-and-validation.md), [primary-source landscape](docs/v3/research.md), [FRAMES preregistration](docs/v3/frames-preregistration.md). The first implementation passes 131 tests, including schema interoperability and a baseline beating a model. Core runtime remains dependency-free; SimPy and framework collectors are optional.
 
 ## Explicit gates
 
