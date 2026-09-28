@@ -1,0 +1,350 @@
+{
+  "resourceSpans": [
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "research-workflow"
+            }
+          },
+          {
+            "key": "workload_lab.data.origin",
+            "value": {
+              "stringValue": "synthetic"
+            }
+          }
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "workload-lab-fixture",
+            "version": "1"
+          },
+          "spans": [
+            {
+              "traceId": "11111111111111111111111111111111",
+              "spanId": "0000000000000001",
+              "name": "synthetic step",
+              "kind": 1,
+              "startTimeUnixNano": "1800000000000000000",
+              "endTimeUnixNano": "1800000012000000000",
+              "attributes": [
+                {
+                  "key": "gen_ai.operation.name",
+                  "value": {
+                    "stringValue": "invoke_workflow"
+                  }
+                },
+                {
+                  "key": "workload_lab.graph.complete",
+                  "value": {
+                    "boolValue": true
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "model-backend"
+            }
+          },
+          {
+            "key": "workload_lab.data.origin",
+            "value": {
+              "stringValue": "synthetic"
+            }
+          }
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "workload-lab-fixture",
+            "version": "1"
+          },
+          "spans": [
+            {
+              "traceId": "11111111111111111111111111111111",
+              "spanId": "0000000000000002",
+              "name": "synthetic step",
+              "kind": 1,
+              "startTimeUnixNano": "1800000000000000000",
+              "endTimeUnixNano": "1800000002000000000",
+              "attributes": [
+                {
+                  "key": "gen_ai.operation.name",
+                  "value": {
+                    "stringValue": "chat"
+                  }
+                },
+                {
+                  "key": "gen_ai.request.model",
+                  "value": {
+                    "stringValue": "synthetic-model"
+                  }
+                },
+                {
+                  "key": "gen_ai.usage.input_tokens",
+                  "value": {
+                    "intValue": "100"
+                  }
+                }
+              ],
+              "parentSpanId": "0000000000000001"
+            },
+            {
+              "traceId": "11111111111111111111111111111111",
+              "spanId": "0000000000000005",
+              "name": "synthetic step",
+              "kind": 1,
+              "startTimeUnixNano": "1800000008000000000",
+              "endTimeUnixNano": "1800000010000000000",
+              "attributes": [
+                {
+                  "key": "gen_ai.operation.name",
+                  "value": {
+                    "stringValue": "chat"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000003"
+                        },
+                        {
+                          "stringValue": "0000000000000004"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "parentSpanId": "0000000000000001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "retrieval"
+            }
+          },
+          {
+            "key": "workload_lab.data.origin",
+            "value": {
+              "stringValue": "synthetic"
+            }
+          }
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "workload-lab-fixture",
+            "version": "1"
+          },
+          "spans": [
+            {
+              "traceId": "11111111111111111111111111111111",
+              "spanId": "0000000000000003",
+              "name": "synthetic step",
+              "kind": 1,
+              "startTimeUnixNano": "1800000002000000000",
+              "endTimeUnixNano": "1800000005000000000",
+              "attributes": [
+                {
+                  "key": "gen_ai.operation.name",
+                  "value": {
+                    "stringValue": "retrieval"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.queue_ns",
+                  "value": {
+                    "intValue": "0"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_ns",
+                  "value": {
+                    "intValue": "3000000000"
+                  }
+                }
+              ],
+              "parentSpanId": "0000000000000001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "browser-workers"
+            }
+          },
+          {
+            "key": "workload_lab.data.origin",
+            "value": {
+              "stringValue": "synthetic"
+            }
+          }
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "workload-lab-fixture",
+            "version": "1"
+          },
+          "spans": [
+            {
+              "traceId": "11111111111111111111111111111111",
+              "spanId": "0000000000000004",
+              "name": "synthetic step",
+              "kind": 1,
+              "startTimeUnixNano": "1800000002000000000",
+              "endTimeUnixNano": "1800000008000000000",
+              "attributes": [
+                {
+                  "key": "gen_ai.operation.name",
+                  "value": {
+                    "stringValue": "execute_tool"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000002"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "gen_ai.tool.name",
+                  "value": {
+                    "stringValue": "browser"
+                  }
+                },
+                {
+                  "key": "workload_lab.queue_ns",
+                  "value": {
+                    "intValue": "1000000000"
+                  }
+                },
+                {
+                  "key": "workload_lab.service_ns",
+                  "value": {
+                    "intValue": "5000000000"
+                  }
+                }
+              ],
+              "parentSpanId": "0000000000000001"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "metadata-db"
+            }
+          },
+          {
+            "key": "workload_lab.data.origin",
+            "value": {
+              "stringValue": "synthetic"
+            }
+          }
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "workload-lab-fixture",
+            "version": "1"
+          },
+          "spans": [
+            {
+              "traceId": "11111111111111111111111111111111",
+              "spanId": "0000000000000006",
+              "name": "synthetic step",
+              "kind": 1,
+              "startTimeUnixNano": "1800000010000000000",
+              "endTimeUnixNano": "1800000011000000000",
+              "attributes": [
+                {
+                  "key": "gen_ai.operation.name",
+                  "value": {
+                    "stringValue": "custom"
+                  }
+                },
+                {
+                  "key": "workload_lab.depends_on",
+                  "value": {
+                    "arrayValue": {
+                      "values": [
+                        {
+                          "stringValue": "0000000000000005"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "key": "workload_lab.node.kind",
+                  "value": {
+                    "stringValue": "database"
+                  }
+                }
+              ],
+              "parentSpanId": "0000000000000001"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

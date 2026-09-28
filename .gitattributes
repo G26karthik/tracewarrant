@@ -1,0 +1,7 @@
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+ContextForge_AI_Systems_Project_Handoff.md -text
+*.docx binary

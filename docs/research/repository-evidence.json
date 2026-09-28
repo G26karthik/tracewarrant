@@ -1,0 +1,133 @@
+{
+  "retrieved_at": "2026-09-28T18:08:13.487644+00:00",
+  "projects": [
+    {
+      "repo": "microsoft/vidur",
+      "url": "https://github.com/microsoft/vidur",
+      "archived": false,
+      "pushed_at": "2026-08-24T12:47:47Z",
+      "default_branch": "main",
+      "license": "MIT"
+    },
+    {
+      "repo": "ai-dynamo/aiconfigurator",
+      "url": "https://github.com/ai-dynamo/aiconfigurator",
+      "archived": false,
+      "pushed_at": "2026-09-18T17:04:46Z",
+      "default_branch": "main",
+      "license": "Apache-2.0"
+    },
+    {
+      "repo": "ai-dynamo/aisimulate",
+      "url": "https://github.com/ai-dynamo/aisimulate",
+      "archived": false,
+      "pushed_at": "2026-09-28T18:06:08Z",
+      "default_branch": "main",
+      "license": "NOASSERTION"
+    },
+    {
+      "repo": "michelgokan/perfsim",
+      "url": "https://github.com/michelgokan/perfsim",
+      "archived": false,
+      "pushed_at": "2025-06-10T08:45:46Z",
+      "default_branch": "main",
+      "license": "GPL-2.0"
+    },
+    {
+      "repo": "simgrid/simgrid",
+      "url": "https://github.com/simgrid/simgrid",
+      "archived": false,
+      "pushed_at": "2026-08-06T23:49:23Z",
+      "default_branch": "master",
+      "license": "NOASSERTION"
+    },
+    {
+      "repo": "wrench-project/wrench",
+      "url": "https://github.com/wrench-project/wrench",
+      "archived": false,
+      "pushed_at": "2026-09-28T08:54:58Z",
+      "default_branch": "master",
+      "license": "LGPL-3.0"
+    },
+    {
+      "repo": "wfcommons/WfCommons",
+      "url": "https://github.com/wfcommons/WfCommons",
+      "archived": false,
+      "pushed_at": "2026-09-24T19:01:18Z",
+      "default_branch": "main",
+      "license": "LGPL-3.0"
+    },
+    {
+      "repo": "langfuse/langfuse",
+      "url": "https://github.com/langfuse/langfuse",
+      "archived": false,
+      "pushed_at": "2026-09-28T14:33:41Z",
+      "default_branch": "main",
+      "license": "NOASSERTION"
+    },
+    {
+      "repo": "Arize-ai/phoenix",
+      "url": "https://github.com/Arize-ai/phoenix",
+      "archived": false,
+      "pushed_at": "2026-09-28T17:57:04Z",
+      "default_branch": "main",
+      "license": "NOASSERTION"
+    },
+    {
+      "repo": "grafana/k6",
+      "url": "https://github.com/grafana/k6",
+      "archived": false,
+      "pushed_at": "2026-09-28T11:33:10Z",
+      "default_branch": "master",
+      "license": "AGPL-3.0"
+    },
+    {
+      "repo": "opencost/opencost",
+      "url": "https://github.com/opencost/opencost",
+      "archived": false,
+      "pushed_at": "2026-09-25T15:29:09Z",
+      "default_branch": "develop",
+      "license": "Apache-2.0"
+    },
+    {
+      "repo": "stanfordnlp/dspy",
+      "url": "https://github.com/stanfordnlp/dspy",
+      "archived": false,
+      "pushed_at": "2026-09-28T16:20:40Z",
+      "default_branch": "main",
+      "license": "MIT"
+    },
+    {
+      "repo": "IBM/mcp-context-forge",
+      "url": "https://github.com/IBM/mcp-context-forge",
+      "archived": false,
+      "pushed_at": "2026-09-28T15:44:48Z",
+      "default_branch": "main",
+      "license": "Apache-2.0"
+    },
+    {
+      "repo": "llm-d/llm-d-inference-sim",
+      "url": "https://github.com/llm-d/llm-d-inference-sim",
+      "archived": false,
+      "pushed_at": "2026-09-23T10:43:03Z",
+      "default_branch": "main",
+      "license": "Apache-2.0"
+    },
+    {
+      "repo": "open-telemetry/semantic-conventions-genai",
+      "url": "https://github.com/open-telemetry/semantic-conventions-genai",
+      "archived": false,
+      "pushed_at": "2026-09-28T00:44:05Z",
+      "default_branch": "main",
+      "license": "Apache-2.0"
+    },
+    {
+      "repo": "fraction12/agentplan",
+      "url": "https://github.com/fraction12/agentplan",
+      "archived": false,
+      "pushed_at": "2026-08-21T13:23:52Z",
+      "default_branch": "main",
+      "license": "MIT"
+    }
+  ]
+}

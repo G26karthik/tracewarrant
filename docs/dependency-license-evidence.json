@@ -1,0 +1,107 @@
+[
+  {
+    "name": "colorama",
+    "version": "0.4.6",
+    "license_expression": null,
+    "license": null,
+    "license_classifiers": [
+      "License :: OSI Approved :: BSD License"
+    ]
+  },
+  {
+    "name": "hatchling",
+    "version": "1.27.0",
+    "license_expression": "MIT",
+    "license": null,
+    "license_classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  {
+    "name": "hypothesis",
+    "version": "6.168.3",
+    "license_expression": "MPL-2.0",
+    "license": null,
+    "license_classifiers": []
+  },
+  {
+    "name": "iniconfig",
+    "version": "2.3.0",
+    "license_expression": "MIT",
+    "license": null,
+    "license_classifiers": []
+  },
+  {
+    "name": "packaging",
+    "version": "26.3",
+    "license_expression": "Apache-2.0 OR BSD-2-Clause",
+    "license": null,
+    "license_classifiers": []
+  },
+  {
+    "name": "pathspec",
+    "version": "1.1.1",
+    "license_expression": null,
+    "license": null,
+    "license_classifiers": [
+      "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)"
+    ]
+  },
+  {
+    "name": "pluggy",
+    "version": "1.6.0",
+    "license_expression": null,
+    "license": "MIT",
+    "license_classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  {
+    "name": "Pygments",
+    "version": "2.21.0",
+    "license_expression": "BSD-2-Clause",
+    "license": null,
+    "license_classifiers": []
+  },
+  {
+    "name": "pytest",
+    "version": "8.4.2",
+    "license_expression": null,
+    "license": "MIT",
+    "license_classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  {
+    "name": "ruff",
+    "version": "0.16.9",
+    "license_expression": "MIT",
+    "license": null,
+    "license_classifiers": []
+  },
+  {
+    "name": "sortedcontainers",
+    "version": "2.4.0",
+    "license_expression": null,
+    "license": "Apache 2.0",
+    "license_classifiers": [
+      "License :: OSI Approved :: Apache Software License"
+    ]
+  },
+  {
+    "name": "trove-classifiers",
+    "version": "2026.9.21.13",
+    "license_expression": null,
+    "license": null,
+    "license_classifiers": [
+      "License :: OSI Approved :: Apache Software License"
+    ]
+  },
+  {
+    "name": "workload-lab-internal",
+    "version": "0.1.0",
+    "license_expression": "Apache-2.0",
+    "license": null,
+    "license_classifiers": []
+  }
+]

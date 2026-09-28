@@ -1,0 +1,11 @@
+# Contributing
+
+Read [PROJECT_V2.md](PROJECT_V2.md) before changing scope. Public name remains undecided. Current work ends at M1; simulation/native/cloud work requires its milestone gate. Preserve the two historical handoffs.
+
+Use Python 3.11+ and `uv sync --locked`. Run `uv run ruff check .`, `uv run ruff format --check .`, and `uv run pytest`. The runtime has no third-party dependencies. Dev dependencies are locked in `uv.lock`. Keep changes small; add a dependency only with alternatives and a measured requirement. Do not commit environments, raw user traces, credentials or generated private reports.
+
+Domain code belongs in the library, file/argument handling in the CLI, vendor interpretation in importers. Use immutable typed records, explicit units, deterministic ordering and actionable errors without payload text. Never equate parentage with causality or elapsed span duration with service demand. Unknown metrics remain null with evidence. Public IR changes require versioning and contract fixtures.
+
+Add meaningful unit/property/contract tests for new semantics. Test failure and incomplete-data paths. For algorithms, include a simple independent baseline or hand-solvable case. Benchmark metadata and raw data are mandatory for performance claims; negative results are welcome. Hardware/compiler/CUDA claims require measurements on the named hardware.
+
+Use Apache-2.0 for new contributions and preserve external attribution. Inspect licenses before importing code or data; citation alone is not redistribution permission. The reviewed competitors are not dependencies. Update ADRs and docs with implementation changes. Confirm no sensitive content before publishing any trace/profile/artifact.

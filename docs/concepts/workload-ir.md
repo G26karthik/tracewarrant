@@ -1,0 +1,15 @@
+# Workload IR v0
+
+Schema version: `0.1`. Instance-only, experimental Python API and JSON output. Not a generative workflow standard.
+
+`Dataset` stores sanitized `Span` records and source evidence. `compile_workload` groups trace IDs into `Workflow` objects with `Node` and `Edge` tuples. Workflows carry source digest/origin, completeness and diagnostics. No caller may add arbitrary attribute bags to the persisted domain objects. Validation applies to library construction as well as importer output.
+
+Node identity is the source span ID within a trace. Parent identity is retained for containment validation. Kinds include workflow, llm, embedding, retrieval, reranker, tool, compute, database, queue, external_api, human_gate and unknown. Role is work/container. Work requires atomic leaf instrumentation; containers receive no work weight. Node start/end are integer nanoseconds and elapsed is their exact difference. Optional queue/service quantities retain explicit unknowns; known components are nonnegative and must sum to no more than elapsed. Model/provider/tool labels and token counts are optional metadata, with no payload text.
+
+Edges are explicit finish-to-start dependencies within one trace. End of predecessor must not exceed successor start. Loops are represented as unrolled execution attempts. Cycles, invalid containment, duplicates, self edges and dangling endpoints fail validation. Cross-trace joins, streaming start-to-start dependencies and speculative cancellation are deferred. Generic OTel links are flagged, not interpreted.
+
+Analysis computes the longest weighted path in the declared atomic DAG. Weights are elapsed observations with fixed durations and zero gaps, so the result is an **analytical path through supplied work**, not a forecast at another load. Missing edges make it incomplete; no causal graph is inferred from nonoverlapping timestamps. One deterministic path is selected among ties; attribution is not unique. The report shows completeness and this limitation even when a numeric result exists.
+
+Resource contribution means accumulated elapsed time by kind/service for selected work and for the chosen path. It is not utilization, resource demand or proof of bottleneck. Overlapping work can exceed wall time. Separately compute union coverage of selected intervals and the uncovered portion of the observed span envelope. Uncovered time is unattributed, not measured queue delay. Root envelope is an observed interval; multiple/missing roots prevent an end-to-end completeness claim.
+
+CLI `ingest` emits compiled IR JSON for inspection/archival. CLI `analyze` accepts original OTLP files; reimporting compiled IR is not supported in v0. Both commands share `ingest -> compile_workload`, and the Python `analyze(workflow)` function has no file/CLI dependency.
