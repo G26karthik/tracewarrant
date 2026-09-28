@@ -1,0 +1,11 @@
+# Real-model applicability probe, specified before execution
+
+Date: 2026-09-29. Exploratory M6 probe, **not a new confirmatory holdout** and not permission to reclassify the controlled result. Local discovery found cached `qwen3-vl:4b` in Ollama; no model download, paid provider or cloud deployment is needed. Existing Azure account availability does not authorize spending and does not make cloud useful before a credible workload model.
+
+Use PydanticAI FunctionModel as a bridge to the local Ollama chat endpoint and the same framework already chosen in M1.5. Deterministic workflow planning requests retrieval plus SQLite lookup in parallel; a real model synthesizes a structured facility/supplier-risk report from fictional reference facts. This is a non-coding task. No prompts, evidence text, generated reports, SQL or tool arguments/results are retained in trace artifacts; record only exact-match fact checks, lengths/counts and performance metadata.
+
+Two owned finite pools: local evidence-tool workers and inference **client in-flight slots**. These are not GPU replicas: the Ollama server's scheduler/batching/KV cache can hide additional queues. Instrument enqueue/acquire/release at owned boundaries and retain provider-reported timing separately, never infer GPU service demand.
+
+Run one warmup, then two blocks of eight concurrent sessions per configuration: BASELINE tool=1/client=1, TOOL+ tool=2/client=1, CLIENT+ tool=1/client=2. Reverse order in the second block. Keep model/options/workload/task mix fixed. Model temperature=0, fixed seed, bounded context/output and local endpoint only. Record warmup separately, all failures and content-free actual traces, model digest/version and GPU memory residency where available. A 120 s HTTP timeout bounds each request; timeout does not prove backend cancellation.
+
+Measure fact-extraction success (site ID, supplier share, stock days), observed session latencies and owned-pool waits. Eight sessions/repetition cannot establish p95/p99 or useful confidence intervals. No frozen capacity predictions are made for this new workload. If non-LLM work is negligible, publish that negative applicability result rather than adding artificial tool delay. Do not optimize or port the engine because a local model runs.
