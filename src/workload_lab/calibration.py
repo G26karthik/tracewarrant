@@ -38,7 +38,7 @@ def fit_cohort(workflows, cohort, expected_sessions):
             raise ValidationError("mixed topologies require separate cohorts")
         for node in nodes:
             obs = node.span.observation
-            if obs.outcome != "completed":
+            if obs.outcome != "completed" or node.span.status == "ERROR":
                 raise ValidationError("failure/censoring model unsupported; retain the cohort")
             if obs.pool is not None:
                 if (

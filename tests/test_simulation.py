@@ -166,3 +166,13 @@ def test_invalid_models(factory):
 def test_event_budget():
     with pytest.raises(ValidationError, match="event budget"):
         simulate(Scenario((Task("a"),), (), (Arrival("a", 0),), 1), max_events=1)
+
+
+def test_paired_session_samples_preserve_correlation():
+    tasks = (Task("a", (1, 5)), Task("b", (5, 1), predecessors=("a",)))
+    spec = Scenario(
+        tasks, (), tuple(Arrival(str(i), 0) for i in range(40)), 20, sample_coupling="session"
+    )
+    assert {s["latency_ns"] for s in simulate(spec)["sessions"]} == {6}
+    with pytest.raises(ValidationError, match="aligned"):
+        replace(spec, tasks=(tasks[0], Task("b", (1, 2, 3))))

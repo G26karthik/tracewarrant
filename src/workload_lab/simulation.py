@@ -123,10 +123,19 @@ class Scenario:
     seed: int = 0
     input_provenance: str = "ESTIMATED"
     sources: tuple[str, ...] = ()
+    sample_coupling: str = "independent"
 
     def __post_init__(self):
         integer(self.horizon_ns, "horizon", MAX_NS)
         integer(self.seed, "seed", MAX_NS)
+        if self.sample_coupling not in ("independent", "session"):
+            raise ValidationError("unsupported sample coupling")
+        if self.sample_coupling == "session":
+            sizes = {
+                len(v) for t in self.tasks for v in (t.service_ns, t.external_ns) if len(v) > 1
+            }
+            if len(sizes) > 1 or any(t.service_exponential_mean_ns for t in self.tasks):
+                raise ValidationError("joint samples must be aligned empirical session vectors")
         if self.horizon_ns == 0 or not 1 <= len(self.tasks) <= 1000:
             raise ValidationError("positive horizon and 1 to 1000 tasks required")
         if len(self.arrivals) > 250_000 or len(self.tasks) * len(self.arrivals) > 2_000_000:
@@ -217,7 +226,12 @@ class _Engine:
     def draw(self, sid, tid, attempt, purpose, values):
         if len(values) == 1:
             return values[0]
-        stream = RandomStream(self.spec.seed, f"{sid}/{tid}/{attempt}/{purpose}")
+        name = (
+            f"{sid}/joint/{attempt}"
+            if self.spec.sample_coupling == "session"
+            else f"{sid}/{tid}/{attempt}/{purpose}"
+        )
+        stream = RandomStream(self.spec.seed, name)
         return values[min(len(values) - 1, int(stream.uniform() * len(values)))]
 
     def release(self, task, work):
@@ -488,6 +502,7 @@ def scenario_from_dict(data):
             "seed",
             "input_provenance",
             "sources",
+            "sample_coupling",
         }
         or data.get("schema_version") != "1"
     ):
@@ -508,6 +523,7 @@ def scenario_from_dict(data):
             data.get("seed", 0),
             data.get("input_provenance", "ESTIMATED"),
             tuple(data.get("sources", ())),
+            data.get("sample_coupling", "independent"),
         )
     except (KeyError, TypeError, ValueError) as exc:
         if isinstance(exc, ValidationError):
