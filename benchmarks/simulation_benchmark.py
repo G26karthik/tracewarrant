@@ -39,6 +39,11 @@ def peak_bytes():
         counters.cb = ctypes.sizeof(counters)
         kernel = ctypes.windll.kernel32
         kernel.GetCurrentProcess.restype = wintypes.HANDLE
+        ctypes.windll.psapi.GetProcessMemoryInfo.argtypes = [
+            wintypes.HANDLE,
+            ctypes.POINTER(Counters),
+            wintypes.DWORD,
+        ]
         if ctypes.windll.psapi.GetProcessMemoryInfo(
             kernel.GetCurrentProcess(), ctypes.byref(counters), counters.cb
         ):
@@ -117,7 +122,10 @@ def benchmark():
             for target in (1000, 100_000, 1_000_000)
         ],
         "not_run": {
-            "10000000": "requires 1,666,667 sessions beyond declared 250,000 session bound; not needed for current experiments"
+            "10000000": (
+                "requires 1,666,667 sessions beyond declared 250,000 session bound; "
+                "not needed for current experiments"
+            )
         },
         "limitations": [
             "single FIFO template, not a representative production agent mix",
