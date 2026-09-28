@@ -1,0 +1,529 @@
+{
+  "artifact_type": "prediction",
+  "assumptions": [
+    "same_task_mix",
+    "stable_network",
+    "owned_clocks_comparable",
+    "client_occupancy_invariant_under_concurrency",
+    "seeds_2000_through_2029"
+  ],
+  "calibration_envelope": {
+    "batch_sessions": {
+      "maximum": 8,
+      "minimum": 8
+    },
+    "client_slots": {
+      "maximum": 1,
+      "minimum": 1
+    },
+    "dataset_sha256": {
+      "values": [
+        "4255093c93b595b5b04c7c8dde290b48ec87d72ca0fb0b760d9dd02740d669ff"
+      ]
+    },
+    "fetch_workers": {
+      "maximum": 1,
+      "minimum": 1
+    },
+    "model_digest": {
+      "values": [
+        "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e"
+      ]
+    }
+  },
+  "lineage": [
+    {
+      "role": "calibration",
+      "sha256": "13e59035ab993eca95a2c50507089225766fb82b6adeb585f723bec9ed4c1db1"
+    },
+    {
+      "role": "producer_source",
+      "sha256": "9895f4588fe4beafad307ac9f6542ad8f9a4b8bb6c8d3e1b2a87d7acad03fe06"
+    },
+    {
+      "role": "external_workload",
+      "sha256": "4255093c93b595b5b04c7c8dde290b48ec87d72ca0fb0b760d9dd02740d669ff"
+    }
+  ],
+  "model": {
+    "id": "simpy-whole-workflow",
+    "method": "paired_task_empirical_fifo",
+    "role": "model",
+    "version": "simpy-4.1.1-producer-v1"
+  },
+  "rankings": [],
+  "scenarios": [
+    {
+      "bottleneck": {
+        "method": "backend_not_identified",
+        "provenance": "UNKNOWN",
+        "resources": []
+      },
+      "comparison_group": "burst-8",
+      "configuration": {
+        "client_slots": 1,
+        "fetch_workers": 1
+      },
+      "environment": {
+        "batch_sessions": 8,
+        "dataset_sha256": "4255093c93b595b5b04c7c8dde290b48ec87d72ca0fb0b760d9dd02740d669ff",
+        "model_digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e"
+      },
+      "extrapolations": [],
+      "id": "BASE",
+      "metrics": [
+        {
+          "id": "latency.mean",
+          "interval": {
+            "kind": "range",
+            "level": 0.9,
+            "lower": 9778517800,
+            "method": "simulation_seed_quantiles",
+            "upper": 10321112837.5
+          },
+          "population": "completed",
+          "provenance": "SIMULATED",
+          "sample_count": 240,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 10128602400.0
+        },
+        {
+          "id": "latency.p50",
+          "interval": {
+            "kind": "range",
+            "level": 0.9,
+            "lower": 8657969200,
+            "method": "simulation_seed_quantiles",
+            "upper": 9044754900
+          },
+          "population": "completed",
+          "provenance": "SIMULATED",
+          "sample_count": 240,
+          "statistic": "p50",
+          "unit": "ns",
+          "value": 8852655400.0
+        },
+        {
+          "id": "latency.p95",
+          "interval": null,
+          "population": "completed",
+          "provenance": "UNKNOWN",
+          "sample_count": 8,
+          "statistic": "p95",
+          "unit": "ns",
+          "value": null
+        },
+        {
+          "id": "latency.p99",
+          "interval": null,
+          "population": "completed",
+          "provenance": "UNKNOWN",
+          "sample_count": 8,
+          "statistic": "p99",
+          "unit": "ns",
+          "value": null
+        },
+        {
+          "id": "throughput.drain",
+          "interval": {
+            "kind": "range",
+            "level": 0.9,
+            "lower": 0.44100455258370974,
+            "method": "simulation_seed_quantiles",
+            "upper": 0.49241482662274005
+          },
+          "population": "offered_batch_window",
+          "provenance": "SIMULATED",
+          "sample_count": 240,
+          "statistic": "rate",
+          "unit": "requests/s",
+          "value": 0.4613667910264374
+        },
+        {
+          "id": "fetch.queue.mean",
+          "interval": {
+            "kind": "range",
+            "level": 0.9,
+            "lower": 31274757012.5,
+            "method": "simulation_seed_quantiles",
+            "upper": 33088633612.5
+          },
+          "population": "offered_observed_stages",
+          "provenance": "SIMULATED",
+          "sample_count": 240,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 32409505756.25
+        },
+        {
+          "id": "fetch.utilization",
+          "interval": {
+            "kind": "range",
+            "level": 0.9,
+            "lower": 0.9639746956965494,
+            "method": "simulation_seed_quantiles",
+            "upper": 0.972609376603849
+          },
+          "population": "offered_batch_window",
+          "provenance": "SIMULATED",
+          "sample_count": 240,
+          "statistic": "fraction",
+          "unit": "ratio",
+          "value": 0.9669077556092381
+        },
+        {
+          "id": "inference-client.queue.mean",
+          "interval": {
+            "kind": "range",
+            "level": 0.9,
+            "lower": 0.0,
+            "method": "simulation_seed_quantiles",
+            "upper": 0.0
+          },
+          "population": "offered_observed_stages",
+          "provenance": "SIMULATED",
+          "sample_count": 240,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 0.0
+        },
+        {
+          "id": "inference-client.utilization",
+          "interval": {
+            "kind": "range",
+            "level": 0.9,
+            "lower": 0.22086895934852732,
+            "method": "simulation_seed_quantiles",
+            "upper": 0.2469134418613103
+          },
+          "population": "offered_batch_window",
+          "provenance": "SIMULATED",
+          "sample_count": 240,
+          "statistic": "fraction",
+          "unit": "ratio",
+          "value": 0.231477910938082
+        }
+      ]
+    },
+    {
+      "bottleneck": {
+        "method": "backend_not_identified",
+        "provenance": "UNKNOWN",
+        "resources": []
+      },
+      "comparison_group": "burst-8",
+      "configuration": {
+        "client_slots": 1,
+        "fetch_workers": 2
+      },
+      "environment": {
+        "batch_sessions": 8,
+        "dataset_sha256": "4255093c93b595b5b04c7c8dde290b48ec87d72ca0fb0b760d9dd02740d669ff",
+        "model_digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e"
+      },
+      "extrapolations": [
+        "fetch_workers"
+      ],
+      "id": "FETCH2",
+      "metrics": [
+        {
+          "id": "latency.mean",
+          "interval": {
+            "kind": "range",
+            "level": 0.9,
+            "lower": 5337590175,
+            "method": "simulation_seed_quantiles",
+            "upper": 5617088475
+          },
+          "population": "completed",
+          "provenance": "SIMULATED",
+          "sample_count": 240,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 5493670275.0
+        },
+        {
+          "id": "latency.p50",
+          "interval": {
+            "kind": "range",
+            "level": 0.9,
+            "lower": 4738070200,
+            "method": "simulation_seed_quantiles",
+            "upper": 4893656400
+          },
+          "population": "completed",
+          "provenance": "SIMULATED",
+          "sample_count": 240,
+          "statistic": "p50",
+          "unit": "ns",
+          "value": 4819279000.0
+        },
+        {
+          "id": "latency.p95",
+          "interval": null,
+          "population": "completed",
+          "provenance": "UNKNOWN",
+          "sample_count": 8,
+          "statistic": "p95",
+          "unit": "ns",
+          "value": null
+        },
+        {
+          "id": "latency.p99",
+          "interval": null,
+          "population": "completed",
+          "provenance": "UNKNOWN",
+          "sample_count": 8,
+          "statistic": "p99",
+          "unit": "ns",
+          "value": null
+        },
+        {
+          "id": "throughput.drain",
+          "interval": {
+            "kind": "range",
+            "level": 0.9,
+            "lower": 0.845793832382566,
+            "method": "simulation_seed_quantiles",
+            "upper": 0.9557744294928668
+          },
+          "population": "offered_batch_window",
+          "provenance": "SIMULATED",
+          "sample_count": 240,
+          "statistic": "rate",
+          "unit": "requests/s",
+          "value": 0.8936377590038067
+        },
+        {
+          "id": "fetch.queue.mean",
+          "interval": {
+            "kind": "range",
+            "level": 0.9,
+            "lower": 15036531425.0,
+            "method": "simulation_seed_quantiles",
+            "upper": 15943216287.5
+          },
+          "population": "offered_observed_stages",
+          "provenance": "SIMULATED",
+          "sample_count": 240,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 15610632787.5
+        },
+        {
+          "id": "fetch.utilization",
+          "interval": {
+            "kind": "range",
+            "level": 0.9,
+            "lower": 0.9195574586774047,
+            "method": "simulation_seed_quantiles",
+            "upper": 0.9453901262141918
+          },
+          "population": "offered_batch_window",
+          "provenance": "SIMULATED",
+          "sample_count": 240,
+          "statistic": "fraction",
+          "unit": "ratio",
+          "value": 0.9289528533575717
+        },
+        {
+          "id": "inference-client.queue.mean",
+          "interval": {
+            "kind": "range",
+            "level": 0.9,
+            "lower": 0.0,
+            "method": "simulation_seed_quantiles",
+            "upper": 46079812.5
+          },
+          "population": "offered_observed_stages",
+          "provenance": "SIMULATED",
+          "sample_count": 240,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 0.0
+        },
+        {
+          "id": "inference-client.utilization",
+          "interval": {
+            "kind": "range",
+            "level": 0.9,
+            "lower": 0.42336185963336653,
+            "method": "simulation_seed_quantiles",
+            "upper": 0.47788870068527706
+          },
+          "population": "offered_batch_window",
+          "provenance": "SIMULATED",
+          "sample_count": 240,
+          "statistic": "fraction",
+          "unit": "ratio",
+          "value": 0.44662997406413557
+        }
+      ]
+    },
+    {
+      "bottleneck": {
+        "method": "backend_not_identified",
+        "provenance": "UNKNOWN",
+        "resources": []
+      },
+      "comparison_group": "burst-8",
+      "configuration": {
+        "client_slots": 2,
+        "fetch_workers": 1
+      },
+      "environment": {
+        "batch_sessions": 8,
+        "dataset_sha256": "4255093c93b595b5b04c7c8dde290b48ec87d72ca0fb0b760d9dd02740d669ff",
+        "model_digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e"
+      },
+      "extrapolations": [
+        "client_slots"
+      ],
+      "id": "CLIENT2",
+      "metrics": [
+        {
+          "id": "latency.mean",
+          "interval": {
+            "kind": "range",
+            "level": 0.9,
+            "lower": 9778517800,
+            "method": "simulation_seed_quantiles",
+            "upper": 10321112837.5
+          },
+          "population": "completed",
+          "provenance": "SIMULATED",
+          "sample_count": 240,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 10128602400.0
+        },
+        {
+          "id": "latency.p50",
+          "interval": {
+            "kind": "range",
+            "level": 0.9,
+            "lower": 8657969200,
+            "method": "simulation_seed_quantiles",
+            "upper": 9044754900
+          },
+          "population": "completed",
+          "provenance": "SIMULATED",
+          "sample_count": 240,
+          "statistic": "p50",
+          "unit": "ns",
+          "value": 8852655400.0
+        },
+        {
+          "id": "latency.p95",
+          "interval": null,
+          "population": "completed",
+          "provenance": "UNKNOWN",
+          "sample_count": 8,
+          "statistic": "p95",
+          "unit": "ns",
+          "value": null
+        },
+        {
+          "id": "latency.p99",
+          "interval": null,
+          "population": "completed",
+          "provenance": "UNKNOWN",
+          "sample_count": 8,
+          "statistic": "p99",
+          "unit": "ns",
+          "value": null
+        },
+        {
+          "id": "throughput.drain",
+          "interval": {
+            "kind": "range",
+            "level": 0.9,
+            "lower": 0.44100455258370974,
+            "method": "simulation_seed_quantiles",
+            "upper": 0.49241482662274005
+          },
+          "population": "offered_batch_window",
+          "provenance": "SIMULATED",
+          "sample_count": 240,
+          "statistic": "rate",
+          "unit": "requests/s",
+          "value": 0.4613667910264374
+        },
+        {
+          "id": "fetch.queue.mean",
+          "interval": {
+            "kind": "range",
+            "level": 0.9,
+            "lower": 31274757012.5,
+            "method": "simulation_seed_quantiles",
+            "upper": 33088633612.5
+          },
+          "population": "offered_observed_stages",
+          "provenance": "SIMULATED",
+          "sample_count": 240,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 32409505756.25
+        },
+        {
+          "id": "fetch.utilization",
+          "interval": {
+            "kind": "range",
+            "level": 0.9,
+            "lower": 0.9639746956965494,
+            "method": "simulation_seed_quantiles",
+            "upper": 0.972609376603849
+          },
+          "population": "offered_batch_window",
+          "provenance": "SIMULATED",
+          "sample_count": 240,
+          "statistic": "fraction",
+          "unit": "ratio",
+          "value": 0.9669077556092381
+        },
+        {
+          "id": "inference-client.queue.mean",
+          "interval": {
+            "kind": "range",
+            "level": 0.9,
+            "lower": 0.0,
+            "method": "simulation_seed_quantiles",
+            "upper": 0.0
+          },
+          "population": "offered_observed_stages",
+          "provenance": "SIMULATED",
+          "sample_count": 240,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 0.0
+        },
+        {
+          "id": "inference-client.utilization",
+          "interval": {
+            "kind": "range",
+            "level": 0.9,
+            "lower": 0.11043447967426366,
+            "method": "simulation_seed_quantiles",
+            "upper": 0.12345672093065516
+          },
+          "population": "offered_batch_window",
+          "provenance": "SIMULATED",
+          "sample_count": 240,
+          "statistic": "fraction",
+          "unit": "ratio",
+          "value": 0.115738955469041
+        }
+      ]
+    }
+  ],
+  "schema_version": "1.0",
+  "unsupported_dimensions": [
+    "gpu_service_demand",
+    "quality",
+    "sustainable_capacity",
+    "latency.p95",
+    "latency.p99"
+  ],
+  "workload_id": "frames-oracle-eight-v1"
+}

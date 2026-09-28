@@ -1,0 +1,401 @@
+{
+  "artifact_type": "prediction",
+  "assumptions": [
+    "same_task_mix",
+    "stable_network",
+    "owned_clocks_comparable"
+  ],
+  "calibration_envelope": {
+    "batch_sessions": {
+      "maximum": 8,
+      "minimum": 8
+    },
+    "client_slots": {
+      "maximum": 1,
+      "minimum": 1
+    },
+    "dataset_sha256": {
+      "values": [
+        "4255093c93b595b5b04c7c8dde290b48ec87d72ca0fb0b760d9dd02740d669ff"
+      ]
+    },
+    "fetch_workers": {
+      "maximum": 1,
+      "minimum": 1
+    },
+    "model_digest": {
+      "values": [
+        "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e"
+      ]
+    }
+  },
+  "lineage": [
+    {
+      "role": "calibration",
+      "sha256": "13e59035ab993eca95a2c50507089225766fb82b6adeb585f723bec9ed4c1db1"
+    },
+    {
+      "role": "producer_source",
+      "sha256": "9895f4588fe4beafad307ac9f6542ad8f9a4b8bb6c8d3e1b2a87d7acad03fe06"
+    },
+    {
+      "role": "external_workload",
+      "sha256": "4255093c93b595b5b04c7c8dde290b48ec87d72ca0fb0b760d9dd02740d669ff"
+    }
+  ],
+  "model": {
+    "id": "fixed-delay",
+    "method": "unchanged_baseline_point",
+    "role": "baseline",
+    "version": "1"
+  },
+  "rankings": [],
+  "scenarios": [
+    {
+      "bottleneck": {
+        "method": "backend_not_identified",
+        "provenance": "UNKNOWN",
+        "resources": []
+      },
+      "comparison_group": "burst-8",
+      "configuration": {
+        "client_slots": 1,
+        "fetch_workers": 1
+      },
+      "environment": {
+        "batch_sessions": 8,
+        "dataset_sha256": "4255093c93b595b5b04c7c8dde290b48ec87d72ca0fb0b760d9dd02740d669ff",
+        "model_digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e"
+      },
+      "extrapolations": [],
+      "id": "BASE",
+      "metrics": [
+        {
+          "id": "latency.mean",
+          "interval": null,
+          "population": "completed",
+          "provenance": "CALIBRATED",
+          "sample_count": 16,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 10093442512.5
+        },
+        {
+          "id": "latency.p50",
+          "interval": null,
+          "population": "completed",
+          "provenance": "CALIBRATED",
+          "sample_count": 16,
+          "statistic": "p50",
+          "unit": "ns",
+          "value": 8849589200
+        },
+        {
+          "id": "latency.p95",
+          "interval": null,
+          "population": "completed",
+          "provenance": "UNKNOWN",
+          "sample_count": 8,
+          "statistic": "p95",
+          "unit": "ns",
+          "value": null
+        },
+        {
+          "id": "latency.p99",
+          "interval": null,
+          "population": "completed",
+          "provenance": "UNKNOWN",
+          "sample_count": 8,
+          "statistic": "p99",
+          "unit": "ns",
+          "value": null
+        },
+        {
+          "id": "throughput.drain",
+          "interval": null,
+          "population": "offered_batch_window",
+          "provenance": "CALIBRATED",
+          "sample_count": 16,
+          "statistic": "rate",
+          "unit": "requests/s",
+          "value": 0.46461127733371577
+        },
+        {
+          "id": "fetch.queue.mean",
+          "interval": null,
+          "population": "offered_observed_stages",
+          "provenance": "CALIBRATED",
+          "sample_count": 16,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 32340351181.25
+        },
+        {
+          "id": "fetch.utilization",
+          "interval": null,
+          "population": "offered_batch_window",
+          "provenance": "CALIBRATED",
+          "sample_count": 16,
+          "statistic": "fraction",
+          "unit": "ratio",
+          "value": 0.9685667866926548
+        },
+        {
+          "id": "inference-client.queue.mean",
+          "interval": null,
+          "population": "offered_observed_stages",
+          "provenance": "CALIBRATED",
+          "sample_count": 16,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 3487.5
+        },
+        {
+          "id": "inference-client.utilization",
+          "interval": null,
+          "population": "offered_batch_window",
+          "provenance": "CALIBRATED",
+          "sample_count": 16,
+          "statistic": "fraction",
+          "unit": "ratio",
+          "value": 0.23297446102752412
+        }
+      ]
+    },
+    {
+      "bottleneck": {
+        "method": "backend_not_identified",
+        "provenance": "UNKNOWN",
+        "resources": []
+      },
+      "comparison_group": "burst-8",
+      "configuration": {
+        "client_slots": 1,
+        "fetch_workers": 2
+      },
+      "environment": {
+        "batch_sessions": 8,
+        "dataset_sha256": "4255093c93b595b5b04c7c8dde290b48ec87d72ca0fb0b760d9dd02740d669ff",
+        "model_digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e"
+      },
+      "extrapolations": [
+        "fetch_workers"
+      ],
+      "id": "FETCH2",
+      "metrics": [
+        {
+          "id": "latency.mean",
+          "interval": null,
+          "population": "completed",
+          "provenance": "CALIBRATED",
+          "sample_count": 16,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 10093442512.5
+        },
+        {
+          "id": "latency.p50",
+          "interval": null,
+          "population": "completed",
+          "provenance": "CALIBRATED",
+          "sample_count": 16,
+          "statistic": "p50",
+          "unit": "ns",
+          "value": 8849589200
+        },
+        {
+          "id": "latency.p95",
+          "interval": null,
+          "population": "completed",
+          "provenance": "UNKNOWN",
+          "sample_count": 8,
+          "statistic": "p95",
+          "unit": "ns",
+          "value": null
+        },
+        {
+          "id": "latency.p99",
+          "interval": null,
+          "population": "completed",
+          "provenance": "UNKNOWN",
+          "sample_count": 8,
+          "statistic": "p99",
+          "unit": "ns",
+          "value": null
+        },
+        {
+          "id": "throughput.drain",
+          "interval": null,
+          "population": "offered_batch_window",
+          "provenance": "CALIBRATED",
+          "sample_count": 16,
+          "statistic": "rate",
+          "unit": "requests/s",
+          "value": 0.46461127733371577
+        },
+        {
+          "id": "fetch.queue.mean",
+          "interval": null,
+          "population": "offered_observed_stages",
+          "provenance": "CALIBRATED",
+          "sample_count": 16,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 32340351181.25
+        },
+        {
+          "id": "fetch.utilization",
+          "interval": null,
+          "population": "offered_batch_window",
+          "provenance": "CALIBRATED",
+          "sample_count": 16,
+          "statistic": "fraction",
+          "unit": "ratio",
+          "value": 0.9685667866926548
+        },
+        {
+          "id": "inference-client.queue.mean",
+          "interval": null,
+          "population": "offered_observed_stages",
+          "provenance": "CALIBRATED",
+          "sample_count": 16,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 3487.5
+        },
+        {
+          "id": "inference-client.utilization",
+          "interval": null,
+          "population": "offered_batch_window",
+          "provenance": "CALIBRATED",
+          "sample_count": 16,
+          "statistic": "fraction",
+          "unit": "ratio",
+          "value": 0.23297446102752412
+        }
+      ]
+    },
+    {
+      "bottleneck": {
+        "method": "backend_not_identified",
+        "provenance": "UNKNOWN",
+        "resources": []
+      },
+      "comparison_group": "burst-8",
+      "configuration": {
+        "client_slots": 2,
+        "fetch_workers": 1
+      },
+      "environment": {
+        "batch_sessions": 8,
+        "dataset_sha256": "4255093c93b595b5b04c7c8dde290b48ec87d72ca0fb0b760d9dd02740d669ff",
+        "model_digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e"
+      },
+      "extrapolations": [
+        "client_slots"
+      ],
+      "id": "CLIENT2",
+      "metrics": [
+        {
+          "id": "latency.mean",
+          "interval": null,
+          "population": "completed",
+          "provenance": "CALIBRATED",
+          "sample_count": 16,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 10093442512.5
+        },
+        {
+          "id": "latency.p50",
+          "interval": null,
+          "population": "completed",
+          "provenance": "CALIBRATED",
+          "sample_count": 16,
+          "statistic": "p50",
+          "unit": "ns",
+          "value": 8849589200
+        },
+        {
+          "id": "latency.p95",
+          "interval": null,
+          "population": "completed",
+          "provenance": "UNKNOWN",
+          "sample_count": 8,
+          "statistic": "p95",
+          "unit": "ns",
+          "value": null
+        },
+        {
+          "id": "latency.p99",
+          "interval": null,
+          "population": "completed",
+          "provenance": "UNKNOWN",
+          "sample_count": 8,
+          "statistic": "p99",
+          "unit": "ns",
+          "value": null
+        },
+        {
+          "id": "throughput.drain",
+          "interval": null,
+          "population": "offered_batch_window",
+          "provenance": "CALIBRATED",
+          "sample_count": 16,
+          "statistic": "rate",
+          "unit": "requests/s",
+          "value": 0.46461127733371577
+        },
+        {
+          "id": "fetch.queue.mean",
+          "interval": null,
+          "population": "offered_observed_stages",
+          "provenance": "CALIBRATED",
+          "sample_count": 16,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 32340351181.25
+        },
+        {
+          "id": "fetch.utilization",
+          "interval": null,
+          "population": "offered_batch_window",
+          "provenance": "CALIBRATED",
+          "sample_count": 16,
+          "statistic": "fraction",
+          "unit": "ratio",
+          "value": 0.9685667866926548
+        },
+        {
+          "id": "inference-client.queue.mean",
+          "interval": null,
+          "population": "offered_observed_stages",
+          "provenance": "CALIBRATED",
+          "sample_count": 16,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 3487.5
+        },
+        {
+          "id": "inference-client.utilization",
+          "interval": null,
+          "population": "offered_batch_window",
+          "provenance": "CALIBRATED",
+          "sample_count": 16,
+          "statistic": "fraction",
+          "unit": "ratio",
+          "value": 0.23297446102752412
+        }
+      ]
+    }
+  ],
+  "schema_version": "1.0",
+  "unsupported_dimensions": [
+    "gpu_service_demand",
+    "quality",
+    "sustainable_capacity",
+    "latency.p95",
+    "latency.p99"
+  ],
+  "workload_id": "frames-oracle-eight-v1"
+}

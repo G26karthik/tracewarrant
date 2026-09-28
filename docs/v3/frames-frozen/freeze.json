@@ -1,0 +1,12 @@
+{
+  "artifact_type": "freeze",
+  "created_at": "2026-09-28T20:39:11.622202Z",
+  "integrity_method": "sha256_raw_bytes",
+  "prediction_sha256s": [
+    "463d442e0caa14200d360b73069d263938efdded23abd617854da743478e85d6",
+    "ce1036cb3c8e958991421a09abee71ffd47f76620ecaae9339dcfd5556d2689e",
+    "e3b75f3cde683090ede663b9e411f64d36de133d9283b5da1f8096aee692017d"
+  ],
+  "protocol_sha256": "ff6e1cff62ba8c12a680eb8239337f9ee6d4ad163f9a7f5ff8c6333a8c1af7e6",
+  "schema_version": "1.0"
+}
