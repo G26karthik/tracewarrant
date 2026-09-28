@@ -309,7 +309,7 @@ async def batch(selected, configuration):
             "workflow",
             **{
                 "workload_lab.node.role": "container",
-                "workload_lab.graph_complete": True,
+                "workload_lab.graph.complete": True,
                 "workload_lab.outcome": "failed" if error else "completed",
             },
         )

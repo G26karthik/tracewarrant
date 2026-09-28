@@ -4,7 +4,7 @@ This is a claim-support contract, independent of any simulator. The current OTLP
 
 | Claim | Required evidence | Interpretation / limit |
 | --- | --- | --- |
-| Causality | explicit `depends_on`, atomic/container `role`, one root `graph_complete` assertion | Identifiable with instrumentation; parentage and elapsed overlap imply no dependency. Finish-to-start only. |
+| Causality | explicit `workload_lab.depends_on`, atomic/container `workload_lab.node.role`, one root `workload_lab.graph.complete` assertion | Identifiable with instrumentation; parentage and elapsed overlap imply no dependency. Finish-to-start only. |
 | Fan-out/fan-in | explicit branches and every join predecessor; complete topology assertion | Counts of declared edges; missing topology remains incomplete. |
 | Acquisition/release | `acquired_ns`, `released_ns`, stable globally scoped `pool` | Observed owned occupancy. Half-open intervals; zero durations consume no interval area. |
 | Queue wait | `enqueued_ns`, `acquired_ns` on one clock and attempt | Acquisition minus enqueue; absence is UNKNOWN. |

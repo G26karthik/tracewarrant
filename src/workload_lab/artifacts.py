@@ -142,6 +142,8 @@ def validate_artifact(data: dict, expected: str | None = None) -> dict:
             ):
                 raise ValidationError("interval does not contain point value")
         b = scenario["bottleneck"]
+        if kind == "prediction" and b["provenance"] == "MEASURED":
+            raise ValidationError("predicted bottleneck cannot be MEASURED")
         if (b["provenance"] == "UNKNOWN") != (not b["resources"]):
             raise ValidationError("unknown bottleneck must have no resource assertion")
         if len(set(b["resources"])) != len(b["resources"]):
@@ -184,6 +186,10 @@ def write_new(path: str | Path, data: dict) -> None:
 
 
 def freeze_predictions(protocol_path: str | Path, prediction_paths: list[str | Path]) -> dict:
+    if not 1 <= len(prediction_paths) <= 32:
+        raise ValidationError("prediction bundle size")
+    if sum(Path(p).stat().st_size for p in [protocol_path, *prediction_paths]) > 64 * 1024 * 1024:
+        raise ValidationError("prediction bundle exceeds byte budget")
     protocol, protocol_sha = load_artifact(protocol_path, "protocol")
     predictions = [load_artifact(p, "prediction") for p in prediction_paths]
     validate_bundle(protocol, [p for p, _ in predictions])
@@ -207,8 +213,25 @@ def validate_bundle(protocol: dict, predictions: list[dict]) -> None:
         p["model"]["role"] == "baseline" for p in predictions
     ):
         raise ValidationError("protocol requires a baseline")
+    primary_definitions = {}
+    identities = {}
     for prediction in predictions:
         if prediction["workload_id"] != protocol["workload_id"]:
             raise ValidationError("workload identity mismatch")
         if {s["id"] for s in prediction["scenarios"]} != set(protocol["scenario_ids"]):
             raise ValidationError("prediction scenario set mismatch")
+        for scenario in prediction["scenarios"]:
+            identity = (scenario["configuration"], scenario["comparison_group"])
+            if scenario["id"] in identities and identities[scenario["id"]] != identity:
+                raise ValidationError("prediction scenario identity mismatch")
+            identities[scenario["id"]] = identity
+            primary = next(
+                (m for m in scenario["metrics"] if m["id"] == protocol["primary_metric"]), None
+            )
+            if primary is None:
+                raise ValidationError("primary metric missing from prediction")
+            definition = tuple(primary[k] for k in ("unit", "statistic", "population"))
+            group = scenario["comparison_group"]
+            if group in primary_definitions and primary_definitions[group] != definition:
+                raise ValidationError("primary metric semantics differ within comparison group")
+            primary_definitions[group] = definition

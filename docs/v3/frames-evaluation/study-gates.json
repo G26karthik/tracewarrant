@@ -1,0 +1,43 @@
+{
+  "interpretation": "Numerical decision comparisons are conditional; quality failure prohibits useful-agent capacity claims.",
+  "quality": [
+    {
+      "configuration": "BASE",
+      "exact_matches": 0,
+      "offered": 8,
+      "repetition": 0
+    },
+    {
+      "configuration": "FETCH2",
+      "exact_matches": 0,
+      "offered": 8,
+      "repetition": 0
+    },
+    {
+      "configuration": "CLIENT2",
+      "exact_matches": 0,
+      "offered": 8,
+      "repetition": 0
+    },
+    {
+      "configuration": "CLIENT2",
+      "exact_matches": 0,
+      "offered": 8,
+      "repetition": 1
+    },
+    {
+      "configuration": "FETCH2",
+      "exact_matches": 0,
+      "offered": 8,
+      "repetition": 1
+    },
+    {
+      "configuration": "BASE",
+      "exact_matches": 0,
+      "offered": 8,
+      "repetition": 1
+    }
+  ],
+  "quality_gate_passed": false,
+  "raw_sha256": "940c9ba61b81402ba952f1815e8e5f0b715c21db43d36b0fbe209d39e8d478e1"
+}

@@ -1,0 +1,366 @@
+{
+  "artifact_type": "measurement",
+  "counts": {
+    "censored": 0,
+    "completed": 24,
+    "failed": 0,
+    "offered": 24
+  },
+  "finished_at": "2026-09-28T20:41:02.339068Z",
+  "freeze_sha256": "f12f130ac49468f9e60d4ada12b92c5c3e8fdaa417d64a205fbd7d1cf976e346",
+  "limitations": [
+    "oracle_sources",
+    "eight_sessions_per_cell",
+    "quality_not_certified",
+    "shared_workstation_and_network"
+  ],
+  "lineage": [
+    {
+      "role": "raw_observations",
+      "sha256": "940c9ba61b81402ba952f1815e8e5f0b715c21db43d36b0fbe209d39e8d478e1"
+    }
+  ],
+  "run_id": "repetition-0",
+  "scenarios": [
+    {
+      "bottleneck": {
+        "method": "backend_not_identified",
+        "provenance": "UNKNOWN",
+        "resources": []
+      },
+      "comparison_group": "burst-8",
+      "configuration": {
+        "client_slots": 1,
+        "fetch_workers": 1
+      },
+      "environment": {
+        "batch_sessions": 8,
+        "dataset_sha256": "4255093c93b595b5b04c7c8dde290b48ec87d72ca0fb0b760d9dd02740d669ff",
+        "model_digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e"
+      },
+      "extrapolations": [],
+      "id": "BASE",
+      "metrics": [
+        {
+          "id": "latency.mean",
+          "interval": null,
+          "population": "completed",
+          "provenance": "MEASURED",
+          "sample_count": 8,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 10265567700
+        },
+        {
+          "id": "latency.p50",
+          "interval": null,
+          "population": "completed",
+          "provenance": "MEASURED",
+          "sample_count": 8,
+          "statistic": "p50",
+          "unit": "ns",
+          "value": 9197178500
+        },
+        {
+          "id": "latency.p95",
+          "interval": null,
+          "population": "completed",
+          "provenance": "UNKNOWN",
+          "sample_count": 8,
+          "statistic": "p95",
+          "unit": "ns",
+          "value": null
+        },
+        {
+          "id": "latency.p99",
+          "interval": null,
+          "population": "completed",
+          "provenance": "UNKNOWN",
+          "sample_count": 8,
+          "statistic": "p99",
+          "unit": "ns",
+          "value": null
+        },
+        {
+          "id": "throughput.drain",
+          "interval": null,
+          "population": "offered_batch_window",
+          "provenance": "MEASURED",
+          "sample_count": 8,
+          "statistic": "rate",
+          "unit": "requests/s",
+          "value": 0.47722090121842914
+        },
+        {
+          "id": "fetch.queue.mean",
+          "interval": null,
+          "population": "offered_observed_stages",
+          "provenance": "MEASURED",
+          "sample_count": 8,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 32873595400.0
+        },
+        {
+          "id": "fetch.utilization",
+          "interval": null,
+          "population": "offered_batch_window",
+          "provenance": "MEASURED",
+          "sample_count": 8,
+          "statistic": "fraction",
+          "unit": "ratio",
+          "value": 0.971839970103065
+        },
+        {
+          "id": "inference-client.queue.mean",
+          "interval": null,
+          "population": "offered_observed_stages",
+          "provenance": "MEASURED",
+          "sample_count": 8,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 4425.0
+        },
+        {
+          "id": "inference-client.utilization",
+          "interval": null,
+          "population": "offered_batch_window",
+          "provenance": "MEASURED",
+          "sample_count": 8,
+          "statistic": "fraction",
+          "unit": "ratio",
+          "value": 0.23415539067745747
+        }
+      ]
+    },
+    {
+      "bottleneck": {
+        "method": "backend_not_identified",
+        "provenance": "UNKNOWN",
+        "resources": []
+      },
+      "comparison_group": "burst-8",
+      "configuration": {
+        "client_slots": 1,
+        "fetch_workers": 2
+      },
+      "environment": {
+        "batch_sessions": 8,
+        "dataset_sha256": "4255093c93b595b5b04c7c8dde290b48ec87d72ca0fb0b760d9dd02740d669ff",
+        "model_digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e"
+      },
+      "extrapolations": [
+        "fetch_workers"
+      ],
+      "id": "FETCH2",
+      "metrics": [
+        {
+          "id": "latency.mean",
+          "interval": null,
+          "population": "completed",
+          "provenance": "MEASURED",
+          "sample_count": 8,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 5887102475
+        },
+        {
+          "id": "latency.p50",
+          "interval": null,
+          "population": "completed",
+          "provenance": "MEASURED",
+          "sample_count": 8,
+          "statistic": "p50",
+          "unit": "ns",
+          "value": 5324405000
+        },
+        {
+          "id": "latency.p95",
+          "interval": null,
+          "population": "completed",
+          "provenance": "UNKNOWN",
+          "sample_count": 8,
+          "statistic": "p95",
+          "unit": "ns",
+          "value": null
+        },
+        {
+          "id": "latency.p99",
+          "interval": null,
+          "population": "completed",
+          "provenance": "UNKNOWN",
+          "sample_count": 8,
+          "statistic": "p99",
+          "unit": "ns",
+          "value": null
+        },
+        {
+          "id": "throughput.drain",
+          "interval": null,
+          "population": "offered_batch_window",
+          "provenance": "MEASURED",
+          "sample_count": 8,
+          "statistic": "rate",
+          "unit": "requests/s",
+          "value": 0.8602805923440511
+        },
+        {
+          "id": "fetch.queue.mean",
+          "interval": null,
+          "population": "offered_observed_stages",
+          "provenance": "MEASURED",
+          "sample_count": 8,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 17082922487.5
+        },
+        {
+          "id": "fetch.utilization",
+          "interval": null,
+          "population": "offered_batch_window",
+          "provenance": "MEASURED",
+          "sample_count": 8,
+          "statistic": "fraction",
+          "unit": "ratio",
+          "value": 0.9484018755622404
+        },
+        {
+          "id": "inference-client.queue.mean",
+          "interval": null,
+          "population": "offered_observed_stages",
+          "provenance": "MEASURED",
+          "sample_count": 8,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 7386712.5
+        },
+        {
+          "id": "inference-client.utilization",
+          "interval": null,
+          "population": "offered_batch_window",
+          "provenance": "MEASURED",
+          "sample_count": 8,
+          "statistic": "fraction",
+          "unit": "ratio",
+          "value": 0.3781033318506039
+        }
+      ]
+    },
+    {
+      "bottleneck": {
+        "method": "backend_not_identified",
+        "provenance": "UNKNOWN",
+        "resources": []
+      },
+      "comparison_group": "burst-8",
+      "configuration": {
+        "client_slots": 2,
+        "fetch_workers": 1
+      },
+      "environment": {
+        "batch_sessions": 8,
+        "dataset_sha256": "4255093c93b595b5b04c7c8dde290b48ec87d72ca0fb0b760d9dd02740d669ff",
+        "model_digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e"
+      },
+      "extrapolations": [
+        "client_slots"
+      ],
+      "id": "CLIENT2",
+      "metrics": [
+        {
+          "id": "latency.mean",
+          "interval": null,
+          "population": "completed",
+          "provenance": "MEASURED",
+          "sample_count": 8,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 10300482312.5
+        },
+        {
+          "id": "latency.p50",
+          "interval": null,
+          "population": "completed",
+          "provenance": "MEASURED",
+          "sample_count": 8,
+          "statistic": "p50",
+          "unit": "ns",
+          "value": 8849950700
+        },
+        {
+          "id": "latency.p95",
+          "interval": null,
+          "population": "completed",
+          "provenance": "UNKNOWN",
+          "sample_count": 8,
+          "statistic": "p95",
+          "unit": "ns",
+          "value": null
+        },
+        {
+          "id": "latency.p99",
+          "interval": null,
+          "population": "completed",
+          "provenance": "UNKNOWN",
+          "sample_count": 8,
+          "statistic": "p99",
+          "unit": "ns",
+          "value": null
+        },
+        {
+          "id": "throughput.drain",
+          "interval": null,
+          "population": "offered_batch_window",
+          "provenance": "MEASURED",
+          "sample_count": 8,
+          "statistic": "rate",
+          "unit": "requests/s",
+          "value": 0.45820863734163847
+        },
+        {
+          "id": "fetch.queue.mean",
+          "interval": null,
+          "population": "offered_observed_stages",
+          "provenance": "MEASURED",
+          "sample_count": 8,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 33466374987.5
+        },
+        {
+          "id": "fetch.utilization",
+          "interval": null,
+          "population": "offered_batch_window",
+          "provenance": "MEASURED",
+          "sample_count": 8,
+          "statistic": "fraction",
+          "unit": "ratio",
+          "value": 0.9744725037731333
+        },
+        {
+          "id": "inference-client.queue.mean",
+          "interval": null,
+          "population": "offered_observed_stages",
+          "provenance": "MEASURED",
+          "sample_count": 8,
+          "statistic": "mean",
+          "unit": "ns",
+          "value": 3137.5
+        },
+        {
+          "id": "inference-client.utilization",
+          "interval": null,
+          "population": "offered_batch_window",
+          "provenance": "MEASURED",
+          "sample_count": 8,
+          "statistic": "fraction",
+          "unit": "ratio",
+          "value": 0.10477104588784811
+        }
+      ]
+    }
+  ],
+  "schema_version": "1.0",
+  "started_at": "2026-09-28T20:39:35.151039Z",
+  "workload_id": "frames-oracle-eight-v1"
+}

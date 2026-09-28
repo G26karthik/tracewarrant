@@ -319,3 +319,18 @@ def test_maximize_rankings(bundle):
 def test_comparison_budget_before_loading(bundle):
     with pytest.raises(ValidationError, match="bundle size"):
         evaluate(bundle[0], bundle[1], bundle[2] * 17, bundle[3])
+
+
+def test_cross_scenario_units_cannot_create_fake_rank(bundle):
+    pred = json.loads(bundle[2][0].read_text())
+    pred["scenarios"][1]["metrics"][0]["unit"] = "s"
+    bundle[2][0].write_text(json.dumps(pred))
+    with pytest.raises(ValidationError, match="semantics differ"):
+        freeze_predictions(bundle[0], bundle[2])
+
+
+def test_predicted_bottleneck_never_measured():
+    pred = prediction()
+    pred["scenarios"][0]["bottleneck"].update(resources=["gpu"], provenance="MEASURED")
+    with pytest.raises(ValidationError, match="bottleneck cannot be MEASURED"):
+        validate_artifact(pred)

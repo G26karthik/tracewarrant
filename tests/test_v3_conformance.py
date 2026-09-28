@@ -2,6 +2,8 @@ import json
 from dataclasses import replace
 from pathlib import Path
 
+from examples.adapt_frames_trace import adapt
+from workload_lab.artifacts import write_new
 from workload_lab.conformance import inspect_observations
 from workload_lab.ingest import ingest
 from workload_lab.ir import Dataset, Observation, Span
@@ -44,3 +46,18 @@ def test_synthetic_never_certifies_prediction():
     )
     assert report["origin"] == "synthetic"
     assert report["claims"]["prediction_suitability"]["classification"] == "unsupported"
+
+
+def test_external_trace_detects_binding_error_and_explicit_adapter(tmp_path):
+    original = ROOT / "examples/v3/frames-heldout-base.otlp.json"
+    before = inspect_observations(ingest(original))
+    assert before["claims"]["dependency_graph"]["support"] == "unsupported"
+    raw = json.loads(original.read_text())
+    transformed, count = adapt(raw)
+    assert count == 8 and raw != transformed
+    path = tmp_path / "adapted.json"
+    write_new(path, transformed)
+    after = inspect_observations(ingest(path))
+    assert after["claims"]["dependency_graph"]["support"] == "supported"
+    assert after["claims"]["prediction_suitability"]["support"] == "unsupported"
+    assert after["claims"]["inference_service_demand"]["provenance"] == "UNKNOWN"

@@ -139,17 +139,26 @@ def evaluate(protocol_path, freeze_path, prediction_paths, measurement_paths) ->
         for measurement, _ in measurements:
             for actual in measurement["scenarios"]:
                 expected = scenarios[actual["id"]]
+                matched_environment = expected["environment"] == actual["environment"]
                 measured_metrics = {m["id"]: m for m in actual["metrics"]}
                 for metric in expected["metrics"]:
                     row = metric_error(metric, measured_metrics.get(metric["id"]), minimum)
                     row.update(scenario_id=actual["id"], run_id=measurement["run_id"])
                     rows.append(row)
-                    if metric["id"] == primary and row["status"] == "compared":
+                    if (
+                        metric["id"] == primary
+                        and row["status"] == "compared"
+                        and matched_environment
+                    ):
                         comparable[actual["id"]][measurement["run_id"]] = measured_metrics[primary][
                             "value"
                         ]
                     # Explicit ordinal-only baselines may have no numeric forecast.
-                    elif metric["id"] == primary and row["reason"] == "unknown_value":
+                    elif (
+                        metric["id"] == primary
+                        and row["reason"] == "unknown_value"
+                        and matched_environment
+                    ):
                         obs = measured_metrics.get(primary)
                         if (
                             obs
@@ -185,6 +194,7 @@ def evaluate(protocol_path, freeze_path, prediction_paths, measurement_paths) ->
                         "run_id": measurement["run_id"],
                         "violations": outside,
                         "missing_dimensions": missing,
+                        "matches_prediction_environment": matched_environment,
                         "undeclared_extrapolations": sorted(
                             set(outside) - set(expected["extrapolations"])
                         ),

@@ -47,7 +47,7 @@ def inspect_observations(dataset: Dataset) -> dict:
         "eligible": len(workflows),
         "required_extensions": [
             "workload_lab.depends_on",
-            "workload_lab.graph_complete",
+            "workload_lab.graph.complete",
             "workload_lab.node.role",
         ],
         "note": (
@@ -69,7 +69,7 @@ def inspect_observations(dataset: Dataset) -> dict:
         "note": ("Counts describe declared edges; concurrent spans establish no synchronization."),
     }
     claim("queue_wait", spans, ("enqueued_ns", "acquired_ns"))
-    claim("resource_occupancy", spans, ("acquired_ns", "released_ns"))
+    claim("resource_occupancy", spans, ("pool", "acquired_ns", "released_ns"))
     claim(
         "service_interval",
         spans,
@@ -111,7 +111,7 @@ def inspect_observations(dataset: Dataset) -> dict:
     claim(
         "inference_client_occupancy",
         llm,
-        ("acquired_ns", "released_ns"),
+        ("pool", "acquired_ns", "released_ns"),
         note="Client occupancy includes unknown backend queue and service.",
     )
     claims["inference_service_demand"] = {
