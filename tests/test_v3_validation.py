@@ -123,6 +123,8 @@ def test_honest_baseline_win(bundle):
 
 def test_schema_interoperability(bundle):
     Draft202012Validator.check_schema(SCHEMA)
+    exported = Path(__file__).parents[1] / "schemas/validation-artifact-v1.schema.json"
+    assert json.loads(exported.read_text()) == SCHEMA
     for path in [bundle[0], bundle[1], *bundle[2], *bundle[3]]:
         data, _ = load_artifact(path)
         Draft202012Validator(SCHEMA).validate(data)
@@ -286,3 +288,34 @@ def test_frozen_history_preserved():
     manifest = json.loads((root / "docs/v3/preservation.json").read_text())
     for path, digest in manifest["files"].items():
         assert sha256((root / path).read_bytes()) == digest, path
+
+
+def test_missing_envelope_is_unknown_and_bottleneck_supported(bundle):
+    pp, fp, preds, actuals = bundle
+    observed = json.loads(actuals[0].read_text())
+    observed["scenarios"][0]["environment"] = {}
+    actuals[0].write_text(json.dumps(observed))
+    report = evaluate(pp, fp, preds, actuals)
+    check = report["models"][0]["envelope_checks"][0]
+    assert check["status"] == "UNKNOWN"
+    assert check["missing_dimensions"] == ["rate"]
+    assert report["models"][0]["bottleneck_agreement"][0]["agreement"] is None
+
+
+def test_maximize_rankings(bundle):
+    pp, fp, preds, actuals = bundle
+    protocol = json.loads(pp.read_text())
+    protocol["direction"] = "maximize"
+    pp.write_text(json.dumps(protocol))
+    fp.write_text(json.dumps(freeze_predictions(pp, preds)))
+    observed = json.loads(actuals[0].read_text())
+    observed["freeze_sha256"] = sha256(fp.read_bytes())
+    actuals[0].write_text(json.dumps(observed))
+    report = evaluate(pp, fp, preds, actuals)
+    assert report["models"][0]["ranking_accuracy"] == 0
+    assert report["models"][0]["decisions"][0]["choices"] == ["a"]
+
+
+def test_comparison_budget_before_loading(bundle):
+    with pytest.raises(ValidationError, match="bundle size"):
+        evaluate(bundle[0], bundle[1], bundle[2] * 17, bundle[3])
