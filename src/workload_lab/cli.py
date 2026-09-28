@@ -46,7 +46,7 @@ def _text(report: AnalysisReport) -> str:
             f"{report.unknown_service_nodes} nodes",
             "Model: fixed elapsed weights, zero gaps, one deterministic tied path.",
             "Elapsed contribution is not utilization or a proven capacity bottleneck.",
-            "GPU utilization: UNKNOWN | Capacity recommendation: unavailable in M1",
+            "GPU utilization: UNKNOWN | Capacity recommendation: not established by span analysis",
             "Diagnostics: " + ", ".join(report.diagnostics),
         ]
     )
@@ -55,7 +55,7 @@ def _text(report: AnalysisReport) -> str:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="workload-lab", description=__doc__)
-    parser.add_argument("--version", action="version", version="workload-lab 0.1.0 (internal)")
+    parser.add_argument("--version", action="version", version="workload-lab 0.2.0 (internal)")
     commands = parser.add_subparsers(dest="command", required=True)
     simulation = commands.add_parser("simulate", help="run an explicit offline scenario")
     simulation.add_argument("input", type=Path)

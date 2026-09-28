@@ -1,8 +1,8 @@
-# Simulator design — proposed, not implemented
+# Simulator — implemented bounded reference
 
-M2 inputs will be workload template, deployment, arrivals, scenario and seed. Observed executions supply calibration evidence, not fixed successor timestamps under changed resources. No live tools run.
+M2 inputs are explicit workload template, deployment, arrivals, scenario and seed. Observed executions supply calibration evidence, not fixed successor timestamps under changed resources. No live tools run. [Exact committed semantics](../design/simulation-semantics.md) and [analytical validation](../validation/milestone-2.md) supersede the original proposal. Optional aligned empirical vectors now permit paired whole-session sampling; no shared-outage process is inferred.
 
-Use integer nanoseconds and total event order: completion/resource release, cancellation/deadline, readiness/admission, dispatch; insertion sequence resolves remaining ties. Decide and test whether completion at deadline is accepted (proposal: yes). All work transitions through ready -> queued -> running -> completed/failed/cancelled; every resource acquisition must have exactly one release. External API/human waits reserve only explicitly declared resources.
+Use integer nanoseconds and total order `(time, microstep, phase, sequence)`: completion/release, cancellation/deadline, arrival/readiness, admission. Scheduling an earlier phase at the same time advances the microstep. Existing completion at a deadline is accepted; a newly ready zero-time successor remains subject to the deadline. Acquisitions release once or remain explicitly outstanding at a censoring horizon. External wait follows release and owns no undeclared pool.
 
 FIFO finite pools are baseline. Queue limits, rejected work, bounded retry attempts, backoff, outage episodes, fan-out/join and conditional outcomes need named contracts. A join waits for its configured required predecessors; losing speculative work may continue until cancellation acknowledgment. Fixed seeds use independent streams per arrival/service/failure/branch source; a scheduler may not see future random samples.
 

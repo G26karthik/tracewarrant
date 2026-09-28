@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "workload-lab-internal"
-version = "0.1.0"
-description = "Experimental local analysis of heterogeneous workflow traces"
+version = "0.2.0"
+description = "Experimental workload trace analysis, simulation and validation"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "Apache-2.0"

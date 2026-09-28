@@ -1,4 +1,8 @@
-# Calibration — proposed, not implemented
+# Calibration — narrow implementation, broader research gated
+
+Current `fit_cohort` handles complete, observed, fixed-DAG sessions whose instrumentation uses stable per-template work IDs. It records source/session lineage, counts, empirical vectors, CV/tails and within-session correlation; missing/failed/censored/mixed topology is refused. This is not general alignment of random framework span IDs: ordinary OTel would need explicit logical operation keys or an adapter. Caller-supplied offered counts and cohort identity cannot prove that an upstream capture has not omitted whole traces.
+
+The controlled runner supplies version/hardware/Python/pool/load manifests, keeps load cohorts separate and fits only training batches. Independent and paired empirical forecasts were frozen before 960 held-out sessions; [M4 results](../validation/milestone-4.md) report accuracy and matching heuristic choice. No real-model service fit is accepted: client occupancy in [M6](../validation/milestone-6.md) includes unidentified shared-backend behavior. Suggestions below remain requirements for extending beyond this narrow pilot, not implemented promises.
 
 The identification problem comes first: response time mixes service, queueing, network and orchestration. A trace collected at one load cannot uniquely recover capacities. Require pool sizes, enqueue/start/end signals and measured intervention anchors before capacity claims. Store unresolved components as unknown.
 

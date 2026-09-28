@@ -2,7 +2,7 @@
 
 Continuation authorization permits autonomous progress through evidence gates. Status is updated by validation records, not aspirations.
 
-Current delivery: M0/M1 and [M1.5 trace compatibility](docs/validation/milestone-1.5.md) pass locally. M2 is the next gate. See [current status](PROJECT_STATUS.md).
+Current delivery: M0/M1, [M1.5](docs/validation/milestone-1.5.md) and [M2](docs/validation/milestone-2.md) pass locally. [M3](docs/validation/milestone-3.md) defers native work on measurements. [M4](docs/validation/milestone-4.md) passes a controlled pilot but general calibration is partial; [M6](docs/validation/milestone-6.md) is a real-model applicability probe. The [narrowing decision](docs/adr/ADR-0015-narrow-to-validation.md) recommends instrumentation/validation rather than expanding the planner. See [current status](PROJECT_STATUS.md).
 
 | Milestone | Deliverable | Exit gate |
 | --- | --- | --- |
@@ -17,6 +17,8 @@ Current delivery: M0/M1 and [M1.5 trace compatibility](docs/validation/milestone
 | M7 | Conditional CUDA hardware characterization | Service-model need demonstrated, real-serving anchors, profile provenance, CPU/vendor baselines |
 | M8 | Small Azure experiment | Preregistered prediction, held-out concurrency/resource intervention, measured effect, costs and teardown evidence |
 | M9 | Capacity regression CI | Validated performance model, uncertainty-aware diffs, version/mix control and controlled false-positive rate |
+
+M5/M7/M8/M9 remain gated, not completed. M6 was brought forward to test whether the controlled M4 result had a suitable real application. No optimizer, CUDA calibration or cloud template is added simply to populate a milestone. The next reversal gate is a real tool-heavy workload with independently identified inference behavior and measurable value beyond a simple utilization heuristic.
 
 M1 tasks: define execution semantics before schema; import safe fields; validate graph; implement deterministic algorithms; add representative fixtures and CLI; test edge cases; run CPU harness and publish raw measurements with limitations. No simulate/plan command stubs implying working features.
 

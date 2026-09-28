@@ -1,5 +1,7 @@
 # Dependency and license inventory
 
+Continuation update: optional `integration` pins pydantic-ai-slim 2.51.0 (MIT) and opentelemetry-sdk 1.45.0 (Apache-2.0); `validation` pins SimPy 4.1.1 (MIT). Transitive installed metadata is preserved in [integration-license-evidence.json](integration-license-evidence.json). These groups do not become runtime wheel dependencies. Local Ollama/model weights are external user-installed software and are neither downloaded nor redistributed by this repository. The model probe does not confer rights to redistribute cached weights.
+
 Recorded 2026-09-29 from the resolved `uv.lock` and installed distribution metadata. Runtime third-party dependencies: **none**. Python's standard library is supplied by the Python installation, not vendored. The current wheel contains this project's code only. Research repositories are not installed, linked or copied into the product.
 
 New code/docs: Apache-2.0, selected over MIT because an explicit patent grant is useful for an infrastructure library while keeping adoption permissive. Terms: [Apache Software Foundation](https://www.apache.org/licenses/LICENSE-2.0). The original handoffs retain their original contents/attribution. No trademark rights or public package name are asserted.

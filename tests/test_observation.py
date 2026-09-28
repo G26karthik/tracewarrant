@@ -49,7 +49,7 @@ def test_observation_bounds(kwargs):
 
 def test_real_concurrent_capture(tmp_path):
     path = tmp_path / "actual.json"
-    path.write_text(json.dumps(asyncio.run(capture(3))), encoding="utf-8")
+    path.write_text(json.dumps(asyncio.run(capture(3, delay_scale=10))), encoding="utf-8")
     dataset = ingest(path)
     workflows = compile_workload(dataset)
     assert len(workflows) == 3 and all(w.graph_complete for w in workflows)

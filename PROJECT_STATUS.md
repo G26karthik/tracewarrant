@@ -2,16 +2,20 @@
 
 Updated: 2026-09-29. Internal codename: Workload Lab.
 
-- Current milestone: M4 controlled calibration/prediction pilot; holdout not yet collected.
-- Last completed: M2 reference semantics and M3 native assessment (C++ deferred on measured evidence).
-- Canonical references: `m1.5`, `m2`; pilot prediction freeze tag `pilot-1-freeze` is created before holdout. Source for predictions: `f73a806`.
+- Current milestone: evidence reassessment/local handoff complete; package 0.2.0. No optimizer/cloud deployment queued.
+- Last completed gates: M1.5 and M2. M3 assessed and native deferred. M4 controlled pilot passed; general calibration partial. M6 real-model applicability probe completed; predictive gate partial.
+- Canonical handoff: local tag `research-pilot-1` (resolve with `git rev-parse research-pilot-1`). Historical boundaries: `m1.5`, `m2`; prediction freeze `377180c` / `pilot-1-freeze`; successful real-probe source `8f37629`. Raw artifacts contain exact source/lock/harness hashes.
 - Verified baseline commit: `9e15d8cf70046597e3614975c03627d680751c98`; clean before work.
-- Thesis: NOT VALIDATED. No predictive intervention evidence yet.
-- Validated: 94 local tests; lifecycle graphs, incomplete PydanticAI import, generated M/M/1/Little's Law, exact SimPy FIFO checks; million-event median 3.361 s and peak 280 MB. 160 actual controlled calibration sessions at 2/9 offered sessions/s, with load cohorts kept separate. Historical hashes preserved.
-- Unvalidated: ordinary trace identifiability, resource simulation, calibration, infrastructure recommendations, native acceleration, cloud transfer and external usability.
+- **Thesis: PIVOT RECOMMENDED**, toward content-free instrumentation/validation and upstream adapters. [Decision](docs/adr/ADR-0015-narrow-to-validation.md), [final report](FINAL_PROJECT_REPORT.md).
+- Validated: 102 tests on Windows Python 3.12.12/3.13; lint/format/build and isolated runtime-wheel simulation. Lifecycle graphs, unknown framework semantics, generated M/M/1/Little's Law, 20 exact SimPy checks; million-event median 3.361 s / peak about 280 MB. Historical hashes preserved.
+- Controlled evidence: 160 training + 960 held-out sessions; median p95 error 1.70%, 2/2 material rankings, one clear bottleneck correct. Utilization heuristic chose the same intervention; no saturation threshold identified.
+- Real evidence: 48/48 exact fact checks with local Llama 3.1 8B; client occupancy increased 1.73x with doubled client slots; tool work small. Qwen failed warmup retained. No real-model predictions frozen.
+- Unvalidated: production-agent intervention accuracy, GPU service identification, arbitrary framework operation alignment, unseen tails/outages/censor-aware fitting, sustainable capacity, optimizer value, cloud transfer and external adoption.
 - Closest reviewed alternatives: AgentServeSim, AISimulate, Vidur, PerfSim; SimPy/SimGrid/WRENCH are engine alternatives.
 - Scientific risks: unobserved queue/service boundaries, incomplete joins, correlated delays, selection/censoring bias, simple heuristics matching simulation, direct load testing being cheaper.
-- External actions: none needed for M1.5/M2; no account, publication, paid API or cloud action authorized by this record.
-- Next gate: collect all eight preregistered held-out cells and score the committed predictions, including simpler baselines. No optimizer before this evidence. Meaningful real-model agent validation remains distinct from this stub pilot.
+- External actions: no upload/publication/paid API/cloud spend. Azure CLI account exists; future justified provisioning still needs explicit capped-spend authorization. [External requirement](HUMAN_ACTION_REQUIRED.md). Offline reproduction needs no Azure action.
+- Next reversal gate: an independently motivated non-coding workload with materially contended non-LLM pools and identified inference behavior, followed by frozen held-out decisions that justify modeling effort beyond a utilization heuristic. Prefer an existing engine when appropriate.
 
 Reproduce baseline: `uv sync --locked`, `uv run ruff check .`, `uv run ruff format --check .`, `uv run pytest -q`, `uv build --no-build-isolation`.
+
+Run `uv run workload-lab simulate examples/scenario.json`; analytical validation: `uv run --group validation python -m benchmarks.validate_simulation --output artifacts/new-validation.json`. Create `artifacts/` and use fresh paths. [Full experiment commands](docs/experiments/README.md). Hosted CI has not run; Linux/Python 3.11 remain configured, not locally verified. Public name/contact/release qualification remains unfinished.

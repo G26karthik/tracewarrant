@@ -57,7 +57,7 @@ uv run --group validation python -m benchmarks.validate_simulation --output arti
 uv run python -m benchmarks.simulation_benchmark --output artifacts/scale.json
 ```
 
-Core tests use the committed content-free framework trace and need no framework. Optional groups isolate PydanticAI/OTel and the independent SimPy baseline. The optional [real-model probe](docs/experiments/real-model-probe-design.md) uses an already-cached local `qwen3-vl:4b`, never a model download or paid provider.
+Core tests use the committed content-free framework trace and need no framework. Optional groups isolate PydanticAI/OTel and the independent SimPy baseline. The [real-model probe](docs/experiments/real-model-probe-design.md) uses already-cached local `llama3.1:8b` after preserving a failed Qwen warmup. It never downloads weights or contacts a paid provider.
 
 [Architecture](ARCHITECTURE.md), [roadmap](ROADMAP.md), [ADRs](docs/adr/README.md), [contributing](CONTRIBUTING.md), [benchmark methodology](docs/benchmarks/methodology.md), [validation plan](docs/validation/plan.md), [license inventory](docs/dependency-licenses.md).
 

@@ -4,5 +4,17 @@ from .analysis import analyze
 from .graph import compile_workload
 from .ingest import ingest
 from .ir import SCHEMA_VERSION, ValidationError
+from .simulation import Arrival, PoolSpec, Scenario, Task, simulate
 
-__all__ = ["SCHEMA_VERSION", "ValidationError", "analyze", "compile_workload", "ingest"]
+__all__ = [
+    "SCHEMA_VERSION",
+    "ValidationError",
+    "analyze",
+    "compile_workload",
+    "ingest",
+    "Arrival",
+    "PoolSpec",
+    "Scenario",
+    "Task",
+    "simulate",
+]

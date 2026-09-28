@@ -206,6 +206,15 @@
     "license_classifiers": []
   },
   {
+    "name": "simpy",
+    "version": "4.1.1",
+    "license_expression": null,
+    "license": "MIT",
+    "license_classifiers": [
+      "License :: OSI Approved :: MIT License"
+    ]
+  },
+  {
     "name": "sortedcontainers",
     "version": "2.4.0",
     "license_expression": null,
@@ -246,7 +255,7 @@
   },
   {
     "name": "workload-lab-internal",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "license_expression": "Apache-2.0",
     "license": null,
     "license_classifiers": []

@@ -4,7 +4,7 @@ Preserves: ContextForge handoff as historical architecture context
 
 # Workload Lab — internal codename
 
-Specification date: 2026-09-28; evidence update 2026-09-29. Status: Experimental / Research Prototype. Public name undecided. The continuation brief authorizes gated autonomous work beyond M1. M1.5 passed the bounded trace compatibility gate; future milestones require their own evidence.
+Specification date: 2026-09-28; evidence update 2026-09-29. Status: Experimental / Research Prototype. Public name undecided. M1.5 and M2 pass locally; M3 assessment defers C++; M4 passes a controlled prediction pilot but general calibration remains partial; M6 supplies a real-model applicability probe. Final assessment: **PIVOT RECOMMENDED** toward instrumentation and validation (ADR-0015). Optimization/CUDA/cloud/regression gates remain unmet.
 
 Current state takes precedence over the historical proposals below: [PROJECT_STATUS.md](PROJECT_STATUS.md). [M1.5](docs/validation/milestone-1.5.md) adds observed lifecycle fields in schema 0.2, actual concurrent traces and one optional PydanticAI integration. Ordinary framework traces remain incomplete with UNKNOWN queue/service. [ADR-0013](docs/adr/ADR-0013-observed-resource-lifecycle.md) extends ADR-0002/0003/0009 without replacing their containment/privacy principles. [Minimum instrumentation contract](docs/design/instrumentation-contract.md).
 
@@ -12,7 +12,7 @@ Current state takes precedence over the historical proposals below: [PROJECT_STA
 
 Investigate whether content-free observations of a heterogeneous agent workflow can support calibrated resource-contention models and trustworthy infrastructure decisions. The proposed product turns supported traces into an execution graph, separates observed facts from modeling assumptions, and eventually evaluates resource changes against held-out real runs. The central experiment is whether browser/retrieval/database limits alter capacity decisions that inference-only or fixed-tool-gap models would make.
 
-The broad digital-twin thesis does not by itself differentiate this project. AgentServeSim, AISimulate and PerfSim are serious precedents/competitors. The narrower thesis survives **conditionally**, pending intervention accuracy and user value. Today the executable scope is local trace-to-graph analysis; it cannot simulate, optimize or recommend purchases.
+The broad digital-twin thesis does not differentiate this project. AgentServeSim, AISimulate and PerfSim are serious precedents/competitors. Executable scope now includes analysis, reference simulation and narrow empirical calibration. A frozen controlled experiment achieved 1.70% median p95 error and 2/2 material rankings, but a utilization heuristic made the same useful choice. A real-model application exposed changing client occupancy and negligible tool demand. These results favor an instrumentation/validation toolkit; no purchase or deployment recommendation is justified. See [final report](FINAL_PROJECT_REPORT.md).
 
 ## 2. Historical ContextForge design
 
@@ -48,11 +48,11 @@ Evidence before recommendation; content-free by default; local execution; explic
 
 ## 10. Agent Workload IR v0 proposal
 
-There are two different objects: **observed execution instances** and, later, **generative workload templates**. Implement only instances now. An instance contains a version, trace identity, source digest/origin, normalized spans, explicit dependency edges, and diagnostics. A node retains stable `(trace_id, span_id)`, parent ID, node kind, resource/service label, role, integer nanosecond timestamps, status, optional token/model metadata, and evidence for reported timing. Known kinds: workflow, llm, embedding, retrieval, reranker, tool, compute, database, queue, external_api, human_gate, unknown.
+There are two distinct implemented objects: **observed execution instances** (schema 0.2) and explicit **generative scenarios** (schema 1). An instance contains source identity/digest/origin, normalized spans, explicit dependencies and diagnostics. A scenario contains a fixed DAG, supplied distributions, finite pools, arrival schedule, seed and input provenance; it is never automatically inferred from an arbitrary trace. Kinds remain workflow, llm, embedding, retrieval, reranker, tool, compute, database, queue, external_api, human_gate and unknown.
 
 Parentage expresses containment; a separate edge expresses finish-to-start dependency. Never convert a parent link or generic OTel link directly to a dependency. Work nodes are atomic leaves; nested instrumentation defaults to containers, avoiding inclusive double counting. Explicit atomic work containing child spans is rejected in v0. Retries remain distinct observed nodes. Cycles, duplicate IDs, invalid timestamps and dangling declared dependencies are errors. Missing parents/sampling/topology produce incomplete diagnostics. A graph-complete flag is an instrumentation assertion, not independently verified truth.
 
-Explicit queue/service nanoseconds may be imported; otherwise UNKNOWN. Their sum may not exceed the span. Resource demand, capacities, retry policies, cancellation semantics, arrivals and distributions are unimplemented extensions, not silently invented fields. A null queue is not a zero queue. [IR contract](docs/concepts/workload-ir.md) is synchronized with code and fixtures.
+Explicit lifecycle timestamps identify enqueue-to-acquisition queue and acquisition-to-release occupancy; absent components remain UNKNOWN. Capacity/outcome/attempt/cancellation metadata is optional and bounded. Occupancy is not CPU/GPU service demand. Generative retry/arrival policies must be supplied separately, never inferred from one observed attempt. A null queue is not zero. [IR contract](docs/concepts/workload-ir.md) and [minimum instrumentation](docs/design/instrumentation-contract.md) define the supported boundary.
 
 ## 11. Measurement and provenance model
 
@@ -70,9 +70,11 @@ Local OTLP JSON / JSONL
   -> deterministic analysis
   -> text / JSON report
 
-Later: execution cohorts -> calibration -> workload template + deployment
-       -> simulator -> constrained search -> candidate + evidence
-       -> held-out intervention validation -> calibration revision
+Controlled pilot: execution cohorts -> empirical model + explicit deployment
+       -> simulator -> frozen intervention forecasts -> measured interventions
+       -> error report and model qualification
+
+Gated: constrained search -> candidate + evidence -> real-workload validation
 ```
 
 Python library functions own domain behavior. CLI handles paths/formatting/errors. JSON is the initial artifact boundary. No long-running service is required. [Architecture](ARCHITECTURE.md) documents implemented modules and future interfaces.
@@ -81,11 +83,11 @@ Python library functions own domain behavior. CLI handles paths/formatting/error
 
 M1: iterative DAG validation and topological longest path, deterministic tie breaking, interval-union accounting and contribution along one tied critical path. Longest path weights are observed leaf-span elapsed times; it is a fixed-weight zero-gap model, not an identified service-demand model. Container duration is excluded. Report total work separately from wall-clock coverage; concurrent contributions must not be portrayed as an end-to-end percentage decomposition. Alternative tied paths may yield different attribution.
 
-Later: stochastic DAG replay; queueing approximations only with diagnosed stationarity/arrival/service assumptions; FIFO first, then SPT/EDF/critical-path/fairness policies; tiny exact replica enumeration before heuristics; Pareto cost/latency/reliability comparisons. M/M/k is a validation case, not a default model of every provider. Cache/placement algorithms require a measured decision problem before implementation.
+Implemented M2: stochastic fixed-DAG simulation, FIFO slots, queues, bounded retries, external waits, cancellation lag and empirical sampling. M/M/1 is an explicitly generated analytical validation case, never a provider default. M4 adds whole-session empirical vectors and paired sampling sensitivity. SPT/EDF/fairness, conditional topology, cache/placement, exact replica enumeration and Pareto planning remain unimplemented and gated.
 
 ## 14. C++ strategy
 
-PROPOSED: C++20 DES behind batch-oriented pybind11 bindings. First establish Python reference semantics and compare against SimPy. Benchmark event throughput, memory/event and parity on fixed seeds. Native work is justified by experiment runtime or memory bottlenecks; retain Python if absent. Start with binary heap and stable event sequence numbers. Calendar queues, timing wheels, object pools, SoA and PDES require separate benchmarks. No native code in M1.
+DEFERRED after M3 measurement: the million-event Python case takes a median 3.361 s with about 280 MB process peak; all 720 pilot forecast scenarios took 6.26 s. No current experiment bottleneck justifies C++20/pybind11 maintenance. SimPy matches tested FIFO timings exactly. Reopen native work only for a measured need, with differential parity and material benefit; start with a stable binary heap. No project-owned C++ code or native speedup claim.
 
 ## 15. CUDA strategy
 
@@ -99,7 +101,7 @@ GenAI conventions moved to their own repository and remain development-status in
 
 ## 17. Framework integration strategy
 
-Core imports normalized OTLP, not framework objects. Later support one real non-coding application, preferably custom instrumentation first or one framework exporting the necessary information. Temporal, MCP, LangGraph, CrewAI, PydanticAI and backend-native exports remain adapter candidates. Langfuse and Phoenix are optional data boundaries. Every adapter needs versioned contract fixtures, loss diagnostics and no core dependency on its runtime.
+Core imports normalized OTLP, not framework objects. One optional PydanticAI 2.51.0 path is exercised with OTel SDK 1.45.0/TestModel; its ordinary trace remains incomplete with UNKNOWN queue/service. A real local-model PydanticAI FunctionModel bridge executes a non-coding facility report workload with owned-boundary instrumentation. The bridge is experimental, not an official general Ollama adapter. No additional framework, collector or hosted observability service is required.
 
 ## 18. Storage requirements
 
@@ -107,7 +109,7 @@ M1: local bounded JSON/JSONL input and deterministic JSON output. No raw input c
 
 ## 19. Simulator architecture
 
-PROPOSED M2: single-threaded integer-time DES with total event ordering `(time, phase, insertion_sequence)`, explicit finite pools and bounded queues, deterministic named PRNG streams, and releases driven by predecessor completion. Define same-time completion/cancellation/admission order before coding. Separate external waits from occupied worker time. Preserve queue/service split, failures, retries, backoff, fan-out/join, cancellation and terminated-session accounting. No recorded-timestamp replay for changed-resource predictions. [Simulator design](docs/concepts/simulator.md).
+IMPLEMENTED M2: single-thread integer-time DES with total `(time, microstep, phase, insertion_sequence)` ordering, finite FIFO pools/queues, named SplitMix64 streams and causal successor readiness. The contract was committed before implementation. Existing completion wins over its deadline; newly ready zero-time successors remain subject to that deadline. Cancellation may retain a slot until acknowledgment. Right-censored, failed, rejected and timed-out sessions remain in denominators. No tools execute. [Exact semantics](docs/design/simulation-semantics.md), [validation](docs/validation/milestone-2.md).
 
 ## 20. Optimizer architecture
 
@@ -115,11 +117,11 @@ PROPOSED M5: finite-domain exact enumeration for tiny replica spaces, explicit b
 
 ## 21. Calibration design
 
-PROPOSED M4: fit per-resource service/arrival/branch/retry distributions within version/hardware/load cohorts. Require enqueue/start/end where capacity is inferred; wall time alone is not identifiable. Preserve within-session and shared-outage correlation; compare empirical bootstrap against parametric fits. Split by session/time/configuration to prevent leakage. Track sample counts, censoring, missing traces and instrumentation overhead. [Calibration](docs/concepts/calibration.md).
+PARTIAL M4: fit complete observed fixed-DAG cohorts with stable operation alignment, direct occupied/external measurements, source IDs/counts and empirical tails. Keep load cohorts separate; preserve paired-session vectors as a sensitivity model. Reject missing/failing/censored cohorts instead of selecting successful spans. The controlled holdout is frozen and scored separately. Generic operation alignment, branch/retry fitting, shared outages, nonstationarity, censor-aware survival models and steady-state saturation remain unsupported. [Calibration](docs/concepts/calibration.md), [pilot results](docs/validation/milestone-4.md).
 
 ## 22. Reliability and failure model
 
-M1 stores normalized observed error status, without executing retries. M2 will model bounded attempts, retry storms, rate limits, outages, timeouts, worker loss, cancellation lag and side effects. Cancellation does not always release resources immediately. Human gates are external waits; do not assume a worker is reserved. No simulator may invoke actual tools or reproduce side effects. Report failed and censored sessions in denominators.
+Observed status/outcome is distinct from generated policy. M2 models bounded IID attempt failure, retries/backoff, timeout, cancellation lag, queue rejection and horizon censoring. Retry storms, shared outages, rate limits, worker-loss policies and external side effects are not modeled. Cancellation does not imply instant release. External waits own no undeclared pool. No simulator invokes real tools; all termination classes remain in denominators.
 
 ## 23. Production architecture
 
@@ -135,7 +137,7 @@ Unit/contract tests cover typed IR, exact timestamps, malformed IDs/data, duplic
 
 ## 26. Local hardware plan
 
-User-reported envelope: Ryzen 9, RTX 4060, 16 GB RAM. Exact SKU/VRAM must be measured before hardware claims. M1 uses CPU, files and a single Python process; bound input bytes/spans. Native compiler/GPU services are absent. Later profiles: analysis-only, simulator-only, one calibration service, GPU-calibration-only. Avoid running observability and application stacks together unless memory permits.
+Verified host: Ryzen 9 8945HS, eight cores/16 logical processors; RTX 4060 Laptop GPU, 8,188 MiB reported VRAM, driver 616.56. Exact physical RAM/OS/Python are in raw benchmark metadata. Analysis and simulation use CPU only. The separate real-model probe uses an existing local Ollama service and cached Llama 3.1 8B Q4_K_M; no weights downloaded, no custom CUDA kernels. No transfer to another GPU's performance is claimed.
 
 ## 27. Cloud validation plan
 
@@ -163,7 +165,7 @@ Which non-coding workload has controllable non-LLM bottlenecks and repeat users?
 
 ## 33. ADR index
 
-See [docs/adr](docs/adr/README.md): 0001 thesis; 0002 IR; 0003 OTel; 0004 language boundary; 0005 DES; 0006 optimizer; 0007 provenance; 0008 storage; 0009 adapters; 0010 hardware; 0011 cloud; 0012 CLI/public API. ACCEPTED applies to the bounded M1 decision, not all future mechanisms. Unjustified future choices remain PROPOSED.
+See [docs/adr](docs/adr/README.md): original 0001–0012 are preserved; 0013 accepts observed lifecycle extensions, 0014 accepts the bounded reference simulator, and 0015 records the evidence-driven narrowing. Earlier proposed scope does not imply completed features. Unjustified native/GPU/optimizer/cloud choices remain gated.
 
 ## 34. References
 
