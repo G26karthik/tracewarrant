@@ -1,0 +1,284 @@
+{
+  "acceptance": {
+    "little_residual_max": 0.01,
+    "mean_error_max": 0.05,
+    "seed_error_max": 0.1
+  },
+  "aggregate_relative_error": 0.016236629663909596,
+  "case_origin": "synthetic mathematical validation",
+  "measurement": "SIMULATED",
+  "metadata": {
+    "compiler": "MSC v.1944 64 bit (AMD64)",
+    "configuration": {
+      "mm1_seeds": 5,
+      "sessions_per_seed": 20000,
+      "simpy_cells": 20
+    },
+    "cpp_compiler": "not applicable",
+    "cpu": "AMD Ryzen 9 8945HS w/ Radeon 780M Graphics",
+    "cuda": "not applicable",
+    "date_utc": "2026-09-29T06:36:21.772881+00:00",
+    "dependency_lock_sha256": "a71105e2fa15e33351ee8befec027919a1148ed42751632bb2453f7a91c1fa9e",
+    "driver": "not applicable",
+    "git_commit": "f0233179c5012550295f3fcca3255e014b16fe32",
+    "git_dirty": false,
+    "gpu": "not used",
+    "harness_sha256": "ae8f2ff53276fda41c793e6605d98ca72e1ae88eab7c53fab1a4af70aa1d8d2a",
+    "logical_cpus": 16,
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+    "ram_bytes": 16356962304,
+    "seed": 0,
+    "source_tree_sha256": "39015a1857d8df97fb31069f19f3a9ebfade9f694f19169073ddde627b66ea0c"
+  },
+  "mm1": [
+    {
+      "arrival_rate_per_ns": 5.951254497990441e-07,
+      "complete_in_window": 17997,
+      "expected_mean_latency_ns": 2499999.2500003753,
+      "expected_utilization": 0.599999880000024,
+      "lambda_times_W": 1.538342711660243,
+      "little_law_relative_residual": 3.3369462038091074e-05,
+      "mean_latency_ns": 2584904.9342112574,
+      "mean_system_size": 1.5383940470419954,
+      "outcomes": {
+        "cancelled": 0,
+        "censored": 0,
+        "completed": 20000,
+        "failed": 0,
+        "rejected": 0,
+        "timeout": 0
+      },
+      "relative_error": 0.033962283873032906,
+      "seed": 0,
+      "sessions": 20000,
+      "utilization": 0.5995432360156772,
+      "warmup_sessions": 2000,
+      "window_end_ns": 33614627895,
+      "window_start_ns": 3373945017
+    },
+    {
+      "arrival_rate_per_ns": 5.968947067334527e-07,
+      "complete_in_window": 17999,
+      "expected_mean_latency_ns": 2499999.2500003753,
+      "expected_utilization": 0.599999880000024,
+      "lambda_times_W": 1.5228983262950615,
+      "little_law_relative_residual": 5.787748656809982e-06,
+      "mean_latency_ns": 2551368.455969776,
+      "mean_system_size": 1.5229071404988184,
+      "outcomes": {
+        "cancelled": 0,
+        "censored": 0,
+        "completed": 20000,
+        "failed": 0,
+        "rejected": 0,
+        "timeout": 0
+      },
+      "relative_error": 0.02054768855206368,
+      "seed": 1,
+      "sessions": 20000,
+      "utilization": 0.6080181788142738,
+      "warmup_sessions": 2000,
+      "window_end_ns": 33454294172,
+      "window_start_ns": 3299897095
+    },
+    {
+      "arrival_rate_per_ns": 6.032415440285984e-07,
+      "complete_in_window": 17997,
+      "expected_mean_latency_ns": 2499999.2500003753,
+      "expected_utilization": 0.599999880000024,
+      "lambda_times_W": 1.5370054853009683,
+      "little_law_relative_residual": 0.00017848691028852386,
+      "mean_latency_ns": 2547910.5352003113,
+      "mean_system_size": 1.5372798696351482,
+      "outcomes": {
+        "cancelled": 0,
+        "censored": 0,
+        "completed": 20000,
+        "failed": 0,
+        "rejected": 0,
+        "timeout": 0
+      },
+      "relative_error": 0.019164519829327542,
+      "seed": 2,
+      "sessions": 20000,
+      "utilization": 0.6066245004179291,
+      "warmup_sessions": 2000,
+      "window_end_ns": 33223248359,
+      "window_start_ns": 3389427764
+    },
+    {
+      "arrival_rate_per_ns": 5.987702934303875e-07,
+      "complete_in_window": 17996,
+      "expected_mean_latency_ns": 2499999.2500003753,
+      "expected_utilization": 0.599999880000024,
+      "lambda_times_W": 1.484800723505525,
+      "little_law_relative_residual": 0.00011410317831540521,
+      "mean_latency_ns": 2479750.147588353,
+      "mean_system_size": 1.4849701633208634,
+      "outcomes": {
+        "cancelled": 0,
+        "censored": 0,
+        "completed": 20000,
+        "failed": 0,
+        "rejected": 0,
+        "timeout": 0
+      },
+      "relative_error": 0.008099643394700706,
+      "seed": 3,
+      "sessions": 20000,
+      "utilization": 0.6003835230400769,
+      "warmup_sessions": 2000,
+      "window_end_ns": 33483242422,
+      "window_start_ns": 3428311178
+    },
+    {
+      "arrival_rate_per_ns": 5.999573915653761e-07,
+      "complete_in_window": 17999,
+      "expected_mean_latency_ns": 2499999.2500003753,
+      "expected_utilization": 0.599999880000024,
+      "lambda_times_W": 1.5233038084991088,
+      "little_law_relative_residual": 1.62678735608569e-05,
+      "mean_latency_ns": 2539019.986943719,
+      "mean_system_size": 1.5233285898159996,
+      "outcomes": {
+        "cancelled": 0,
+        "censored": 0,
+        "completed": 20000,
+        "failed": 0,
+        "rejected": 0,
+        "timeout": 0
+      },
+      "relative_error": 0.015608299459825004,
+      "seed": 4,
+      "sessions": 20000,
+      "utilization": 0.6054280466245704,
+      "warmup_sessions": 2000,
+      "window_end_ns": 33266247454,
+      "window_start_ns": 3265783666
+    }
+  ],
+  "passed": true,
+  "simpy": [
+    {
+      "capacity": 1,
+      "exact_match": true,
+      "seed": 0,
+      "sessions": 100
+    },
+    {
+      "capacity": 2,
+      "exact_match": true,
+      "seed": 1,
+      "sessions": 100
+    },
+    {
+      "capacity": 3,
+      "exact_match": true,
+      "seed": 2,
+      "sessions": 100
+    },
+    {
+      "capacity": 4,
+      "exact_match": true,
+      "seed": 3,
+      "sessions": 100
+    },
+    {
+      "capacity": 1,
+      "exact_match": true,
+      "seed": 4,
+      "sessions": 100
+    },
+    {
+      "capacity": 2,
+      "exact_match": true,
+      "seed": 5,
+      "sessions": 100
+    },
+    {
+      "capacity": 3,
+      "exact_match": true,
+      "seed": 6,
+      "sessions": 100
+    },
+    {
+      "capacity": 4,
+      "exact_match": true,
+      "seed": 7,
+      "sessions": 100
+    },
+    {
+      "capacity": 1,
+      "exact_match": true,
+      "seed": 8,
+      "sessions": 100
+    },
+    {
+      "capacity": 2,
+      "exact_match": true,
+      "seed": 9,
+      "sessions": 100
+    },
+    {
+      "capacity": 3,
+      "exact_match": true,
+      "seed": 10,
+      "sessions": 100
+    },
+    {
+      "capacity": 4,
+      "exact_match": true,
+      "seed": 11,
+      "sessions": 100
+    },
+    {
+      "capacity": 1,
+      "exact_match": true,
+      "seed": 12,
+      "sessions": 100
+    },
+    {
+      "capacity": 2,
+      "exact_match": true,
+      "seed": 13,
+      "sessions": 100
+    },
+    {
+      "capacity": 3,
+      "exact_match": true,
+      "seed": 14,
+      "sessions": 100
+    },
+    {
+      "capacity": 4,
+      "exact_match": true,
+      "seed": 15,
+      "sessions": 100
+    },
+    {
+      "capacity": 1,
+      "exact_match": true,
+      "seed": 16,
+      "sessions": 100
+    },
+    {
+      "capacity": 2,
+      "exact_match": true,
+      "seed": 17,
+      "sessions": 100
+    },
+    {
+      "capacity": 3,
+      "exact_match": true,
+      "seed": 18,
+      "sessions": 100
+    },
+    {
+      "capacity": 4,
+      "exact_match": true,
+      "seed": 19,
+      "sessions": 100
+    }
+  ]
+}

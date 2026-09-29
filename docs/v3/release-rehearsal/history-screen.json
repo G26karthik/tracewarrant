@@ -1,0 +1,15 @@
+{
+  "bytes_examined": 17804595,
+  "docx_versions_examined": 1,
+  "findings": [],
+  "head": "f0233179c5012550295f3fcca3255e014b16fe32",
+  "kind": "bounded_credential_pattern_screen",
+  "limitation": "Pattern screen is not a comprehensive secret, privacy, or ownership guarantee.",
+  "patterns": [
+    "private_key",
+    "github_token",
+    "cloud_access_key",
+    "provider_token"
+  ],
+  "reachable_blobs": 284
+}

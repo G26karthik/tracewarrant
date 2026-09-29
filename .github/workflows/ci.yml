@@ -1,37 +1,65 @@
 name: correctness
-on: [push, pull_request]
+on: [push, pull_request, workflow_dispatch]
 permissions:
   contents: read
+concurrency:
+  group: correctness-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   test:
+    timeout-minutes: 15
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest]
         python: ['3.11', '3.13']
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: ${{ matrix.python }}
       - run: python -m pip install uv==0.9.26
-      - run: uv sync --locked
+      - run: uv sync --locked --python ${{ matrix.python }}
+      - run: python -c "from pathlib import Path; Path('artifacts/ci').mkdir(parents=True, exist_ok=True)"
       - run: uv run ruff check .
       - run: uv run ruff format --check .
-      - run: uv run pytest
+      - run: uv run pytest --junitxml=artifacts/ci/tests.xml
       - run: uv build --no-build-isolation
-      - run: uv run python -m benchmarks.qualify_package --wheel dist/tracewarrant-0.3.1-py3-none-any.whl --sdist dist/tracewarrant-0.3.1.tar.gz --output package-qualification.json
+      - run: uv run python -m benchmarks.qualify_package --wheel dist/tracewarrant-0.3.1-py3-none-any.whl --sdist dist/tracewarrant-0.3.1.tar.gz --output artifacts/ci/package-qualification.json
+      - run: uv run python -m benchmarks.v3_audit --output artifacts/ci/offline-audit.json
       - run: uv run workload-lab analyze examples/research-workflow.otlp.json --origin synthetic --format json
-      - run: uv run workload-lab simulate examples/scenario.json --output simulation-smoke.json
-      - run: uv run workload-lab inspect examples/v3/frames-heldout-base.otlp.json --output conformance-smoke.json
-      - run: uv run workload-lab evaluate --protocol docs/v3/frames-frozen/protocol.json --freeze docs/v3/frames-frozen/freeze.json --prediction docs/v3/frames-frozen/simpy.json --prediction docs/v3/frames-frozen/fixed.json --prediction docs/v3/frames-frozen/utilization.json --measurement docs/v3/frames-evaluation/measured-r0.json --measurement docs/v3/frames-evaluation/measured-r1.json --output evaluation-smoke.json
+      - run: uv run workload-lab simulate examples/scenario.json --output artifacts/ci/simulation-smoke.json
+      - run: uv run workload-lab inspect examples/v3/frames-heldout-base.otlp.json --output artifacts/ci/conformance-smoke.json
+      - run: uv run workload-lab evaluate --protocol docs/v3/frames-frozen/protocol.json --freeze docs/v3/frames-frozen/freeze.json --prediction docs/v3/frames-frozen/simpy.json --prediction docs/v3/frames-frozen/fixed.json --prediction docs/v3/frames-frozen/utilization.json --measurement docs/v3/frames-evaluation/measured-r0.json --measurement docs/v3/frames-evaluation/measured-r1.json --output artifacts/ci/evaluation-smoke.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: qualification-${{ matrix.os }}-py${{ matrix.python }}
+          path: artifacts/ci/
+          if-no-files-found: warn
+          retention-days: 14
   analytic:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: '3.12'
       - run: python -m pip install uv==0.9.26
-      - run: uv sync --locked --group validation
-      - run: uv run --group validation python -m benchmarks.validate_simulation --output analytical-validation.json
+      - run: uv sync --locked --group validation --python 3.12
+      - run: python -c "from pathlib import Path; Path('artifacts/ci').mkdir(parents=True, exist_ok=True)"
+      - run: uv run --group validation python -m benchmarks.validate_simulation --output artifacts/ci/analytical-validation.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: analytical-validation
+          path: artifacts/ci/
+          if-no-files-found: warn
+          retention-days: 14

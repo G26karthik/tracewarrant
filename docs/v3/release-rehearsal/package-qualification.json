@@ -1,0 +1,65 @@
+{
+  "artifact_type": "local_package_qualification",
+  "checks": {
+    "cli_verified": true,
+    "conformance_sources": {
+      "controlled": "supported",
+      "frames_original": "unsupported",
+      "pydantic_ai": "unsupported"
+    },
+    "distribution": "tracewarrant",
+    "evaluation_byte_exact": true,
+    "installed_bytes_match_wheel": true,
+    "installed_module_sha256": {
+      "workload_lab/__init__.py": "5ff5cae5fb4408188df555b87a31d30de123a589c5b38cf4514328adbd5d12a6",
+      "workload_lab/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "workload_lab/analysis.py": "f515db18740eed3d085c45c164cc4233740a4ab89b43aecd6eaa853c2f1c8ee2",
+      "workload_lab/artifact_schema.py": "9fe500346559f2554995934516fec45a96c3a4ede9f5b3b0e6e1caf45d931cd4",
+      "workload_lab/artifacts.py": "289e1d1259099a0467a47602e2cae2e032762dbb6c58028e21d5dfea86b6e27a",
+      "workload_lab/calibration.py": "03cd15a01d0943052a2e43f72fc0488252edb96fe97a17511b44414088a59e05",
+      "workload_lab/cli.py": "c574f3ddfd069ba29dffe01d8eacd16cb3bbce70af9c6070887f6f992a7a074d",
+      "workload_lab/conformance.py": "852e8f6a7c7db63c752953a43e64b8b6e5720a4e65cc85285944ed22700120cf",
+      "workload_lab/graph.py": "49dbd2c0e9f0afc705afa28979651b91aa25bc9232c6eb5e95bcf53f237d22d8",
+      "workload_lab/ingest.py": "3b85751875e1070fd230f0d4c53a1e851033aedd65d51196fa61c7ab4afc2ab9",
+      "workload_lab/ir.py": "76cbc15abefc74286846b5239581277ff6c46ddbd57294ee1505aef3806c0b4f",
+      "workload_lab/simulation.py": "1f36fe16a09a5d66d95470493e2c589f4f981dc2344ce66fc62fe8c2125c72a4",
+      "workload_lab/validation.py": "7303f9f86391c5018130f56808376cf03ad00fdc32d53666f0178b2d3e341f53"
+    },
+    "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+    "runtime_dependencies": [],
+    "simulator_not_imported": true,
+    "version": "0.3.1"
+  },
+  "limitations": [
+    "local_qualification_not_independent_review",
+    "not_publication"
+  ],
+  "metadata": {
+    "compiler": "MSC v.1944 64 bit (AMD64)",
+    "configuration": {
+      "model_execution": false,
+      "network": false
+    },
+    "cpp_compiler": "not applicable",
+    "cpu": "AMD Ryzen 9 8945HS w/ Radeon 780M Graphics",
+    "cuda": "not applicable",
+    "date_utc": "2026-09-29T06:34:56.887965+00:00",
+    "dependency_lock_sha256": "a71105e2fa15e33351ee8befec027919a1148ed42751632bb2453f7a91c1fa9e",
+    "driver": "not applicable",
+    "git_commit": "f0233179c5012550295f3fcca3255e014b16fe32",
+    "git_dirty": false,
+    "gpu": "not used",
+    "harness_sha256": "92502f7ca5163def96fdd20d4f353a6aeadf82d01746ae10f251bd8b94b1d46e",
+    "logical_cpus": 16,
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+    "ram_bytes": 16356962304,
+    "seed": 0,
+    "source_tree_sha256": "39015a1857d8df97fb31069f19f3a9ebfade9f694f19169073ddde627b66ea0c"
+  },
+  "sdist_code_matches_wheel": true,
+  "sdist_reproducibility_inputs_verified": true,
+  "sdist_sha256": "f2d60740cb18db2309911bef661e1ff0b4d2d696c44c7e12fcf798dc65e5ba7b",
+  "wheel_code_matches_checkout": true,
+  "wheel_sha256": "34825479104cd529db831b9b681448c5d60358e91ff4615311891794ea20bfbf"
+}

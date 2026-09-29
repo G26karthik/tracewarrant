@@ -1,0 +1,720 @@
+{
+  "adapted_frames_complete_graphs": 72,
+  "artifact_type": "v3_offline_audit",
+  "conformance": {
+    "controlled": {
+      "artifact_type": "observation_conformance",
+      "atomic_spans": 61,
+      "claims": {
+        "cancellation_release": {
+          "classification": "identifiable_with_instrumentation",
+          "eligible": 1,
+          "missing_fields": {},
+          "note": "Owned release is not proof of cancellation at a remote inference backend.",
+          "observed": 1,
+          "required_extensions": [
+            "workload_lab.cancel_requested_ns",
+            "workload_lab.released_ns"
+          ],
+          "support": "supported"
+        },
+        "dependency_graph": {
+          "classification": "identifiable_with_instrumentation",
+          "eligible": 8,
+          "note": "Explicit finish-to-start edges and collector completeness assertions; parentage is containment. Missing entire traces cannot be detected.",
+          "observed": 8,
+          "required_extensions": [
+            "workload_lab.depends_on",
+            "workload_lab.graph.complete",
+            "workload_lab.node.role"
+          ],
+          "support": "supported"
+        },
+        "external_wait": {
+          "classification": "directly_observable",
+          "eligible": 61,
+          "missing_fields": {
+            "external_wait_ns": 44
+          },
+          "note": "Explicit duration; overlap and placement need an application contract.",
+          "observed": 17,
+          "required_extensions": [
+            "workload_lab.external_wait_ns"
+          ],
+          "support": "partial"
+        },
+        "fan_out_fan_in": {
+          "classification": "identifiable_with_instrumentation",
+          "explicit_fan_in_nodes": 8,
+          "explicit_fan_out_nodes": 8,
+          "note": "Counts describe declared edges; concurrent spans establish no synchronization.",
+          "support": "supported"
+        },
+        "finite_pool_capacity": {
+          "classification": "unsupported",
+          "eligible": 61,
+          "missing_fields": {
+            "capacity": 17,
+            "pool": 17
+          },
+          "note": "Collector-reported owned capacity; not physical device capacity.",
+          "observed": 44,
+          "required_extensions": [
+            "workload_lab.pool",
+            "workload_lab.capacity"
+          ],
+          "support": "unsupported"
+        },
+        "inference_client_occupancy": {
+          "classification": "identifiable_with_instrumentation",
+          "eligible": 16,
+          "missing_fields": {},
+          "note": "Client occupancy includes unknown backend queue and service.",
+          "observed": 16,
+          "required_extensions": [
+            "workload_lab.pool",
+            "workload_lab.acquired_ns",
+            "workload_lab.released_ns"
+          ],
+          "support": "supported"
+        },
+        "inference_service_demand": {
+          "classification": "not_identifiable",
+          "note": "Client timestamps and token counts cannot identify invariant GPU service demand.",
+          "provenance": "UNKNOWN",
+          "required_extensions": [
+            "backend_queue_boundary",
+            "backend_execution_boundary",
+            "shared_device_schedule"
+          ],
+          "support": "unsupported",
+          "value": null
+        },
+        "prediction_suitability": {
+          "classification": "unsupported",
+          "note": "Inspection does not validate predictions. Require offered/completed counts, clocks, sampling, stable cohorts, identifiability and held-out intervention evidence.",
+          "provenance": "UNKNOWN",
+          "support": "unsupported"
+        },
+        "queue_wait": {
+          "classification": "identifiable_with_instrumentation",
+          "eligible": 61,
+          "missing_fields": {
+            "acquired_ns": 17,
+            "enqueued_ns": 17
+          },
+          "note": null,
+          "observed": 44,
+          "required_extensions": [
+            "workload_lab.enqueued_ns",
+            "workload_lab.acquired_ns"
+          ],
+          "support": "partial"
+        },
+        "resource_occupancy": {
+          "classification": "identifiable_with_instrumentation",
+          "eligible": 61,
+          "missing_fields": {
+            "acquired_ns": 17,
+            "pool": 17,
+            "released_ns": 17
+          },
+          "note": null,
+          "observed": 44,
+          "required_extensions": [
+            "workload_lab.pool",
+            "workload_lab.acquired_ns",
+            "workload_lab.released_ns"
+          ],
+          "support": "partial"
+        },
+        "retry_attempts": {
+          "classification": "identifiable_with_instrumentation",
+          "eligible": 61,
+          "missing_fields": {
+            "attempt": 59,
+            "attempt_group": 59
+          },
+          "note": "Explicit attempts only; sampling can hide retries and terminal outcomes.",
+          "observed": 2,
+          "required_extensions": [
+            "workload_lab.attempt_group",
+            "workload_lab.attempt"
+          ],
+          "support": "partial"
+        },
+        "service_interval": {
+          "classification": "identifiable_with_instrumentation",
+          "eligible": 61,
+          "missing_fields": {
+            "service_end_ns": 17,
+            "service_start_ns": 17
+          },
+          "note": "Observed interval only; nested waits or shared hardware may remain.",
+          "observed": 44,
+          "required_extensions": [
+            "workload_lab.service_start_ns",
+            "workload_lab.service_end_ns"
+          ],
+          "support": "partial"
+        },
+        "timeout_semantics": {
+          "classification": "directly_observable",
+          "note": "Outcome labels are observable; IR 0.2 lacks deadlines and remote release acknowledgements.",
+          "reported_timeouts": 1,
+          "required_extensions": [
+            "deadline_ns",
+            "terminal_outcome",
+            "backend_release_acknowledgement"
+          ],
+          "support": "partial"
+        }
+      },
+      "contract_version": "1.0",
+      "origin": "observed",
+      "privacy": "No application labels, span names, payloads or raw attribute values emitted.",
+      "schema_version": "1.0",
+      "source_sha256": "49244670659129b2e5e6b78fa24818b50e17a7a60bf510fb7060fec7e0ced5e0",
+      "trace_count": 8,
+      "violations": {
+        "observed_occupancy_exceeds_declared_capacity": 2
+      }
+    },
+    "frames-adapted": {
+      "artifact_type": "observation_conformance",
+      "atomic_spans": 63,
+      "claims": {
+        "cancellation_release": {
+          "classification": "unsupported",
+          "eligible": 0,
+          "missing_fields": {},
+          "note": "Owned release is not proof of cancellation at a remote inference backend.",
+          "observed": 0,
+          "required_extensions": [
+            "workload_lab.cancel_requested_ns",
+            "workload_lab.released_ns"
+          ],
+          "support": "unsupported"
+        },
+        "dependency_graph": {
+          "classification": "identifiable_with_instrumentation",
+          "eligible": 8,
+          "note": "Explicit finish-to-start edges and collector completeness assertions; parentage is containment. Missing entire traces cannot be detected.",
+          "observed": 8,
+          "required_extensions": [
+            "workload_lab.depends_on",
+            "workload_lab.graph.complete",
+            "workload_lab.node.role"
+          ],
+          "support": "supported"
+        },
+        "external_wait": {
+          "classification": "unsupported",
+          "eligible": 63,
+          "missing_fields": {
+            "external_wait_ns": 63
+          },
+          "note": "Explicit duration; overlap and placement need an application contract.",
+          "observed": 0,
+          "required_extensions": [
+            "workload_lab.external_wait_ns"
+          ],
+          "support": "unsupported"
+        },
+        "fan_out_fan_in": {
+          "classification": "identifiable_with_instrumentation",
+          "explicit_fan_in_nodes": 8,
+          "explicit_fan_out_nodes": 8,
+          "note": "Counts describe declared edges; concurrent spans establish no synchronization.",
+          "support": "supported"
+        },
+        "finite_pool_capacity": {
+          "classification": "directly_observable",
+          "eligible": 63,
+          "missing_fields": {},
+          "note": "Collector-reported owned capacity; not physical device capacity.",
+          "observed": 63,
+          "required_extensions": [
+            "workload_lab.pool",
+            "workload_lab.capacity"
+          ],
+          "support": "supported"
+        },
+        "inference_client_occupancy": {
+          "classification": "identifiable_with_instrumentation",
+          "eligible": 8,
+          "missing_fields": {},
+          "note": "Client occupancy includes unknown backend queue and service.",
+          "observed": 8,
+          "required_extensions": [
+            "workload_lab.pool",
+            "workload_lab.acquired_ns",
+            "workload_lab.released_ns"
+          ],
+          "support": "supported"
+        },
+        "inference_service_demand": {
+          "classification": "not_identifiable",
+          "note": "Client timestamps and token counts cannot identify invariant GPU service demand.",
+          "provenance": "UNKNOWN",
+          "required_extensions": [
+            "backend_queue_boundary",
+            "backend_execution_boundary",
+            "shared_device_schedule"
+          ],
+          "support": "unsupported",
+          "value": null
+        },
+        "prediction_suitability": {
+          "classification": "calibratable_under_assumptions",
+          "note": "Inspection does not validate predictions. Require offered/completed counts, clocks, sampling, stable cohorts, identifiability and held-out intervention evidence.",
+          "provenance": "UNKNOWN",
+          "support": "unsupported"
+        },
+        "queue_wait": {
+          "classification": "identifiable_with_instrumentation",
+          "eligible": 63,
+          "missing_fields": {},
+          "note": null,
+          "observed": 63,
+          "required_extensions": [
+            "workload_lab.enqueued_ns",
+            "workload_lab.acquired_ns"
+          ],
+          "support": "supported"
+        },
+        "resource_occupancy": {
+          "classification": "identifiable_with_instrumentation",
+          "eligible": 63,
+          "missing_fields": {},
+          "note": null,
+          "observed": 63,
+          "required_extensions": [
+            "workload_lab.pool",
+            "workload_lab.acquired_ns",
+            "workload_lab.released_ns"
+          ],
+          "support": "supported"
+        },
+        "retry_attempts": {
+          "classification": "identifiable_with_instrumentation",
+          "eligible": 63,
+          "missing_fields": {},
+          "note": "Explicit attempts only; sampling can hide retries and terminal outcomes.",
+          "observed": 63,
+          "required_extensions": [
+            "workload_lab.attempt_group",
+            "workload_lab.attempt"
+          ],
+          "support": "supported"
+        },
+        "service_interval": {
+          "classification": "unsupported",
+          "eligible": 63,
+          "missing_fields": {
+            "service_end_ns": 63,
+            "service_start_ns": 63
+          },
+          "note": "Observed interval only; nested waits or shared hardware may remain.",
+          "observed": 0,
+          "required_extensions": [
+            "workload_lab.service_start_ns",
+            "workload_lab.service_end_ns"
+          ],
+          "support": "unsupported"
+        },
+        "timeout_semantics": {
+          "classification": "unsupported",
+          "note": "Outcome labels are observable; IR 0.2 lacks deadlines and remote release acknowledgements.",
+          "reported_timeouts": 0,
+          "required_extensions": [
+            "deadline_ns",
+            "terminal_outcome",
+            "backend_release_acknowledgement"
+          ],
+          "support": "unsupported"
+        }
+      },
+      "contract_version": "1.0",
+      "origin": "observed",
+      "privacy": "No application labels, span names, payloads or raw attribute values emitted.",
+      "schema_version": "1.0",
+      "source_sha256": "364659f9722eb18f5227a1a56b900598d8a0dcc26717059a09aebdb9148645b5",
+      "trace_count": 8,
+      "violations": {}
+    },
+    "frames-original": {
+      "artifact_type": "observation_conformance",
+      "atomic_spans": 63,
+      "claims": {
+        "cancellation_release": {
+          "classification": "unsupported",
+          "eligible": 0,
+          "missing_fields": {},
+          "note": "Owned release is not proof of cancellation at a remote inference backend.",
+          "observed": 0,
+          "required_extensions": [
+            "workload_lab.cancel_requested_ns",
+            "workload_lab.released_ns"
+          ],
+          "support": "unsupported"
+        },
+        "dependency_graph": {
+          "classification": "unsupported",
+          "eligible": 8,
+          "note": "Explicit finish-to-start edges and collector completeness assertions; parentage is containment. Missing entire traces cannot be detected.",
+          "observed": 0,
+          "required_extensions": [
+            "workload_lab.depends_on",
+            "workload_lab.graph.complete",
+            "workload_lab.node.role"
+          ],
+          "support": "unsupported"
+        },
+        "external_wait": {
+          "classification": "unsupported",
+          "eligible": 63,
+          "missing_fields": {
+            "external_wait_ns": 63
+          },
+          "note": "Explicit duration; overlap and placement need an application contract.",
+          "observed": 0,
+          "required_extensions": [
+            "workload_lab.external_wait_ns"
+          ],
+          "support": "unsupported"
+        },
+        "fan_out_fan_in": {
+          "classification": "unsupported",
+          "explicit_fan_in_nodes": 8,
+          "explicit_fan_out_nodes": 8,
+          "note": "Counts describe declared edges; concurrent spans establish no synchronization.",
+          "support": "unsupported"
+        },
+        "finite_pool_capacity": {
+          "classification": "directly_observable",
+          "eligible": 63,
+          "missing_fields": {},
+          "note": "Collector-reported owned capacity; not physical device capacity.",
+          "observed": 63,
+          "required_extensions": [
+            "workload_lab.pool",
+            "workload_lab.capacity"
+          ],
+          "support": "supported"
+        },
+        "inference_client_occupancy": {
+          "classification": "identifiable_with_instrumentation",
+          "eligible": 8,
+          "missing_fields": {},
+          "note": "Client occupancy includes unknown backend queue and service.",
+          "observed": 8,
+          "required_extensions": [
+            "workload_lab.pool",
+            "workload_lab.acquired_ns",
+            "workload_lab.released_ns"
+          ],
+          "support": "supported"
+        },
+        "inference_service_demand": {
+          "classification": "not_identifiable",
+          "note": "Client timestamps and token counts cannot identify invariant GPU service demand.",
+          "provenance": "UNKNOWN",
+          "required_extensions": [
+            "backend_queue_boundary",
+            "backend_execution_boundary",
+            "shared_device_schedule"
+          ],
+          "support": "unsupported",
+          "value": null
+        },
+        "prediction_suitability": {
+          "classification": "unsupported",
+          "note": "Inspection does not validate predictions. Require offered/completed counts, clocks, sampling, stable cohorts, identifiability and held-out intervention evidence.",
+          "provenance": "UNKNOWN",
+          "support": "unsupported"
+        },
+        "queue_wait": {
+          "classification": "identifiable_with_instrumentation",
+          "eligible": 63,
+          "missing_fields": {},
+          "note": null,
+          "observed": 63,
+          "required_extensions": [
+            "workload_lab.enqueued_ns",
+            "workload_lab.acquired_ns"
+          ],
+          "support": "supported"
+        },
+        "resource_occupancy": {
+          "classification": "identifiable_with_instrumentation",
+          "eligible": 63,
+          "missing_fields": {},
+          "note": null,
+          "observed": 63,
+          "required_extensions": [
+            "workload_lab.pool",
+            "workload_lab.acquired_ns",
+            "workload_lab.released_ns"
+          ],
+          "support": "supported"
+        },
+        "retry_attempts": {
+          "classification": "identifiable_with_instrumentation",
+          "eligible": 63,
+          "missing_fields": {},
+          "note": "Explicit attempts only; sampling can hide retries and terminal outcomes.",
+          "observed": 63,
+          "required_extensions": [
+            "workload_lab.attempt_group",
+            "workload_lab.attempt"
+          ],
+          "support": "supported"
+        },
+        "service_interval": {
+          "classification": "unsupported",
+          "eligible": 63,
+          "missing_fields": {
+            "service_end_ns": 63,
+            "service_start_ns": 63
+          },
+          "note": "Observed interval only; nested waits or shared hardware may remain.",
+          "observed": 0,
+          "required_extensions": [
+            "workload_lab.service_start_ns",
+            "workload_lab.service_end_ns"
+          ],
+          "support": "unsupported"
+        },
+        "timeout_semantics": {
+          "classification": "unsupported",
+          "note": "Outcome labels are observable; IR 0.2 lacks deadlines and remote release acknowledgements.",
+          "reported_timeouts": 0,
+          "required_extensions": [
+            "deadline_ns",
+            "terminal_outcome",
+            "backend_release_acknowledgement"
+          ],
+          "support": "unsupported"
+        }
+      },
+      "contract_version": "1.0",
+      "origin": "observed",
+      "privacy": "No application labels, span names, payloads or raw attribute values emitted.",
+      "schema_version": "1.0",
+      "source_sha256": "eeadbd1b3c446fa50d92d676102191603d597055b0d0f3654b97419f2afbf945",
+      "trace_count": 8,
+      "violations": {}
+    },
+    "pydantic-ai": {
+      "artifact_type": "observation_conformance",
+      "atomic_spans": 4,
+      "claims": {
+        "cancellation_release": {
+          "classification": "unsupported",
+          "eligible": 0,
+          "missing_fields": {},
+          "note": "Owned release is not proof of cancellation at a remote inference backend.",
+          "observed": 0,
+          "required_extensions": [
+            "workload_lab.cancel_requested_ns",
+            "workload_lab.released_ns"
+          ],
+          "support": "unsupported"
+        },
+        "dependency_graph": {
+          "classification": "unsupported",
+          "eligible": 1,
+          "note": "Explicit finish-to-start edges and collector completeness assertions; parentage is containment. Missing entire traces cannot be detected.",
+          "observed": 0,
+          "required_extensions": [
+            "workload_lab.depends_on",
+            "workload_lab.graph.complete",
+            "workload_lab.node.role"
+          ],
+          "support": "unsupported"
+        },
+        "external_wait": {
+          "classification": "unsupported",
+          "eligible": 4,
+          "missing_fields": {
+            "external_wait_ns": 4
+          },
+          "note": "Explicit duration; overlap and placement need an application contract.",
+          "observed": 0,
+          "required_extensions": [
+            "workload_lab.external_wait_ns"
+          ],
+          "support": "unsupported"
+        },
+        "fan_out_fan_in": {
+          "classification": "unsupported",
+          "explicit_fan_in_nodes": 0,
+          "explicit_fan_out_nodes": 0,
+          "note": "Counts describe declared edges; concurrent spans establish no synchronization.",
+          "support": "unsupported"
+        },
+        "finite_pool_capacity": {
+          "classification": "unsupported",
+          "eligible": 4,
+          "missing_fields": {
+            "capacity": 4,
+            "pool": 4
+          },
+          "note": "Collector-reported owned capacity; not physical device capacity.",
+          "observed": 0,
+          "required_extensions": [
+            "workload_lab.pool",
+            "workload_lab.capacity"
+          ],
+          "support": "unsupported"
+        },
+        "inference_client_occupancy": {
+          "classification": "unsupported",
+          "eligible": 2,
+          "missing_fields": {
+            "acquired_ns": 2,
+            "pool": 2,
+            "released_ns": 2
+          },
+          "note": "Client occupancy includes unknown backend queue and service.",
+          "observed": 0,
+          "required_extensions": [
+            "workload_lab.pool",
+            "workload_lab.acquired_ns",
+            "workload_lab.released_ns"
+          ],
+          "support": "unsupported"
+        },
+        "inference_service_demand": {
+          "classification": "not_identifiable",
+          "note": "Client timestamps and token counts cannot identify invariant GPU service demand.",
+          "provenance": "UNKNOWN",
+          "required_extensions": [
+            "backend_queue_boundary",
+            "backend_execution_boundary",
+            "shared_device_schedule"
+          ],
+          "support": "unsupported",
+          "value": null
+        },
+        "prediction_suitability": {
+          "classification": "unsupported",
+          "note": "Inspection does not validate predictions. Require offered/completed counts, clocks, sampling, stable cohorts, identifiability and held-out intervention evidence.",
+          "provenance": "UNKNOWN",
+          "support": "unsupported"
+        },
+        "queue_wait": {
+          "classification": "unsupported",
+          "eligible": 4,
+          "missing_fields": {
+            "acquired_ns": 4,
+            "enqueued_ns": 4
+          },
+          "note": null,
+          "observed": 0,
+          "required_extensions": [
+            "workload_lab.enqueued_ns",
+            "workload_lab.acquired_ns"
+          ],
+          "support": "unsupported"
+        },
+        "resource_occupancy": {
+          "classification": "unsupported",
+          "eligible": 4,
+          "missing_fields": {
+            "acquired_ns": 4,
+            "pool": 4,
+            "released_ns": 4
+          },
+          "note": null,
+          "observed": 0,
+          "required_extensions": [
+            "workload_lab.pool",
+            "workload_lab.acquired_ns",
+            "workload_lab.released_ns"
+          ],
+          "support": "unsupported"
+        },
+        "retry_attempts": {
+          "classification": "unsupported",
+          "eligible": 4,
+          "missing_fields": {
+            "attempt": 4,
+            "attempt_group": 4
+          },
+          "note": "Explicit attempts only; sampling can hide retries and terminal outcomes.",
+          "observed": 0,
+          "required_extensions": [
+            "workload_lab.attempt_group",
+            "workload_lab.attempt"
+          ],
+          "support": "unsupported"
+        },
+        "service_interval": {
+          "classification": "unsupported",
+          "eligible": 4,
+          "missing_fields": {
+            "service_end_ns": 4,
+            "service_start_ns": 4
+          },
+          "note": "Observed interval only; nested waits or shared hardware may remain.",
+          "observed": 0,
+          "required_extensions": [
+            "workload_lab.service_start_ns",
+            "workload_lab.service_end_ns"
+          ],
+          "support": "unsupported"
+        },
+        "timeout_semantics": {
+          "classification": "unsupported",
+          "note": "Outcome labels are observable; IR 0.2 lacks deadlines and remote release acknowledgements.",
+          "reported_timeouts": 0,
+          "required_extensions": [
+            "deadline_ns",
+            "terminal_outcome",
+            "backend_release_acknowledgement"
+          ],
+          "support": "unsupported"
+        }
+      },
+      "contract_version": "1.0",
+      "origin": "observed",
+      "privacy": "No application labels, span names, payloads or raw attribute values emitted.",
+      "schema_version": "1.0",
+      "source_sha256": "7251357859d23938a6bc2d33e637d3445cc3760d8ea585d2fea3510e0c983181",
+      "trace_count": 1,
+      "violations": {}
+    }
+  },
+  "evaluation_byte_exact": true,
+  "frames_sessions": 72,
+  "metadata": {
+    "compiler": "MSC v.1944 64 bit (AMD64)",
+    "configuration": {
+      "model_execution": false,
+      "network": false
+    },
+    "cpp_compiler": "not applicable",
+    "cpu": "AMD Ryzen 9 8945HS w/ Radeon 780M Graphics",
+    "cuda": "not applicable",
+    "date_utc": "2026-09-29T06:36:17.548448+00:00",
+    "dependency_lock_sha256": "a71105e2fa15e33351ee8befec027919a1148ed42751632bb2453f7a91c1fa9e",
+    "driver": "not applicable",
+    "git_commit": "f0233179c5012550295f3fcca3255e014b16fe32",
+    "git_dirty": false,
+    "gpu": "not used",
+    "harness_sha256": "3285d93b57a19394425f44189ddfceaac03ce04e28c3e62f97b398a7a231dff6",
+    "logical_cpus": 16,
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+    "ram_bytes": 16356962304,
+    "seed": 0,
+    "source_tree_sha256": "39015a1857d8df97fb31069f19f3a9ebfade9f694f19169073ddde627b66ea0c"
+  },
+  "note": "Adapter renames an existing root assertion; no dependencies or timings inferred.",
+  "original_frames_complete_graphs": 0,
+  "original_working_bytes_exact": 61,
+  "pilot_tag_unchanged": true,
+  "preserved_file_count": 64
+}

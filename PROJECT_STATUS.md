@@ -10,6 +10,7 @@ Updated: 2026-09-29. Selected public name: **TraceWarrant**; former internal cod
 - Frozen V3 experiment: `af36005` / `v3-frames-freeze`. [Results](docs/v3/results.md), [reproduction](docs/v3/reproduce.md), [verification](docs/v3/verification.md).
 - 150 tests pass on Windows Python 3.11/3.12.12/3.13 and Ubuntu WSL Python 3.12.3. Fresh installed wheels pass qualification on Windows and Linux: source/archive bytes, both command names, no runtime dependencies, no simulator import and exact evaluation reproduction. Hosted CI is configured, not run here.
 - Completion review fixed conflicting declared environments, scale-dependent material comparisons, single-option decision conclusions and empty files after serialization failure. [ADR-0018](docs/adr/ADR-0018-controlled-comparisons-and-release-qualification.md). Public `tracewarrant` naming preserves `workload-lab`/`workload_lab` compatibility and frozen wire formats.
+- Release rehearsal passed from a separate committed-source clone with fresh dependencies: 150 tests, distributions, installed qualification, preservation/evaluation and analytical checks. CI now retains evidence and runs the history audit. [Rehearsal](docs/v3/release-rehearsal.md), [exact public-release proposal](PUBLIC_RELEASE.md).
 - Baseline `c0fad29`, `research-pilot-1`, V2, its final report, all predictions and 64 protected files remain unchanged. No paid calls, cloud provisioning, external messages or publication. No C++/CUDA/optimizer investment justified.
 
 ## Frozen V2 pilot summary (historical)
