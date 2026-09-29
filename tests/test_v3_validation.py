@@ -355,3 +355,75 @@ def test_extreme_relative_error_remains_json_safe():
     assert row["relative_error_reason"] == "relative_error_overflow"
     assert row["absolute_error"] == 1e30
     json.dumps(row, allow_nan=False)
+
+
+@pytest.mark.parametrize("different_producer", [False, True])
+def test_controlled_comparisons_require_matching_environments(bundle, different_producer):
+    path = bundle[2][1 if different_producer else 0]
+    pred = json.loads(path.read_text())
+    for s in pred["scenarios"] if different_producer else pred["scenarios"][:1]:
+        s["environment"]["rate"] = 20
+    path.write_text(json.dumps(pred))
+    with pytest.raises(ValidationError, match="environment"):
+        freeze_predictions(bundle[0], bundle[2])
+
+
+@pytest.mark.parametrize("scale", [1, 1e-50, 1e-300])
+def test_material_decisions_do_not_depend_on_numeric_scale(bundle, scale):
+    actual = json.loads(bundle[3][0].read_text())
+    for s in actual["scenarios"]:
+        s["metrics"][0]["value"] *= scale
+    bundle[3][0].write_text(json.dumps(actual))
+    report = evaluate(*bundle)
+    assert report["models"][0]["material_pair_count"] == 1
+    assert report["baseline_comparisons"][0]["result"] == "baseline_choice_better"
+
+
+def test_single_scenario_cannot_establish_decision_value(bundle):
+    pp, fp, preds, actuals = bundle
+    protocol = json.loads(pp.read_text())
+    protocol["scenario_ids"] = ["a"]
+    pp.write_text(json.dumps(protocol))
+    for path in preds:
+        pred = json.loads(path.read_text())
+        pred["scenarios"] = pred["scenarios"][:1]
+        pred["rankings"] = []
+        pred["scenarios"][0]["metrics"][0].update(value=100, provenance="ESTIMATED")
+        path.write_text(json.dumps(pred))
+    fp.write_text(json.dumps(freeze_predictions(pp, preds)))
+    actual = json.loads(actuals[0].read_text())
+    actual["scenarios"] = actual["scenarios"][:1]
+    actual["freeze_sha256"] = sha256(fp.read_bytes())
+    actuals[0].write_text(json.dumps(actual))
+    report = evaluate(*bundle)
+    assert report["models"][0]["metric_errors"][0]["status"] == "compared"
+    assert report["baseline_comparisons"][0]["result"] == "insufficient_evidence"
+
+
+def test_invalid_output_does_not_reserve_filename(tmp_path):
+    path = tmp_path / "receipt.json"
+    with pytest.raises(ValueError):
+        write_new(path, {"invalid": float("nan")})
+    assert not path.exists()
+
+
+def test_separate_comparison_groups_can_use_different_environments(bundle):
+    pp, _, preds, _ = bundle
+    for path in preds:
+        pred = json.loads(path.read_text())
+        pred["scenarios"][1]["environment"]["rate"] = 20
+        pred["scenarios"][1]["comparison_group"] = "another-load"
+        pred["rankings"] = []
+        path.write_text(json.dumps(pred))
+    assert freeze_predictions(pp, preds)["artifact_type"] == "freeze"
+
+
+def test_zero_observations_are_nonmaterial_without_division(bundle):
+    actual = json.loads(bundle[3][0].read_text())
+    for s in actual["scenarios"]:
+        s["metrics"][0]["value"] = 0
+    bundle[3][0].write_text(json.dumps(actual))
+    report = evaluate(*bundle)
+    assert report["models"][0]["material_pair_count"] == 0
+    assert report["models"][0]["ranking_accuracy"] is None
+    assert report["baseline_comparisons"][0]["result"] == "no_material_decision_difference"

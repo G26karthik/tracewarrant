@@ -183,8 +183,9 @@ def load_artifact(path: str | Path, expected: str | None = None) -> tuple[dict, 
 
 
 def write_new(path: str | Path, data: dict) -> None:
+    raw = canonical_bytes(data)
     with Path(path).open("xb") as stream:
-        stream.write(canonical_bytes(data))
+        stream.write(raw)
 
 
 def freeze_predictions(protocol_path: str | Path, prediction_paths: list[str | Path]) -> dict:
@@ -216,6 +217,7 @@ def validate_bundle(protocol: dict, predictions: list[dict]) -> None:
     ):
         raise ValidationError("protocol requires a baseline")
     primary_definitions = {}
+    environments = {}
     identities = {}
     for prediction in predictions:
         if prediction["workload_id"] != protocol["workload_id"]:
@@ -234,6 +236,9 @@ def validate_bundle(protocol: dict, predictions: list[dict]) -> None:
                 raise ValidationError("primary metric missing from prediction")
             definition = tuple(primary[k] for k in ("unit", "statistic", "population"))
             group = scenario["comparison_group"]
+            if group in environments and environments[group] != scenario["environment"]:
+                raise ValidationError("prediction environments differ within comparison group")
+            environments[group] = scenario["environment"]
             if group in primary_definitions and primary_definitions[group] != definition:
                 raise ValidationError("primary metric semantics differ within comparison group")
             primary_definitions[group] = definition

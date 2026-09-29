@@ -240,9 +240,9 @@ def evaluate(protocol_path, freeze_path, prediction_paths, measurement_paths) ->
                         a, b = comparable[left][run], comparable[right][run]
                         signs.append((a > b) - (a < b))
                         material.append(
-                            abs(a - b) / max(abs(a), abs(b), 1e-30)
+                            a != b
+                            and abs(a - b) / max(abs(a), abs(b))
                             >= protocol["material_relative_difference"]
-                            and a != b
                         )
                     if not all(material) or len(set(signs)) != 1:
                         row["reason"] = "tie_small_or_inconsistent_effect"
@@ -262,7 +262,7 @@ def evaluate(protocol_path, freeze_path, prediction_paths, measurement_paths) ->
                     "comparison_group": group,
                     "choices": choices,
                     "method": method,
-                    "eligible": bool(ranking) and len(eligible) == len(ids),
+                    "eligible": bool(ranking) and len(ids) >= 2 and len(eligible) == len(ids),
                 }
             )
         material = [r for r in pairs if r["material"]]
