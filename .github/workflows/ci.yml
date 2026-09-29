@@ -20,6 +20,7 @@ jobs:
       - run: uv run ruff format --check .
       - run: uv run pytest
       - run: uv build --no-build-isolation
+      - run: uv run python -m benchmarks.qualify_package --wheel dist/tracewarrant-0.3.1-py3-none-any.whl --sdist dist/tracewarrant-0.3.1.tar.gz --output package-qualification.json
       - run: uv run workload-lab analyze examples/research-workflow.otlp.json --origin synthetic --format json
       - run: uv run workload-lab simulate examples/scenario.json --output simulation-smoke.json
       - run: uv run workload-lab inspect examples/v3/frames-heldout-base.otlp.json --output conformance-smoke.json

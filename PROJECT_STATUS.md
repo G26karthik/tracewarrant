@@ -1,14 +1,15 @@
 # Project status
 
-Updated: 2026-09-29. Internal codename: Workload Lab.
+Updated: 2026-09-29. Selected public name: **TraceWarrant**; former internal codename: Workload Lab.
 
-**Active direction: [PROJECT_V3.md](PROJECT_V3.md)** — simulator-neutral observation and performance-model validation. Internal release 0.3.0; [V3 final report](V3_PROJECT_REPORT.md). Local handoff tag: `validation-toolkit-v3`.
+**Active direction: [PROJECT_V3.md](PROJECT_V3.md)** — simulator-neutral observation and performance-model validation. Local open-source candidate 0.3.1; [completion report](docs/v3/completion-0.3.1.md), [short project refresher](START_HERE.md). The initial 0.3.0 report and `validation-toolkit-v3` tag remain preserved.
 
 - V3-A/B/C/E delivered locally: contract/research, three-source conformance, neutral artifacts, independent validation, baselines, packaging and reproducibility. `inspect`, `schema`, `check`, `freeze`, `evaluate` load no reference simulator.
 - V3-D executed with negative limits: FRAMES 16 calibration + 48 held-out sessions; SimPy median mean-latency error 1.50%, 2/2 material rankings. Utilization selected the same intervention. Strict exact answers passed 0/48 held-out; no useful-agent capacity claim. Hard-decision workload and external adoption remain unestablished.
 - Real conformance finding: incorrect collector completeness key refused; original traces preserved and explicit binding adapter supplied. All 72 feasibility/calibration/holdout graphs validate structurally after adaptation; inference service demand remains UNKNOWN.
 - Frozen V3 experiment: `af36005` / `v3-frames-freeze`. [Results](docs/v3/results.md), [reproduction](docs/v3/reproduce.md), [verification](docs/v3/verification.md).
-- 139 tests on Windows Python 3.11/3.12.12/3.13; lint/format/build; isolated zero-runtime-dependency wheel reproduces evaluation byte for byte. Hosted Linux/Windows CI is configured, not run here.
+- 150 tests pass on Windows Python 3.11/3.12.12/3.13 and Ubuntu WSL Python 3.12.3. Fresh installed wheels pass qualification on Windows and Linux: source/archive bytes, both command names, no runtime dependencies, no simulator import and exact evaluation reproduction. Hosted CI is configured, not run here.
+- Completion review fixed conflicting declared environments, scale-dependent material comparisons, single-option decision conclusions and empty files after serialization failure. [ADR-0018](docs/adr/ADR-0018-controlled-comparisons-and-release-qualification.md). Public `tracewarrant` naming preserves `workload-lab`/`workload_lab` compatibility and frozen wire formats.
 - Baseline `c0fad29`, `research-pilot-1`, V2, its final report, all predictions and 64 protected files remain unchanged. No paid calls, cloud provisioning, external messages or publication. No C++/CUDA/optimizer investment justified.
 
 ## Frozen V2 pilot summary (historical)
@@ -29,6 +30,8 @@ The entries below preserve the prior research state and are not the active roadm
 - External actions: no upload/publication/paid API/cloud spend. Azure CLI account exists; future justified provisioning still needs explicit capped-spend authorization. [External requirement](HUMAN_ACTION_REQUIRED.md). Offline reproduction needs no Azure action.
 - Next reversal gate: an independently motivated non-coding workload with materially contended non-LLM pools and identified inference behavior, followed by frozen held-out decisions that justify modeling effort beyond a utilization heuristic. Prefer an existing engine when appropriate.
 
-Reproduce baseline: `uv sync --locked`, `uv run ruff check .`, `uv run ruff format --check .`, `uv run pytest -q`, `uv build --no-build-isolation`.
+## Current reproduction
 
-Run `uv run workload-lab simulate examples/scenario.json`; analytical validation: `uv run --group validation python -m benchmarks.validate_simulation --output artifacts/new-validation.json`. Create `artifacts/` and use fresh paths. [Full experiment commands](docs/experiments/README.md). Hosted CI has not run; Linux/Python 3.11 remain configured, not locally verified. Public name/contact/release qualification remains unfinished.
+Reproduce: `uv sync --locked`, `uv run ruff check .`, `uv run ruff format --check .`, `uv run pytest -q`, `uv build --no-build-isolation`. Use the [distribution qualification procedure](docs/v3/release-qualification.md) to verify the installed wheel.
+
+Run `uv run tracewarrant inspect examples/traces/controlled-v1.otlp.json` or `uv run python -m benchmarks.v3_audit --output audit-new.json`. Use fresh output names. The reference backend remains available as `workload-lab simulate`. Public publication is prospective; TraceWarrant naming and local qualification are complete. [Publication boundary](HUMAN_ACTION_REQUIRED.md).

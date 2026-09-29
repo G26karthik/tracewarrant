@@ -1,5 +1,7 @@
 # V3 post-pilot report
 
+This is the preserved initial 0.3.0 phase assessment. The later 0.3.1 engineering completion and selected TraceWarrant name are recorded in the [completion report](docs/v3/completion-0.3.1.md); the study conclusions below are unchanged.
+
 2026-09-29. **Delivered: a local instrumentation/conformance and simulator-neutral validation prototype. Stronger scientific success remains unestablished.** Internal package 0.3.0, no public release.
 
 The V2 decision **PIVOT RECOMMENDED** remains accepted. `PROJECT_V2.md`, `FINAL_PROJECT_REPORT.md`, commit `c0fad29`, tag `research-pilot-1`, both ContextForge handoffs and all protected historical evidence are unchanged. V3 supersedes only the active product direction.

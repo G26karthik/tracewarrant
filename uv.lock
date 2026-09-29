@@ -696,6 +696,43 @@ wheels = [
 ]
 
 [[package]]
+name = "tracewarrant"
+version = "0.3.1"
+source = { editable = "." }
+
+[package.dev-dependencies]
+dev = [
+    { name = "hatchling" },
+    { name = "hypothesis" },
+    { name = "jsonschema" },
+    { name = "pytest" },
+    { name = "ruff" },
+]
+integration = [
+    { name = "opentelemetry-sdk" },
+    { name = "pydantic-ai-slim" },
+]
+validation = [
+    { name = "simpy" },
+]
+
+[package.metadata]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "hatchling", specifier = "==1.27.0" },
+    { name = "hypothesis", specifier = ">=6.130,<7" },
+    { name = "jsonschema", specifier = ">=4.25,<5" },
+    { name = "pytest", specifier = ">=8.3,<9" },
+    { name = "ruff", specifier = ">=0.11,<1" },
+]
+integration = [
+    { name = "opentelemetry-sdk", specifier = "==1.45.0" },
+    { name = "pydantic-ai-slim", specifier = "==2.51.0" },
+]
+validation = [{ name = "simpy", specifier = "==4.1.1" }]
+
+[[package]]
 name = "trove-classifiers"
 version = "2026.9.21.13"
 source = { registry = "https://pypi.org/simple" }
@@ -733,40 +770,3 @@ sdist = { url = "https://files.pythonhosted.org/packages/a3/26/b09b8010994eccc3c
 wheels = [
     { url = "https://files.pythonhosted.org/packages/67/81/4add07e5172b7ac40d8ed5ff580409a7801a4fe26d529bdd915401dabfbe/typing_inspection-0.4.4-py3-none-any.whl", hash = "sha256:65b8397ba37ccbce054456aaccddfc91e6e3083c92824df348d96ca832f3f147", size = 14750, upload-time = "2026-08-12T12:37:24.648Z" },
 ]
-
-[[package]]
-name = "workload-lab-internal"
-version = "0.3.0"
-source = { editable = "." }
-
-[package.dev-dependencies]
-dev = [
-    { name = "hatchling" },
-    { name = "hypothesis" },
-    { name = "jsonschema" },
-    { name = "pytest" },
-    { name = "ruff" },
-]
-integration = [
-    { name = "opentelemetry-sdk" },
-    { name = "pydantic-ai-slim" },
-]
-validation = [
-    { name = "simpy" },
-]
-
-[package.metadata]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "hatchling", specifier = "==1.27.0" },
-    { name = "hypothesis", specifier = ">=6.130,<7" },
-    { name = "jsonschema", specifier = ">=4.25,<5" },
-    { name = "pytest", specifier = ">=8.3,<9" },
-    { name = "ruff", specifier = ">=0.11,<1" },
-]
-integration = [
-    { name = "opentelemetry-sdk", specifier = "==1.45.0" },
-    { name = "pydantic-ai-slim", specifier = "==2.51.0" },
-]
-validation = [{ name = "simpy", specifier = "==4.1.1" }]

@@ -57,8 +57,8 @@ def _text(report: AnalysisReport) -> str:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(prog="workload-lab", description=__doc__)
-    parser.add_argument("--version", action="version", version="workload-lab 0.3.0 (internal)")
+    parser = argparse.ArgumentParser(prog="tracewarrant", description=__doc__)
+    parser.add_argument("--version", action="version", version="TraceWarrant 0.3.1 (experimental)")
     commands = parser.add_subparsers(dest="command", required=True)
     schema = commands.add_parser("schema", help="emit simulator-neutral artifact JSON Schema")
     schema.add_argument("--output", type=Path)

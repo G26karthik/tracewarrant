@@ -3,9 +3,9 @@ requires = ["hatchling==1.27.0"]
 build-backend = "hatchling.build"
 
 [project]
-name = "workload-lab-internal"
-version = "0.3.0"
-description = "Observation conformance and simulator-neutral performance-model validation"
+name = "tracewarrant"
+version = "0.3.1"
+description = "TraceWarrant: telemetry conformance and simulator-neutral performance-model validation"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "Apache-2.0"
@@ -13,6 +13,7 @@ dependencies = []
 classifiers = ["Private :: Do Not Upload", "Development Status :: 2 - Pre-Alpha"]
 
 [project.scripts]
+tracewarrant = "workload_lab.cli:main"
 workload-lab = "workload_lab.cli:main"
 
 [dependency-groups]

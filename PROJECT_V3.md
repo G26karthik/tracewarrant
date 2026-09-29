@@ -1,8 +1,8 @@
-# Workload Lab V3 — observation and model validation
+# TraceWarrant V3 — observation and model validation
 
 V3 supersedes V2 as the active product direction. `PROJECT_V2.md`, `FINAL_PROJECT_REPORT.md`, commit `c0fad29` and tag `research-pilot-1` remain the frozen V2 research record. The pilot conclusion **PIVOT RECOMMENDED** is accepted, not reinterpreted.
 
-Status: initial post-pilot toolkit and external study delivered, 2026-09-29; internal package 0.3.0. Stronger scientific success is not established. Internal name only; no public naming or release decision. [V3 report](V3_PROJECT_REPORT.md).
+Status: initial post-pilot toolkit and external study delivered, 2026-09-29; completion patch 0.3.1 uses the delegated public name TraceWarrant. It remains a local open-source candidate. Stronger scientific success is not established. [Initial V3 report](V3_PROJECT_REPORT.md), [completion report](docs/v3/completion-0.3.1.md), [project refresher](START_HERE.md).
 
 ## Product question
 
@@ -36,7 +36,7 @@ Claim support and value provenance are separate. Support: directly observable; i
 | V3-B | multi-source conformance, missingness/contradiction/privacy checks | passed on controlled/PydanticAI/FRAMES; caught real collector binding defect |
 | V3-C | simulator-neutral schemas; independent model sources; freeze/evaluate CLI; baseline comparisons | passed with independent SimPy, fixed-delay and ordinal heuristic producers |
 | V3-D | external workload feasibility, preregistration, frozen models, real intervention measurements and all-result report | executed; model/heuristic same decision, exact-answer quality gate failed, hard-decision workload unestablished |
-| V3-E | reproducible examples, tests/build, limitations, final status and coherent commits | passed locally: 139 tests on Python 3.11/3.12/3.13, wheel-only evaluation and offline audit |
+| V3-E | reproducible examples, tests/build, limitations, final status and coherent commits | 150 regression tests; Linux/Windows and installed-package qualification recorded in the completion report |
 
 No stage requires a complex model to win. Scientific success requires honest held-out evidence, not planner expansion. Stronger evidence would be a material decision improvement over the cheapest reasonable baseline. Do not claim uniqueness from an incomplete literature search.
 
@@ -48,7 +48,7 @@ Three trace sources exercise explicit support/refusal. The checker found a real 
 
 ## Explicit gates
 
-C++, CUDA, optimizers and cloud deployment require a measured V3 need. They are not scheduled. Public release requires independently reproduced behavior, a public identity/contact and packaging review. External requirements belong in `HUMAN_ACTION_REQUIRED.md`; ordinary local engineering continues autonomously.
+C++, CUDA, optimizers and cloud deployment require a measured V3 need. They are not scheduled. Local packaging qualification and public naming are complete; independent reproduction and external adoption remain unestablished. Public upload is prospective. The proposed destination and GitHub private reporting channel are recorded in `HUMAN_ACTION_REQUIRED.md`.
 
 ## Preservation and traceability
 

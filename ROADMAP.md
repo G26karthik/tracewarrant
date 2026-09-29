@@ -12,6 +12,8 @@ Active direction: [PROJECT_V3.md](PROJECT_V3.md). The standalone planner roadmap
 
 Next research is an independently motivated application with a defensible quality measure and a nontrivial intervention choice, or upstream integration of the already useful conformance/validation interfaces. Do not select by whether simulation wins. Preserve failed studies and include a cheap baseline. External adoption is not established by running our executor on external tasks.
 
-C++, CUDA, optimization and cloud deployment require a measured V3 product need. None is queued. Public naming/contact and release qualification remain maintainer decisions; local validation needs no authorization or paid resources.
+The completion patch uses the delegated public name **TraceWarrant**, corrects four validation/output edge cases, and adds local Linux/Windows and installed-distribution qualification. [Completion report](docs/v3/completion-0.3.1.md), [ADR-0018](docs/adr/ADR-0018-controlled-comparisons-and-release-qualification.md).
+
+C++, CUDA, optimization and cloud deployment require a measured V3 product need. None is queued. Public upload remains prospective; the proposed GitHub destination and private reporting channel are recorded in `HUMAN_ACTION_REQUIRED.md`. Local use is complete and needs no credentials or paid resources.
 
 [External results](docs/v3/results.md), [reproduction](docs/v3/reproduce.md), [current status](PROJECT_STATUS.md), [frozen V2 conclusion](FINAL_PROJECT_REPORT.md).

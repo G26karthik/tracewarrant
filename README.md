@@ -1,8 +1,12 @@
-# Workload Lab (internal codename)
+# TraceWarrant
+
+**Check the evidence behind performance claims.**
 
 Status: Experimental / Research Prototype
 
-Workload Lab checks whether observations support a performance model and whether frozen predictions survive real interventions. Use its trace conformance checker and simulator-neutral validator without adopting our simulator. UNKNOWN, unsupported claims and a simple baseline beating a complex model are useful results. Start with [PROJECT_V3.md](PROJECT_V3.md) and [PROJECT_STATUS.md](PROJECT_STATUS.md).
+TraceWarrant checks whether observations support a performance model and whether frozen predictions survive real interventions. Use its trace conformance checker and simulator-neutral validator without adopting our simulator. UNKNOWN, unsupported claims and a simple baseline beating a complex model are useful results. Returning to the project? Start with [the short refresher](START_HERE.md), then [PROJECT_V3.md](PROJECT_V3.md) and [PROJECT_STATUS.md](PROJECT_STATUS.md).
+
+Former internal name: Workload Lab. The selected public name and local distribution are `tracewarrant`; this candidate has not been published. The `workload-lab` command, `workload_lab` Python imports and versioned artifact/telemetry bindings remain compatible. Apache-2.0 licensed. [Naming decision](docs/v3/naming-2026-09-29.md), [release qualification](docs/v3/release-qualification.md).
 
 V3 accepts the pilot's **PIVOT RECOMMENDED** conclusion. [V2](PROJECT_V2.md), [its final report](FINAL_PROJECT_REPORT.md), `research-pilot-1` and all frozen evidence remain unchanged. This is a local research prototype, not a capacity planner or production release. [Refreshed research](docs/v3/research.md) establishes substantial overlap; no uniqueness is claimed.
 
@@ -12,10 +16,10 @@ Python 3.11+; core runtime has no third-party dependencies, service or GPU requi
 
 ```sh
 uv sync --locked
-uv run workload-lab inspect examples/traces/pydantic-ai-2.51.0.otlp.json
-uv run workload-lab inspect examples/v3/frames-heldout-base.otlp.json
-uv run workload-lab schema
-uv run workload-lab check docs/v3/frames-frozen/simpy.json
+uv run tracewarrant inspect examples/traces/pydantic-ai-2.51.0.otlp.json
+uv run tracewarrant inspect examples/v3/frames-heldout-base.otlp.json
+uv run tracewarrant schema
+uv run tracewarrant check docs/v3/frames-frozen/simpy.json
 ```
 
 The framework capture cannot identify queue/service boundaries. The external FRAMES capture exposes a misspelled completeness binding; inspection refuses it. [An explicit adapter and the retained failure](docs/v3/results.md) show how to fix an existing assertion without guessing topology.
@@ -49,7 +53,7 @@ uv run workload-lab simulate examples/scenario.json --output simulation.json
 uv run pytest
 ```
 
-`--output` creates a new file and refuses overwrite. `analyze` consumes original OTLP JSON/JSONL, not compiled IR. `simulate` accepts a separate explicit scenario and never executes traced tools. Runtime-only installation works with `python -m pip install .`; the internal distribution must not be published.
+`--output` creates a new file and refuses overwrite. `analyze` consumes original OTLP JSON/JSONL, not compiled IR. `simulate` accepts a separate explicit scenario and never executes traced tools. Runtime-only installation works with `python -m pip install .`; the local candidate retains the upload-prevention classifier pending publication.
 
 ```python
 from workload_lab import analyze, compile_workload, ingest
@@ -91,4 +95,4 @@ Core tests use the committed content-free framework trace and need no framework.
 
 [Architecture](ARCHITECTURE.md), [roadmap](ROADMAP.md), [ADRs](docs/adr/README.md), [contributing](CONTRIBUTING.md), [benchmark methodology](docs/benchmarks/methodology.md), [validation plan](docs/validation/plan.md), [license inventory](docs/dependency-licenses.md).
 
-The two ContextForge handoffs remain unchanged historical context. ContextForge and agentplan already have naming conflicts. No final public name or trademark clearance is claimed. New project code is Apache-2.0; reviewed competitor code has not been imported.
+The two ContextForge handoffs remain unchanged historical context. TraceWarrant replaces the internal Workload Lab name; historical names remain in frozen evidence. New project code is Apache-2.0; reviewed competitor code has not been imported.

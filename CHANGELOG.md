@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.1 — TraceWarrant local open-source candidate
+
+- Select TraceWarrant as the public project/distribution name; add `tracewarrant` CLI while preserving `workload-lab`, Python imports and artifact/telemetry identities.
+- Refuse conflicting declared environments within a controlled comparison group, including differences across prediction producers.
+- Preserve material relative differences at very small numeric scales and refuse decision-value conclusions from a single scenario.
+- Serialize JSON before reserving an exclusive output path, avoiding empty files after invalid output.
+- Add fresh installed-wheel qualification, source-archive checks and CI integration; verify both CLI entry points and exact frozen evaluation without a simulator.
+- Add a short project refresher and document local Linux/Windows qualification. Original studies and their negative results remain unchanged.
+
 ## 0.3.0 — unreleased internal validation toolkit
 
 - V3 supersedes the prospective V2 planner direction; frozen pilot preserved.

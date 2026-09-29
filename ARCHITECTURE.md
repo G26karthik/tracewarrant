@@ -1,5 +1,7 @@
 # Architecture
 
+Project identity: TraceWarrant. The distribution and preferred CLI are `tracewarrant`; existing `workload_lab` Python imports, `workload-lab` alias and versioned wire identities remain stable. Historical research continues to use Workload Lab.
+
 Active scope: [PROJECT_V3.md](PROJECT_V3.md); evidence: [PROJECT_STATUS.md](PROJECT_STATUS.md). The product boundary is offline observation conformance and model-neutral prediction evaluation. The V2 simulator remains an optional reference backend. Example applications execute explicitly requested measurement workloads; core inspection/validation executes none.
 
 ```text
