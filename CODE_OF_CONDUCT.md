@@ -4,4 +4,4 @@ Discuss evidence and implementation respectfully. Welcome questions and correcti
 
 Do not publish private prompts, credentials, traces or model outputs in issues. Use synthetic reproductions. Maintainers may remove harmful content, limit participation or close discussions that repeatedly violate these expectations, applying proportionate measures and explaining decisions where privacy permits.
 
-Before public release, establish and document a private maintainer contact or reporting channel. No public community or enforcement team is currently claimed. Follow [SECURITY.md](SECURITY.md) for security-sensitive reports.
+For abuse or safety concerns, use GitHub's [Report content / Report abuse channels](https://docs.github.com/en/communities/maintaining-your-safety-on-github/reporting-abuse-or-spam) to report to GitHub Support. Do not expose private information in a public issue. Follow [SECURITY.md](SECURITY.md) for confidential vulnerability reports to the repository maintainers. No independent moderation team or response SLA is claimed.

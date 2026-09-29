@@ -12,6 +12,12 @@ license = "Apache-2.0"
 dependencies = []
 classifiers = ["Private :: Do Not Upload", "Development Status :: 2 - Pre-Alpha"]
 
+[project.urls]
+Repository = "https://github.com/G26karthik/tracewarrant"
+Documentation = "https://github.com/G26karthik/tracewarrant#readme"
+Issues = "https://github.com/G26karthik/tracewarrant/issues"
+Security = "https://github.com/G26karthik/tracewarrant/security/policy"
+
 [project.scripts]
 tracewarrant = "workload_lab.cli:main"
 workload-lab = "workload_lab.cli:main"

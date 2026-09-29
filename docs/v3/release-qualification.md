@@ -1,6 +1,6 @@
 # Qualifying the local 0.3.1 distribution
 
-These checks establish local engineering readiness, not production suitability, independent review or public publication. The artifact format remains 1.0; the package is `tracewarrant` 0.3.1. Keep the `Private :: Do Not Upload` classifier until the prospective public upload is requested. The public name is chosen; the proposed destination and security channel are recorded in the [naming decision](naming-2026-09-29.md).
+These checks establish local engineering readiness, not production suitability or independent review. The artifact format remains 1.0; the package is `tracewarrant` 0.3.1. GitHub publication is authorized. Keep the `Private :: Do Not Upload` classifier because PyPI upload is outside the release scope. The original selection is recorded in the [naming decision](naming-2026-09-29.md); current publication status is in [PUBLIC_RELEASE.md](../../PUBLIC_RELEASE.md).
 
 ## Repeatable checks
 

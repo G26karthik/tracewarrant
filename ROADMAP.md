@@ -14,6 +14,6 @@ Next research is an independently motivated application with a defensible qualit
 
 The completion patch uses the delegated public name **TraceWarrant**, corrects four validation/output edge cases, and adds local Linux/Windows and installed-distribution qualification. [Completion report](docs/v3/completion-0.3.1.md), [ADR-0018](docs/adr/ADR-0018-controlled-comparisons-and-release-qualification.md).
 
-C++, CUDA, optimization and cloud deployment require a measured V3 product need. None is queued. Public upload remains prospective; the proposed GitHub destination and private reporting channel are recorded in `HUMAN_ACTION_REQUIRED.md`. Local use is complete and needs no credentials or paid resources.
+C++, CUDA, optimization and cloud deployment require a measured V3 product need. None is queued. The maintainer authorized GitHub publication; the repository is public and private security reporting enabled. [Release procedure](PUBLIC_RELEASE.md). Local use needs no credentials or paid resources.
 
 [External results](docs/v3/results.md), [reproduction](docs/v3/reproduce.md), [current status](PROJECT_STATUS.md), [frozen V2 conclusion](FINAL_PROJECT_REPORT.md).

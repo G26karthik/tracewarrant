@@ -4,9 +4,11 @@
 
 Status: Experimental / Research Prototype
 
+[![Correctness](https://github.com/G26karthik/tracewarrant/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/G26karthik/tracewarrant/actions/workflows/ci.yml)
+
 TraceWarrant checks whether observations support a performance model and whether frozen predictions survive real interventions. Use its trace conformance checker and simulator-neutral validator without adopting our simulator. UNKNOWN, unsupported claims and a simple baseline beating a complex model are useful results. Returning to the project? Start with [the short refresher](START_HERE.md), then [PROJECT_V3.md](PROJECT_V3.md) and [PROJECT_STATUS.md](PROJECT_STATUS.md).
 
-Former internal name: Workload Lab. The selected public name and local distribution are `tracewarrant`; this candidate has not been published. The `workload-lab` command, `workload_lab` Python imports and versioned artifact/telemetry bindings remain compatible. Apache-2.0 licensed. [Naming decision](docs/v3/naming-2026-09-29.md), [release qualification](docs/v3/release-qualification.md).
+Former internal name: Workload Lab. Source is available at [G26karthik/tracewarrant](https://github.com/G26karthik/tracewarrant), licensed Apache-2.0. The `workload-lab` command, `workload_lab` Python imports and versioned artifact/telemetry bindings remain compatible. [GitHub releases](https://github.com/G26karthik/tracewarrant/releases), [release qualification](docs/v3/release-qualification.md).
 
 V3 accepts the pilot's **PIVOT RECOMMENDED** conclusion. [V2](PROJECT_V2.md), [its final report](FINAL_PROJECT_REPORT.md), `research-pilot-1` and all frozen evidence remain unchanged. This is a local research prototype, not a capacity planner or production release. [Refreshed research](docs/v3/research.md) establishes substantial overlap; no uniqueness is claimed.
 
@@ -15,6 +17,8 @@ V3 accepts the pilot's **PIVOT RECOMMENDED** conclusion. [V2](PROJECT_V2.md), [i
 Python 3.11+; core runtime has no third-party dependencies, service or GPU requirement.
 
 ```sh
+git clone https://github.com/G26karthik/tracewarrant.git
+cd tracewarrant
 uv sync --locked
 uv run tracewarrant inspect examples/traces/pydantic-ai-2.51.0.otlp.json
 uv run tracewarrant inspect examples/v3/frames-heldout-base.otlp.json
@@ -53,7 +57,7 @@ uv run workload-lab simulate examples/scenario.json --output simulation.json
 uv run pytest
 ```
 
-`--output` creates a new file and refuses overwrite. `analyze` consumes original OTLP JSON/JSONL, not compiled IR. `simulate` accepts a separate explicit scenario and never executes traced tools. Runtime-only installation works with `python -m pip install .`; the local candidate retains the upload-prevention classifier pending publication.
+`--output` creates a new file and refuses overwrite. `analyze` consumes original OTLP JSON/JSONL, not compiled IR. `simulate` accepts a separate explicit scenario and never executes traced tools. Runtime-only installation works with `python -m pip install .`, or install a wheel from GitHub Releases. There is no PyPI release; the package retains its registry upload-prevention classifier.
 
 ```python
 from workload_lab import analyze, compile_workload, ingest
