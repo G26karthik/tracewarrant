@@ -6,9 +6,11 @@ Status: Experimental / Research Prototype
 
 [![Correctness](https://github.com/G26karthik/tracewarrant/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/G26karthik/tracewarrant/actions/workflows/ci.yml)
 
-TraceWarrant checks whether observations support a performance model and whether frozen predictions survive real interventions. Use its trace conformance checker and simulator-neutral validator without adopting our simulator. UNKNOWN, unsupported claims and a simple baseline beating a complex model are useful results. Returning to the project? Start with [the short refresher](START_HERE.md), then [PROJECT_V3.md](PROJECT_V3.md) and [PROJECT_STATUS.md](PROJECT_STATUS.md).
+TraceWarrant checks whether observations support a performance model and whether frozen predictions survive real interventions. Use its trace conformance checker and simulator-neutral validator without adopting our simulator. UNKNOWN, unsupported claims and a simple baseline beating a complex model are useful results. Returning to the project? Start with [the short refresher](START_HERE.md), then [PROJECT_V3.md](PROJECT_V3.md), [PROJECT_STATUS.md](PROJECT_STATUS.md) and [the continuation checkpoint](CONTINUATION.md).
 
 Former internal name: Workload Lab. Source is available at [G26karthik/tracewarrant](https://github.com/G26karthik/tracewarrant), licensed Apache-2.0. The `workload-lab` command, `workload_lab` Python imports and versioned artifact/telemetry bindings remain compatible. [GitHub releases](https://github.com/G26karthik/tracewarrant/releases), [release qualification](docs/v3/release-qualification.md).
+
+Publication status, checked 2026-09-30: the repository and private security reporting are live; [all five hosted CI jobs passed](https://github.com/G26karthik/tracewarrant/actions/runs/36533108249). The first experimental GitHub prerelease and its downloadable assets are still pending. Until then, install from the source checkout.
 
 V3 accepts the pilot's **PIVOT RECOMMENDED** conclusion. [V2](PROJECT_V2.md), [its final report](FINAL_PROJECT_REPORT.md), `research-pilot-1` and all frozen evidence remain unchanged. This is a local research prototype, not a capacity planner or production release. [Refreshed research](docs/v3/research.md) establishes substantial overlap; no uniqueness is claimed.
 

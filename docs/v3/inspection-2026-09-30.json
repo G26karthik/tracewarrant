@@ -1,0 +1,230 @@
+{
+  "checkpoint_date": "2026-09-30",
+  "documentation_checkpoint": "Subsequent local commit; resolve current HEAD with Git. Not pushed by this inspection.",
+  "github": {
+    "ci_artifacts": [
+      {
+        "digest": "sha256:28519bf8cb75fde060e48052b3eac71f89962d1ee48b82900da82a91e4617a44",
+        "expired": false,
+        "name": "qualification-windows-latest-py3.13"
+      },
+      {
+        "digest": "sha256:2f4a4f6ab0b136b6be63d659899b14876535bd245495fffab4bb89e23f3f9fcc",
+        "expired": false,
+        "name": "qualification-windows-latest-py3.11"
+      },
+      {
+        "digest": "sha256:7838edfa32d108953bd4b546d6c47acd040cec7af48ef4d1c7b58658a998ef9b",
+        "expired": false,
+        "name": "qualification-ubuntu-latest-py3.13"
+      },
+      {
+        "digest": "sha256:465e2902b4406a208cfe23a486a553fbb97f4adf13f32656e2fb00ae8536aeb6",
+        "expired": false,
+        "name": "qualification-ubuntu-latest-py3.11"
+      },
+      {
+        "digest": "sha256:cd62ae1c1aa9f4be17b889d5089dd76c1a55a9c772ca0658143e9e893f5ad79e",
+        "expired": false,
+        "name": "analytical-validation"
+      }
+    ],
+    "ci_run": {
+      "conclusion": "success",
+      "head_sha": "cede1a4f662c3e179928d8145d761040f4831939",
+      "id": 36533108249,
+      "jobs": [
+        {
+          "conclusion": "success",
+          "name": "analytic"
+        },
+        {
+          "conclusion": "success",
+          "name": "test (ubuntu-latest, 3.13)"
+        },
+        {
+          "conclusion": "success",
+          "name": "test (ubuntu-latest, 3.11)"
+        },
+        {
+          "conclusion": "success",
+          "name": "test (windows-latest, 3.11)"
+        },
+        {
+          "conclusion": "success",
+          "name": "test (windows-latest, 3.13)"
+        }
+      ],
+      "status": "completed",
+      "url": "https://github.com/G26karthik/tracewarrant/actions/runs/36533108249"
+    },
+    "default_branch": "main",
+    "private_vulnerability_reporting": true,
+    "release_count_at_inspection": 0,
+    "remote_main_at_inspection": "cede1a4f662c3e179928d8145d761040f4831939",
+    "repository": "https://github.com/G26karthik/tracewarrant",
+    "v0_3_1_tag_present_at_inspection": false,
+    "visibility": "public"
+  },
+  "implementation_source_commit": "cede1a4f662c3e179928d8145d761040f4831939",
+  "local_validation": {
+    "audit_checks": {
+      "adapted_frames_complete_graphs": 72,
+      "evaluation_byte_exact": true,
+      "frames_sessions": 72,
+      "original_working_bytes_exact": 64,
+      "pilot_tag_unchanged": true,
+      "preserved_file_count": 64
+    },
+    "audit_report": {
+      "path": "artifacts/handoff-2026-09-30/offline-audit.json",
+      "sha256": "1ecbeba50100e35b2b5bc4577e57366618fe4fb067449698a1ea0df191c94414"
+    },
+    "ruff_format_passed": true,
+    "ruff_formatted_file_count": 123,
+    "ruff_lint_passed": true,
+    "source_metadata": {
+      "compiler": "MSC v.1944 64 bit (AMD64)",
+      "configuration": {
+        "model_execution": false,
+        "network": false
+      },
+      "cpp_compiler": "not applicable",
+      "cpu": "AMD Ryzen 9 8945HS w/ Radeon 780M Graphics",
+      "cuda": "not applicable",
+      "date_utc": "2026-09-30T17:51:19.304464+00:00",
+      "dependency_lock_sha256": "9517390ba53419767964dae13ca93b26dd960654466e368103c5d9cce919f915",
+      "driver": "not applicable",
+      "git_commit": "cede1a4f662c3e179928d8145d761040f4831939",
+      "git_dirty": false,
+      "gpu": "not used",
+      "harness_sha256": "3285d93b57a19394425f44189ddfceaac03ce04e28c3e62f97b398a7a231dff6",
+      "logical_cpus": 16,
+      "os": "Windows-11-10.0.26200-SP0",
+      "python": "3.12.12 (main, Jan 14 2026, 19:30:21) [MSC v.1944 64 bit (AMD64)]",
+      "ram_bytes": 16356962304,
+      "seed": 0,
+      "source_tree_sha256": "39015a1857d8df97fb31069f19f3a9ebfade9f694f19169073ddde627b66ea0c"
+    },
+    "test_report": {
+      "path": "artifacts/handoff-2026-09-30/tests.xml",
+      "sha256": "c4f8dedfa7d56a6d28bc953fc03f7d61ac5a5b5eb5c35dcb38a0b2f5c48b8174"
+    },
+    "tests_failed": 0,
+    "tests_passed": 150
+  },
+  "pending_completion_gate": "Qualified v0.3.1 GitHub experimental prerelease, public asset verification and closeout.",
+  "retained_ci_reports": [
+    {
+      "path": "artifacts/public-release/initial-ci/analytical-validation/analytical-validation.json",
+      "sha256": "84db5f6b4c199918f31ccbf13183c8eb1f2c0783a94974fcfad6a70d121828c6",
+      "source_commit": "cede1a4f662c3e179928d8145d761040f4831939"
+    },
+    {
+      "checks": {
+        "adapted_frames_complete_graphs": 72,
+        "evaluation_byte_exact": true,
+        "frames_sessions": 72,
+        "original_working_bytes_exact": 61,
+        "pilot_tag_unchanged": true,
+        "preserved_file_count": 64
+      },
+      "path": "artifacts/public-release/initial-ci/qualification-ubuntu-latest-py3.11/offline-audit.json",
+      "sha256": "d030d85f02eed4a1783386582c4171348082499e23e5e16210b269df785187de",
+      "source_commit": "cede1a4f662c3e179928d8145d761040f4831939"
+    },
+    {
+      "checks": {
+        "cli_verified": true,
+        "evaluation_byte_exact": true,
+        "installed_bytes_match_wheel": true,
+        "runtime_dependencies": [],
+        "simulator_not_imported": true
+      },
+      "path": "artifacts/public-release/initial-ci/qualification-ubuntu-latest-py3.11/package-qualification.json",
+      "sha256": "36489ce3db556e5293fe8e7fb4ba2de4cdc532e97b60f044c5862545665bccaa",
+      "source_commit": "cede1a4f662c3e179928d8145d761040f4831939"
+    },
+    {
+      "checks": {
+        "adapted_frames_complete_graphs": 72,
+        "evaluation_byte_exact": true,
+        "frames_sessions": 72,
+        "original_working_bytes_exact": 61,
+        "pilot_tag_unchanged": true,
+        "preserved_file_count": 64
+      },
+      "path": "artifacts/public-release/initial-ci/qualification-ubuntu-latest-py3.13/offline-audit.json",
+      "sha256": "b31419d92495c22c60f719195b0b54afe6839aa07085e6cdee60dfeaa14f569a",
+      "source_commit": "cede1a4f662c3e179928d8145d761040f4831939"
+    },
+    {
+      "checks": {
+        "cli_verified": true,
+        "evaluation_byte_exact": true,
+        "installed_bytes_match_wheel": true,
+        "runtime_dependencies": [],
+        "simulator_not_imported": true
+      },
+      "path": "artifacts/public-release/initial-ci/qualification-ubuntu-latest-py3.13/package-qualification.json",
+      "sha256": "44fe472097f6dff94df3d42cb5147e648136cfe7b5fc78b3636a81e27be2aa7e",
+      "source_commit": "cede1a4f662c3e179928d8145d761040f4831939"
+    },
+    {
+      "checks": {
+        "adapted_frames_complete_graphs": 72,
+        "evaluation_byte_exact": true,
+        "frames_sessions": 72,
+        "original_working_bytes_exact": 61,
+        "pilot_tag_unchanged": true,
+        "preserved_file_count": 64
+      },
+      "path": "artifacts/public-release/initial-ci/qualification-windows-latest-py3.11/offline-audit.json",
+      "sha256": "2f6b7fd7a657a170a633f8cab3687790954806889b8fdb1aeb10eae85d0e71e8",
+      "source_commit": "cede1a4f662c3e179928d8145d761040f4831939"
+    },
+    {
+      "checks": {
+        "cli_verified": true,
+        "evaluation_byte_exact": true,
+        "installed_bytes_match_wheel": true,
+        "runtime_dependencies": [],
+        "simulator_not_imported": true
+      },
+      "path": "artifacts/public-release/initial-ci/qualification-windows-latest-py3.11/package-qualification.json",
+      "sha256": "e4680098d80ec07be75b0a09206464396854d3b8dfa9429649400f1d90978a06",
+      "source_commit": "cede1a4f662c3e179928d8145d761040f4831939"
+    },
+    {
+      "checks": {
+        "adapted_frames_complete_graphs": 72,
+        "evaluation_byte_exact": true,
+        "frames_sessions": 72,
+        "original_working_bytes_exact": 61,
+        "pilot_tag_unchanged": true,
+        "preserved_file_count": 64
+      },
+      "path": "artifacts/public-release/initial-ci/qualification-windows-latest-py3.13/offline-audit.json",
+      "sha256": "9ddcb4e8dc4e3ece5bc073be50aa8e40bded87da1d0b6b6bb463c063f2ae7dc5",
+      "source_commit": "cede1a4f662c3e179928d8145d761040f4831939"
+    },
+    {
+      "checks": {
+        "cli_verified": true,
+        "evaluation_byte_exact": true,
+        "installed_bytes_match_wheel": true,
+        "runtime_dependencies": [],
+        "simulator_not_imported": true
+      },
+      "path": "artifacts/public-release/initial-ci/qualification-windows-latest-py3.13/package-qualification.json",
+      "sha256": "2cc3445f77d86ce898a76c0268dc2c296af0362eedbac102926323a006e58bb3",
+      "source_commit": "cede1a4f662c3e179928d8145d761040f4831939"
+    }
+  ],
+  "scientific_limits": [
+    "No added intervention-choice value over utilization in FRAMES.",
+    "Strict exact-answer quality passed 0/48 held-out sessions.",
+    "Production suitability and external adoption unestablished."
+  ],
+  "verified_at_utc": "2026-09-30T17:58:46.999769+00:00"
+}
