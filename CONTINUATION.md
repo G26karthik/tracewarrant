@@ -60,7 +60,7 @@ Public package: `tracewarrant` 0.3.1, Python >=3.11, no third-party runtime depe
 
 ## Resume checklist
 
-The [assessment prompt](CONTINUE_PROMPT.md) first requests inspection and a wait for an explicit **continue**. After that instruction, complete these authorized release steps without repeatedly asking for routine approval:
+The [autonomous completion prompt](CONTINUE_PROMPT.md) requests inspection followed immediately by the authorized release work. The maintainer superseded the earlier assessment-only wait: use an inspect → act → verify → checkpoint → repeat loop without waiting for a separate **continue** or routine approval. Stop once the scoped release gates pass, or when a genuine access/scope blocker requires maintainer input. Complete these steps:
 
 1. Inspect `git status`, branch/HEAD, remotes and tags. Recheck repository visibility/default branch, release list, CI and private reporting through GitHub. Respect any new user changes. Never assume the inspection snapshot is current.
 2. Choose a clean final source commit containing the current documentation and any necessary routine release fixes. Push the intended source to remote `main` without force and wait for all five CI jobs on that exact SHA. The previous green run does not automatically qualify a new commit.
