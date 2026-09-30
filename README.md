@@ -10,7 +10,7 @@ TraceWarrant checks whether observations support a performance model and whether
 
 Former internal name: Workload Lab. Source is available at [G26karthik/tracewarrant](https://github.com/G26karthik/tracewarrant), licensed Apache-2.0. The `workload-lab` command, `workload_lab` Python imports and versioned artifact/telemetry bindings remain compatible. [GitHub releases](https://github.com/G26karthik/tracewarrant/releases), [release qualification](docs/v3/release-qualification.md).
 
-Publication status, checked 2026-09-30: the repository and private security reporting are live; [all five hosted CI jobs passed](https://github.com/G26karthik/tracewarrant/actions/runs/36533108249). The first experimental GitHub prerelease and its downloadable assets are still pending. Until then, install from the source checkout.
+Publication status, checked 2026-09-30: [experimental prerelease `v0.3.1`](https://github.com/G26karthik/tracewarrant/releases/tag/v0.3.1) is available. [All five release-source CI jobs passed](https://github.com/G26karthik/tracewarrant/actions/runs/36757290326); all eight public assets passed checksum verification and the downloaded wheel passed fresh installed-package qualification. [Release evidence and limits](docs/v3/public-release-0.3.1.md). Private security reporting is enabled.
 
 V3 accepts the pilot's **PIVOT RECOMMENDED** conclusion. [V2](PROJECT_V2.md), [its final report](FINAL_PROJECT_REPORT.md), `research-pilot-1` and all frozen evidence remain unchanged. This is a local research prototype, not a capacity planner or production release. [Refreshed research](docs/v3/research.md) establishes substantial overlap; no uniqueness is claimed.
 

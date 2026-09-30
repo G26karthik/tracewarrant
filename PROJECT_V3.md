@@ -2,7 +2,7 @@
 
 V3 supersedes V2 as the active product direction. `PROJECT_V2.md`, `FINAL_PROJECT_REPORT.md`, commit `c0fad29` and tag `research-pilot-1` remain the frozen V2 research record. The pilot conclusion **PIVOT RECOMMENDED** is accepted, not reinterpreted.
 
-Status: initial post-pilot toolkit and external study delivered, 2026-09-29; completion patch 0.3.1 uses the public name TraceWarrant. The maintainer authorized GitHub publication at [G26karthik/tracewarrant](https://github.com/G26karthik/tracewarrant). Stronger scientific success is not established. [Initial V3 report](V3_PROJECT_REPORT.md), [completion report](docs/v3/completion-0.3.1.md), [project refresher](START_HERE.md).
+Status: initial post-pilot toolkit and external study delivered, 2026-09-29; completion patch 0.3.1 uses the public name TraceWarrant. [Public prerelease `v0.3.1`](https://github.com/G26karthik/tracewarrant/releases/tag/v0.3.1) was published and verified 2026-09-30; scoped completion is recorded in the 2026-10-01 closeout. Stronger scientific success is not established. [Initial V3 report](V3_PROJECT_REPORT.md), [local completion report](docs/v3/completion-0.3.1.md), [public release closeout](docs/v3/public-release-0.3.1.md), [project refresher](START_HERE.md).
 
 ## Product question
 
@@ -36,7 +36,7 @@ Claim support and value provenance are separate. Support: directly observable; i
 | V3-B | multi-source conformance, missingness/contradiction/privacy checks | passed on controlled/PydanticAI/FRAMES; caught real collector binding defect |
 | V3-C | simulator-neutral schemas; independent model sources; freeze/evaluate CLI; baseline comparisons | passed with independent SimPy, fixed-delay and ordinal heuristic producers |
 | V3-D | external workload feasibility, preregistration, frozen models, real intervention measurements and all-result report | executed; model/heuristic same decision, exact-answer quality gate failed, hard-decision workload unestablished |
-| V3-E | reproducible examples, tests/build, limitations, final status and coherent commits | 150 regression tests; Linux/Windows and installed-package qualification recorded in the completion report |
+| V3-E | reproducible examples, tests/build, limitations, final status and coherent commits | passed; 150 regressions per hosted matrix job, Linux/Windows installed qualification, published prerelease and verified public-download installation |
 
 No stage requires a complex model to win. Scientific success requires honest held-out evidence, not planner expansion. Stronger evidence would be a material decision improvement over the cheapest reasonable baseline. Do not claim uniqueness from an incomplete literature search.
 
@@ -48,8 +48,8 @@ Three trace sources exercise explicit support/refusal. The checker found a real 
 
 ## Explicit gates
 
-C++, CUDA, optimizers and cloud deployment require a measured V3 need. They are not scheduled. Local packaging qualification and public naming are complete; independent reproduction and external adoption remain unestablished. GitHub publication is authorized and private reporting enabled. The release procedure is recorded in `PUBLIC_RELEASE.md`.
+C++, CUDA, optimizers and cloud deployment require a measured V3 need. They are not scheduled. Packaging qualification, public naming and the experimental GitHub prerelease are complete; independent maintainer reproduction and external adoption remain unestablished. Private reporting is enabled. Release evidence is recorded in `PUBLIC_RELEASE.md`.
 
 ## Preservation and traceability
 
-New research and validation live under `docs/v3/`; previous experiment artifacts and reports are immutable. New ADRs describe current decisions without rewriting old reasoning. `PROJECT_STATUS.md` records the active phase; the final V3 report will assess each success criterion separately and identify unmet external or scientific requirements.
+New research and validation live under `docs/v3/`; previous experiment artifacts and reports are immutable. New ADRs describe current decisions without rewriting old reasoning. `PROJECT_STATUS.md` records the active phase; the initial/local reports and public release closeout assess delivered scope separately from unmet external or scientific requirements.

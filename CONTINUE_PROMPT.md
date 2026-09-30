@@ -81,10 +81,13 @@ research-pilot-1, the V3 freeze, original traces and negative findings. Do not
 resume the old capacity-planner/native/CUDA/optimizer roadmap. Keep workload_lab
 imports, workload-lab compatibility and frozen artifact/telemetry formats.
 
-The V3 core is delivered and all five hosted jobs passed on cede1a4, but the
-first GitHub release and final assets were still pending at the checkpoint.
-The continuation/status documentation is a later local commit, not yet pushed.
-Recheck these facts. Do not upload older candidate files without rebuilding.
+Current closeout: the scoped V3 toolkit and first experimental release are
+complete. v0.3.1 is published from b0d5c5d; all five release-source CI jobs passed,
+all eight public assets were verified, and downloaded-wheel qualification passed.
+See docs/v3/public-release-0.3.1.md and its JSON evidence. Verify these facts first.
+If all gates still pass, report completed scope and stop; do not recreate the
+release or manufacture more work. A later main-branch documentation commit does
+not move the immutable release tag. Older candidate files are not final assets.
 Do not report 100/100 for the scoped release until all completion gates pass.
 Never equate that completion with production readiness or scientific superiority
 to the simple baseline. The FRAMES study retained failed exact-answer quality and

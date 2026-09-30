@@ -1,6 +1,6 @@
 # External actions
 
-No maintainer input is required for the authorized TraceWarrant GitHub publication. The maintainer approved creation of the repository, upload of the description/README/source, and continuation through release. Naming, routine Git commits, hosted CI and release fixes are authorized.
+No maintainer input is required for the completed TraceWarrant GitHub publication. The maintainer approved creation of the repository, upload of the description/README/source, and continuation through release. The scoped experimental toolkit and [prerelease `v0.3.1`](https://github.com/G26karthik/tracewarrant/releases/tag/v0.3.1) are complete; public downloads, checksums and installed-package qualification passed. [Closeout evidence](docs/v3/public-release-0.3.1.md).
 
 The public repository is [G26karthik/tracewarrant](https://github.com/G26karthik/tracewarrant). Private vulnerability reporting is enabled. [Release scope and procedure](PUBLIC_RELEASE.md). The package retains `Private :: Do Not Upload` to prevent PyPI publication; the authorized release is on GitHub.
 
