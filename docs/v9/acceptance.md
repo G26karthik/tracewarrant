@@ -3,8 +3,9 @@
 This map uses the maintainer's V3 pivot requirements as the product boundary;
 the superseded planner roadmap is not an outstanding backlog. V3 implementation
 and scientific records remain preserved. The V4–V8 workflow additions are also
-closed. Final integrity/package/public-release qualification is V9; it is still
-pending until its evidence is recorded below and in the public closeout.
+closed. Final V9 integrity/package/public-release qualification passed. The
+agreed experimental scope is complete, with **zero required remaining stages**.
+[Verified public closeout](public-release-0.7.1.md), [acceptance record](acceptance.json).
 
 | Original V3 requirement | Delivered evidence |
 | --- | --- |
@@ -31,13 +32,14 @@ honest completion. Caller-declared evidence is not independently authenticated.
 | V6 standalone quality checks | Strict scalar sample/policy, offered-population multiple gates and HTML/JSON; verified 0.5.0 |
 | V7 policy/population binding | Exact plan/receipt bytes, identities and roster membership; verified 0.6.0; retrospective example chronology remains unauthenticated |
 | V8 portable quality evidence | Bound/unbound snapshots, checksum and JSON/HTML replay, refusals and installed/public-download qualification; verified 0.7.0 |
-| V9 final acceptance | One reproduced performance-HTML integrity defect fixed; final installed/hosted/public 0.7.1 checks pending |
+| V9 final acceptance | Reproduced performance-HTML defect fixed; 292 tests per hosted matrix job, fresh installed/hosted and all ten public 0.7.1 downloads/replays/refusals passed |
 
 Final checks: full tests/lint/format, isolated installed wheel/source bytes and
 both commands, conformance sources, frozen evaluation, strict/performance/quality
 workflow, bound/unbound bundles and rehashed false reports, protected files/tags,
 exact-source/tag CI, all public asset hashes and fresh downloaded installed replay.
-The release closeout will bind these results to one clean immutable source.
+The release closeout binds these passed checks to clean immutable source
+`ecc0ebe1c224a9345b355d38ef44a0a0c6f1ac61`. No required check or feature stage remains.
 
 Remaining claims outside completion: production readiness, independent adoption,
 authenticated measurements/chronology, and model superiority over cheap baselines.

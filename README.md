@@ -2,7 +2,7 @@
 
 **Check the evidence behind performance claims.**
 
-Status: Experimental / Research Prototype. [Final acceptance](PROJECT_V9.md) is preparing patch 0.7.1; [completion boundary](PROJECT_COMPLETION.md). Published 0.7.0 remains verified.
+Status: Experimental / Research Prototype. The agreed project is [complete](PROJECT_COMPLETION.md), published as 0.7.1. Required remaining stages: zero.
 
 Latest application study: [V5 HotpotQA qualification](PROJECT_V5.md) completed
 eight real requests but failed its predeclared quality floor (4/8 exact answers,
@@ -11,11 +11,11 @@ performance study was not unlocked; useful-agent capacity is still unestablished
 
 [![Correctness](https://github.com/G26karthik/tracewarrant/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/G26karthik/tracewarrant/actions/workflows/ci.yml)
 
-TraceWarrant checks whether observations support a performance model and whether frozen predictions survive real interventions. Use its trace conformance checker and simulator-neutral validator without adopting our simulator. UNKNOWN, unsupported claims and a simple baseline beating a complex model are useful results. Returning to the project? Start with [the short refresher](START_HERE.md), then [PROJECT_V8.md](PROJECT_V8.md), [PROJECT_STATUS.md](PROJECT_STATUS.md) and [the continuation checkpoint](CONTINUATION.md).
+TraceWarrant checks whether observations support a performance model and whether frozen predictions survive real interventions. Use its trace conformance checker and simulator-neutral validator without adopting our simulator. UNKNOWN, unsupported claims and a simple baseline beating a complex model are useful results. Returning to the project? Start with [the short refresher](START_HERE.md), then [PROJECT_COMPLETION.md](PROJECT_COMPLETION.md), [PROJECT_STATUS.md](PROJECT_STATUS.md) and [the continuation checkpoint](CONTINUATION.md).
 
 Former internal name: Workload Lab. Source is available at [G26karthik/tracewarrant](https://github.com/G26karthik/tracewarrant), licensed Apache-2.0. The `workload-lab` command, `workload_lab` Python imports and versioned artifact/telemetry bindings remain compatible. [GitHub releases](https://github.com/G26karthik/tracewarrant/releases), [release qualification](docs/v3/release-qualification.md).
 
-Publication status, checked 2026-10-14: [experimental prerelease `v0.7.0`](https://github.com/G26karthik/tracewarrant/releases/tag/v0.7.0) is available. [All five exact-source CI jobs passed](https://github.com/G26karthik/tracewarrant/actions/runs/38569379493), with 288 tests per matrix job. All ten public assets and fresh downloaded-package/source-free bundle replay and rehashed false-report/omission refusals passed. [Release evidence and limits](docs/v8/public-release-0.7.0.md). Private security reporting is enabled; [0.6.0](docs/v7/public-release-0.6.0.md), [0.5.0](docs/v6/public-release-0.5.0.md), [0.4.0](docs/v4/public-release-0.4.0.md) and [0.3.1](docs/v3/public-release-0.3.1.md) remain preserved.
+Publication status, checked 2026-10-14: [experimental prerelease `v0.7.1`](https://github.com/G26karthik/tracewarrant/releases/tag/v0.7.1) is available. [All five exact-source CI jobs passed](https://github.com/G26karthik/tracewarrant/actions/runs/38579068103), with 292 tests per matrix job. All ten public downloads, fresh installed qualification and source-free performance/quality bundle replays and rehashed false-report refusals passed. [Evidence and limits](docs/v9/public-release-0.7.1.md). Prior releases and failed studies remain preserved; private security reporting is enabled.
 
 V3 accepts the pilot's **PIVOT RECOMMENDED** conclusion. [V2](PROJECT_V2.md), [its final report](FINAL_PROJECT_REPORT.md), `research-pilot-1` and all frozen evidence remain unchanged. This is a local research prototype, not a capacity planner or production release. [Refreshed research](docs/v3/research.md) establishes substantial overlap; no uniqueness is claimed.
 

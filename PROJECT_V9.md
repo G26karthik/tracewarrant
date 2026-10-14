@@ -23,8 +23,13 @@ Finite gates:
 4. Commit a final acceptance record and canonical completion checkpoint. Set
    required remaining stages to zero only after every preceding gate passes.
 
-Status: gates 1/2 implementation prepared; full verification and publication are
-in progress. [Acceptance map](docs/v9/acceptance.md), [finish line](PROJECT_COMPLETION.md).
+**Status: all four final gates complete.** Original ten requirements mapped;
+292 tests per hosted matrix job, fresh installed qualification and all five
+source/tag jobs passed. Public 0.7.1 and all ten downloads, both source-free native
+bundle replays and rehashed false-report/omission refusals are verified. Final
+acceptance is committed separately from the immutable release source. Required
+remaining stages: **zero**. [Closeout](docs/v9/public-release-0.7.1.md),
+[acceptance map](docs/v9/acceptance.md), [finish line](PROJECT_COMPLETION.md).
 No new feature roadmap is introduced. A scientific win, production certification,
 independent adoption, C++/CUDA, optimizer or cloud deployment is not required.
 [Decision](docs/adr/ADR-0024-final-acceptance-and-rendered-evidence.md).

@@ -1,0 +1,120 @@
+{
+  "artifact_type": "experimental_project_scope_acceptance",
+  "bounded_phases": {
+    "V3": "complete_negative_science_preserved",
+    "V4": "complete",
+    "V5": "closed_quality_failed",
+    "V6": "complete",
+    "V7": "complete",
+    "V8": "complete",
+    "V9": "complete"
+  },
+  "limits": [
+    "experimental_not_production_certification",
+    "external_adoption_unestablished",
+    "model_superiority_unestablished",
+    "caller_declared_evidence_not_authenticated",
+    "internal_acceptance_not_independent_review"
+  ],
+  "original_criteria": [
+    {
+      "evidence": [
+        "docs/v3/observation-contract.md",
+        "tests/test_v3_conformance.py"
+      ],
+      "id": "multiple_trace_sources",
+      "status": "delivered"
+    },
+    {
+      "evidence": [
+        "src/workload_lab/conformance.py",
+        "tests/test_v3_conformance.py"
+      ],
+      "id": "unsupported_claim_refusal",
+      "status": "delivered"
+    },
+    {
+      "evidence": [
+        "docs/v3/artifacts-and-validation.md",
+        "tests/test_v3_validation.py"
+      ],
+      "id": "independent_model_sources",
+      "status": "delivered"
+    },
+    {
+      "evidence": [
+        "docs/v3/frames-frozen/freeze.json",
+        "docs/v3/frames-evaluation/validation.json"
+      ],
+      "id": "frozen_prediction_measurement_validation",
+      "status": "delivered"
+    },
+    {
+      "evidence": [
+        "src/workload_lab/validation.py",
+        "tests/test_v3_validation.py"
+      ],
+      "id": "first_class_cheap_baselines",
+      "status": "delivered"
+    },
+    {
+      "evidence": [
+        "docs/v3/results.md",
+        "docs/v3/frames-evaluation/validation.json"
+      ],
+      "id": "added_value_and_negative_decisions",
+      "status": "delivered"
+    },
+    {
+      "evidence": [
+        "benchmarks/qualify_package.py",
+        "benchmarks/v3_audit.py"
+      ],
+      "id": "reproducible_content_free_defaults",
+      "status": "delivered"
+    },
+    {
+      "evidence": [
+        "docs/v3/frames-holdout.json",
+        "docs/v5/feasibility.json"
+      ],
+      "id": "external_workload_tested",
+      "status": "delivered"
+    },
+    {
+      "evidence": [
+        "docs/v3/observation-contract.md",
+        "docs/v5/results.md"
+      ],
+      "id": "limitations_and_identifiability",
+      "status": "delivered"
+    },
+    {
+      "evidence": [
+        "src/workload_lab/cli.py",
+        "PROJECT_V3.md"
+      ],
+      "id": "useful_after_planner_pivot",
+      "status": "delivered"
+    }
+  ],
+  "qualified_source": "ecc0ebe1c224a9345b355d38ef44a0a0c6f1ac61",
+  "release_url": "https://github.com/G26karthik/tracewarrant/releases/tag/v0.7.1",
+  "remaining_required_stage_count": 0,
+  "remaining_required_stages": [],
+  "schema_version": "1.0",
+  "scope": "V3 experimental observation/model validation toolkit and bounded V4-V9 increments",
+  "status": "complete",
+  "validation": {
+    "fresh_installed_qualification": true,
+    "frozen_evaluation_byte_exact": true,
+    "native_quality_bundle_verified": true,
+    "protected_files_verified": 64,
+    "public_downloads_verified": 10,
+    "rehashed_performance_html_refused": true,
+    "source_and_tag_jobs_successful": true,
+    "tests_per_source_matrix_job": 292
+  },
+  "verified_at_utc": "2026-10-14T14:22:13.622360+00:00",
+  "version": "0.7.1"
+}

@@ -9,13 +9,20 @@ capacity planner or a production certification service.
 The original V3 request defines ten acceptance criteria. V4–V8 add finite,
 completed reusable workflows. [The final acceptance map](docs/v9/acceptance.md)
 links these requirements to actual code, tests and preserved measurements.
-V9 closes one demonstrated HTML-verification gap and verifies experimental
-0.7.1 through public download/install. This is the final remaining stage of this
-scope; it does not create an endless sequence of version increments.
+V9 closed one demonstrated HTML-verification gap and verified experimental
+0.7.1 through public download/install. This completed the final stage of this
+scope; no further version increment is required.
 
-**Current state: final V9 verification/publication in progress.** Required
-remaining stages: **1**, with four finite gates in [PROJECT_V9.md](PROJECT_V9.md).
-Completion will be recorded only after those gates pass.
+**Current state: the agreed experimental project is complete.** Required
+remaining stages: **0**. All four final [V9 gates](PROJECT_V9.md) passed: original
+requirements accepted, integrity defect fixed, installed/hosted verification and
+public patch release checked. [Verified 0.7.1 closeout](docs/v9/public-release-0.7.1.md),
+[machine-readable acceptance](docs/v9/acceptance.json).
+
+The final version is **0.7.1**, an experimental release label. Its number is not
+a percentage or a promise to build 1.0. Completion here is 100% of the defined
+engineering/release scope; it does not establish production readiness or science
+that the preserved results failed to support. No further stage is queued.
 
 Future maintenance, independently motivated experiments, external integration or
 production requirements can be new work. They are not unfinished stages of this

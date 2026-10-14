@@ -1,8 +1,10 @@
 # External actions
 
-Final V9 acceptance and patch 0.7.1 qualification are proceeding autonomously.
-No maintainer action is required. V8/0.7.0 is complete and publicly verified.
-No external service, new study or paid/cloud resource is needed for closure.
+The agreed experimental project, final V9 acceptance and public patch 0.7.1
+are complete and verified. Required remaining stages: zero. No maintainer action
+is required. [Completion record](PROJECT_COMPLETION.md),
+[public closeout](docs/v9/public-release-0.7.1.md). Future production/adoption or
+new scientific work is a separate requirement, not unfinished release work.
 
 V7 quality-plan binding and experimental 0.6.0 publication are complete and
 publicly verified. No maintainer action is required. No paid/cloud service, model

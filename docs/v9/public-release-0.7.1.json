@@ -1,0 +1,343 @@
+{
+  "annotated_tag_object": "a976ff9075680d297336bd65a80dbeaf717d9e74",
+  "assets": [
+    {
+      "name": "hosted-ci-evidence.zip",
+      "sha256": "4f83b332240d3e2624083d2a8b0bc948e230d87849ba022cf8742552cd7a2387",
+      "size": 100837,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.7.1/hosted-ci-evidence.zip"
+    },
+    {
+      "name": "offline-audit.json",
+      "sha256": "ab3172b7758ded7b71b7f1f5a30e94114653a945fbccadc87f1c3ac6e37f5cf4",
+      "size": 25917,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.7.1/offline-audit.json"
+    },
+    {
+      "name": "package-qualification.json",
+      "sha256": "c9e3fe85d221165b54f7f60a33c234666bde6fed85aee5f0bb9ab5787b47a848",
+      "size": 3914,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.7.1/package-qualification.json"
+    },
+    {
+      "name": "portable-evidence-examples.zip",
+      "sha256": "0e56c50ed038ee443d4d619825a60be74097a28e087dc476cc0268d1fc24fec0",
+      "size": 25117,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.7.1/portable-evidence-examples.zip"
+    },
+    {
+      "name": "release-notes.md",
+      "sha256": "7df24b89112e7ae6549edbb8dcb1dddd80dc36f77af2d0374d25db48274ddde5",
+      "size": 2676,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.7.1/release-notes.md"
+    },
+    {
+      "name": "SHA256SUMS",
+      "sha256": "cd3756402fd951b156ad0edacd973add75b9e613aa0af405f694986934f9bc71",
+      "size": 824,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.7.1/SHA256SUMS"
+    },
+    {
+      "name": "source-provenance.json",
+      "sha256": "69b1ac20e9c817c67a59b0d33f86e0c4de2f184a41806f7e584066deb774ebdc",
+      "size": 5092,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.7.1/source-provenance.json"
+    },
+    {
+      "name": "tracewarrant-0.7.1-py3-none-any.whl",
+      "sha256": "06e7e02458c90423cd66c147a18b9525e91bd0dd67e8894df6d5884dc23df88a",
+      "size": 59125,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.7.1/tracewarrant-0.7.1-py3-none-any.whl"
+    },
+    {
+      "name": "tracewarrant-0.7.1.tar.gz",
+      "sha256": "9ede7e101c34688c91590a904ac3f2d173a987fcbabb9ae494cc3a09e1ba2681",
+      "size": 1073103,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.7.1/tracewarrant-0.7.1.tar.gz"
+    },
+    {
+      "name": "workflow-qualification.json",
+      "sha256": "e9a833647c8bbe9585e2e083da9c8a3867d88c9d2cdc4f6293385dc1a9959976",
+      "size": 3217,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.7.1/workflow-qualification.json"
+    }
+  ],
+  "checksum_manifest_verified": true,
+  "draft": false,
+  "fresh_performance_bundle": {
+    "claim_scope": "performance_only_policy",
+    "exit_code": 0,
+    "gates": [
+      {
+        "id": "baseline_presence",
+        "observed": 2,
+        "reason": null,
+        "required": 1,
+        "status": "passed"
+      },
+      {
+        "id": "replications",
+        "observed": 2,
+        "reason": null,
+        "required": 2,
+        "status": "passed"
+      },
+      {
+        "id": "primary_relative_error",
+        "observed": 0.11782062699029806,
+        "reason": null,
+        "required": 0.15,
+        "status": "passed"
+      },
+      {
+        "id": "environment_alignment",
+        "observed": true,
+        "reason": null,
+        "required": true,
+        "status": "passed"
+      },
+      {
+        "id": "calibration_envelope",
+        "observed": null,
+        "reason": "not_requested_by_policy",
+        "required": null,
+        "status": "not_required"
+      },
+      {
+        "id": "material_pairs",
+        "observed": 2,
+        "reason": null,
+        "required": 1,
+        "status": "passed"
+      },
+      {
+        "id": "ranking_accuracy",
+        "observed": 1.0,
+        "reason": null,
+        "required": 1,
+        "status": "passed"
+      },
+      {
+        "id": "added_decision_value",
+        "observed": null,
+        "reason": "not_requested_by_policy",
+        "required": null,
+        "status": "not_required"
+      },
+      {
+        "id": "measured_quality",
+        "observed": null,
+        "reason": "not_requested_by_policy",
+        "required": null,
+        "status": "not_required"
+      }
+    ],
+    "no_invalid_report_created": true,
+    "rehashed_false_html_refused_with_exit_2": true
+  },
+  "fresh_public_downloaded_pair_qualification": {
+    "checks": {
+      "application_quality_verified": true,
+      "cli_verified": true,
+      "conformance_sources": {
+        "controlled": "supported",
+        "frames_original": "unsupported",
+        "pydantic_ai": "unsupported"
+      },
+      "distribution": "tracewarrant",
+      "evaluation_byte_exact": true,
+      "frozen_quality_verified": true,
+      "installed_bytes_match_wheel": true,
+      "installed_module_sha256": {
+        "workload_lab/__init__.py": "5ff5cae5fb4408188df555b87a31d30de123a589c5b38cf4514328adbd5d12a6",
+        "workload_lab/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+        "workload_lab/analysis.py": "f515db18740eed3d085c45c164cc4233740a4ab89b43aecd6eaa853c2f1c8ee2",
+        "workload_lab/artifact_schema.py": "9fe500346559f2554995934516fec45a96c3a4ede9f5b3b0e6e1caf45d931cd4",
+        "workload_lab/artifacts.py": "289e1d1259099a0467a47602e2cae2e032762dbb6c58028e21d5dfea86b6e27a",
+        "workload_lab/calibration.py": "03cd15a01d0943052a2e43f72fc0488252edb96fe97a17511b44414088a59e05",
+        "workload_lab/cli.py": "936a4d708279eb02d53a7bf4bba88d04dd14db34bc11735cd64b645739e558f5",
+        "workload_lab/conformance.py": "852e8f6a7c7db63c752953a43e64b8b6e5720a4e65cc85285944ed22700120cf",
+        "workload_lab/graph.py": "49dbd2c0e9f0afc705afa28979651b91aa25bc9232c6eb5e95bcf53f237d22d8",
+        "workload_lab/ingest.py": "3b85751875e1070fd230f0d4c53a1e851033aedd65d51196fa61c7ab4afc2ab9",
+        "workload_lab/ir.py": "76cbc15abefc74286846b5239581277ff6c46ddbd57294ee1505aef3806c0b4f",
+        "workload_lab/jobs.py": "d7594b644d4265a898e30ecb5c4be90124d25e1b624d53511a3ad650acf6142b",
+        "workload_lab/qualification.py": "91d4be24ae2fb3736e224e9f7a599961b4923c096208fa1725bab479d06c8ad3",
+        "workload_lab/quality_bundle.py": "bf59929428b1ef3a0742c166d7c493ec6bdbb87eba7fa9a00e2c94abc31957ea",
+        "workload_lab/reporting.py": "326fcf2ceef6fd4811007363e9be1e9c0c51f6a725cd7ed62e3e5ead6e21fdb0",
+        "workload_lab/simulation.py": "1f36fe16a09a5d66d95470493e2c589f4f981dc2344ce66fc62fe8c2125c72a4",
+        "workload_lab/validation.py": "7303f9f86391c5018130f56808376cf03ad00fdc32d53666f0178b2d3e341f53"
+      },
+      "installed_workflow_verified": true,
+      "portable_bundle_verified": true,
+      "portable_quality_verified": true,
+      "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+      "rehashed_job_html_refused": true,
+      "runtime_dependencies": [],
+      "simulator_not_imported": true,
+      "version": "0.7.1"
+    },
+    "metadata": {
+      "compiler": "MSC v.1944 64 bit (AMD64)",
+      "configuration": {
+        "model_execution": false,
+        "network": false
+      },
+      "cpp_compiler": "not applicable",
+      "cpu": "AMD Ryzen 9 8945HS w/ Radeon 780M Graphics",
+      "cuda": "not applicable",
+      "date_utc": "2026-10-14T14:22:35.781970+00:00",
+      "dependency_lock_sha256": "1950a9b6a2fee772e478e3ab6645d470f516bb655de86ba81c3113048226cf07",
+      "driver": "not applicable",
+      "git_commit": "ecc0ebe1c224a9345b355d38ef44a0a0c6f1ac61",
+      "git_dirty": false,
+      "gpu": "not used",
+      "harness_sha256": "2506f4e88b1af42c8abd264289ca6ac5531f7639e8874fd2e1eef0f5927c2109",
+      "logical_cpus": 16,
+      "os": "Windows-11-10.0.26200-SP0",
+      "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+      "ram_bytes": 33536831488,
+      "seed": 0,
+      "source_tree_sha256": "61ea4b884bf8b954c73fb140fed241bc0fbdcede7c982fecad23d68bbe66971a"
+    },
+    "sdist_code_matches_wheel": true,
+    "sdist_reproducibility_inputs_verified": true,
+    "sdist_sha256": "9ede7e101c34688c91590a904ac3f2d173a987fcbabb9ae494cc3a09e1ba2681",
+    "wheel_sha256": "06e7e02458c90423cd66c147a18b9525e91bd0dd67e8894df6d5884dc23df88a"
+  },
+  "fresh_wheel_only_no_checkout_replay": {
+    "binding": {
+      "chronology": "not_authenticated",
+      "expected_offered": 8,
+      "freeze_sha256": "7edad3bc634c4062a82bdfb94de8790b6f752cde92378933a6d57571b4ac990b",
+      "observed_offered": 8,
+      "plan_sha256": "af4dcc18298cf0afb3ca38b437b9687b48b3c58bfe4d7a4065f0f193aa8d04de",
+      "policy_sha256": "d542c2d74a1b3d69df6cc29b39714723bb032bb906322669e2e2203f27cfc6d0",
+      "status": "verified"
+    },
+    "exit_code": 1,
+    "gates": [
+      {
+        "id": "offered_samples",
+        "observed": 8,
+        "reason": null,
+        "required": 8,
+        "status": "passed"
+      },
+      {
+        "id": "completion_fraction",
+        "observed": 1.0,
+        "reason": null,
+        "required": 1,
+        "status": "passed"
+      },
+      {
+        "id": "quality/answer.exact",
+        "observed": 0.5,
+        "reason": null,
+        "required": 0.75,
+        "status": "failed"
+      },
+      {
+        "id": "quality/answer.f1",
+        "observed": 0.5416666666666666,
+        "reason": null,
+        "required": 0.75,
+        "status": "failed"
+      }
+    ],
+    "native_bundle_verified": true,
+    "no_runtime_dependencies": true,
+    "no_simulator_import": true,
+    "omitted_task_refused_with_exit_2": true,
+    "rehashed_false_html_refused_with_exit_2": true,
+    "report_bytes_match_source_qualified_example": true,
+    "result": "failed"
+  },
+  "historical_tag_targets_verified": {
+    "research-pilot-1": "c0fad29ca78cdaf6325357735d292066d844dcd9",
+    "tracewarrant-0.3.1": "f0233179c5012550295f3fcca3255e014b16fe32",
+    "v0.3.1": "b0d5c5dc2a23589245ad1c6fabdf4d07dd2b51b6",
+    "v0.4.0": "a248708e203869a6efd529595a20988c57f35115",
+    "v0.5.0": "0bbc550519114e82d5a70858ea093786f77fd89d",
+    "v0.6.0": "086123bc5bf3b3f8b114716de2f337f0bfa6ef81",
+    "v0.7.0": "da3da5d799a7c1ed351c40ad45ffc8cd1e381119",
+    "v3-frames-freeze": "af3600530774492b4f7be23ec78db93491ad3d5c",
+    "validation-toolkit-v3": "4ffbd076a7b8c9bc5783b91550d3d708a816479f"
+  },
+  "hosted_ci": [
+    {
+      "conclusion": "success",
+      "head_sha": "ecc0ebe1c224a9345b355d38ef44a0a0c6f1ac61",
+      "id": 38579068103,
+      "jobs": [
+        {
+          "conclusion": "success",
+          "name": "analytic"
+        },
+        {
+          "conclusion": "success",
+          "name": "test (ubuntu-latest, 3.11)"
+        },
+        {
+          "conclusion": "success",
+          "name": "test (ubuntu-latest, 3.13)"
+        },
+        {
+          "conclusion": "success",
+          "name": "test (windows-latest, 3.13)"
+        },
+        {
+          "conclusion": "success",
+          "name": "test (windows-latest, 3.11)"
+        }
+      ],
+      "url": "https://github.com/G26karthik/tracewarrant/actions/runs/38579068103"
+    },
+    {
+      "conclusion": "success",
+      "head_sha": "ecc0ebe1c224a9345b355d38ef44a0a0c6f1ac61",
+      "id": 38579595599,
+      "jobs": [
+        {
+          "conclusion": "success",
+          "name": "analytic"
+        },
+        {
+          "conclusion": "success",
+          "name": "test (windows-latest, 3.13)"
+        },
+        {
+          "conclusion": "success",
+          "name": "test (windows-latest, 3.11)"
+        },
+        {
+          "conclusion": "success",
+          "name": "test (ubuntu-latest, 3.13)"
+        },
+        {
+          "conclusion": "success",
+          "name": "test (ubuntu-latest, 3.11)"
+        }
+      ],
+      "url": "https://github.com/G26karthik/tracewarrant/actions/runs/38579595599"
+    }
+  ],
+  "prerelease": true,
+  "published_at": "2026-10-14T14:22:05Z",
+  "qualified_source": "ecc0ebe1c224a9345b355d38ef44a0a0c6f1ac61",
+  "release_id": 412807562,
+  "release_url": "https://github.com/G26karthik/tracewarrant/releases/tag/v0.7.1",
+  "source_matrix_tests": 292,
+  "verified_at_utc": "2026-10-14T14:22:13.622360+00:00",
+  "wheel_version": "TraceWarrant 0.7.1 (experimental)"
+}

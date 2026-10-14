@@ -1,11 +1,13 @@
 # Evidence-gated roadmap
 
-## Final V9 acceptance — one remaining stage
+## Project complete — zero remaining required stages
 
-[V9](PROJECT_V9.md) audits the original requirements, closes a reproduced
-performance-HTML verification gap and qualifies patch 0.7.1. Its four finite
-gates are the final required work for this scope. [Acceptance map](docs/v9/acceptance.md),
-[finish line](PROJECT_COMPLETION.md). No further feature stage is scheduled.
+[V9](PROJECT_V9.md) passed all four final gates: original requirement acceptance,
+performance-HTML integrity fix, installed/hosted qualification and verified
+experimental 0.7.1 public release. [Acceptance map](docs/v9/acceptance.md),
+[completion checkpoint](PROJECT_COMPLETION.md), [closeout](docs/v9/public-release-0.7.1.md).
+No feature, engineering or release stage remains in this agreed scope. Future
+maintenance or new requirements do not reopen the superseded planner or studies.
 
 ## Completed V8 portable quality evidence
 

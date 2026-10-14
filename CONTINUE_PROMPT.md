@@ -9,6 +9,11 @@ Read PROJECT_V9.md, PROJECT_COMPLETION.md, docs/v9/acceptance.md, PROJECT_V8.md,
 docs/v8/quality-bundles.md, PROJECT_V7.md, PROJECT_STATUS.md,
 CONTINUATION.md, docs/v7/quality-plans.md,
 PROJECT_V5.md and HUMAN_ACTION_REQUIRED.md. Verify Git and GitHub state.
+The agreed project is complete: final V9 acceptance and experimental 0.7.1 passed
+all gates; required remaining stages are zero. Read docs/v9/public-release-0.7.1.md
+and docs/v9/acceptance.json. Do not invent another stage to prolong the project.
+Without a concrete new requirement or reproduced defect, report the completed
+checkpoint and stop. Future scientific/adoption/production work is separate.
 V8 is complete: native exact quality export, bounded checksum/JSON/HTML replay,
 288 tests per matrix job, installed/hosted qualification and verified public
 0.7.0. Read docs/v8/public-release-0.7.0.md. No V8 code/release gate remains.

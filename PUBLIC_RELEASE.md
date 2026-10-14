@@ -1,5 +1,14 @@
 # Public releases
 
+## Completed final patch 0.7.1
+
+[Experimental 0.7.1](https://github.com/G26karthik/tracewarrant/releases/tag/v0.7.1)
+is published and publicly verified. Performance bundles now compare HTML with
+recomputed evidence. 292 tests per matrix job, all five source/tag jobs, all ten
+public downloads and fresh installed/source-free performance/quality replay and
+rehashed false-report refusals passed. [Closeout](docs/v9/public-release-0.7.1.md),
+[acceptance](PROJECT_COMPLETION.md). Zero required stages or maintainer actions remain.
+
 ## Completed 0.7.0 portable-quality release
 
 [Experimental v0.7.0](https://github.com/G26karthik/tracewarrant/releases/tag/v0.7.0)

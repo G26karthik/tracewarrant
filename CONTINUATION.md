@@ -1,11 +1,21 @@
 # Continuation checkpoint
 
-## Final V9 acceptance in progress
+## Final project completion — no remaining stages
 
-Read PROJECT_V9.md, PROJECT_COMPLETION.md and docs/v9/acceptance.md. No further
-feature stages are scheduled. Finish the integrity patch's tests, installed and
-exact-source/hosted/public 0.7.1 qualification, then record zero remaining stages.
-Keep all historical releases/studies immutable. No model rerun or regrading.
+Read PROJECT_COMPLETION.md, PROJECT_V9.md and docs/v9/acceptance.md. All original
+ten V3 criteria and bounded V4–V9 increments are accepted; required remaining
+stages are zero. Experimental 0.7.1 is published and publicly verified. Source/
+peeled tag: ecc0ebe1c224a9345b355d38ef44a0a0c6f1ac61; source CI 38579068103 and
+tag CI 38579595599 passed all five jobs, 292 tests per matrix job. All ten
+public downloads, fresh installed wheel/source qualification and source-free
+performance/quality bundle replay/rehashed false-report/omission refusals passed.
+[Closeout](docs/v9/public-release-0.7.1.md). PR #5 merged the patch.
+
+Main includes this later acceptance record; never move release tags. Do not
+create another stage merely because an agent is asked to continue. Inspect for a
+real new requirement or defect; otherwise preserve this completed checkpoint.
+Future independent science/adoption/production work is a new scope. Keep failed
+studies immutable; no model rerun or regrading is a completion requirement.
 
 ## Completed V8 engineering and public release
 
