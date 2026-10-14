@@ -382,6 +382,11 @@ async def run(folder, selection_path, output, private_output):
     meta = metadata(__file__, {"phase": "feasibility", "options": OPTIONS}, 27)
     if meta["git_dirty"]:
         raise ValueError("commit the preregistration and collector before measurement")
+    meta.update(
+        gpu="local_Ollama_backend_see_residency",
+        driver="not_recorded",
+        cuda="no_custom_kernel",
+    )
     model = next((m for m in local_request("tags")["models"] if m["name"] == MODEL), None)
     if model is None:
         raise ValueError("required local model missing; collector will not download one")
