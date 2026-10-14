@@ -2,7 +2,7 @@
 
 **Check the evidence behind performance claims.**
 
-Status: Experimental / Research Prototype. Current product: [V7 frozen quality plans](PROJECT_V7.md), completed and published as 0.6.0.
+Status: Experimental / Research Prototype. Current stage: [V8 portable quality evidence](PROJECT_V8.md), preparing 0.7.0. Published 0.6.0 remains verified.
 
 Latest application study: [V5 HotpotQA qualification](PROJECT_V5.md) completed
 eight real requests but failed its predeclared quality floor (4/8 exact answers,
@@ -20,6 +20,11 @@ Publication status, checked 2026-10-14: [experimental prerelease `v0.6.0`](https
 V3 accepts the pilot's **PIVOT RECOMMENDED** conclusion. [V2](PROJECT_V2.md), [its final report](FINAL_PROJECT_REPORT.md), `research-pilot-1` and all frozen evidence remain unchanged. This is a local research prototype, not a capacity planner or production release. [Refreshed research](docs/v3/research.md) establishes substantial overlap; no uniqueness is claimed.
 
 ## Run an explicit validation policy
+
+Export application quality inputs and reports with `bundle-quality`, then
+recompute their JSON/HTML using `verify-quality-bundle` on another machine.
+[Portable quality guide](docs/v8/quality-bundles.md). Integrity checks do not
+authenticate authors, scores or preregistration chronology.
 
 The 0.6.0 release can bind a quality policy and declared task roster
 with `freeze-quality`, then require `--plan`/`--freeze` during qualification.

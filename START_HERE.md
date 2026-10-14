@@ -1,5 +1,10 @@
 # Project refresher
 
+Active stage: [V8 portable quality evidence](PROJECT_V8.md), preparing 0.7.0.
+Export exact quality inputs/reports, then independently replay their checksums
+and JSON/HTML offline. [Guide](docs/v8/quality-bundles.md). Public release gates
+remain; published 0.6.0 and failed studies stay preserved.
+
 Current product: [V7 frozen quality plans](PROJECT_V7.md), completed and published
 as experimental [0.6.0](https://github.com/G26karthik/tracewarrant/releases/tag/v0.6.0).
 Bind a quality policy and declared task IDs before collection, then require exact

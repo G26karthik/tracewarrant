@@ -25,6 +25,7 @@ from .qualification import (
     qualify_application,
     write_qualification_report,
 )
+from .quality_bundle import bundle_quality, verify_quality_bundle
 from .validation import evaluate
 
 
@@ -68,19 +69,21 @@ def _text(report: AnalysisReport) -> str:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="tracewarrant", description=__doc__)
-    parser.add_argument("--version", action="version", version="TraceWarrant 0.6.0 (experimental)")
+    parser.add_argument("--version", action="version", version="TraceWarrant 0.7.0 (experimental)")
     commands = parser.add_subparsers(dest="command", required=True)
     quality_schema = commands.add_parser("quality-schema", help="emit application quality schemas")
     quality_schema.add_argument("kind", choices=("sample", "policy", "plan", "freeze"))
     quality_schema.add_argument("--output", type=Path)
-    qualify = commands.add_parser(
-        "qualify-application", help="check offered-population quality before modeling"
-    )
-    qualify.add_argument("input", type=Path)
-    qualify.add_argument("--policy", type=Path, required=True)
-    qualify.add_argument("--plan", type=Path)
-    qualify.add_argument("--freeze", type=Path)
-    qualify.add_argument("--output", type=Path, required=True)
+    for name in ("qualify-application", "bundle-quality"):
+        qualify = commands.add_parser(name, help="qualify or export application quality evidence")
+        qualify.add_argument("input", type=Path)
+        qualify.add_argument("--policy", type=Path, required=True)
+        qualify.add_argument("--plan", type=Path)
+        qualify.add_argument("--freeze", type=Path)
+        qualify.add_argument("--output", type=Path, required=True)
+    quality_verify = commands.add_parser("verify-quality-bundle", help="replay quality evidence")
+    quality_verify.add_argument("input", type=Path)
+    quality_verify.add_argument("--output", type=Path, required=True)
     quality_freeze = commands.add_parser(
         "freeze-quality", help="bind exact quality plan/policy bytes"
     )
@@ -143,6 +146,20 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "freeze-quality":
             write_new(args.output, freeze_application_quality(args.plan, args.policy))
             return 0
+        if args.command in ("bundle-quality", "verify-quality-bundle"):
+            if args.command == "bundle-quality":
+                report = bundle_quality(
+                    args.input,
+                    args.policy,
+                    args.output,
+                    plan_path=args.plan,
+                    freeze_path=args.freeze,
+                )
+            else:
+                report = verify_quality_bundle(args.input)
+                write_qualification_report(args.output, report)
+            print(json.dumps({"result": report["result"], "claim_scope": report["claim_scope"]}))
+            return 0 if report["result"] == "passed" else 1
         if args.command == "qualify-application":
             report = qualify_application(
                 args.input, args.policy, plan_path=args.plan, freeze_path=args.freeze

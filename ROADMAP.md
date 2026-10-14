@@ -1,5 +1,11 @@
 # Evidence-gated roadmap
 
+## Active V8 portable quality evidence
+
+[V8](PROJECT_V8.md) fills a demonstrated gap in sharing quality evidence: native
+bounded export and offline checksum/JSON/HTML replay. A/B implemented; installed,
+hosted and verified experimental 0.7.0 release gates remain. [Guide](docs/v8/quality-bundles.md).
+
 ## Completed V7 declared-population and policy binding
 
 [V7](PROJECT_V7.md) addresses the next explicit workflow gap: enforce an exact
