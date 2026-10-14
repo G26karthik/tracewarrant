@@ -3,6 +3,7 @@
 import argparse
 import hashlib
 import json
+import os
 import subprocess
 import tempfile
 import venv
@@ -54,36 +55,28 @@ def qualify(wheel, uv):
         env = work / "runtime"
         venv.EnvBuilder(with_pip=False).create(env)
         python = env / ("Scripts/python.exe" if (env / "Scripts").is_dir() else "bin/python")
-        requirements = work / "integration.txt"
+        # Locked sync uses the exact wheel URLs/hashes already cached by the
+        # integration-group setup. Pip resolution also needs index metadata,
+        # which a fresh CI cache need not contain after a locked install.
+        dependency_project = work / "dependencies"
+        dependency_project.mkdir()
+        for name in ("pyproject.toml", "uv.lock"):
+            (dependency_project / name).write_bytes((ROOT / name).read_bytes())
+        setup_environment = {**os.environ, "UV_PROJECT_ENVIRONMENT": str(env)}
         subprocess.run(
             [
                 uv,
-                "export",
+                "sync",
                 "--locked",
+                "--offline",
                 "--only-group",
                 "integration",
-                "--no-emit-project",
-                "--output-file",
-                str(requirements),
-            ],
-            cwd=ROOT,
-            check=True,
-            capture_output=True,
-            timeout=60,
-        )
-        subprocess.run(
-            [
-                uv,
-                "pip",
-                "install",
-                "--offline",
-                "--require-hashes",
+                "--no-install-project",
                 "--python",
                 str(python),
-                "-r",
-                str(requirements),
             ],
-            cwd=work,
+            cwd=dependency_project,
+            env=setup_environment,
             check=True,
             capture_output=True,
             timeout=60,
