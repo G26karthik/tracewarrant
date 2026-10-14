@@ -7,9 +7,10 @@ Work in C:\Users\saita\OneDrive\Desktop\AI Everyday\Context - Aware.
 
 Read PROJECT_V6.md, PROJECT_STATUS.md, CONTINUATION.md, docs/v6/qualification.md,
 PROJECT_V5.md and HUMAN_ACTION_REQUIRED.md. Verify Git and GitHub state.
-V6 is the current engineering increment: standalone application sample/policy
-quality gates, CLI/reports, retained V5 export, installed qualification and a
-verified experimental GitHub release 0.5.0. Finish its scoped gates autonomously.
+V6 is complete: standalone application sample/policy quality gates, CLI/reports,
+retained V5 export, installed qualification and a verified experimental GitHub
+release 0.5.0. Read docs/v6/public-release-0.5.0.md and verify that state. No
+scoped V6 code/release gate is queued; do not recreate its release or move tags.
 V4 and its public 0.4.0 release are complete. V5's real HotpotQA application
 qualification is also closed: all eight requests completed, but 4/8 exact
 answers and mean answer F1 0.541667 failed the preregistered quality floor.

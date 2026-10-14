@@ -1,5 +1,13 @@
 # Project refresher
 
+Current product: [V6 application-quality qualification](PROJECT_V6.md), complete
+and published as experimental [0.5.0](https://github.com/G26karthik/tracewarrant/releases/tag/v0.5.0).
+Before modeling performance, check completion and several exact/graded quality
+criteria over every offered task. Missing evidence stays unsupported. The new
+command needs no model or prediction freeze. [Guide](docs/v6/qualification.md),
+[verified release](docs/v6/public-release-0.5.0.md). The earlier workflows below
+remain available; production readiness and application success are unestablished.
+
 Latest research: [V5 application qualification](PROJECT_V5.md) is complete with
 a failed predeclared quality gate. Eight HotpotQA requests completed; 4/8 exact
 answers and mean answer F1 0.542 did not meet 6/8 and 0.75. Official scoring

@@ -19,6 +19,13 @@ Gates: A formats/decision semantics; B CLI/reports/privacy and adversarial tests
 C real retained-study adapter plus fresh installed-package/hosted qualification;
 D documentation, integration and qualified experimental release 0.5.0.
 
-Status: implementation in progress. Existing schemas, freezes, 64 protected files
+**Status: all four scoped V6 stages complete; experimental 0.5.0 published and
+publicly verified.** A/B delivered strict offered-population semantics, CLI and
+escaped reports with refusal/adversarial coverage; C verified unchanged V5 export,
+fresh installed code and all five hosted jobs (244 tests per matrix job); D
+completed documentation/integration, exact-source release, all ten public asset
+downloads and source-free installed example replay. [Closeout](docs/v6/public-release-0.5.0.md).
+
+Existing schemas, freezes, 64 protected files
 and public releases remain unchanged. A policy pass is only a sample-quality
 decision, never performance-model acceptance or production certification.

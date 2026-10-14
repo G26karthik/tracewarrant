@@ -1,5 +1,16 @@
 # Public releases
 
+## Completed 0.5.0 application-quality release
+
+[Experimental v0.5.0](https://github.com/G26karthik/tracewarrant/releases/tag/v0.5.0)
+is published from qualified `0bbc550519114e82d5a70858ea093786f77fd89d`.
+All five source/tag CI jobs passed (244 tests per matrix job). All ten public
+assets, SHA256SUMS and fresh downloaded-wheel/source and source-free example
+checks passed. [Closeout](docs/v6/public-release-0.5.0.md),
+[public verification](docs/v6/public-release-0.5.0.json). No maintainer action or
+scoped release gate remains. Prior versions and negative studies are preserved;
+quality-policy acceptance is not performance certification or production readiness.
+
 ## Completed 0.4.0 workflow release
 
 Autonomous completion authorized and delivered 2026-10-14. [V4 prerelease `v0.4.0`](https://github.com/G26karthik/tracewarrant/releases/tag/v0.4.0) is published from clean qualified source `a248708e203869a6efd529595a20988c57f35115`. All five exact-source jobs passed, each matrix job ran 190 tests, and all ten assets passed GitHub digest and unauthenticated public-download checks. Fresh downloaded-wheel/source qualification and portable replay without a checkout passed. `v0.3.1` and historical tags/assets remain unchanged. [Closeout](docs/v4/public-release-0.4.0.md), [verification](docs/v4/public-release-0.4.0.json). No PyPI, paid/cloud work or outreach was performed.

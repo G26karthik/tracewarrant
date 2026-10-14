@@ -1,12 +1,18 @@
 # Continuation checkpoint
 
-## Active V6 engineering
+## Completed V6 engineering and public release
 
-Read PROJECT_V6.md and docs/v6/qualification.md. Implement/qualify standalone
-application-quality sample/policy semantics, CLI/HTML/JSON and actual retained
-V5 export without altering its negative result. Source version 0.5.0; no new
-runtime dependencies. Complete hosted/installed qualification and an experimental
-0.5.0 GitHub release from clean exact source with verified public assets.
+Read PROJECT_V6.md and docs/v6/public-release-0.5.0.md. All four V6 stages are
+complete: standalone quality schemas, completion/multiple mean/fraction gates,
+CLI/HTML/JSON, unchanged V5 export, installed/hosted qualification and published
+experimental 0.5.0. Tag target/source is 0bbc550519114e82d5a70858ea093786f77fd89d;
+source CI 38534867889 and tag CI 38535296944 passed all five jobs, 244 tests per
+matrix job. Ten public assets and fresh downloaded-wheel/source and checkout-free
+example replay checks passed. Machine-readable public proof is in docs/v6.
+PR #2 merged the feature. Current main includes subsequent closeout documentation;
+do not move the immutable tag. No V6 code or release gate is queued. The negative
+V5 study remains closed; application success/adoption/production readiness are
+unestablished. A future increment needs a distinct demonstrated requirement.
 Existing 0.4.0/0.3.1 releases, freezes and all 64 protected files remain immutable.
 
 ## Completed V5 application qualification

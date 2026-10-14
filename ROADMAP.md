@@ -1,12 +1,14 @@
 # Evidence-gated roadmap
 
-## Active V6 reusable quality prerequisite
+## Completed V6 reusable quality prerequisite
 
 [V6](PROJECT_V6.md) addresses a concrete V5 integration gap: completion, exact
 fraction and mean answer F1 need a standalone quality decision before any
 performance prediction. Strict schemas, offered-population multiple gates,
 CLI/reports, retained-data adapter and installed/public-release qualification are
-in progress. It preserves V5 and does not resume its locked performance study.
+complete. [0.5.0 closeout](docs/v6/public-release-0.5.0.md): 244 tests per hosted
+matrix job, ten public assets and fresh source-free replay. It preserves V5 and
+does not resume its locked performance study. No additional stage is queued.
 
 ## Completed V5 application qualification
 

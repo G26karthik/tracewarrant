@@ -2,11 +2,14 @@
 
 Updated: 2026-10-14. Selected public name: **TraceWarrant**; former internal codename: Workload Lab.
 
-**Active engineering: [V6 application-quality qualification](PROJECT_V6.md).**
-The maintainer requested continuation after V5. A reusable core command now
-checks completion and several mean/binary-fraction criteria before performance
-predictions exist. Retained HotpotQA replay remains failed. Version 0.5.0 is being
-qualified for an experimental release; 0.4.0 remains the existing public release.
+**Current product: [V6 application-quality qualification](PROJECT_V6.md), complete.**
+[Experimental 0.5.0](https://github.com/G26karthik/tracewarrant/releases/tag/v0.5.0)
+is published and publicly verified. The core checks completion and multiple
+mean/binary-fraction criteria before predictions exist. All five source/tag CI
+jobs passed, 244 tests per matrix job; ten public assets and fresh downloaded
+wheel/source and source-free example replay passed. [Closeout](docs/v6/public-release-0.5.0.md).
+Retained HotpotQA replay remains failed; no application-quality success or
+production readiness is claimed. No scoped V6 code/release work remains.
 
 **Latest research: [V5 application qualification](PROJECT_V5.md), complete with
 a negative result.** Eight real HotpotQA requests completed; 4/8 exact answers
