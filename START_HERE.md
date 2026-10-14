@@ -1,5 +1,13 @@
 # Project refresher
 
+Current product: [V7 frozen quality plans](PROJECT_V7.md), completed and published
+as experimental [0.6.0](https://github.com/G26karthik/tracewarrant/releases/tag/v0.6.0).
+Bind a quality policy and declared task IDs before collection, then require exact
+receipt/identity/membership matches during qualification. A local receipt cannot
+authenticate chronology or actual execution. [Guide](docs/v7/quality-plans.md),
+[verified release](docs/v7/public-release-0.6.0.md). Existing unbound workflows
+remain available, and the historical quality failures remain unchanged.
+
 Current product: [V6 application-quality qualification](PROJECT_V6.md), complete
 and published as experimental [0.5.0](https://github.com/G26karthik/tracewarrant/releases/tag/v0.5.0).
 Before modeling performance, check completion and several exact/graded quality

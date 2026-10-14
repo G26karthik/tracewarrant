@@ -1,0 +1,129 @@
+{
+  "assets": [
+    {
+      "name": "application-quality-example.zip",
+      "sha256": "1dc80fb38c70a10ecc2eb72b5993360731dfd51541b84810684e9bb4f43a0e15",
+      "size": 4989,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.6.0/application-quality-example.zip"
+    },
+    {
+      "name": "hosted-ci-evidence.zip",
+      "sha256": "7b3d7a44e71021051ed1d874da1cb1e01b052569b55f0099239ec667cf52af03",
+      "size": 98610,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.6.0/hosted-ci-evidence.zip"
+    },
+    {
+      "name": "offline-audit.json",
+      "sha256": "18fb85e67ad30e465af57718064b205d1d5a4b61184d334a3d112891b4dd17f7",
+      "size": 25917,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.6.0/offline-audit.json"
+    },
+    {
+      "name": "package-qualification.json",
+      "sha256": "f37759be077f24bbac4629b17d94c6dd49b865389431b99daa258e019ef83324",
+      "size": 3728,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.6.0/package-qualification.json"
+    },
+    {
+      "name": "release-notes.md",
+      "sha256": "c0a5a3f7e21383d833680dd0e1d6456f1b0501342dc75acbca16f8027240b3a6",
+      "size": 2583,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.6.0/release-notes.md"
+    },
+    {
+      "name": "SHA256SUMS",
+      "sha256": "9277771f7ece06210509c003ccf489c51963f4c7b7f3fa40e89041ae409b438c",
+      "size": 825,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.6.0/SHA256SUMS"
+    },
+    {
+      "name": "source-provenance.json",
+      "sha256": "4cc2c113497a9f5f490167ed1c143a05f9034519cea4bdf669ae3542c8af4d53",
+      "size": 4985,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.6.0/source-provenance.json"
+    },
+    {
+      "name": "tracewarrant-0.6.0-py3-none-any.whl",
+      "sha256": "304e07c2237a065b85b63da86b5154474c7d3803ff9a8330a3c921bd995e330a",
+      "size": 56757,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.6.0/tracewarrant-0.6.0-py3-none-any.whl"
+    },
+    {
+      "name": "tracewarrant-0.6.0.tar.gz",
+      "sha256": "515e7d6b35ca1ce3bc4ccec7c7e16c8fc324e9022271cf020b10fe14a63ae73b",
+      "size": 1055916,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.6.0/tracewarrant-0.6.0.tar.gz"
+    },
+    {
+      "name": "workflow-qualification.json",
+      "sha256": "aca5f68e5b13b3c8eebb3db2dcfc62a0cd0fb605daf70f5b1c0759c4db3eba7d",
+      "size": 3180,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.6.0/workflow-qualification.json"
+    }
+  ],
+  "checksum_manifest_verified": true,
+  "draft": false,
+  "fresh_wheel_only_no_checkout_replay": {
+    "binding": {
+      "chronology": "not_authenticated",
+      "expected_offered": 8,
+      "freeze_sha256": "7edad3bc634c4062a82bdfb94de8790b6f752cde92378933a6d57571b4ac990b",
+      "observed_offered": 8,
+      "plan_sha256": "af4dcc18298cf0afb3ca38b437b9687b48b3c58bfe4d7a4065f0f193aa8d04de",
+      "policy_sha256": "d542c2d74a1b3d69df6cc29b39714723bb032bb906322669e2e2203f27cfc6d0",
+      "status": "verified"
+    },
+    "exit_code": 1,
+    "gates": [
+      {
+        "id": "offered_samples",
+        "observed": 8,
+        "reason": null,
+        "required": 8,
+        "status": "passed"
+      },
+      {
+        "id": "completion_fraction",
+        "observed": 1.0,
+        "reason": null,
+        "required": 1,
+        "status": "passed"
+      },
+      {
+        "id": "quality/answer.exact",
+        "observed": 0.5,
+        "reason": null,
+        "required": 0.75,
+        "status": "failed"
+      },
+      {
+        "id": "quality/answer.f1",
+        "observed": 0.5416666666666666,
+        "reason": null,
+        "required": 0.75,
+        "status": "failed"
+      }
+    ],
+    "no_runtime_dependencies": true,
+    "no_simulator_import": true,
+    "omitted_task_refused_with_exit_2": true,
+    "report_bytes_match_source_qualified_example": true,
+    "result": "failed"
+  },
+  "prerelease": true,
+  "published_at": "2026-10-14T08:53:30Z",
+  "release_id": 412511475,
+  "release_url": "https://github.com/G26karthik/tracewarrant/releases/tag/v0.6.0",
+  "verified_at_utc": "2026-10-14T08:53:47.835472+00:00",
+  "wheel_version": "TraceWarrant 0.6.0 (experimental)"
+}

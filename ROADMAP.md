@@ -1,12 +1,14 @@
 # Evidence-gated roadmap
 
-## Active V7 declared-population and policy binding
+## Completed V7 declared-population and policy binding
 
 [V7](PROJECT_V7.md) addresses the next explicit workflow gap: enforce an exact
 quality policy and declared population against a separately frozen receipt.
 Optional bound qualification preserves the existing unbound interface and
 refuses dropped/substituted tasks or changed policy/plan bytes. Documentation,
-installed/hosted checks and experimental 0.6.0 publication are in progress.
+installed/hosted checks and experimental 0.6.0 publication are complete: 260 tests
+per hosted matrix job, ten public assets, fresh bound replay and omission refusal.
+[Closeout](docs/v7/public-release-0.6.0.md). No additional stage is queued.
 
 ## Completed V6 reusable quality prerequisite
 

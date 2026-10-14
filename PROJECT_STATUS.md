@@ -2,11 +2,14 @@
 
 Updated: 2026-10-14. Selected public name: **TraceWarrant**; former internal codename: Workload Lab.
 
-**Active engineering: [V7 frozen quality plans](PROJECT_V7.md).** Bind exact
-quality policy bytes and declared task membership before qualification, with
-strict identity/hash checks and explicit unauthenticated chronology. Version
-0.6.0 is being qualified; the existing 0.5.0 release remains complete. No task
-quality is regraded and the retrospective HotpotQA example remains failed.
+**Current product: [V7 frozen quality plans](PROJECT_V7.md), complete.**
+[Experimental 0.6.0](https://github.com/G26karthik/tracewarrant/releases/tag/v0.6.0)
+is published and publicly verified. Exact plan/policy/identity/population binding
+preserves unbound semantics and unauthenticated chronology limits. All five
+source/tag jobs passed (260 tests per matrix job), ten public assets and fresh
+downloaded-package/source-free bound replay/omission refusal passed.
+[Closeout](docs/v7/public-release-0.6.0.md). No task quality is regraded and the
+retrospective HotpotQA example remains failed. No scoped V7 work remains.
 
 **Current product: [V6 application-quality qualification](PROJECT_V6.md), complete.**
 [Experimental 0.5.0](https://github.com/G26karthik/tracewarrant/releases/tag/v0.5.0)

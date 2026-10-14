@@ -2,7 +2,7 @@
 
 **Check the evidence behind performance claims.**
 
-Status: Experimental / Research Prototype. Active increment: [V7 frozen quality plans](PROJECT_V7.md). Published 0.5.0 remains available.
+Status: Experimental / Research Prototype. Current product: [V7 frozen quality plans](PROJECT_V7.md), completed and published as 0.6.0.
 
 Latest application study: [V5 HotpotQA qualification](PROJECT_V5.md) completed
 eight real requests but failed its predeclared quality floor (4/8 exact answers,
@@ -15,13 +15,13 @@ TraceWarrant checks whether observations support a performance model and whether
 
 Former internal name: Workload Lab. Source is available at [G26karthik/tracewarrant](https://github.com/G26karthik/tracewarrant), licensed Apache-2.0. The `workload-lab` command, `workload_lab` Python imports and versioned artifact/telemetry bindings remain compatible. [GitHub releases](https://github.com/G26karthik/tracewarrant/releases), [release qualification](docs/v3/release-qualification.md).
 
-Publication status, checked 2026-10-14: [experimental prerelease `v0.5.0`](https://github.com/G26karthik/tracewarrant/releases/tag/v0.5.0) is available. [All five source CI jobs passed](https://github.com/G26karthik/tracewarrant/actions/runs/38534867889), with 244 tests per matrix job. All ten public assets and fresh downloaded-package/source-free replay checks passed. [Release evidence and limits](docs/v6/public-release-0.5.0.md). Private security reporting is enabled; [0.4.0](docs/v4/public-release-0.4.0.md) and [0.3.1](docs/v3/public-release-0.3.1.md) remain preserved.
+Publication status, checked 2026-10-14: [experimental prerelease `v0.6.0`](https://github.com/G26karthik/tracewarrant/releases/tag/v0.6.0) is available. [All five source CI jobs passed](https://github.com/G26karthik/tracewarrant/actions/runs/38537748030), with 260 tests per matrix job. All ten public assets and fresh downloaded-package/source-free bound replay and omission-refusal checks passed. [Release evidence and limits](docs/v7/public-release-0.6.0.md). Private security reporting is enabled; [0.5.0](docs/v6/public-release-0.5.0.md), [0.4.0](docs/v4/public-release-0.4.0.md) and [0.3.1](docs/v3/public-release-0.3.1.md) remain preserved.
 
 V3 accepts the pilot's **PIVOT RECOMMENDED** conclusion. [V2](PROJECT_V2.md), [its final report](FINAL_PROJECT_REPORT.md), `research-pilot-1` and all frozen evidence remain unchanged. This is a local research prototype, not a capacity planner or production release. [Refreshed research](docs/v3/research.md) establishes substantial overlap; no uniqueness is claimed.
 
 ## Run an explicit validation policy
 
-The new 0.6.0 source candidate can bind a quality policy and declared task roster
+The 0.6.0 release can bind a quality policy and declared task roster
 with `freeze-quality`, then require `--plan`/`--freeze` during qualification.
 [Quality-plan guide](docs/v7/quality-plans.md). Byte/membership verification does
 not authenticate preregistration chronology or collector honesty.

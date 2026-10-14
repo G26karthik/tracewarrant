@@ -7,9 +7,10 @@ Work in C:\Users\saita\OneDrive\Desktop\AI Everyday\Context - Aware.
 
 Read PROJECT_V7.md, PROJECT_STATUS.md, CONTINUATION.md, docs/v7/quality-plans.md,
 PROJECT_V5.md and HUMAN_ACTION_REQUIRED.md. Verify Git and GitHub state.
-V7 is the active increment: exact quality plan/policy binding, optional bound
-qualification, compatibility/refusal tests, installed checks and a verified
-experimental 0.6.0 GitHub release. Finish all its scoped gates autonomously.
+V7 is complete: exact quality plan/policy binding, optional bound qualification,
+compatibility/refusal tests, installed checks and a verified experimental 0.6.0
+GitHub release. Read docs/v7/public-release-0.6.0.md and verify that state. Do not
+restart a closed release, move immutable tags or invent additional scoped gates.
 V6 is complete: standalone application sample/policy quality gates, CLI/reports,
 retained V5 export, installed qualification and a verified experimental GitHub
 release 0.5.0. Read docs/v6/public-release-0.5.0.md and verify that state. No

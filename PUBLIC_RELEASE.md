@@ -1,5 +1,16 @@
 # Public releases
 
+## Completed 0.6.0 quality-plan release
+
+[Experimental v0.6.0](https://github.com/G26karthik/tracewarrant/releases/tag/v0.6.0)
+is published from qualified `086123bc5bf3b3f8b114716de2f337f0bfa6ef81`. All five
+source/tag CI jobs passed (260 tests per matrix job). All ten public assets and
+fresh downloaded-package/source-free bound replay and task-omission refusal
+passed. [Closeout](docs/v7/public-release-0.6.0.md),
+[public proof](docs/v7/public-release-0.6.0.json). No maintainer action is required.
+Binding is integrity/membership verification, not authenticated preregistration.
+Prior versions and negative studies remain preserved.
+
 ## Completed 0.5.0 application-quality release
 
 [Experimental v0.5.0](https://github.com/G26karthik/tracewarrant/releases/tag/v0.5.0)

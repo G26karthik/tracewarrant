@@ -1,9 +1,9 @@
 # External actions
 
-V7 quality-plan binding and experimental GitHub publication are within the
-maintainer's autonomous next-stage authorization. No external access, paid/cloud
-service or extra maintainer action is required. A local receipt is not a trusted
-timestamp; publication/chronology evidence remains the experiment author's duty.
+V7 quality-plan binding and experimental 0.6.0 publication are complete and
+publicly verified. No maintainer action is required. No paid/cloud service, model
+rerun or private answer publication occurred. A local receipt remains an untrusted
+timestamp; independent chronology evidence is the experiment author's duty.
 
 V6 standalone quality qualification and experimental GitHub release 0.5.0 are
 complete and publicly verified. No maintainer action is required. No credentials,

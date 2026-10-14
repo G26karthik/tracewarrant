@@ -1,13 +1,18 @@
 # Continuation checkpoint
 
-## Active V7 engineering
+## Completed V7 engineering and public release
 
-Read PROJECT_V7.md and docs/v7/quality-plans.md. Complete bounded quality-plan /
-receipt semantics, optional bound qualification, refusal/regression/installed
-checks and an exact-source verified experimental 0.6.0 release. Preserve 0.5.0
-unbound JSON semantics, old schemas, all failed studies and protected files.
-The new retained-data binding is retrospective; no authenticated chronology or
-new application/model success is claimed. No model rerun or cloud work is needed.
+Read PROJECT_V7.md and docs/v7/public-release-0.6.0.md. All four V7 stages are
+complete: plan/receipt formats, bound qualification/refusals, unbound compatibility,
+retained-data example, installed/hosted checks and verified experimental 0.6.0.
+Qualified source/tag target is 086123bc5bf3b3f8b114716de2f337f0bfa6ef81; source CI
+38537748030 and tag CI 38538161522 passed all five jobs, 260 tests per matrix job.
+Ten public assets and fresh downloaded-wheel/source and source-free bound replay/
+omission-refusal checks passed. PR #3 merged the feature. Current main includes
+later closeout docs; do not move the immutable tag or restart a completed release.
+The retained-data binding is retrospective and unauthenticated in chronology;
+V5's failed study remains closed. No V7 gate is queued. Future work needs a distinct
+demonstrated requirement; production readiness/adoption/model value remain open.
 
 ## Completed V6 engineering and public release
 
