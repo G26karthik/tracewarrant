@@ -6,6 +6,7 @@ from pathlib import Path
 
 import pytest
 
+from benchmarks.hotpot_validation import audit, official_functions
 from examples import hotpot_workload as app
 from workload_lab.artifacts import canonical_bytes
 from workload_lab.graph import compile_workload
@@ -229,3 +230,39 @@ def test_core_does_not_import_application_or_optional_dataset_dependency():
         capture_output=True,
     )
     assert result.returncode == 0, result.stderr
+
+
+def test_retained_real_study_replays_the_failed_gate():
+    root = Path(__file__).parents[1]
+    result = audit(root / "docs/v5/feasibility.json", root / "docs/v5/selection.json")
+    proof = json.loads((root / "docs/v5/verification.json").read_bytes())
+    parity = proof.pop("scorer_parity")
+    assert parity["parity"] is True and parity["pairs_checked"] == 8
+    assert result == proof
+    assert result["quality_gate"]["passed"] is False
+    assert result["complete_graphs"] == 8
+
+
+@pytest.mark.parametrize("tamper", ["quality", "population", "stage", "source"])
+def test_offline_audit_rejects_altered_evidence(tmp_path, tamper):
+    root = Path(__file__).parents[1]
+    raw = json.loads((root / "docs/v5/feasibility.json").read_bytes())
+    if tamper == "quality":
+        raw["quality_gate"]["passed"] = True
+    elif tamper == "population":
+        raw["cells"][0]["sessions"][0]["task_id"] = "0" * 24
+    elif tamper == "stage":
+        raw["cells"][0]["sessions"][0]["stages"][0]["occupied_ns"] += 1
+    else:
+        raw["collector_dependencies"]["examples/frames_workload.py"] = "0" * 64
+    path = tmp_path / "raw.json"
+    path.write_bytes(canonical_bytes(raw))
+    with pytest.raises(ValueError):
+        audit(path, root / "docs/v5/selection.json")
+
+
+def test_external_scorer_is_never_executed_without_exact_source_hash(tmp_path):
+    path = tmp_path / "untrusted.py"
+    path.write_text("raise AssertionError('must not execute')")
+    with pytest.raises(ValueError, match="evaluator digest"):
+        official_functions(path)

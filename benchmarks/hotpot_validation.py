@@ -134,6 +134,7 @@ def audit(raw_path, selection_path):
     if data["quality_gate"] != gate or data["disposition"] != disposition:
         raise ValueError("recorded quality decision mismatch")
     complete_graphs = 0
+    leases = {pool: [] for pool in ("database", "context", "inference-client")}
     with tempfile.TemporaryDirectory(prefix="hotpot-audit-") as folder:
         trace = Path(folder) / "trace.json"
         for session in sessions:
@@ -147,7 +148,38 @@ def audit(raw_path, selection_path):
             workflows = compile_workload(ingest(trace))
             if len(workflows) != 1 or not workflows[0].graph_complete:
                 raise ValueError("recorded dependency graph is incomplete")
+            nodes = workflows[0].nodes
+            roots = [n.span for n in nodes if n.span.parent_id is None]
+            if len(roots) != 1 or (roots[0].start_ns, roots[0].end_ns) != (
+                session["start_ns"],
+                session["end_ns"],
+            ):
+                raise ValueError("session clocks disagree with traced root")
+            observed = {}
+            for node in nodes:
+                if node.role != "work":
+                    continue
+                obs = node.span.observation
+                if obs.pool not in leases or obs.pool in observed or obs.capacity != 1:
+                    raise ValueError("unexpected owned pool trace")
+                if None in (obs.enqueued_ns, obs.acquired_ns, obs.released_ns):
+                    raise ValueError("owned pool lifecycle missing")
+                observed[obs.pool] = {
+                    "stage": obs.pool,
+                    "pool": obs.pool,
+                    "queue_ns": obs.acquired_ns - obs.enqueued_ns,
+                    "occupied_ns": obs.released_ns - obs.acquired_ns,
+                    "outcome": obs.outcome,
+                }
+                leases[obs.pool].append((obs.acquired_ns, obs.released_ns))
+            recorded = {s["pool"]: s for s in session["stages"]}
+            if len(recorded) != len(session["stages"]) or recorded != observed:
+                raise ValueError("stage clocks/outcomes disagree with resource trace")
             complete_graphs += 1
+    for intervals in leases.values():
+        ordered = sorted(intervals)
+        if any(left[1] > right[0] for left, right in zip(ordered, ordered[1:], strict=False)):
+            raise ValueError("observed leases exceed declared single-slot pool capacity")
     latencies = [s["latency_ns"] / 1e9 for s in sessions if s["error_type"] is None]
     window = cell["end_ns"] - cell["start_ns"]
     return {

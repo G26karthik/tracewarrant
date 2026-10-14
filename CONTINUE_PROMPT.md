@@ -5,31 +5,35 @@ Use the following in a coding session opened in this repository:
 ```text
 Work in C:\Users\saita\OneDrive\Desktop\AI Everyday\Context - Aware.
 
-Read PROJECT_V4.md, PROJECT_STATUS.md, CONTINUATION.md, PUBLIC_RELEASE.md,
-HUMAN_ACTION_REQUIRED.md and docs/v4/workflow.md. Verify Git and GitHub state.
-The maintainer authorized autonomous V4 completion on 2026-10-14. The old
-0.3.1 closure is historical; do not mistake it for completion of V4.
+Read PROJECT_V5.md, PROJECT_STATUS.md, CONTINUATION.md, docs/v5/results.md,
+PROJECT_V4.md and HUMAN_ACTION_REQUIRED.md. Verify Git and GitHub state.
+V4 and its public 0.4.0 release are complete. V5's real HotpotQA application
+qualification is also closed: all eight requests completed, but 4/8 exact
+answers and mean answer F1 0.541667 failed the preregistered quality floor.
 
 Proceed immediately in an inspect -> act -> verify -> checkpoint -> repeat loop.
-Finish the five V4 gates, including the usable offline validation workflow,
-quality/baseline refusals, portable verified replay, documentation, installed
-qualification, full hosted CI and experimental GitHub release v0.4.0.
+Complete any genuinely unfinished verification/publication item in the current
+checkpoint. Do not restart the closed V4 release or V5 collection. Verify the
+retained study offline with benchmarks.hotpot_validation and preserve its failed
+quality decision. Conditional calibration/held-out modeling was not unlocked.
 
-Routine implementation choices, fixes, tests, commits, pushes and the GitHub
-prerelease are authorized. Resolve routine problems without approval pauses.
-Bind release assets to clean exact source, verify all CI jobs on that SHA,
-preserve older tags, verify every uploaded digest and unauthenticated public
-download, and qualify an installation from the downloaded wheel/source pair.
-Record exact source, reports and release/run URLs before reporting completion.
+Routine choices, fixes, relevant tests, commits and pushes are authorized.
+Resolve routine problems without approval pauses. Record exact source, report
+and CI/PR URLs before claiming completion. Preserve immutable release tags;
+the package remains 0.4.0 and no new release is required for the research study.
 
 Preserve all 64 protected files, original predictions/measurements, the V3
 freeze, prior releases and negative results. Job policies are retrospective
-unless separately frozen; do not relabel FRAMES as a successful agent study.
+unless separately frozen; do not relabel FRAMES or HotpotQA as successful agent
+studies. Raw dataset/model weights/private answer text stay ignored. Public
+scalar-only replay cannot independently rescore missing answers or authenticate
+the collector. Private answer verification uses the hash-pinned official scorer.
 Do not revive the planner/native/CUDA/optimizer roadmap or claim production
 readiness/adoption. No PyPI upload, paid/cloud work or outreach is authorized.
 
-If the current checkpoint already proves all V4 gates complete, verify and
-report that state; do not recreate a release or invent extra work. Otherwise
+If the current checkpoint proves scoped closure, verify and report that state.
+A future application improvement needs a distinct design, disjoint evidence,
+justified goal and preserved negative results. Do not invent extra work. Otherwise
 continue until all scoped gates pass. Send meaningful progress updates without
 waiting for replies. If a real access/scope blocker requires maintainer input,
 complete independent work and identify the smallest required action. Never

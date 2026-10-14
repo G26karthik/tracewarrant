@@ -1,12 +1,13 @@
 # Evidence-gated roadmap
 
-## Active V5 application qualification
+## Completed V5 application qualification
 
 The maintainer requested the next real-application stage on 2026-10-14.
-[V5](PROJECT_V5.md) preregisters one public HotpotQA local QA application, with
-official answer scoring and fixed disjoint samples. Performance-model and cheap
-baseline comparison is conditional on useful task quality. A failed quality
-gate closes the study honestly; the toolkit and 0.4.0 release remain complete.
+[V5](PROJECT_V5.md) executed one public HotpotQA local QA application, with
+official answer scoring and fixed disjoint samples. Eight requests completed,
+4/8 exact answers and mean answer F1 0.541667 failed its predeclared quality gate.
+Performance-model and cheap-baseline comparison were not unlocked. The negative
+study, toolkit and 0.4.0 release are closed and preserved. [Results](docs/v5/results.md).
 
 ## Completed V4 workflow increment
 

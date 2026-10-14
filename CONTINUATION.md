@@ -1,16 +1,27 @@
 # Continuation checkpoint
 
-## Active V5 study
+## Completed V5 application qualification
 
-The maintainer authorized the next application study on 2026-10-14. Read
-PROJECT_V5.md and docs/v5/preregistration.md. Dataset/scorer and fixed first
-24 rows are pinned in docs/v5/selection.json. The collector is
-examples/hotpot_workload.py; offline/parity checks are
-benchmarks/hotpot_validation.py. Commit the harness/design before inference.
-Raw dataset, model weights and answer strings stay ignored under artifacts/v5.
-Do not change prompts/questions/thresholds after scoring. Feasibility failure
-closes this study with a negative finding; it does not authorize a hidden
-replacement workload or fabricated calibration/held-out predictions.
+The maintainer authorized the next application study on 2026-10-14. V5 is now
+closed under its predeclared stopping rule: eight requests completed, 4/8 exact
+answers and mean answer F1 0.541667. Both quality floors failed. No calibration,
+forecast freeze or held-out intervention was run. Do not resume conditional
+performance work on this unqualified application or tune the preserved study.
+
+Read PROJECT_V5.md and docs/v5/results.md. Design/selection were committed at
+7d1ab8d; measured source f023348ac27e4725707de37f79e6710e08136155 was clean.
+Both source CI runs passed all five jobs. Public docs/v5/feasibility.json and
+verification.json contain no question/passages/answer strings. Official scorer
+parity checked all eight private answers locally. The ignored artifacts/v5
+folder retains private source/answers, setup logs and local audit reports; do
+not publish it wholesale. The chosen local model is now cached, digest recorded
+in raw evidence. No package/release version or historical frozen artifact changed.
+
+Offline: uv run python -m benchmarks.hotpot_validation --raw
+docs/v5/feasibility.json --selection docs/v5/selection.json --output <fresh path>.
+Scalar-only replay is structural/gate verification, not independent answer
+rescoring or collector authentication. A different future application/quality
+improvement study needs a separate design and must preserve this negative result.
 
 ## Completed V4 checkpoint
 

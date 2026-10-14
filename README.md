@@ -4,6 +4,11 @@
 
 Status: Experimental / Research Prototype. Active increment: [V4 offline validation workflow](PROJECT_V4.md).
 
+Latest application study: [V5 HotpotQA qualification](PROJECT_V5.md) completed
+eight real requests but failed its predeclared quality floor (4/8 exact answers,
+mean answer F1 0.542). [Evidence and limits](docs/v5/results.md). Its conditional
+performance study was not unlocked; useful-agent capacity is still unestablished.
+
 [![Correctness](https://github.com/G26karthik/tracewarrant/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/G26karthik/tracewarrant/actions/workflows/ci.yml)
 
 TraceWarrant checks whether observations support a performance model and whether frozen predictions survive real interventions. Use its trace conformance checker and simulator-neutral validator without adopting our simulator. UNKNOWN, unsupported claims and a simple baseline beating a complex model are useful results. Returning to the project? Start with [the short refresher](START_HERE.md), then [PROJECT_V4.md](PROJECT_V4.md), [PROJECT_STATUS.md](PROJECT_STATUS.md) and [the continuation checkpoint](CONTINUATION.md).

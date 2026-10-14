@@ -41,6 +41,19 @@ uv run python -m benchmarks.hotpot_validation \
   --output artifacts/v5/verified-with-private-scorer.json
 ```
 
+The retained result is a failed quality gate; do not overwrite or tune it.
+Replay the published evidence without a model, dataset download or PyArrow:
+
+```sh
+uv run python -m benchmarks.hotpot_validation \
+  --raw docs/v5/feasibility.json --selection docs/v5/selection.json \
+  --output artifacts/v5/replay-new.json
+```
+
+Use a repository checkout with the measured source commit available in Git
+history. A shallow clone may require fetching that history first. This is a
+research example outside the installed core package, not a new 0.4.0 CLI command.
+
 Offline replay omits both private arguments. It checks committed source,
 selection/clock/graph identities and recomputes the gate from retained scalar
 scores. Digests do not authenticate the collector, and scalar-only replay cannot
