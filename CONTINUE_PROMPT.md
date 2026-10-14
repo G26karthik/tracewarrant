@@ -9,7 +9,8 @@ The maintainer has now authorized a new researched scope after V3-V9 completion:
 V10 observation collection and framework integration. Read PROJECT_V10.md,
 docs/v10/research.md, docs/v10/integration-research.json and ADR-0025 first.
 This phase addresses measured collector duplication and missing native lifecycle
-evidence. It does not reopen closed studies. Research is being recorded; B/C/D
+evidence. It does not reopen closed studies. Research gate A passed on clean
+40cff5b545b66a64f083c051733afd8c75dd0fd5; docs/v10/framework-probe.json records it. B/C/D
 collection/integration/qualification are planned, not implemented. Package is
 still 0.7.1. When asked to implement/continue this new scope, follow its gates.
 Use caller-owned scheduling, explicit boundaries/roles/edges, bounded opaque

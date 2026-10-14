@@ -1,0 +1,120 @@
+{
+  "artifact_type": "framework_integration_research_probe",
+  "fresh_pydantic": {
+    "claims": {
+      "cancellation_release": {
+        "eligible": 0,
+        "observed": 0,
+        "support": "unsupported"
+      },
+      "dependency_graph": {
+        "eligible": 1,
+        "observed": 0,
+        "support": "unsupported"
+      },
+      "external_wait": {
+        "eligible": 4,
+        "observed": 0,
+        "support": "unsupported"
+      },
+      "fan_out_fan_in": {
+        "support": "unsupported"
+      },
+      "finite_pool_capacity": {
+        "eligible": 4,
+        "observed": 0,
+        "support": "unsupported"
+      },
+      "inference_client_occupancy": {
+        "eligible": 2,
+        "observed": 0,
+        "support": "unsupported"
+      },
+      "inference_service_demand": {
+        "support": "unsupported"
+      },
+      "prediction_suitability": {
+        "support": "unsupported"
+      },
+      "queue_wait": {
+        "eligible": 4,
+        "observed": 0,
+        "support": "unsupported"
+      },
+      "resource_occupancy": {
+        "eligible": 4,
+        "observed": 0,
+        "support": "unsupported"
+      },
+      "retry_attempts": {
+        "eligible": 4,
+        "observed": 0,
+        "support": "unsupported"
+      },
+      "service_interval": {
+        "eligible": 4,
+        "observed": 0,
+        "support": "unsupported"
+      },
+      "timeout_semantics": {
+        "support": "unsupported"
+      }
+    },
+    "node_kinds": {
+      "llm": 2,
+      "tool": 2,
+      "workflow": 1
+    },
+    "source_sha256": "d17f0b82b2f929f4d2b398b797ec03ea0acbeb305347421f5b7d6d19ff374443",
+    "span_count": 5
+  },
+  "limitations": [
+    "probe_not_implemented_adapter",
+    "testmodel_not_real_task_quality",
+    "controlled_tools_not_independent_deployed_application",
+    "synchronization_probe_not_performance_benchmark",
+    "no_upstream_adoption_or_uniqueness_claim"
+  ],
+  "locked_integration_versions": {
+    "anyio": "4.15.1",
+    "opentelemetry-sdk": "1.45.0",
+    "pydantic-ai-slim": "2.51.0"
+  },
+  "metadata": {
+    "compiler": "MSC v.1944 64 bit (AMD64)",
+    "configuration": {
+      "model_execution": false,
+      "network": false
+    },
+    "cpp_compiler": "not applicable",
+    "cpu": "AMD Ryzen 9 8945HS w/ Radeon 780M Graphics",
+    "cuda": "not applicable",
+    "date_utc": "2026-10-14T14:46:39.742664+00:00",
+    "dependency_lock_sha256": "1950a9b6a2fee772e478e3ab6645d470f516bb655de86ba81c3113048226cf07",
+    "driver": "not applicable",
+    "git_commit": "40cff5b545b66a64f083c051733afd8c75dd0fd5",
+    "git_dirty": false,
+    "gpu": "not used",
+    "harness_sha256": "01589ee63f6f765982fd4063717f6fa43440388d434f13a484e2b0728c04de21",
+    "logical_cpus": 16,
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.12 (main, Jan 14 2026, 19:30:21) [MSC v.1944 64 bit (AMD64)]",
+    "ram_bytes": 33536831488,
+    "seed": 0,
+    "source_tree_sha256": "61ea4b884bf8b954c73fb140fed241bc0fbdcede7c982fecad23d68bbe66971a"
+  },
+  "native_concurrency": {
+    "attribute_keys": [
+      "limiter_name",
+      "max_running",
+      "source",
+      "waiting_count"
+    ],
+    "final_running": 0,
+    "final_waiting": 0,
+    "keys_current_importer_retains": [],
+    "max_running": 1,
+    "wait_spans": 1
+  },
+  "schema_version": "1.0"
+}

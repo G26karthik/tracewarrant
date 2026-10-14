@@ -7,7 +7,8 @@ research of a concrete new requirement after completing V3–V9. A local locked
 Pydantic probe reproduces missing lifecycle/topology evidence and native wait
 attributes discarded by the importer. Recommendation: reusable caller-owned
 observation boundaries plus optional OTel bridge and one pinned framework example.
-Research qualification is being recorded; B/C/D are planned, not implemented.
+Research gate A passed on clean `40cff5b545b66a64f083c051733afd8c75dd0fd5`;
+docs/v10/framework-probe.json records the result. B/C/D are planned, not implemented.
 The tested version is Pydantic AI 2.51.0; reviewed upstream differs in token
 ownership. Reuse actual scheduling; do not infer release or auto-complete graphs.
 No version bump, model rerun, paid service or scientific success is implied.

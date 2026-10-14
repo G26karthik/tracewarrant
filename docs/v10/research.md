@@ -90,8 +90,10 @@ The parent output directory must exist; the output must be new. This runs
 TestModel, controlled local tools and one synchronized limiter check. It disables
 remote model requests, records no answer text and uses no model/GPU service.
 It is a source-checkout research probe, not an installed SDK test, a meaningful
-task-quality evaluation or a throughput benchmark. The final clean-source probe
-will be recorded separately from the initial exploratory snapshot.
+task-quality evaluation or a throughput benchmark. The [clean-source probe](framework-probe.json)
+passed at committed source `40cff5b545b66a64f083c051733afd8c75dd0fd5` with
+`git_dirty: false`, separately from the initial exploratory snapshot. This
+completes research gate A. Collection/bridge implementation is still pending.
 
 Resource plan: target 16 GiB system RAM and a provisional 2 GiB process ceiling;
 measure peak working set and overhead before making claims. The actual current

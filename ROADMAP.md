@@ -5,7 +5,7 @@
 On 2026-10-14 the maintainer requested concrete next-phase research. [V10](PROJECT_V10.md)
 targets a reusable caller-owned collection primitive, optional OTel bridge and
 pinned Pydantic integration. Fresh interface probes demonstrate the need;
-[research and alternatives](docs/v10/research.md). Research is prepared; B/C/D
+[research and alternatives](docs/v10/research.md). Research gate A passed; B/C/D
 implementation/qualification are planned. Package remains 0.7.1. The completed
 V3–V9 acceptance below remains valid; this is a separately authorized scope.
 

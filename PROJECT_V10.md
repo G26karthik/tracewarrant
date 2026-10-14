@@ -74,8 +74,10 @@ not change the GPU's reported VRAM.
 
 ## Status and stopping rule
 
-Status: research/probe completed locally; A evidence qualification is being
-recorded. B/C/D are planned, not implemented or released. Package remains 0.7.1.
+Status: **A complete.** The reproducible probe passed on clean committed source
+`40cff5b545b66a64f083c051733afd8c75dd0fd5` with locked dependencies.
+[Clean-source probe](docs/v10/framework-probe.json). B/C/D are planned, not
+implemented or released. Package remains 0.7.1.
 No new public version is chosen merely to label a plan.
 
 If the useful evidence can be supplied entirely through an existing framework
