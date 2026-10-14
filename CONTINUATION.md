@@ -1,5 +1,13 @@
 # Continuation checkpoint
 
+## Collector maintenance 0.8.1 in progress
+
+Remaining-work review reproduced exception-truthiness and clock/cleanup-priority
+defects. The fixes and eleven new regressions are implemented; installed failure
+qualification is added. Read docs/v10/maintenance-0.8.1.md. Finish 328-test,
+installed/hosted/exact-source and public patch qualification, then close out.
+V10/0.8.0 acceptance below remains valid; do not move its immutable tag.
+
 ## V10 complete — no required stages remain
 
 Read PROJECT_COMPLETION.md, PROJECT_V10.md, docs/v10/collection.md and
