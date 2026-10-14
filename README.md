@@ -4,6 +4,11 @@
 
 Status: Experimental / Research Prototype. The agreed project is [complete](PROJECT_COMPLETION.md), published as 0.7.1. Required remaining stages: zero.
 
+New scope, requested 2026-10-14: [V10 usable observation collection](PROJECT_V10.md).
+[Research](docs/v10/research.md) supports a small framework-neutral collection
+interface and optional OTel/Pydantic integration. This is a plan, not delivered
+0.7.1 functionality; the completed release and failed studies remain preserved.
+
 Latest application study: [V5 HotpotQA qualification](PROJECT_V5.md) completed
 eight real requests but failed its predeclared quality floor (4/8 exact answers,
 mean answer F1 0.542). [Evidence and limits](docs/v5/results.md). Its conditional
