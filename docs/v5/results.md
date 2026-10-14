@@ -81,6 +81,11 @@ Both preregistration/source CI runs passed all five jobs (214 tests per matrix
 job): [initial design](https://github.com/G26karthik/tracewarrant/actions/runs/38519331992),
 [measured source](https://github.com/G26karthik/tracewarrant/actions/runs/38520913887).
 Final evidence replay is also a network-free regression test in the repository.
+Final evidence source `afae018f67023ae2e449ef363db9e8b08888481f` passed all five
+hosted jobs with 220 tests per Windows/Ubuntu matrix job, zero failures/errors/
+skips: [branch CI](https://github.com/G26karthik/tracewarrant/actions/runs/38521739584),
+[PR CI](https://github.com/G26karthik/tracewarrant/actions/runs/38521777867).
+Review and integration are tracked by [PR #1](https://github.com/G26karthik/tracewarrant/pull/1).
 The 64-file historical preservation and byte-exact V3 evaluation checks passed.
 Historical release tags stay unchanged. Published records exclude private answer
 text. No paid/cloud request or outreach was made.
