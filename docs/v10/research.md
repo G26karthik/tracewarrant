@@ -1,5 +1,9 @@
 # Next-phase research — 2026-10-14
 
+Research checkpoint below is retained as recorded. Its bounded recommendation
+has since been implemented and qualified: [verified experimental 0.8.0](public-release-0.8.0.md),
+[interface](collection.md), [all four gates complete](../../PROJECT_V10.md).
+
 ## Recommendation
 
 Make TraceWarrant practical to instrument in an existing application. The next

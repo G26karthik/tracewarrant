@@ -1,17 +1,20 @@
 # Project refresher
 
-Current new scope: [V10 observation collection and framework integration](PROJECT_V10.md).
-The maintainer requested researched next steps after the completed release.
-Fresh locked-framework probes justify a supported collection interface and
-optional OTel bridge. [Research](docs/v10/research.md), [implemented API](docs/v10/collection.md).
-B/C implementation is complete; D qualification/publication is preparing 0.8.0.
-The V3–V9 completion and published 0.7.1 below remain valid.
+TraceWarrant is an experimental Python library/CLI that checks evidence behind
+AI application performance claims. It now also provides bounded collection of
+explicitly owned operation/resource boundaries, optional OTel SDK export and a
+pinned framework companion example. [Usage](docs/v10/collection.md).
 
-The agreed experimental project is **complete**, with **zero required stages
-remaining**. [Final version 0.7.1](docs/v9/public-release-0.7.1.md) includes the
-performance-HTML integrity fix and verified installed/public bundle replay.
-[Requirements and evidence](docs/v9/acceptance.md), [completion checkpoint](PROJECT_COMPLETION.md).
-Production/adoption and stronger science remain unestablished, not queued stages.
+The original toolkit and all four authorized [V10 gates](PROJECT_V10.md) are
+**complete**, with **zero required stages remaining**. Latest public version:
+[verified 0.8.0](docs/v10/public-release-0.8.0.md), 317 tests per matrix job, all
+five source/tag CI jobs and thirteen public downloads passed. Native framework
+coverage stays partial; the short-operation collector cost is material. Version
+numbers are release labels, not progress percentages. Production readiness,
+external adoption and model superiority remain unestablished.
+[Completion boundary](PROJECT_COMPLETION.md), [status](PROJECT_STATUS.md).
+
+Prior stages and scientific results below are preserved history.
 
 Previous stage: [V8 portable quality evidence](PROJECT_V8.md), completed and
 published as experimental [0.7.0](https://github.com/G26karthik/tracewarrant/releases/tag/v0.7.0).

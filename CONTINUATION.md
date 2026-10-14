@@ -1,28 +1,34 @@
 # Continuation checkpoint
 
-## New V10 research and implementation plan
+## V10 complete — no required stages remain
 
-Implementation checkpoint: B/C delivered `collection.py`, `otel_collection.py`,
-plain/pinned framework examples and 25 new regression cases (317 total). D adds
-core-only and locked-SDK isolated installed qualification plus paired SQLite
-overhead/peak-working-set measurement in CI. Candidate package is 0.8.0; fresh
-local installed SDK checks passed. Exact-source/hosted/public release gates are
-pending. Read docs/v10/collection.md and ADR-0026. Do not claim a public release,
-free instrumentation, real task quality or a fully modeled native agent.
+Read PROJECT_COMPLETION.md, PROJECT_V10.md, docs/v10/collection.md and
+docs/v10/public-release-0.8.0.md/json. All four V10 gates passed. Experimental
+0.8.0 is public and all thirteen unauthenticated downloads match qualified bytes.
+Release source/peeled tag: c8ae1af15e8d3e60972e72c5bcca27ad30775714; annotated tag: 7fc5eaa66c29546c1fe7be4536e833040e207607.
+Source CI 38592818864 and tag CI 38593907594 passed all five jobs;
+each matrix has 317 tests, zero failures/errors/skips. PR #7 is merged. Main
+contains later closeout documentation; never move the immutable tag.
 
-Read PROJECT_V10.md, docs/v10/research.md and ADR-0025. The maintainer asked for
-research of a concrete new requirement after completing V3–V9. A local locked
-Pydantic probe reproduces missing lifecycle/topology evidence and native wait
-attributes discarded by the importer. Recommendation: reusable caller-owned
-observation boundaries plus optional OTel bridge and one pinned framework example.
-Research gate A passed on clean `40cff5b545b66a64f083c051733afd8c75dd0fd5`;
-docs/v10/framework-probe.json records the result. B/C are implemented; D final
-qualification/publication remains.
-The tested version is Pydantic AI 2.51.0; reviewed upstream differs in token
-ownership. Reuse actual scheduling; do not infer release or auto-complete graphs.
-No version bump, model rerun, paid service or scientific success is implied.
+Fresh downloaded wheel-only execution outside a checkout generated real SQLite
+capture and replayed both supplied trace inspections byte for byte, with no SDK
+or simulator import. Separate installed locked-SDK checks verified bridge
+identity/timestamps/roles/edges, exporter refusal and native partial coverage.
+Plain closed graph/resource coverage is supported; companion framework coverage
+is only 2/4, graph/prediction unsupported and GPU demand UNKNOWN. TestModel is not
+real task quality. Local microbenchmark: 114.919 us added/operation,
+29.21% loop overhead, 35.29 MiB process peak; serialization separately
+reported. This cost is material for short work. All measured processes meet the
+provisional 2 GiB ceiling; the machine actually has about 31.2 GiB, not a tested
+16 GiB deployment. Raw local/hosted evidence is public.
 
-## Final project completion — no remaining stages
+Required remaining stages across V3–V10: zero. Preserve all 64 protected files,
+historical tags, failed studies and UNKNOWN distinctions. No next feature/study
+is queued. Future maintenance or a concrete new requirement is separate. Do not
+restart closed release qualification, infer free instrumentation or claim a
+fully modeled agent, production readiness, external adoption or model superiority.
+
+## Completed V3–V9 acceptance
 
 Read PROJECT_COMPLETION.md, PROJECT_V9.md and docs/v9/acceptance.md. All original
 ten V3 criteria and bounded V4–V9 increments are accepted; required remaining

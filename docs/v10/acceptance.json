@@ -1,0 +1,65 @@
+{
+  "artifact_type": "experimental_collection_scope_acceptance",
+  "gates": [
+    {
+      "evidence": [
+        "docs/v10/research.md",
+        "docs/v10/framework-probe.json"
+      ],
+      "id": "A",
+      "status": "complete"
+    },
+    {
+      "evidence": [
+        "src/workload_lab/collection.py",
+        "tests/test_collection.py"
+      ],
+      "id": "B",
+      "status": "complete"
+    },
+    {
+      "evidence": [
+        "src/workload_lab/otel_collection.py",
+        "examples/collect_pydantic_observations.py"
+      ],
+      "id": "C",
+      "status": "complete"
+    },
+    {
+      "evidence": [
+        "benchmarks/qualify_collection_package.py",
+        "benchmarks/measure_collection.py",
+        "docs/v10/public-release-0.8.0.json"
+      ],
+      "id": "D",
+      "status": "complete"
+    }
+  ],
+  "limits": [
+    "experimental_not_production",
+    "testmodel_not_real_task_quality",
+    "partial_native_resource_coverage_2_of_4",
+    "native_graph_and_gpu_demand_unknown",
+    "material_short_operation_overhead",
+    "caller_declarations_not_authenticated",
+    "not_tested_on_16gib_hardware",
+    "no_model_superiority_or_adoption_claim"
+  ],
+  "qualified_source": "c8ae1af15e8d3e60972e72c5bcca27ad30775714",
+  "release_url": "https://github.com/G26karthik/tracewarrant/releases/tag/v0.8.0",
+  "remaining_required_stage_count": 0,
+  "remaining_required_stages": [],
+  "schema_version": "1.0",
+  "status": "complete",
+  "validation": {
+    "core_only_collection_and_exact_report_replay": true,
+    "frozen_evaluation_byte_exact": true,
+    "installed_public_wheel_sdk_verified": true,
+    "protected_files": 64,
+    "public_downloads": 13,
+    "source_and_tag_ci_jobs": 5,
+    "tests_per_matrix": 317
+  },
+  "verified_at_utc": "2026-10-14T16:01:43.773526+00:00",
+  "version": "0.8.0"
+}

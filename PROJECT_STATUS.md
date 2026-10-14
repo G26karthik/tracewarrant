@@ -2,13 +2,14 @@
 
 Updated: 2026-10-14. Selected public name: **TraceWarrant**; former internal codename: Workload Lab.
 
-**Active implementation: [V10 observation collection and framework integration](PROJECT_V10.md).**
-The maintainer requested a concrete next requirement. Fresh locked-framework
-probes and primary-source research support a small collection/OTel bridge with a
-first Pydantic integration. Research gate A passed, including a reproducible
-clean-source local probe. B/C are now implemented with 317 local tests and fresh
-installed SDK qualification; experimental 0.8.0 exact-source/hosted/public
-verification is in progress. [Interface](docs/v10/collection.md).
+**Latest V10 scope complete: [observation collection and framework integration](PROJECT_V10.md).**
+All four gates passed; experimental 0.8.0 is public and verified. 317 tests per
+hosted matrix job, all five source/tag jobs, fresh installed core/SDK checks and
+all thirteen public downloads passed. New SQLite capture and both supplied trace
+reports replay outside the checkout. Native coverage remains 2/4, graph/GPU
+demand unsupported; measured short-operation cost is material.
+[Closeout and raw proof](docs/v10/public-release-0.8.0.md). Required remaining
+stages across the agreed toolkit and authorized V10 increment: **zero**.
 
 **Completed V3–V9 scope: [final V9 acceptance](PROJECT_V9.md), zero required stages
 remaining in that scope.** The original ten criteria and V4–V8 increments are accepted with

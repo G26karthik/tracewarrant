@@ -1,14 +1,15 @@
 # Evidence-gated roadmap
 
-## New V10 scope — usable observation collection
+## Completed V10 collection — zero remaining required stages
 
-On 2026-10-14 the maintainer requested concrete next-phase research. [V10](PROJECT_V10.md)
-targets a reusable caller-owned collection primitive, optional OTel bridge and
-pinned Pydantic integration. Fresh interface probes demonstrate the need;
-[research and alternatives](docs/v10/research.md). A/B/C are delivered; D installed,
-hosted and public-release qualification is in progress for experimental 0.8.0.
-Existing 0.7.1 remains the verified published release. The completed
-V3–V9 acceptance below remains valid; this is a separately authorized scope.
+The researched [V10 requirement](PROJECT_V10.md) delivers a bounded caller-owned
+recorder, explicit optional SDK export and pinned Pydantic companion example.
+All four gates passed: research, implementation, integration, measured costs,
+317 tests per hosted matrix, installed core/SDK and verified public 0.8.0.
+[Closeout](docs/v10/public-release-0.8.0.md), [acceptance](docs/v10/acceptance.json).
+Native coverage remains partial, GPU demand unknown and short-operation recording
+cost material. V3–V9 acceptance below remains valid. No further feature or
+release stage is queued; maintenance or a new measured requirement is separate.
 
 ## Completed V3–V9 scope — zero remaining required stages in that scope
 

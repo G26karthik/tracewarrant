@@ -1,76 +1,40 @@
-# Autonomous completion prompt
+# Autonomous maintenance prompt
 
-Use the following in a coding session opened in this repository:
+Use in a coding session opened in this repository:
 
 ```text
 Work in C:\Users\saita\OneDrive\Desktop\AI Everyday\Context - Aware.
+Read PROJECT_COMPLETION.md, PROJECT_V10.md, PROJECT_STATUS.md, CONTINUATION.md,
+docs/v10/collection.md, docs/v10/public-release-0.8.0.md/json and docs/v10/acceptance.json.
+Verify disk/Git/GitHub state rather than trusting this checkpoint alone.
 
-The maintainer has now authorized a new researched scope after V3-V9 completion:
-V10 observation collection and framework integration. Read PROJECT_V10.md,
-docs/v10/research.md, docs/v10/integration-research.json and ADR-0025 first.
-This phase addresses measured collector duplication and missing native lifecycle
-evidence. It does not reopen closed studies. Research gate A passed on clean
-40cff5b545b66a64f083c051733afd8c75dd0fd5; docs/v10/framework-probe.json records it.
-B/C are implemented; D exact-source/hosted/public qualification is pending for
-experimental 0.8.0. Read docs/v10/collection.md and ADR-0026. Continue its gates.
-Use caller-owned scheduling, explicit boundaries/roles/edges, bounded opaque
-output and optional OTel imports. Pinned Pydantic 2.51.0 and current upstream
-differ in token ownership. Do not infer release, automatic graph completeness,
-remote cancellation or GPU demand. Keep all historical acceptance/evidence intact.
+V3-V9 and all four separately authorized V10 gates are complete. Experimental
+0.8.0 is public; all thirteen unauthenticated assets, installed core/SDK checks,
+new stdlib collection and exact supplied trace/bundle replay passed. Qualified
+release source: c8ae1af15e8d3e60972e72c5bcca27ad30775714; source CI 38592818864, tag CI 38593907594,
+317 tests per source matrix job, all five jobs passed. Main contains later
+closeout docs. Required remaining stages: zero. Do not move immutable tags or
+repeat a completed release. No new feature or study is queued.
 
-Read PROJECT_V9.md, PROJECT_COMPLETION.md, docs/v9/acceptance.md, PROJECT_V8.md,
-docs/v8/quality-bundles.md, PROJECT_V7.md, PROJECT_STATUS.md,
-CONTINUATION.md, docs/v7/quality-plans.md,
-PROJECT_V5.md and HUMAN_ACTION_REQUIRED.md. Verify Git and GitHub state.
-The agreed project is complete: final V9 acceptance and experimental 0.7.1 passed
-all gates; required remaining stages are zero. Read docs/v9/public-release-0.7.1.md
-and docs/v9/acceptance.json. Do not invent another stage to prolong the project.
-Without a concrete new requirement or reproduced defect, report the completed
-checkpoint and stop. Future scientific/adoption/production work is separate.
-V8 is complete: native exact quality export, bounded checksum/JSON/HTML replay,
-288 tests per matrix job, installed/hosted qualification and verified public
-0.7.0. Read docs/v8/public-release-0.7.0.md. No V8 code/release gate remains.
-A future increment needs a distinct demonstrated requirement.
-V7 is complete: exact quality plan/policy binding, optional bound qualification,
-compatibility/refusal tests, installed checks and a verified experimental 0.6.0
-GitHub release. Read docs/v7/public-release-0.6.0.md and verify that state. Do not
-restart a closed release, move immutable tags or invent additional scoped gates.
-V6 is complete: standalone application sample/policy quality gates, CLI/reports,
-retained V5 export, installed qualification and a verified experimental GitHub
-release 0.5.0. Read docs/v6/public-release-0.5.0.md and verify that state. No
-scoped V6 code/release gate is queued; do not recreate its release or move tags.
-V4 and its public 0.4.0 release are complete. V5's real HotpotQA application
-qualification is also closed: all eight requests completed, but 4/8 exact
-answers and mean answer F1 0.541667 failed the preregistered quality floor.
+Routine design choices, fixes, tests, commits/pushes and experimental GitHub
+releases are authorized. For a concrete new requirement or reproduced defect,
+inspect -> act -> verify -> checkpoint -> repeat without routine approval pauses.
+Complete the bounded scope end to end; report exact sources and validation.
+Without a new requirement or defect, report the verified complete checkpoint.
 
-Proceed immediately in an inspect -> act -> verify -> checkpoint -> repeat loop.
-Complete any genuinely unfinished V9 verification/publication item in the current
-checkpoint. Do not restart the closed V4 release or V5 collection. Verify the
-retained study offline with benchmarks.hotpot_validation and preserve its failed
-quality decision. Conditional calibration/held-out modeling was not unlocked.
+Use caller-owned scheduling and known boundaries/roles/edges, bounded opaque
+content-free output and optional SDK imports. Native graph/prediction is
+unsupported, resource coverage 2/4 and GPU demand UNKNOWN in the pinned example.
+TestModel is not quality or adoption. Local recording costs are material for
+short operations; do not claim negligible overhead or infer hardware guarantees
+from a provisional process ceiling. Cross-host clocks/remote release are unknown.
 
-Routine choices, fixes, relevant tests, commits and pushes are authorized.
-Resolve routine problems without approval pauses. Record exact source, report
-and CI/PR URLs before claiming completion. Preserve immutable release tags;
-V9's patch package is 0.7.1. Bind new release assets to clean exact source, qualify
-installed bytes and hosted CI, verify all public downloaded asset hashes, then
-record source/release/CI URLs. Historical versions and V5 artifacts stay intact.
-
-Preserve all 64 protected files, original predictions/measurements, the V3
-freeze, prior releases and negative results. Job policies are retrospective
-unless separately frozen; do not relabel FRAMES or HotpotQA as successful agent
-studies. Raw dataset/model weights/private answer text stay ignored. Public
-scalar-only replay cannot independently rescore missing answers or authenticate
-the collector. Private answer verification uses the hash-pinned official scorer.
-Do not revive the planner/native/CUDA/optimizer roadmap or claim production
-readiness/adoption. No PyPI upload, paid/cloud work or outreach is authorized.
-
-If the current checkpoint proves scoped closure, verify and report that state.
-A future application improvement needs a distinct design, disjoint evidence,
-justified goal and preserved negative results. Do not invent extra work. Otherwise
-continue until all scoped gates pass. Send meaningful progress updates without
-waiting for replies. If a real access/scope blocker requires maintainer input,
-complete independent work and identify the smallest required action. Never
-request credentials in chat. On forced session interruption, leave verified
-progress and a concrete next step. Start now.
+Preserve all 64 protected files, prior releases/tags, original predictions and
+measurements, negative FRAMES/HotpotQA results and V3 freeze. FRAMES established
+no added decision value; HotpotQA failed quality (4/8 exact, mean F1 0.541667),
+so conditional performance modeling is closed. More RAM does not reopen it.
+Do not revive planner/native/CUDA/optimizer scope or claim production readiness.
+No PyPI upload, paid/cloud provisioning, outreach or private answer publication.
+Never request credentials in chat. When interrupted, leave verified progress
+and an exact next action; no unfinished action is recorded in this checkpoint.
 ```

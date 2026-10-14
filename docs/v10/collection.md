@@ -133,3 +133,10 @@ study. Collector overhead is material for short operations; use boundaries at th
 resource-operation level and measure it for your workload. No negligible-overhead
 or general speedup claim is made. The final exact-source report is attached to
 the qualified release; preliminary timings are not a release claim.
+
+[Verified 0.8.0 release](public-release-0.8.0.md): 317 tests per hosted matrix,
+all five source/tag jobs and thirteen public downloads passed. Exact-source
+local added cost: 114.919 us/operation, 29.21% loop overhead,
+35.29 MiB process peak; locked-SDK peak 116.07 MiB. Raw paired
+samples and hosted variation are public. This is a short SQLite microbenchmark
+on about 31.2 GiB hardware, not a general agent-performance or 16 GiB deployment claim.
