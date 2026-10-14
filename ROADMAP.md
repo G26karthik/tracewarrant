@@ -1,5 +1,12 @@
 # Evidence-gated roadmap
 
+## Final V9 acceptance — one remaining stage
+
+[V9](PROJECT_V9.md) audits the original requirements, closes a reproduced
+performance-HTML verification gap and qualifies patch 0.7.1. Its four finite
+gates are the final required work for this scope. [Acceptance map](docs/v9/acceptance.md),
+[finish line](PROJECT_COMPLETION.md). No further feature stage is scheduled.
+
 ## Completed V8 portable quality evidence
 
 [V8](PROJECT_V8.md) fills the quality evidence sharing gap: native bounded export

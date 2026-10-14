@@ -390,6 +390,33 @@ def test_bundle_refuses_a_rehashed_report_that_disagrees_with_evidence(job, tmp_
         verify_bundle(exported)
 
 
+@pytest.mark.parametrize(
+    "payload", [b"<h1>certified</h1>", b"<script>alert(1)</script>", b"", None]
+)
+def test_bundle_refuses_rehashed_html_and_creates_no_verified_output(job, tmp_path, payload):
+    exported = tmp_path / "exported"
+    bundle_job(job, exported)
+    path = exported / "report.html"
+    raw = payload if payload is not None else path.read_bytes() + b"\n"
+    path.write_bytes(raw)
+    sums = exported / "SHA256SUMS"
+    sums.write_text(
+        "\n".join(
+            hashlib.sha256(raw).hexdigest() + "  report.html"
+            if line.endswith("  report.html")
+            else line
+            for line in sums.read_text().splitlines()
+        )
+        + "\n",
+        encoding="ascii",
+    )
+    with pytest.raises(ValidationError, match="HTML report disagrees"):
+        verify_bundle(exported)
+    output = tmp_path / "verified"
+    assert main(["verify-bundle", str(exported), "--output", str(output)]) == 2
+    assert not output.exists()
+
+
 def test_actual_retained_quality_is_derived_without_rewriting_measurements():
     from examples.frames_quality import attach_quality
 

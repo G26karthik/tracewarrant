@@ -69,7 +69,7 @@ def _text(report: AnalysisReport) -> str:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="tracewarrant", description=__doc__)
-    parser.add_argument("--version", action="version", version="TraceWarrant 0.7.0 (experimental)")
+    parser.add_argument("--version", action="version", version="TraceWarrant 0.7.1 (experimental)")
     commands = parser.add_subparsers(dest="command", required=True)
     quality_schema = commands.add_parser("quality-schema", help="emit application quality schemas")
     quality_schema.add_argument("kind", choices=("sample", "policy", "plan", "freeze"))

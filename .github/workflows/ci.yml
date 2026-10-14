@@ -29,7 +29,7 @@ jobs:
       - run: uv run ruff format --check .
       - run: uv run pytest --junitxml=artifacts/ci/tests.xml
       - run: uv build --no-build-isolation
-      - run: uv run python -m benchmarks.qualify_package --wheel dist/tracewarrant-0.7.0-py3-none-any.whl --sdist dist/tracewarrant-0.7.0.tar.gz --output artifacts/ci/package-qualification.json
+      - run: uv run python -m benchmarks.qualify_package --wheel dist/tracewarrant-0.7.1-py3-none-any.whl --sdist dist/tracewarrant-0.7.1.tar.gz --output artifacts/ci/package-qualification.json
       - run: uv run python -m benchmarks.validate_workflow --output artifacts/ci/workflow-qualification.json
       - run: uv run python -m benchmarks.v3_audit --output artifacts/ci/offline-audit.json
       - run: uv run workload-lab analyze examples/research-workflow.otlp.json --origin synthetic --format json

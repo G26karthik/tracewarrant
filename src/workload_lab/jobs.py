@@ -424,6 +424,15 @@ def verify_bundle(path: str | Path) -> dict:
     normalized = {**bundled, "source_manifest_sha256": report["source_manifest_sha256"]}
     if canonical_bytes(normalized) != canonical_bytes(report):
         raise ValidationError("bundled report disagrees with evidence")
+    # Integrity of supplied HTML is insufficient: an author can rehash a false
+    # presentation while keeping the actual JSON/evidence unchanged. Render the
+    # recomputed report before adding verification metadata. The original source
+    # manifest digest is opaque lineage and has already been syntax checked.
+    from .reporting import job_html
+
+    expected_html = job_html({**report, "source_manifest_sha256": source}).encode("utf-8")
+    if captured["report.html"] != expected_html:
+        raise ValidationError("bundled HTML report disagrees with evidence")
     report["bundle_checksums_verified"] = True
     report["bundle_checksums_sha256"] = hashlib.sha256(raw_sums).hexdigest()
     report["limitations"].append("bundle_checksums_do_not_authenticate_author")

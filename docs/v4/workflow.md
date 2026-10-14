@@ -86,6 +86,11 @@ The [application CI example](../../examples/ci/tracewarrant.yml) installs the pi
 
 `verify-bundle` checks every checksum, rejects missing/unlisted entries and unsafe references, snapshots verified bytes, reruns the job and checks the bundled report against recomputation. No source checkout or application runtime is required. Checksums detect changes, not author identity or measurement truth.
 
+As of 0.7.1, both the JSON decision and exact rendered HTML must match replay;
+an edited HTML report remains invalid even with an updated checksum. Use the
+exporting package version for verification. Earlier releases checked HTML hashes
+but did not recompute its presentation. [Final acceptance](../v9/acceptance.md).
+
 Rewritten paths change the portable manifest digest. Its report retains the source manifest digest separately. Replay preserves input digests, gates and the underlying evaluation; export provenance can make full reports differ.
 
 Limits: manifest 1 MiB; individual evidence file 16 MiB; total source inputs 64 MiB including manifest; at most 32 predictions and 32 runs; existing evaluation comparison budgets. JSON output is capped at 64 MiB, HTML at 16 MiB, checksum listing at 128 KiB and bundle entries at 70. Files remain under the manifest directory after resolving symlinks. Absolute paths, URLs, parent traversal and Windows drive/stream paths are refused.

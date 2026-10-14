@@ -2,7 +2,7 @@
 
 **Check the evidence behind performance claims.**
 
-Status: Experimental / Research Prototype. Current product: [V8 portable quality evidence](PROJECT_V8.md), completed and published as 0.7.0.
+Status: Experimental / Research Prototype. [Final acceptance](PROJECT_V9.md) is preparing patch 0.7.1; [completion boundary](PROJECT_COMPLETION.md). Published 0.7.0 remains verified.
 
 Latest application study: [V5 HotpotQA qualification](PROJECT_V5.md) completed
 eight real requests but failed its predeclared quality floor (4/8 exact answers,
