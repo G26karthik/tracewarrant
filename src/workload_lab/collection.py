@@ -137,7 +137,7 @@ class ObservationRecorder:
                     "scopeSpans": [
                         {
                             "scope": {"name": "tracewarrant.collection", "version": "1"},
-                        "spans": [_span_wire(span) for span in spans],
+                            "spans": [_span_wire(span) for span in spans],
                         }
                     ],
                 }
