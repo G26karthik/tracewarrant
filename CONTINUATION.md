@@ -1,8 +1,10 @@
 # Continuation checkpoint
 
-Updated 2026-10-14. Active authorization now includes completing [V4](PROJECT_V4.md), not reopening V3's release or planner roadmap. Implemented: manifests/policy, bounded snapshot, quality/performance gates, standalone reports, portable verified export, a lineage-checked quality adapter and tests. Finish full qualification, commit clean source, verify hosted CI, publish experimental `v0.4.0`, verify public assets/installation, and record closeout. Preserve all old tags and evidence. [Workflow contract](docs/v4/workflow.md).
+Updated 2026-10-14. [V4 is complete](PROJECT_V4.md): strict manifests, bounded snapshot, explicit quality/performance gates, standalone reports, portable export with full verification, lineage-checked retained-quality adapter and application CI. Published [experimental `v0.4.0`](https://github.com/G26karthik/tracewarrant/releases/tag/v0.4.0), qualified source `a248708e203869a6efd529595a20988c57f35115`; 190 tests per matrix job and all five CI jobs passed. Ten assets passed public-download/digest checks; fresh installed qualification and wheel-only portable replay without a checkout passed. [Closeout and source/run references](docs/v4/public-release-0.4.0.md), [machine-readable evidence](docs/v4/public-release-0.4.0.json).
 
-The older V3 checkpoint below is historical. Its no-further-work statement refers to 0.3.1, not the newly authorized V4 scope.
+No V4 code or release gate remains. Current `main` includes a subsequent closeout commit; do not move the immutable release tag to it. Verify Git/remote state before acting and preserve `v0.4.0`, `v0.3.1`, all research tags and protected files. New product expansion needs a distinct justified scope. Do not restart an already completed release or reinterpret a negative study as a model win.
+
+The older V3 checkpoint below is historical context. Both scoped V3 and V4 releases are now complete. [Current workflow contract](docs/v4/workflow.md).
 
 ## Completion and next deliverable
 

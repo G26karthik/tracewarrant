@@ -2,7 +2,9 @@
 
 Updated: 2026-10-14. Selected public name: **TraceWarrant**; former internal codename: Workload Lab.
 
-**Active direction: [PROJECT_V4.md](PROJECT_V4.md)** — a complete offline validation workflow on the V3 contracts. Public project: [G26karthik/tracewarrant](https://github.com/G26karthik/tracewarrant); 0.4.0 in qualification. Autonomous continuation authorized 2026-10-14. V4-A/B/C are implemented: strict manifests, explicit quality/performance gates, reports and portable verified replay. V4-D/E qualification, hosted CI and public release verification remain the completion gate. [Workflow guide](docs/v4/workflow.md).
+**Active product: [PROJECT_V4.md](PROJECT_V4.md)** — a complete offline validation workflow on the V3 contracts. [Experimental 0.4.0](https://github.com/G26karthik/tracewarrant/releases/tag/v0.4.0) is published and publicly verified. All five V4 milestones are complete: manifests, explicit quality/performance gates, HTML/JSON/CI reports, verified portable replay, retained-real-evidence adapter, documentation and qualified release. 190 tests per hosted Windows/Ubuntu job passed; all ten public assets and fresh downloaded-wheel/source and source-free example replay checks passed. [Closeout](docs/v4/public-release-0.4.0.md), [workflow guide](docs/v4/workflow.md).
+
+No required code or release work remains for V4. Production readiness, adoption and added scientific value remain unestablished; the original negative findings remain unchanged.
 
 ## Completed V3 release
 

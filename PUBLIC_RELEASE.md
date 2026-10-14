@@ -1,8 +1,8 @@
 # Public releases
 
-## Active 0.4.0 qualification
+## Completed 0.4.0 workflow release
 
-Autonomous completion authorized 2026-10-14. [V4](PROJECT_V4.md) will be experimental prerelease `v0.4.0`, with qualified wheel/source, checksums and replay evidence. Complete exact-source CI and installed-package qualification before publication; verify every public asset and a fresh downloaded-wheel replay afterward. Preserve `v0.3.1` and historical tags/assets. No PyPI, paid/cloud work or outreach is in scope.
+Autonomous completion authorized and delivered 2026-10-14. [V4 prerelease `v0.4.0`](https://github.com/G26karthik/tracewarrant/releases/tag/v0.4.0) is published from clean qualified source `a248708e203869a6efd529595a20988c57f35115`. All five exact-source jobs passed, each matrix job ran 190 tests, and all ten assets passed GitHub digest and unauthenticated public-download checks. Fresh downloaded-wheel/source qualification and portable replay without a checkout passed. `v0.3.1` and historical tags/assets remain unchanged. [Closeout](docs/v4/public-release-0.4.0.md), [verification](docs/v4/public-release-0.4.0.json). No PyPI, paid/cloud work or outreach was performed.
 
 ## First public release: 0.3.1
 

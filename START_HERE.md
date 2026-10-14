@@ -1,6 +1,6 @@
 # Project refresher
 
-Current increment: [V4 offline validation workflow](PROJECT_V4.md). One manifest now drives explicit quality/performance gates, HTML/JSON reports and a CI exit code; evidence can be exported and verified on another machine. Start with [the walkthrough](docs/v4/workflow.md). The earlier V3 product/release account below remains context; it does not close the newly authorized 0.4.0 qualification work.
+Current product: [V4 offline validation workflow](PROJECT_V4.md), completed and published as experimental [0.4.0](https://github.com/G26karthik/tracewarrant/releases/tag/v0.4.0). One manifest drives quality/performance gates, HTML/JSON and CI exits; export and verify evidence on another machine. All five milestones passed their engineering/release gates, including public-download replay without a checkout. Start with [the walkthrough](docs/v4/workflow.md) and [closeout](docs/v4/public-release-0.4.0.md). The earlier V3 account below remains context.
 
 TraceWarrant is this Python project's selected public name; Workload Lab was its internal codename. It checks whether application traces contain enough information to support performance claims, then compares frozen model predictions with real measurements. It can explicitly report UNKNOWN or that a simple heuristic provides the same decision as a simulator.
 

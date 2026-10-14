@@ -1,8 +1,8 @@
 # Evidence-gated roadmap
 
-## Active V4 workflow increment
+## Completed V4 workflow increment
 
-Autonomous continuation authorized 2026-10-14. [PROJECT_V4.md](PROJECT_V4.md) defines five gates: A strict manifest/contained inputs; B explicit quality/performance policy; C reports/CI/portable verified bundles; D retained real-evidence replay and installed-package checks; E documentation, hosted CI and verified 0.4.0 experimental release. No model victory or planner expansion is required. Current progress is in `PROJECT_STATUS.md`.
+Autonomous continuation authorized and delivered 2026-10-14. [PROJECT_V4.md](PROJECT_V4.md) defines five completed gates: A strict manifest/contained inputs; B explicit quality/performance policy; C reports/CI/portable verified bundles; D retained real-evidence replay and installed-package checks; E documentation, hosted CI and verified 0.4.0 experimental release. [Closeout](docs/v4/public-release-0.4.0.md). No required engineering gate is queued; production/adoption or a harder scientific study would need a new evidence-based scope.
 
 ## Completed V3 experimental scope
 
