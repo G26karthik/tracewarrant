@@ -1,5 +1,10 @@
 # External actions
 
+V6 standalone quality qualification and its experimental GitHub release are
+within the maintainer's autonomous continuation/publication authorization.
+No credentials, paid/cloud service, model rerun or additional maintainer action
+is required. V5's failed result is immutable; scalar replay is not regrading.
+
 V5's authorized local public-data study is complete with a failed quality gate.
 Dataset/model setup recovered from transient network failures without maintainer
 action; the selected model is cached locally. Only content-free evidence was

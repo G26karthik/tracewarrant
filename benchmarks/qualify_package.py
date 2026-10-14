@@ -33,6 +33,7 @@ from workload_lab.artifacts import canonical_bytes
 from workload_lab.conformance import inspect_observations
 from workload_lab.ingest import ingest
 from workload_lab.jobs import JOB_SCHEMA, bundle_job, run_job, verify_bundle
+from workload_lab.qualification import POLICY_SCHEMA, SAMPLE_SCHEMA, qualify_application
 from workload_lab.validation import evaluate
 
 root, wheel = map(Path, sys.argv[1:])
@@ -53,6 +54,15 @@ with ZipFile(wheel) as archive:
 assert module_hashes
 assert SCHEMA == json.loads((root / "schemas/validation-artifact-v1.schema.json").read_bytes())
 assert JOB_SCHEMA == json.loads((root / "schemas/validation-job-v1.schema.json").read_bytes())
+assert SAMPLE_SCHEMA == json.loads(
+    (root / "schemas/application-sample-v1.schema.json").read_bytes())
+assert POLICY_SCHEMA == json.loads(
+    (root / "schemas/application-quality-policy-v1.schema.json").read_bytes())
+quality_example = root / "examples/qualification/hotpot"
+quality = qualify_application(quality_example / "sample.json", quality_example / "policy.json")
+assert quality["result"] == "failed"
+assert [g["status"] for g in quality["gates"]] == ["passed", "passed", "failed", "failed"]
+assert quality["counts"]["offered"] == 8
 example = root / "examples/validation/frames"
 assert run_job(example / "job.json")["result"] == "failed"
 assert run_job(example / "performance-job.json")["result"] == "passed"
@@ -90,6 +100,16 @@ for name in entry_points:
     executable = Path(sys.executable).parent / (name + (".exe" if sys.platform == "win32" else ""))
     assert subprocess.check_output([str(executable), "--version"], text=True).strip() == version
 assert json.loads(subprocess.check_output([*command, "schema"])) == SCHEMA
+assert json.loads(subprocess.check_output([*command, "quality-schema", "sample"])) == SAMPLE_SCHEMA
+assert json.loads(subprocess.check_output([*command, "quality-schema", "policy"])) == POLICY_SCHEMA
+quality_process = subprocess.run([
+    *command, "qualify-application", str(quality_example / "sample.json"),
+    "--policy", str(quality_example / "policy.json"), "--output", "application-quality-report"
+], capture_output=True, text=True)
+assert quality_process.returncode == 1
+installed_quality = json.loads(Path("application-quality-report/report.json").read_bytes())
+assert installed_quality["gates"] == quality["gates"]
+assert "Every offered row" in Path("application-quality-report/report.html").read_text()
 assert json.loads(subprocess.check_output([
     *command, "check", str(frozen / "simpy.json")
 ]))["valid"]
@@ -116,6 +136,7 @@ print(json.dumps({
     "cli_verified": True,
     "conformance_sources": sources,
     "installed_workflow_verified": True,
+    "application_quality_verified": True,
     "portable_bundle_verified": True,
 }))
 """

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.0 — standalone application-quality qualification
+
+- Add strict bounded application sample/policy schemas and `qualify-application` / `quality-schema` commands.
+- Check completion and multiple binary-fraction/mean-score criteria over all offered tasks, refusing missing evidence and duplicate identities.
+- Generate standalone escaped HTML/JSON reports with exact input/policy hashes and explicit scope limits.
+- Add lineage-checked retained HotpotQA adapter, documentation, adversarial and installed-wheel qualification. The V5 result stays negative.
+- Preserve V3/V4 wire formats and releases; core runtime remains dependency-free.
+
 ## Unreleased — application research, package remains 0.4.0
 
 - Preregister a fixed-sample local HotpotQA qualification; optional dataset/model setup stays outside the core.

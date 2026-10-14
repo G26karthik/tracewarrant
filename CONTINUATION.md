@@ -1,5 +1,14 @@
 # Continuation checkpoint
 
+## Active V6 engineering
+
+Read PROJECT_V6.md and docs/v6/qualification.md. Implement/qualify standalone
+application-quality sample/policy semantics, CLI/HTML/JSON and actual retained
+V5 export without altering its negative result. Source version 0.5.0; no new
+runtime dependencies. Complete hosted/installed qualification and an experimental
+0.5.0 GitHub release from clean exact source with verified public assets.
+Existing 0.4.0/0.3.1 releases, freezes and all 64 protected files remain immutable.
+
 ## Completed V5 application qualification
 
 The maintainer authorized the next application study on 2026-10-14. V5 is now

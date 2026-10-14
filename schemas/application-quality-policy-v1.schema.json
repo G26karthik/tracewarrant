@@ -1,0 +1,68 @@
+{
+  "$id": "urn:tracewarrant:application-quality-policy:1.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_type": {
+      "enum": [
+        "application_quality_policy"
+      ]
+    },
+    "metrics": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$(?!\\n)",
+            "type": "string"
+          },
+          "minimum_value": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          },
+          "statistic": {
+            "enum": [
+              "fraction",
+              "mean"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "statistic",
+          "minimum_value"
+        ],
+        "type": "object"
+      },
+      "maxItems": 16,
+      "minItems": 1,
+      "type": "array"
+    },
+    "minimum_completion_fraction": {
+      "maximum": 1,
+      "minimum": 0,
+      "type": "number"
+    },
+    "minimum_samples": {
+      "maximum": 10000,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "schema_version": {
+      "enum": [
+        "1.0"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "artifact_type",
+    "minimum_samples",
+    "minimum_completion_fraction",
+    "metrics"
+  ],
+  "type": "object"
+}

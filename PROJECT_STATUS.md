@@ -2,6 +2,12 @@
 
 Updated: 2026-10-14. Selected public name: **TraceWarrant**; former internal codename: Workload Lab.
 
+**Active engineering: [V6 application-quality qualification](PROJECT_V6.md).**
+The maintainer requested continuation after V5. A reusable core command now
+checks completion and several mean/binary-fraction criteria before performance
+predictions exist. Retained HotpotQA replay remains failed. Version 0.5.0 is being
+qualified for an experimental release; 0.4.0 remains the existing public release.
+
 **Latest research: [V5 application qualification](PROJECT_V5.md), complete with
 a negative result.** Eight real HotpotQA requests completed; 4/8 exact answers
 and mean answer F1 0.541667 failed the preregistered 6/8 and 0.75 quality gates.

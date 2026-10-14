@@ -1,0 +1,140 @@
+{
+  "artifact_type": "application_sample",
+  "limitations": [
+    "exact_and_token_overlap_are_not_semantic_quality",
+    "retained_scalar_scores_not_rescored_by_adapter",
+    "small_development_sample"
+  ],
+  "lineage": [
+    {
+      "role": "raw_observations",
+      "sha256": "e8e967fdcc6bc349bac72d73089c5fb5189bc15aed46fb710b0b924275d8f7ac"
+    },
+    {
+      "role": "selection",
+      "sha256": "b454ef7f436d90ac643011a1923f3c6d883d0a827840dd6f3ecbef64743c3bb3"
+    },
+    {
+      "role": "score_adapter",
+      "sha256": "c99939274f43e5aa323f2ab6cdef446734013e6b95e98368286fe76b369d4e56"
+    }
+  ],
+  "provenance": "MEASURED",
+  "rows": [
+    {
+      "id": "5a8b57f25542995d1e6f1371",
+      "metrics": [
+        {
+          "id": "answer.exact",
+          "value": 1
+        },
+        {
+          "id": "answer.f1",
+          "value": 1.0
+        }
+      ],
+      "outcome": "completed"
+    },
+    {
+      "id": "5a8c7595554299585d9e36b6",
+      "metrics": [
+        {
+          "id": "answer.exact",
+          "value": 0
+        },
+        {
+          "id": "answer.f1",
+          "value": 0.0
+        }
+      ],
+      "outcome": "completed"
+    },
+    {
+      "id": "5a85ea095542994775f606a8",
+      "metrics": [
+        {
+          "id": "answer.exact",
+          "value": 1
+        },
+        {
+          "id": "answer.f1",
+          "value": 1.0
+        }
+      ],
+      "outcome": "completed"
+    },
+    {
+      "id": "5adbf0a255429947ff17385a",
+      "metrics": [
+        {
+          "id": "answer.exact",
+          "value": 0
+        },
+        {
+          "id": "answer.f1",
+          "value": 0.0
+        }
+      ],
+      "outcome": "completed"
+    },
+    {
+      "id": "5a8e3ea95542995a26add48d",
+      "metrics": [
+        {
+          "id": "answer.exact",
+          "value": 0
+        },
+        {
+          "id": "answer.f1",
+          "value": 0.3333333333333333
+        }
+      ],
+      "outcome": "completed"
+    },
+    {
+      "id": "5abd94525542992ac4f382d2",
+      "metrics": [
+        {
+          "id": "answer.exact",
+          "value": 1
+        },
+        {
+          "id": "answer.f1",
+          "value": 1.0
+        }
+      ],
+      "outcome": "completed"
+    },
+    {
+      "id": "5a85b2d95542997b5ce40028",
+      "metrics": [
+        {
+          "id": "answer.exact",
+          "value": 1
+        },
+        {
+          "id": "answer.f1",
+          "value": 1.0
+        }
+      ],
+      "outcome": "completed"
+    },
+    {
+      "id": "5a87ab905542996e4f3088c1",
+      "metrics": [
+        {
+          "id": "answer.exact",
+          "value": 0
+        },
+        {
+          "id": "answer.f1",
+          "value": 0.0
+        }
+      ],
+      "outcome": "completed"
+    }
+  ],
+  "sample_id": "feasibility-eight",
+  "schema_version": "1.0",
+  "workload_id": "hotpot-distractor-local-v5"
+}
