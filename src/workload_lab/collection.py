@@ -15,6 +15,7 @@ from .ingest import DEFAULT_MAX_BYTES, DEFAULT_MAX_SPANS
 from .ir import MAX_NS, NodeKind, Observation, Span, ValidationError, integer
 
 _active_operation = ContextVar("tracewarrant_active_operation", default=None)
+__all__ = ["ObservationRecorder", "OwnedPool", "AttemptGroup"]
 
 
 def _identity(width):
@@ -36,7 +37,7 @@ def _attribute(key, value):
     return {"key": "workload_lab." + key, "value": wire}
 
 
-def span_wire(span: Span) -> dict:
+def _span_wire(span: Span) -> dict:
     attrs = {
         "node.kind": span.kind.value,
         "node.role": span.role,
@@ -102,7 +103,7 @@ class ObservationRecorder:
 
     def _finish(self, span):
         self._active -= 1
-        self._bytes += len(canonical_bytes(span_wire(span)))
+        self._bytes += len(canonical_bytes(_span_wire(span)))
         if self._bytes > self._max_bytes:
             self._invalid = True
         else:
@@ -120,7 +121,7 @@ class ObservationRecorder:
     def run(self, *, complete: bool = False):
         if type(complete) is not bool:
             raise ValidationError("closed scope assertion must be boolean")
-        return RecordedRun(self, complete)
+        return _RecordedRun(self, complete)
 
     def spans(self) -> tuple[Span, ...]:
         if self._invalid or self._active or not self._spans:
@@ -136,7 +137,7 @@ class ObservationRecorder:
                     "scopeSpans": [
                         {
                             "scope": {"name": "tracewarrant.collection", "version": "1"},
-                            "spans": [span_wire(span) for span in spans],
+                        "spans": [_span_wire(span) for span in spans],
                         }
                     ],
                 }
@@ -152,7 +153,7 @@ class ObservationRecorder:
             stream.write(raw)
 
 
-class RecordedRun:
+class _RecordedRun:
     def __init__(self, recorder, complete):
         self._recorder, self._complete = recorder, complete
         self._trace, self._id = _identity(32), _identity(16)
@@ -219,10 +220,10 @@ class RecordedRun:
             integer(attempt, "attempt", 1_000_000)
             if not attempt:
                 raise ValidationError("attempt must be positive")
-        return RecordedOperation(self, kind, depends_on, attempt_group, attempt)
+        return _RecordedOperation(self, kind, depends_on, attempt_group, attempt)
 
 
-class RecordedOperation:
+class _RecordedOperation:
     def __init__(self, run, kind, dependencies, group, attempt):
         self._run, self._kind = run, kind
         self._deps, self._id = dependencies, _identity(16)
@@ -247,7 +248,7 @@ class RecordedOperation:
             run._incomplete = True
             raise ValidationError("atomic operations cannot be nested")
         if any(
-            not isinstance(d, RecordedOperation) or d._run is not run or d._end is None
+            not isinstance(d, _RecordedOperation) or d._run is not run or d._end is None
             for d in self._deps
         ):
             run._incomplete = True
@@ -320,10 +321,10 @@ class RecordedOperation:
         if inspect.iscoroutinefunction(release):
             raise ValidationError("lease release must be synchronous")
         self._lease_used = True
-        return ObservedLease(self, pool, acquire, release)
+        return _ObservedLease(self, pool, acquire, release)
 
 
-class ObservedLease:
+class _ObservedLease:
     """Async acquisition and synchronous release; caller retains actual pool ownership."""
 
     def __init__(self, operation, pool, acquire, release):
