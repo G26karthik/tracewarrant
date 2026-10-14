@@ -1,0 +1,37 @@
+{
+  "artifact_type": "hotpot_offline_audit",
+  "complete_graphs": 8,
+  "disposition": "stop_quality_gate_failed",
+  "limits": [
+    "scores_not_rescored_without_private_answers",
+    "no_heldout_predictions",
+    "no_semantic_quality_claim",
+    "no_external_adoption"
+  ],
+  "measured_source_commit": "f023348ac27e4725707de37f79e6710e08136155",
+  "observed_mean_completed_latency_seconds": 5.5135521,
+  "owned_pool_occupied_fraction": {
+    "context": 0.0028237315120952424,
+    "database": 0.0010633858422017838,
+    "inference-client": 0.9990961211397302
+  },
+  "quality_gate": {
+    "completed": 8,
+    "exact_matches": 4,
+    "mean_answer_f1": 0.5416666666666666,
+    "offered": 8,
+    "passed": false,
+    "policy": {
+      "minimum_completed": 8,
+      "minimum_exact_matches": 6,
+      "minimum_mean_f1": 0.75
+    }
+  },
+  "raw_sha256": "e8e967fdcc6bc349bac72d73089c5fb5189bc15aed46fb710b0b924275d8f7ac",
+  "scorer_parity": {
+    "official_scorer_sha256": "d35fc91a6db21d791dbdda11daf3856e9359f5701d54e3eefba20d88fecc02c0",
+    "pairs_checked": 8,
+    "parity": true
+  },
+  "selection_sha256": "b454ef7f436d90ac643011a1923f3c6d883d0a827840dd6f3ecbef64743c3bb3"
+}

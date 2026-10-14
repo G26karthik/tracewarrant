@@ -1,5 +1,14 @@
 # Evidence-gated roadmap
 
+## Completed V5 application qualification
+
+The maintainer requested the next real-application stage on 2026-10-14.
+[V5](PROJECT_V5.md) executed one public HotpotQA local QA application, with
+official answer scoring and fixed disjoint samples. Eight requests completed,
+4/8 exact answers and mean answer F1 0.541667 failed its predeclared quality gate.
+Performance-model and cheap-baseline comparison were not unlocked. The negative
+study, toolkit and 0.4.0 release are closed and preserved. [Results](docs/v5/results.md).
+
 ## Completed V4 workflow increment
 
 Autonomous continuation authorized and delivered 2026-10-14. [PROJECT_V4.md](PROJECT_V4.md) defines five completed gates: A strict manifest/contained inputs; B explicit quality/performance policy; C reports/CI/portable verified bundles; D retained real-evidence replay and installed-package checks; E documentation, hosted CI and verified 0.4.0 experimental release. [Closeout](docs/v4/public-release-0.4.0.md). No required engineering gate is queued; production/adoption or a harder scientific study would need a new evidence-based scope.

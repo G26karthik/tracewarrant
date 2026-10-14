@@ -2,6 +2,15 @@
 
 Updated: 2026-10-14. Selected public name: **TraceWarrant**; former internal codename: Workload Lab.
 
+**Latest research: [V5 application qualification](PROJECT_V5.md), complete with
+a negative result.** Eight real HotpotQA requests completed; 4/8 exact answers
+and mean answer F1 0.541667 failed the preregistered 6/8 and 0.75 quality gates.
+Official scorer parity verified all eight local answers; public content-free
+evidence replays eight dependency/resource graphs. Conditional calibration and
+held-out performance modeling were not unlocked. [Results](docs/v5/results.md).
+The runtime/package stays 0.4.0; this study does not recreate its release or
+establish a useful application, external adoption or added model value.
+
 **Active product: [PROJECT_V4.md](PROJECT_V4.md)** — a complete offline validation workflow on the V3 contracts. [Experimental 0.4.0](https://github.com/G26karthik/tracewarrant/releases/tag/v0.4.0) is published and publicly verified. All five V4 milestones are complete: manifests, explicit quality/performance gates, HTML/JSON/CI reports, verified portable replay, retained-real-evidence adapter, documentation and qualified release. 190 tests per hosted Windows/Ubuntu job passed; all ten public assets and fresh downloaded-wheel/source and source-free example replay checks passed. [Closeout](docs/v4/public-release-0.4.0.md), [workflow guide](docs/v4/workflow.md).
 
 No required code or release work remains for V4. Production readiness, adoption and added scientific value remain unestablished; the original negative findings remain unchanged.

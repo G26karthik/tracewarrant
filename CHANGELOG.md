@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased — application research, package remains 0.4.0
+
+- Preregister a fixed-sample local HotpotQA qualification; optional dataset/model setup stays outside the core.
+- Add actual SQLite/context/inference collection with content-free traces and official-compatible answer scoring.
+- Retain the failed quality gate (4/8 exact; mean answer F1 0.541667), official scorer parity and offline population/source/resource-clock verification.
+- No conditional calibration/held-out prediction result, production claim, core runtime dependency or release-tag change.
+
 ## 0.4.0 — offline validation workflow
 
 - Add job schema and `validate-job`, `bundle-job`, `verify-bundle`, `job-schema` commands.

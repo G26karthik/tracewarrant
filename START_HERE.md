@@ -1,5 +1,12 @@
 # Project refresher
 
+Latest research: [V5 application qualification](PROJECT_V5.md) is complete with
+a failed predeclared quality gate. Eight HotpotQA requests completed; 4/8 exact
+answers and mean answer F1 0.542 did not meet 6/8 and 0.75. Official scoring
+agreed with all eight local answers. [Results and public evidence](docs/v5/results.md).
+No conditional performance experiment was unlocked. The usable toolkit remains
+the completed 0.4.0 workflow; version numbers are not completion percentages.
+
 Current product: [V4 offline validation workflow](PROJECT_V4.md), completed and published as experimental [0.4.0](https://github.com/G26karthik/tracewarrant/releases/tag/v0.4.0). One manifest drives quality/performance gates, HTML/JSON and CI exits; export and verify evidence on another machine. All five milestones passed their engineering/release gates, including public-download replay without a checkout. Start with [the walkthrough](docs/v4/workflow.md) and [closeout](docs/v4/public-release-0.4.0.md). The earlier V3 account below remains context.
 
 TraceWarrant is this Python project's selected public name; Workload Lab was its internal codename. It checks whether application traces contain enough information to support performance claims, then compares frozen model predictions with real measurements. It can explicitly report UNKNOWN or that a simple heuristic provides the same decision as a simulator.

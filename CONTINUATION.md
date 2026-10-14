@@ -1,5 +1,30 @@
 # Continuation checkpoint
 
+## Completed V5 application qualification
+
+The maintainer authorized the next application study on 2026-10-14. V5 is now
+closed under its predeclared stopping rule: eight requests completed, 4/8 exact
+answers and mean answer F1 0.541667. Both quality floors failed. No calibration,
+forecast freeze or held-out intervention was run. Do not resume conditional
+performance work on this unqualified application or tune the preserved study.
+
+Read PROJECT_V5.md and docs/v5/results.md. Design/selection were committed at
+7d1ab8d; measured source f023348ac27e4725707de37f79e6710e08136155 was clean.
+Both source CI runs passed all five jobs. Public docs/v5/feasibility.json and
+verification.json contain no question/passages/answer strings. Official scorer
+parity checked all eight private answers locally. The ignored artifacts/v5
+folder retains private source/answers, setup logs and local audit reports; do
+not publish it wholesale. The chosen local model is now cached, digest recorded
+in raw evidence. No package/release version or historical frozen artifact changed.
+
+Offline: uv run python -m benchmarks.hotpot_validation --raw
+docs/v5/feasibility.json --selection docs/v5/selection.json --output <fresh path>.
+Scalar-only replay is structural/gate verification, not independent answer
+rescoring or collector authentication. A different future application/quality
+improvement study needs a separate design and must preserve this negative result.
+
+## Completed V4 checkpoint
+
 Updated 2026-10-14. [V4 is complete](PROJECT_V4.md): strict manifests, bounded snapshot, explicit quality/performance gates, standalone reports, portable export with full verification, lineage-checked retained-quality adapter and application CI. Published [experimental `v0.4.0`](https://github.com/G26karthik/tracewarrant/releases/tag/v0.4.0), qualified source `a248708e203869a6efd529595a20988c57f35115`; 190 tests per matrix job and all five CI jobs passed. Ten assets passed public-download/digest checks; fresh installed qualification and wheel-only portable replay without a checkout passed. [Closeout and source/run references](docs/v4/public-release-0.4.0.md), [machine-readable evidence](docs/v4/public-release-0.4.0.json).
 
 No V4 code or release gate remains. Current `main` includes a subsequent closeout commit; do not move the immutable release tag to it. Verify Git/remote state before acting and preserve `v0.4.0`, `v0.3.1`, all research tags and protected files. New product expansion needs a distinct justified scope. Do not restart an already completed release or reinterpret a negative study as a model win.
