@@ -1,0 +1,8 @@
+{
+  "artifact_type": "application_quality_freeze",
+  "created_at": "2026-10-14T08:42:24.058359Z",
+  "integrity_method": "sha256_raw_bytes",
+  "plan_sha256": "af4dcc18298cf0afb3ca38b437b9687b48b3c58bfe4d7a4065f0f193aa8d04de",
+  "policy_sha256": "d542c2d74a1b3d69df6cc29b39714723bb032bb906322669e2e2203f27cfc6d0",
+  "schema_version": "1.0"
+}

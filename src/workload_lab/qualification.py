@@ -7,13 +7,14 @@ import statistics
 from html import escape
 from pathlib import Path
 
-from .artifact_schema import SHA, TOKEN, array, enum, nullable, obj
-from .artifacts import _matches, canonical_bytes
+from .artifact_schema import SHA, TIME, TOKEN, array, enum, nullable, obj
+from .artifacts import _matches, canonical_bytes, parse_time, timestamp
 from .ingest import _decode
 from .ir import ValidationError
 
 MAX_SAMPLE_BYTES = 8 * 1024 * 1024
 MAX_POLICY_BYTES = 64 * 1024
+MAX_PLAN_BYTES = 2 * 1024 * 1024
 FRACTION = {"type": "number", "minimum": 0, "maximum": 1}
 COUNT = {"type": "integer", "minimum": 1, "maximum": 10_000}
 SAMPLE_SCHEMA = {
@@ -65,6 +66,33 @@ POLICY_SCHEMA = {
         }
     ),
 }
+PLAN_SCHEMA = {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "urn:tracewarrant:application-quality-plan:1.0",
+    **obj(
+        {
+            "schema_version": enum(["1.0"]),
+            "artifact_type": enum(["application_quality_plan"]),
+            "workload_id": TOKEN,
+            "sample_id": TOKEN,
+            "row_ids": array(TOKEN, 1, 10_000),
+        }
+    ),
+}
+FREEZE_SCHEMA = {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "urn:tracewarrant:application-quality-freeze:1.0",
+    **obj(
+        {
+            "schema_version": enum(["1.0"]),
+            "artifact_type": enum(["application_quality_freeze"]),
+            "created_at": TIME,
+            "plan_sha256": SHA,
+            "policy_sha256": SHA,
+            "integrity_method": enum(["sha256_raw_bytes"]),
+        }
+    ),
+}
 
 
 def _load(path, schema, limit):
@@ -84,7 +112,55 @@ def _load(path, schema, limit):
     return value, hashlib.sha256(raw).hexdigest()
 
 
-def qualify_application(sample_path, policy_path):
+def _validate_plan_policy(plan, policy):
+    if len(set(plan["row_ids"])) != len(plan["row_ids"]):
+        raise ValidationError("duplicate planned row identity")
+    if len({m["id"] for m in policy["metrics"]}) != len(policy["metrics"]):
+        raise ValidationError("duplicate quality-policy metric")
+    if policy["minimum_samples"] > len(plan["row_ids"]):
+        raise ValidationError("quality policy requires more samples than the declared plan")
+
+
+def freeze_application_quality(plan_path, policy_path):
+    """Bind exact plan/policy bytes; timestamp is an unauthenticated local assertion."""
+    plan, plan_sha = _load(plan_path, PLAN_SCHEMA, MAX_PLAN_BYTES)
+    policy, policy_sha = _load(policy_path, POLICY_SCHEMA, MAX_POLICY_BYTES)
+    _validate_plan_policy(plan, policy)
+    return {
+        "schema_version": "1.0",
+        "artifact_type": "application_quality_freeze",
+        "created_at": timestamp(),
+        "plan_sha256": plan_sha,
+        "policy_sha256": policy_sha,
+        "integrity_method": "sha256_raw_bytes",
+    }
+
+
+def _binding(sample, policy, policy_sha, plan_path, freeze_path):
+    plan, plan_sha = _load(plan_path, PLAN_SCHEMA, MAX_PLAN_BYTES)
+    receipt, receipt_sha = _load(freeze_path, FREEZE_SCHEMA, MAX_POLICY_BYTES)
+    parse_time(receipt["created_at"])
+    _validate_plan_policy(plan, policy)
+    if receipt["plan_sha256"] != plan_sha or receipt["policy_sha256"] != policy_sha:
+        raise ValidationError("application quality freeze does not match exact plan/policy bytes")
+    if (sample["workload_id"], sample["sample_id"]) != (plan["workload_id"], plan["sample_id"]):
+        raise ValidationError("application sample identity does not match declared plan")
+    if {r["id"] for r in sample["rows"]} != set(plan["row_ids"]):
+        raise ValidationError("application sample population differs from declared plan")
+    return {
+        "status": "verified",
+        "plan_sha256": plan_sha,
+        "freeze_sha256": receipt_sha,
+        "policy_sha256": policy_sha,
+        "expected_offered": len(plan["row_ids"]),
+        "observed_offered": len(sample["rows"]),
+        "chronology": "not_authenticated",
+    }
+
+
+def qualify_application(sample_path, policy_path, *, plan_path=None, freeze_path=None):
+    if (plan_path is None) != (freeze_path is None):
+        raise ValidationError("application quality requires both plan and freeze, or neither")
     sample, sample_sha = _load(sample_path, SAMPLE_SCHEMA, MAX_SAMPLE_BYTES)
     policy, policy_sha = _load(policy_path, POLICY_SCHEMA, MAX_POLICY_BYTES)
     rows = sample["rows"]
@@ -99,6 +175,11 @@ def qualify_application(sample_path, policy_path):
             m["value"] not in (None, 0) for m in row["metrics"]
         ):
             raise ValidationError("unsuccessful rows require zero or unknown quality")
+    binding = (
+        _binding(sample, policy, policy_sha, plan_path, freeze_path)
+        if plan_path is not None
+        else None
+    )
     counts = {
         outcome: sum(r["outcome"] == outcome for r in rows)
         for outcome in ("completed", "failed", "censored")
@@ -160,7 +241,7 @@ def qualify_application(sample_path, policy_path):
                 "value": observed,
             }
         )
-    return {
+    report = {
         "schema_version": "1.0",
         "artifact_type": "application_qualification_report",
         "result": "passed" if all(g["status"] == "passed" for g in gates) else "failed",
@@ -186,6 +267,9 @@ def qualify_application(sample_path, policy_path):
             }
         ),
     }
+    if binding is not None:
+        report["binding"] = binding
+    return report
 
 
 def qualification_html(report):
@@ -199,6 +283,12 @@ def qualification_html(report):
         for g in report["gates"]
     )
     limits = "".join(f"<li>{escape(item)}</li>" for item in report["limitations"])
+    binding_note = (
+        "Exact policy and declared task membership match the supplied plan and receipt. "
+        "Local timestamps and hashes do not prove registration before collection."
+        if "binding" in report
+        else "No frozen policy/population binding was supplied."
+    )
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline';
@@ -209,6 +299,7 @@ td,th{{border:1px solid #ccc;padding:.5rem}}
 code{{overflow-wrap:anywhere}}</style></head><body>
 <h1>Application quality policy: {escape(report["result"])}</h1>
 <p>Scope: {escape(report["claim_scope"])}. Every offered row is in the denominator.</p>
+<p>{escape(binding_note)}</p>
 <p>This result checks supplied scores and an explicit policy. It does not certify
 semantic correctness, performance predictions or production readiness.</p>
 <table><thead><tr><th>Gate</th><th>Status</th><th>Observed</th><th>Required</th><th>Reason</th></tr></thead>

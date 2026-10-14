@@ -19,6 +19,16 @@ def qualify():
     quality = qualify_application(quality_root / "sample.json", quality_root / "policy.json")
     assert quality["result"] == "failed"
     assert [g["status"] for g in quality["gates"]] == ["passed", "passed", "failed", "failed"]
+    frozen_root = ROOT / "examples/qualification/hotpot-frozen"
+    bound = qualify_application(
+        frozen_root / "sample.json",
+        frozen_root / "policy.json",
+        plan_path=frozen_root / "plan.json",
+        freeze_path=frozen_root / "freeze.json",
+    )
+    assert bound["result"] == quality["result"] and bound["gates"] == quality["gates"]
+    assert bound["binding"]["expected_offered"] == 8
+    assert bound["binding"]["chronology"] == "not_authenticated"
     example = ROOT / "examples/validation/frames"
     strict = run_job(example / "job.json")
     performance = run_job(example / "performance-job.json")
@@ -69,6 +79,7 @@ def qualify():
             "sample_sha256": quality["sample_sha256"],
             "policy_sha256": quality["policy_sha256"],
         },
+        "frozen_quality_binding": bound["binding"],
         "portable_checksums_sha256": checksums,
         "note": "Retrospective workflow qualification; no new task quality or added-value result.",
     }

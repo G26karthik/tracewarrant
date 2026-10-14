@@ -1,5 +1,13 @@
 # Evidence-gated roadmap
 
+## Active V7 declared-population and policy binding
+
+[V7](PROJECT_V7.md) addresses the next explicit workflow gap: enforce an exact
+quality policy and declared population against a separately frozen receipt.
+Optional bound qualification preserves the existing unbound interface and
+refuses dropped/substituted tasks or changed policy/plan bytes. Documentation,
+installed/hosted checks and experimental 0.6.0 publication are in progress.
+
 ## Completed V6 reusable quality prerequisite
 
 [V6](PROJECT_V6.md) addresses a concrete V5 integration gap: completion, exact

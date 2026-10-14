@@ -2,7 +2,7 @@
 
 **Check the evidence behind performance claims.**
 
-Status: Experimental / Research Prototype. Current product: [V6 application-quality qualification](PROJECT_V6.md), completed and published as 0.5.0.
+Status: Experimental / Research Prototype. Active increment: [V7 frozen quality plans](PROJECT_V7.md). Published 0.5.0 remains available.
 
 Latest application study: [V5 HotpotQA qualification](PROJECT_V5.md) completed
 eight real requests but failed its predeclared quality floor (4/8 exact answers,
@@ -20,6 +20,11 @@ Publication status, checked 2026-10-14: [experimental prerelease `v0.5.0`](https
 V3 accepts the pilot's **PIVOT RECOMMENDED** conclusion. [V2](PROJECT_V2.md), [its final report](FINAL_PROJECT_REPORT.md), `research-pilot-1` and all frozen evidence remain unchanged. This is a local research prototype, not a capacity planner or production release. [Refreshed research](docs/v3/research.md) establishes substantial overlap; no uniqueness is claimed.
 
 ## Run an explicit validation policy
+
+The new 0.6.0 source candidate can bind a quality policy and declared task roster
+with `freeze-quality`, then require `--plan`/`--freeze` during qualification.
+[Quality-plan guide](docs/v7/quality-plans.md). Byte/membership verification does
+not authenticate preregistration chronology or collector honesty.
 
 Check application quality before creating performance predictions:
 

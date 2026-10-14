@@ -1,0 +1,46 @@
+{
+  "$id": "urn:tracewarrant:application-quality-freeze:1.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_type": {
+      "enum": [
+        "application_quality_freeze"
+      ]
+    },
+    "created_at": {
+      "maxLength": 27,
+      "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d\\.\\d{6}Z$",
+      "type": "string"
+    },
+    "integrity_method": {
+      "enum": [
+        "sha256_raw_bytes"
+      ]
+    },
+    "plan_sha256": {
+      "maxLength": 64,
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "policy_sha256": {
+      "maxLength": 64,
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "enum": [
+        "1.0"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "artifact_type",
+    "created_at",
+    "plan_sha256",
+    "policy_sha256",
+    "integrity_method"
+  ],
+  "type": "object"
+}

@@ -33,7 +33,8 @@ from workload_lab.artifacts import canonical_bytes
 from workload_lab.conformance import inspect_observations
 from workload_lab.ingest import ingest
 from workload_lab.jobs import JOB_SCHEMA, bundle_job, run_job, verify_bundle
-from workload_lab.qualification import POLICY_SCHEMA, SAMPLE_SCHEMA, qualify_application
+from workload_lab.qualification import (POLICY_SCHEMA, SAMPLE_SCHEMA,
+    PLAN_SCHEMA, FREEZE_SCHEMA, freeze_application_quality, qualify_application)
 from workload_lab.validation import evaluate
 
 root, wheel = map(Path, sys.argv[1:])
@@ -63,6 +64,15 @@ quality = qualify_application(quality_example / "sample.json", quality_example /
 assert quality["result"] == "failed"
 assert [g["status"] for g in quality["gates"]] == ["passed", "passed", "failed", "failed"]
 assert quality["counts"]["offered"] == 8
+frozen_quality = root / "examples/qualification/hotpot-frozen"
+bound_quality = qualify_application(frozen_quality / "sample.json", frozen_quality / "policy.json",
+    plan_path=frozen_quality / "plan.json", freeze_path=frozen_quality / "freeze.json")
+assert bound_quality["result"] == "failed" and bound_quality["binding"]["status"] == "verified"
+assert bound_quality["binding"]["chronology"] == "not_authenticated"
+assert PLAN_SCHEMA == json.loads(
+    (root / "schemas/application-quality-plan-v1.schema.json").read_bytes())
+assert FREEZE_SCHEMA == json.loads(
+    (root / "schemas/application-quality-freeze-v1.schema.json").read_bytes())
 example = root / "examples/validation/frames"
 assert run_job(example / "job.json")["result"] == "failed"
 assert run_job(example / "performance-job.json")["result"] == "passed"
@@ -110,6 +120,13 @@ assert quality_process.returncode == 1
 installed_quality = json.loads(Path("application-quality-report/report.json").read_bytes())
 assert installed_quality["gates"] == quality["gates"]
 assert "Every offered row" in Path("application-quality-report/report.html").read_text()
+assert subprocess.run([*command, "freeze-quality", "--plan", str(frozen_quality / "plan.json"),
+    "--policy", str(frozen_quality / "policy.json"), "--output", "new-quality-freeze.json"],
+    capture_output=True).returncode == 0
+assert subprocess.run([*command, "qualify-application", str(frozen_quality / "sample.json"),
+    "--policy", str(frozen_quality / "policy.json"), "--plan", str(frozen_quality / "plan.json"),
+    "--freeze", "new-quality-freeze.json", "--output", "frozen-quality-report"],
+    capture_output=True).returncode == 1
 assert json.loads(subprocess.check_output([
     *command, "check", str(frozen / "simpy.json")
 ]))["valid"]
@@ -137,6 +154,7 @@ print(json.dumps({
     "conformance_sources": sources,
     "installed_workflow_verified": True,
     "application_quality_verified": True,
+    "frozen_quality_verified": True,
     "portable_bundle_verified": True,
 }))
 """

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.6.0 — frozen quality plans
+
+- Add bounded application-plan/quality-freeze schemas and `freeze-quality`.
+- Optionally bind exact policy/plan bytes, workload/sample identity and entire declared task membership during qualification.
+- Refuse omitted/substituted tasks, duplicate plans, modified policies and invalid receipt dates; report binding without claiming authenticated chronology.
+- Preserve unbound 0.5.0 JSON semantics and all historical studies/releases. Retained HotpotQA binding is explicitly retrospective and stays negative.
+
 ## 0.5.0 — standalone application-quality qualification
 
 - Add strict bounded application sample/policy schemas and `qualify-application` / `quality-schema` commands.
