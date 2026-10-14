@@ -1,0 +1,135 @@
+{
+  "artifact_type": "hotpot_fixed_selection",
+  "dataset_revision": "1908d6afbbead072334abe2965f91bd2709910ab",
+  "parquet_sha256": "c20b638ca82b21d04fe12e14ff417ad05153d4d215a65de54497fca4e972f7c6",
+  "samples": {
+    "calibration": [
+      {
+        "row": 8,
+        "task_id": "5a7bbb64554299042af8f7cc",
+        "task_sha256": "774379f0191811195b326a688df70b701ad0b2d1967774a3904d95160765d21b"
+      },
+      {
+        "row": 9,
+        "task_id": "5a8db19d5542994ba4e3dd00",
+        "task_sha256": "f3f70985e028c25702a1159c14100ce4750dae9dc04c56830a9f73ddbe11e5a5"
+      },
+      {
+        "row": 10,
+        "task_id": "5a7166395542994082a3e814",
+        "task_sha256": "5e0d118361211fe91d2cbd60abd740268e5a40ad025eeede0c7c6be6176dddb3"
+      },
+      {
+        "row": 11,
+        "task_id": "5a877e5d5542993e715abf7d",
+        "task_sha256": "e1d0bca0d5b519f544ee55e7310fb3a9956d945596ab0e700856ed41fc4cfbec"
+      },
+      {
+        "row": 12,
+        "task_id": "5ab3b0bf5542992ade7c6e39",
+        "task_sha256": "6ab31ffa4318fca88dcf392dc963521f0548af04cf220b3c798f0c24aba3116b"
+      },
+      {
+        "row": 13,
+        "task_id": "5ab56e32554299637185c594",
+        "task_sha256": "cc0ea76f8c6e898f37749d807ea063c67b1e8329042fc692e8448b8b9a1843d7"
+      },
+      {
+        "row": 14,
+        "task_id": "5ab6d09255429954757d337d",
+        "task_sha256": "dca2635681c6a41fba9ac24880a891a92ede6dd88b3c0e1aabbf4ed021078f0b"
+      },
+      {
+        "row": 15,
+        "task_id": "5a75e05c55429976ec32bc5f",
+        "task_sha256": "44fa93b9c9977cae3374aed7f338645b818b9e56b667fe86a9e9dffeb5f56487"
+      }
+    ],
+    "feasibility": [
+      {
+        "row": 0,
+        "task_id": "5a8b57f25542995d1e6f1371",
+        "task_sha256": "b147f8d601b0df29fc02aa3ad5fd999012ff7780126bdbc03fa613ef41906eb2"
+      },
+      {
+        "row": 1,
+        "task_id": "5a8c7595554299585d9e36b6",
+        "task_sha256": "30f0a193052ed600241de387b0038d2251d3a4b4ac79e649aa43eab1f9444cfa"
+      },
+      {
+        "row": 2,
+        "task_id": "5a85ea095542994775f606a8",
+        "task_sha256": "bdcb61af9ffbed9524c0840f4599567de50d8d2f29a82bc5bda6a320e9b10163"
+      },
+      {
+        "row": 3,
+        "task_id": "5adbf0a255429947ff17385a",
+        "task_sha256": "8f9b2ef9f8cfa7a0f9e490ee1701bc4ffe6aa88986570c9119721367529efd6f"
+      },
+      {
+        "row": 4,
+        "task_id": "5a8e3ea95542995a26add48d",
+        "task_sha256": "45b11ad2f53e64c59ba127ff484cefea704df84ba90704395feecb810bea64aa"
+      },
+      {
+        "row": 5,
+        "task_id": "5abd94525542992ac4f382d2",
+        "task_sha256": "c46335c8cf50206e3707d19a798bc54ef6fd2f712e8e5d90cf2592beee0d190d"
+      },
+      {
+        "row": 6,
+        "task_id": "5a85b2d95542997b5ce40028",
+        "task_sha256": "1b1a9050a67804b50fffa1fb5e1c10a349763d185ac1b17a77141c112a2cf8c5"
+      },
+      {
+        "row": 7,
+        "task_id": "5a87ab905542996e4f3088c1",
+        "task_sha256": "d4a610d9f5727f834b46ab70d0ddc2276e4edd4473abfffe19eb796fb8b5bf38"
+      }
+    ],
+    "holdout": [
+      {
+        "row": 16,
+        "task_id": "5ab3e45655429976abd1bcd4",
+        "task_sha256": "cdbf3dcc259278c9a57b756c3112fbdc28b52aaf0680bcdccf5cc74d495b7e5b"
+      },
+      {
+        "row": 17,
+        "task_id": "5ab29c24554299449642c932",
+        "task_sha256": "081e644b9d5a47e54e11e3327c3e2746ea0180fc25dcbace45350120dc0ae6bd"
+      },
+      {
+        "row": 18,
+        "task_id": "5ae0d4c9554299603e418468",
+        "task_sha256": "1d7a2e1b436d521455279dcbd7032603bdbb2f04fd212be98566f8d3ef98bd07"
+      },
+      {
+        "row": 19,
+        "task_id": "5a8133725542995ce29dcbdb",
+        "task_sha256": "aae507ce921cb47a4d767721d1b1b5c761c6c983edee5635f6deaf9f4535958f"
+      },
+      {
+        "row": 20,
+        "task_id": "5ae7a8175542993210983ed8",
+        "task_sha256": "8aa6645e1d88160218e8f7a64fdb58010ac90ca21b5d8b02429fbc68ef50f370"
+      },
+      {
+        "row": 21,
+        "task_id": "5ae6050f55429929b0807a5e",
+        "task_sha256": "8ce8bc9c1ba9584c5ec86ef153fe3f4d6495550e638c04b9f016a889f49c70ba"
+      },
+      {
+        "row": 22,
+        "task_id": "5adddccd5542997dc7907069",
+        "task_sha256": "d8607bf29ff21a699b023a4f7bb9937582529f25817c38454cf85c3be31b558f"
+      },
+      {
+        "row": 23,
+        "task_id": "5ae2070a5542994d89d5b313",
+        "task_sha256": "f9bc64805f919228f6ec3bdca37adbc35b7be785adb8cd7af091c9f16bcef6db"
+      }
+    ]
+  },
+  "source_rows": 7405,
+  "tasks_sha256": "1182a716fe9193fc0e42d641f0a18b903b9a5cdb46b9e7c980da7812a4de2cb1"
+}

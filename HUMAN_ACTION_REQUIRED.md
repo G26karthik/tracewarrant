@@ -1,5 +1,10 @@
 # External actions
 
+V5's local public-data application study is authorized. Dataset and free local
+model setup need no account, paid/cloud endpoint or maintainer action. No
+publication of raw dataset passages, prompts or answer strings is intended.
+Scientific qualification is a gate, not an approval request; see PROJECT_V5.md.
+
 The maintainer authorized autonomous V4 continuation on 2026-10-14; it is complete, including routine fixes/commits/pushes, hosted CI and published experimental `v0.4.0`. All public assets and fresh downloaded-package/source-free replay checks passed. [Closeout](docs/v4/public-release-0.4.0.md). No maintainer action is required. Prior releases/research are preserved; PyPI, paid/cloud work and outreach remain outside scope.
 
 No maintainer input is required for the completed TraceWarrant GitHub publication. The maintainer approved creation of the repository, upload of the description/README/source, and continuation through release. The scoped experimental toolkit and [prerelease `v0.3.1`](https://github.com/G26karthik/tracewarrant/releases/tag/v0.3.1) are complete; public downloads, checksums and installed-package qualification passed. [Closeout evidence](docs/v3/public-release-0.3.1.md).

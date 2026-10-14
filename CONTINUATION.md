@@ -1,5 +1,19 @@
 # Continuation checkpoint
 
+## Active V5 study
+
+The maintainer authorized the next application study on 2026-10-14. Read
+PROJECT_V5.md and docs/v5/preregistration.md. Dataset/scorer and fixed first
+24 rows are pinned in docs/v5/selection.json. The collector is
+examples/hotpot_workload.py; offline/parity checks are
+benchmarks/hotpot_validation.py. Commit the harness/design before inference.
+Raw dataset, model weights and answer strings stay ignored under artifacts/v5.
+Do not change prompts/questions/thresholds after scoring. Feasibility failure
+closes this study with a negative finding; it does not authorize a hidden
+replacement workload or fabricated calibration/held-out predictions.
+
+## Completed V4 checkpoint
+
 Updated 2026-10-14. [V4 is complete](PROJECT_V4.md): strict manifests, bounded snapshot, explicit quality/performance gates, standalone reports, portable export with full verification, lineage-checked retained-quality adapter and application CI. Published [experimental `v0.4.0`](https://github.com/G26karthik/tracewarrant/releases/tag/v0.4.0), qualified source `a248708e203869a6efd529595a20988c57f35115`; 190 tests per matrix job and all five CI jobs passed. Ten assets passed public-download/digest checks; fresh installed qualification and wheel-only portable replay without a checkout passed. [Closeout and source/run references](docs/v4/public-release-0.4.0.md), [machine-readable evidence](docs/v4/public-release-0.4.0.json).
 
 No V4 code or release gate remains. Current `main` includes a subsequent closeout commit; do not move the immutable release tag to it. Verify Git/remote state before acting and preserve `v0.4.0`, `v0.3.1`, all research tags and protected files. New product expansion needs a distinct justified scope. Do not restart an already completed release or reinterpret a negative study as a model win.
