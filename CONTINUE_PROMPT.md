@@ -5,8 +5,11 @@ Use the following in a coding session opened in this repository:
 ```text
 Work in C:\Users\saita\OneDrive\Desktop\AI Everyday\Context - Aware.
 
-Read PROJECT_V6.md, PROJECT_STATUS.md, CONTINUATION.md, docs/v6/qualification.md,
+Read PROJECT_V7.md, PROJECT_STATUS.md, CONTINUATION.md, docs/v7/quality-plans.md,
 PROJECT_V5.md and HUMAN_ACTION_REQUIRED.md. Verify Git and GitHub state.
+V7 is the active increment: exact quality plan/policy binding, optional bound
+qualification, compatibility/refusal tests, installed checks and a verified
+experimental 0.6.0 GitHub release. Finish all its scoped gates autonomously.
 V6 is complete: standalone application sample/policy quality gates, CLI/reports,
 retained V5 export, installed qualification and a verified experimental GitHub
 release 0.5.0. Read docs/v6/public-release-0.5.0.md and verify that state. No
@@ -24,7 +27,7 @@ quality decision. Conditional calibration/held-out modeling was not unlocked.
 Routine choices, fixes, relevant tests, commits and pushes are authorized.
 Resolve routine problems without approval pauses. Record exact source, report
 and CI/PR URLs before claiming completion. Preserve immutable release tags;
-V6's new package is 0.5.0. Bind new release assets to clean exact source, qualify
+V7's new package is 0.6.0. Bind new release assets to clean exact source, qualify
 installed bytes and hosted CI, verify all public downloaded asset hashes, then
 record source/release/CI URLs. Historical versions and V5 artifacts stay intact.
 

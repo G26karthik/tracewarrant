@@ -1,0 +1,18 @@
+{
+  "artifact_type": "application_quality_policy",
+  "metrics": [
+    {
+      "id": "answer.exact",
+      "minimum_value": 0.75,
+      "statistic": "fraction"
+    },
+    {
+      "id": "answer.f1",
+      "minimum_value": 0.75,
+      "statistic": "mean"
+    }
+  ],
+  "minimum_completion_fraction": 1,
+  "minimum_samples": 8,
+  "schema_version": "1.0"
+}

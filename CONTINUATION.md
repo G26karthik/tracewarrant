@@ -1,5 +1,14 @@
 # Continuation checkpoint
 
+## Active V7 engineering
+
+Read PROJECT_V7.md and docs/v7/quality-plans.md. Complete bounded quality-plan /
+receipt semantics, optional bound qualification, refusal/regression/installed
+checks and an exact-source verified experimental 0.6.0 release. Preserve 0.5.0
+unbound JSON semantics, old schemas, all failed studies and protected files.
+The new retained-data binding is retrospective; no authenticated chronology or
+new application/model success is claimed. No model rerun or cloud work is needed.
+
 ## Completed V6 engineering and public release
 
 Read PROJECT_V6.md and docs/v6/public-release-0.5.0.md. All four V6 stages are
