@@ -2,6 +2,10 @@
 
 Updated: 2026-10-14. Selected public name: **TraceWarrant**; former internal codename: Workload Lab.
 
+**Active stage: [V8 portable quality evidence](PROJECT_V8.md).** Native exact-byte
+export and offline JSON/HTML replay implemented; 288 tests locally passed.
+Installed/hosted qualification and public 0.7.0 verification are pending.
+
 **Current product: [V7 frozen quality plans](PROJECT_V7.md), complete.**
 [Experimental 0.6.0](https://github.com/G26karthik/tracewarrant/releases/tag/v0.6.0)
 is published and publicly verified. Exact plan/policy/identity/population binding

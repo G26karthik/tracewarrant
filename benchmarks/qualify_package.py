@@ -36,6 +36,7 @@ from workload_lab.jobs import JOB_SCHEMA, bundle_job, run_job, verify_bundle
 from workload_lab.qualification import (POLICY_SCHEMA, SAMPLE_SCHEMA,
     PLAN_SCHEMA, FREEZE_SCHEMA, freeze_application_quality, qualify_application)
 from workload_lab.validation import evaluate
+from workload_lab.quality_bundle import bundle_quality, verify_quality_bundle
 
 root, wheel = map(Path, sys.argv[1:])
 distribution = importlib.metadata.distribution("tracewarrant")
@@ -141,6 +142,20 @@ for manifest, code, output in (("job.json", 1, "strict-report"),
     assert (Path(output) / "report.html").is_file()
 assert subprocess.run([*command, "verify-bundle", str(bundle), "--output", "verified-report"],
                       capture_output=True).returncode == 0
+assert subprocess.run([*command, "bundle-quality", str(frozen_quality / "sample.json"),
+    "--policy", str(frozen_quality / "policy.json"), "--plan", str(frozen_quality / "plan.json"),
+    "--freeze", str(frozen_quality / "freeze.json"), "--output", "quality-bundle"],
+    capture_output=True).returncode == 1
+assert subprocess.run([*command, "verify-quality-bundle", "quality-bundle", "--output",
+    "quality-bundle-replay"], capture_output=True).returncode == 1
+quality_replay = json.loads(Path("quality-bundle-replay/report.json").read_bytes())
+assert quality_replay["bundle_checksums_verified"] and quality_replay["gates"] == quality["gates"]
+bundle_quality(quality_example / "sample.json", quality_example / "policy.json", "unbound-bundle")
+assert verify_quality_bundle("unbound-bundle")["result"] == "failed"
+Path("quality-bundle/report.html").write_bytes(b"forged passed report")
+assert subprocess.run([*command, "verify-quality-bundle", "quality-bundle", "--output",
+    "invalid-quality-replay"], capture_output=True).returncode == 2
+assert not Path("invalid-quality-replay").exists()
 print(json.dumps({
     "distribution": distribution.metadata["Name"],
     "version": distribution.version,
@@ -155,6 +170,7 @@ print(json.dumps({
     "installed_workflow_verified": True,
     "application_quality_verified": True,
     "frozen_quality_verified": True,
+    "portable_quality_verified": True,
     "portable_bundle_verified": True,
 }))
 """

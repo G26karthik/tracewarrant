@@ -10,6 +10,7 @@ from benchmarks.provenance import metadata
 from workload_lab.artifacts import canonical_bytes, write_new
 from workload_lab.jobs import bundle_job, run_job, verify_bundle
 from workload_lab.qualification import qualify_application
+from workload_lab.quality_bundle import bundle_quality, verify_quality_bundle
 
 ROOT = Path(__file__).parents[1]
 
@@ -62,6 +63,17 @@ def qualify():
         ):
             assert (example / original).read_bytes() == (path / copy).read_bytes()
         checksums = hashlib.sha256((path / "SHA256SUMS").read_bytes()).hexdigest()
+        quality_path = Path(folder) / "quality-bundle"
+        bundle_quality(
+            frozen_root / "sample.json",
+            frozen_root / "policy.json",
+            quality_path,
+            plan_path=frozen_root / "plan.json",
+            freeze_path=frozen_root / "freeze.json",
+        )
+        quality_replay = verify_quality_bundle(quality_path)
+        assert quality_replay["gates"] == bound["gates"]
+        assert quality_replay["binding"] == bound["binding"]
     return {
         "artifact_type": "offline_workflow_qualification",
         "metadata": metadata(__file__, {"network": False, "model_execution": False}, 0),
@@ -80,6 +92,7 @@ def qualify():
             "policy_sha256": quality["policy_sha256"],
         },
         "frozen_quality_binding": bound["binding"],
+        "portable_quality_verified": quality_replay["bundle_checksums_verified"],
         "portable_checksums_sha256": checksums,
         "note": "Retrospective workflow qualification; no new task quality or added-value result.",
     }

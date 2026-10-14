@@ -1,5 +1,13 @@
 # Continuation checkpoint
 
+## Active V8 portable quality evidence
+
+Read PROJECT_V8.md and docs/v8/quality-bundles.md. Native bounded export/replay
+and 28 new regressions are implemented (288 total locally passed). Installed/
+hosted verification and experimental 0.7.0 publication remain. Verify disk/Git/
+CI before continuing; do not claim those gates passed without their evidence.
+V7/0.6.0 and all older releases remain immutable. No new model or grading study.
+
 ## Completed V7 engineering and public release
 
 Read PROJECT_V7.md and docs/v7/public-release-0.6.0.md. All four V7 stages are
