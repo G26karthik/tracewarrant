@@ -1,0 +1,146 @@
+{
+  "$id": "urn:tracewarrant:validation-job:1.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_type": {
+      "enum": [
+        "validation_job"
+      ]
+    },
+    "freeze": {
+      "maxLength": 512,
+      "minLength": 1,
+      "type": "string"
+    },
+    "measurements": {
+      "items": {
+        "maxLength": 512,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 32,
+      "minItems": 1,
+      "type": "array"
+    },
+    "model_id": {
+      "maxLength": 128,
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$(?!\\n)",
+      "type": "string"
+    },
+    "policy": {
+      "additionalProperties": false,
+      "properties": {
+        "maximum_primary_relative_error": {
+          "maximum": 1e+30,
+          "minimum": 0,
+          "type": "number"
+        },
+        "minimum_material_pairs": {
+          "maximum": 200000,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "minimum_ranking_accuracy": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "minimum_replications": {
+          "maximum": 32,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "quality": {
+          "anyOf": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "metric_id": {
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$(?!\\n)",
+                  "type": "string"
+                },
+                "minimum_samples": {
+                  "maximum": 1000000000,
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "minimum_value": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "population": {
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:/-]*$(?!\\n)",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "metric_id",
+                "population",
+                "minimum_value",
+                "minimum_samples"
+              ],
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "require_added_decision_value": {
+          "type": "boolean"
+        },
+        "require_within_envelope": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "maximum_primary_relative_error",
+        "minimum_replications",
+        "require_within_envelope",
+        "minimum_material_pairs",
+        "minimum_ranking_accuracy",
+        "require_added_decision_value",
+        "quality"
+      ],
+      "type": "object"
+    },
+    "predictions": {
+      "items": {
+        "maxLength": 512,
+        "minLength": 1,
+        "type": "string"
+      },
+      "maxItems": 32,
+      "minItems": 1,
+      "type": "array"
+    },
+    "protocol": {
+      "maxLength": 512,
+      "minLength": 1,
+      "type": "string"
+    },
+    "schema_version": {
+      "enum": [
+        "1.0"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "artifact_type",
+    "protocol",
+    "freeze",
+    "predictions",
+    "measurements",
+    "model_id",
+    "policy"
+  ],
+  "type": "object"
+}

@@ -1,5 +1,7 @@
 # Project refresher
 
+Current increment: [V4 offline validation workflow](PROJECT_V4.md). One manifest now drives explicit quality/performance gates, HTML/JSON reports and a CI exit code; evidence can be exported and verified on another machine. Start with [the walkthrough](docs/v4/workflow.md). The earlier V3 product/release account below remains context; it does not close the newly authorized 0.4.0 qualification work.
+
 TraceWarrant is this Python project's selected public name; Workload Lab was its internal codename. It checks whether application traces contain enough information to support performance claims, then compares frozen model predictions with real measurements. It can explicitly report UNKNOWN or that a simple heuristic provides the same decision as a simulator.
 
 The original ambition was an agent capacity planner. Experiments did not justify that broader product, so V3 narrowed the project to instrumentation conformance and model validation. The original research and negative results are preserved. This is an experimental local toolkit, with no running hosted service or recurring paid work.

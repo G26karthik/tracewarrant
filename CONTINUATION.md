@@ -1,6 +1,8 @@
 # Continuation checkpoint
 
-Updated 2026-10-01. This is the current operational checkpoint; older reports retain their original dates and conclusions. Verify disk and GitHub state before acting. [Public release verification](docs/v3/public-release-0.3.1.json), [earlier inspection snapshot](docs/v3/inspection-2026-09-30.json).
+Updated 2026-10-14. Active authorization now includes completing [V4](PROJECT_V4.md), not reopening V3's release or planner roadmap. Implemented: manifests/policy, bounded snapshot, quality/performance gates, standalone reports, portable verified export, a lineage-checked quality adapter and tests. Finish full qualification, commit clean source, verify hosted CI, publish experimental `v0.4.0`, verify public assets/installation, and record closeout. Preserve all old tags and evidence. [Workflow contract](docs/v4/workflow.md).
+
+The older V3 checkpoint below is historical. Its no-further-work statement refers to 0.3.1, not the newly authorized V4 scope.
 
 ## Completion and next deliverable
 

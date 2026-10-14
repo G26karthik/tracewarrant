@@ -1,5 +1,7 @@
 # External actions
 
+The maintainer authorized autonomous V4 continuation on 2026-10-14, including routine fixes/commits/pushes, hosted CI and the experimental `v0.4.0` GitHub release. No new maintainer input is needed for that workflow increment. Preserve the prior release and research findings. PyPI upload, paid services/cloud provisioning and outreach are outside this scope.
+
 No maintainer input is required for the completed TraceWarrant GitHub publication. The maintainer approved creation of the repository, upload of the description/README/source, and continuation through release. The scoped experimental toolkit and [prerelease `v0.3.1`](https://github.com/G26karthik/tracewarrant/releases/tag/v0.3.1) are complete; public downloads, checksums and installed-package qualification passed. [Closeout evidence](docs/v3/public-release-0.3.1.md).
 
 The public repository is [G26karthik/tracewarrant](https://github.com/G26karthik/tracewarrant). Private vulnerability reporting is enabled. [Release scope and procedure](PUBLIC_RELEASE.md). The package retains `Private :: Do Not Upload` to prevent PyPI publication; the authorized release is on GitHub.

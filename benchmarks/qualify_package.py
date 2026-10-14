@@ -32,6 +32,7 @@ from workload_lab.artifact_schema import SCHEMA
 from workload_lab.artifacts import canonical_bytes
 from workload_lab.conformance import inspect_observations
 from workload_lab.ingest import ingest
+from workload_lab.jobs import JOB_SCHEMA, bundle_job, run_job, verify_bundle
 from workload_lab.validation import evaluate
 
 root, wheel = map(Path, sys.argv[1:])
@@ -51,6 +52,13 @@ with ZipFile(wheel) as archive:
             module_hashes[name] = digest
 assert module_hashes
 assert SCHEMA == json.loads((root / "schemas/validation-artifact-v1.schema.json").read_bytes())
+assert JOB_SCHEMA == json.loads((root / "schemas/validation-job-v1.schema.json").read_bytes())
+example = root / "examples/validation/frames"
+assert run_job(example / "job.json")["result"] == "failed"
+assert run_job(example / "performance-job.json")["result"] == "passed"
+bundle = Path("portable-evidence")
+bundle_job(example / "performance-job.json", bundle)
+assert verify_bundle(bundle)["bundle_checksums_verified"]
 
 frozen = root / "docs/v3/frames-frozen"
 measured = root / "docs/v3/frames-evaluation"
@@ -88,6 +96,14 @@ assert json.loads(subprocess.check_output([
 assert subprocess.run([
     *command, "check", "missing.json"
 ], capture_output=True).returncode == 2
+for manifest, code, output in (("job.json", 1, "strict-report"),
+                               ("performance-job.json", 0, "performance-report")):
+    process = subprocess.run([*command, "validate-job", str(example / manifest),
+                              "--output", output], capture_output=True, text=True)
+    assert process.returncode == code
+    assert (Path(output) / "report.html").is_file()
+assert subprocess.run([*command, "verify-bundle", str(bundle), "--output", "verified-report"],
+                      capture_output=True).returncode == 0
 print(json.dumps({
     "distribution": distribution.metadata["Name"],
     "version": distribution.version,
@@ -99,6 +115,8 @@ print(json.dumps({
     "simulator_not_imported": True,
     "cli_verified": True,
     "conformance_sources": sources,
+    "installed_workflow_verified": True,
+    "portable_bundle_verified": True,
 }))
 """
 
@@ -133,6 +151,9 @@ def qualify(wheel: Path, sdist: Path, uv: str) -> dict:
             "uv.lock",
             "LICENSE",
             "schemas/validation-artifact-v1.schema.json",
+            "schemas/validation-job-v1.schema.json",
+            "examples/validation/frames/job.json",
+            "examples/validation/frames/performance-job.json",
             "docs/v3/frames-frozen/freeze.json",
             "docs/v3/frames-evaluation/validation.json",
             "tests/test_v3_validation.py",

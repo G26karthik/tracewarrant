@@ -1,5 +1,7 @@
 # Architecture
 
+V4 adds an offline job layer over the independent validator: strict manifest → contained bounded byte snapshot → existing frozen evaluation → explicit acceptance gates → escaped standalone report. Portable export retains evidence bytes; bundle verification validates the checksum listing, snapshots payloads and recomputes the report. Neither path imports the reference simulator or executes user code. [Workflow contract](docs/v4/workflow.md), [ADR-0020](docs/adr/ADR-0020-offline-validation-jobs.md).
+
 Project identity: TraceWarrant. The distribution and preferred CLI are `tracewarrant`; existing `workload_lab` Python imports, `workload-lab` alias and versioned wire identities remain stable. Historical research continues to use Workload Lab.
 
 Active scope: [PROJECT_V3.md](PROJECT_V3.md); evidence: [PROJECT_STATUS.md](PROJECT_STATUS.md). The product boundary is offline observation conformance and model-neutral prediction evaluation. The V2 simulator remains an optional reference backend. Example applications execute explicitly requested measurement workloads; core inspection/validation executes none.

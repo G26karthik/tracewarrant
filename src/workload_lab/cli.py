@@ -15,6 +15,7 @@ from .conformance import inspect_observations
 from .graph import compile_workload
 from .ingest import DEFAULT_MAX_BYTES, DEFAULT_MAX_SPANS, _decode, ingest
 from .ir import SCHEMA_VERSION, ValidationError
+from .jobs import JOB_SCHEMA, bundle_job, run_job, verify_bundle, write_job_report
 from .validation import evaluate
 
 
@@ -58,8 +59,14 @@ def _text(report: AnalysisReport) -> str:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="tracewarrant", description=__doc__)
-    parser.add_argument("--version", action="version", version="TraceWarrant 0.3.1 (experimental)")
+    parser.add_argument("--version", action="version", version="TraceWarrant 0.4.0 (experimental)")
     commands = parser.add_subparsers(dest="command", required=True)
+    job_schema = commands.add_parser("job-schema", help="emit validation job JSON Schema")
+    job_schema.add_argument("--output", type=Path)
+    for name in ("validate-job", "bundle-job", "verify-bundle"):
+        job = commands.add_parser(name, help="evaluate an offline job or export a portable bundle")
+        job.add_argument("input", type=Path)
+        job.add_argument("--output", type=Path, required=True, help="create a new output directory")
     schema = commands.add_parser("schema", help="emit simulator-neutral artifact JSON Schema")
     schema.add_argument("--output", type=Path)
     check = commands.add_parser(
@@ -95,6 +102,24 @@ def main(argv: list[str] | None = None) -> int:
             sub.add_argument("--format", choices=("text", "json"), default="text")
     args = parser.parse_args(argv)
     try:
+        if args.command == "job-schema":
+            if args.output:
+                write_new(args.output, JOB_SCHEMA)
+            else:
+                print(json.dumps(JOB_SCHEMA, indent=2, sort_keys=True))
+            return 0
+        if args.command in ("validate-job", "bundle-job", "verify-bundle"):
+            if args.command == "bundle-job":
+                report = bundle_job(args.input, args.output)
+            else:
+                report = (
+                    verify_bundle(args.input)
+                    if args.command == "verify-bundle"
+                    else run_job(args.input)
+                )
+                write_job_report(args.output, report)
+            print(json.dumps({"result": report["result"], "claim_scope": report["claim_scope"]}))
+            return 0 if report["result"] == "passed" else 1
         if args.command in ("schema", "check", "freeze", "evaluate"):
             if args.command == "schema":
                 result = SCHEMA

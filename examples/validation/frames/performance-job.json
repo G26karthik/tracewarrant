@@ -1,0 +1,25 @@
+{
+  "artifact_type": "validation_job",
+  "freeze": "freeze.json",
+  "measurements": [
+    "measured-r0.json",
+    "measured-r1.json"
+  ],
+  "model_id": "simpy-whole-workflow",
+  "policy": {
+    "maximum_primary_relative_error": 0.15,
+    "minimum_material_pairs": 1,
+    "minimum_ranking_accuracy": 1,
+    "minimum_replications": 2,
+    "quality": null,
+    "require_added_decision_value": false,
+    "require_within_envelope": false
+  },
+  "predictions": [
+    "simpy.json",
+    "fixed.json",
+    "utilization.json"
+  ],
+  "protocol": "protocol.json",
+  "schema_version": "1.0"
+}

@@ -2,7 +2,7 @@
 
 **Check the evidence behind performance claims.**
 
-Status: Experimental / Research Prototype
+Status: Experimental / Research Prototype. Active increment: [V4 offline validation workflow](PROJECT_V4.md).
 
 [![Correctness](https://github.com/G26karthik/tracewarrant/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/G26karthik/tracewarrant/actions/workflows/ci.yml)
 
@@ -13,6 +13,18 @@ Former internal name: Workload Lab. Source is available at [G26karthik/tracewarr
 Publication status, checked 2026-09-30: [experimental prerelease `v0.3.1`](https://github.com/G26karthik/tracewarrant/releases/tag/v0.3.1) is available. [All five release-source CI jobs passed](https://github.com/G26karthik/tracewarrant/actions/runs/36757290326); all eight public assets passed checksum verification and the downloaded wheel passed fresh installed-package qualification. [Release evidence and limits](docs/v3/public-release-0.3.1.md). Private security reporting is enabled.
 
 V3 accepts the pilot's **PIVOT RECOMMENDED** conclusion. [V2](PROJECT_V2.md), [its final report](FINAL_PROJECT_REPORT.md), `research-pilot-1` and all frozen evidence remain unchanged. This is a local research prototype, not a capacity planner or production release. [Refreshed research](docs/v3/research.md) establishes substantial overlap; no uniqueness is claimed.
+
+## Run an explicit validation policy
+
+The 0.4.0 workflow adds one manifest, CI pass/fail, standalone HTML/JSON and portable evidence verification. [Complete guide](docs/v4/workflow.md), [job schema](schemas/validation-job-v1.schema.json), [application CI example](examples/ci/tracewarrant.yml).
+
+```sh
+uv sync --locked
+python -c "from pathlib import Path; Path('artifacts').mkdir(exist_ok=True)"
+uv run tracewarrant validate-job examples/validation/frames/job.json --output artifacts/strict-report
+```
+
+This retained study deliberately returns **1**: exact-answer quality failed, interventions extrapolate beyond calibration, and added decision value is unestablished. Open `artifacts/strict-report/report.html`. The separate `performance-job.json` permits a limited numerical replay and says quality was not assessed. Use `bundle-job` and `verify-bundle` to share and replay checksummed evidence offline. Existing outputs are never overwritten.
 
 ## Inspect and validate without a simulator
 

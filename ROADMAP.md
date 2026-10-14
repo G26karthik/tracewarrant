@@ -1,4 +1,10 @@
-# V3 evidence-gated roadmap
+# Evidence-gated roadmap
+
+## Active V4 workflow increment
+
+Autonomous continuation authorized 2026-10-14. [PROJECT_V4.md](PROJECT_V4.md) defines five gates: A strict manifest/contained inputs; B explicit quality/performance policy; C reports/CI/portable verified bundles; D retained real-evidence replay and installed-package checks; E documentation, hosted CI and verified 0.4.0 experimental release. No model victory or planner expansion is required. Current progress is in `PROJECT_STATUS.md`.
+
+## Completed V3 experimental scope
 
 Active direction: [PROJECT_V3.md](PROJECT_V3.md). The standalone planner roadmap is superseded. Its full historical state remains in V2 and tag `research-pilot-1`; this roadmap does not resume M3/M5/M7/M8/M9.
 

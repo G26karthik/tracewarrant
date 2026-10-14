@@ -1,0 +1,30 @@
+{
+  "artifact_type": "validation_job",
+  "freeze": "freeze.json",
+  "measurements": [
+    "quality-measured-r0.json",
+    "quality-measured-r1.json"
+  ],
+  "model_id": "simpy-whole-workflow",
+  "policy": {
+    "maximum_primary_relative_error": 0.15,
+    "minimum_material_pairs": 1,
+    "minimum_ranking_accuracy": 1,
+    "minimum_replications": 2,
+    "quality": {
+      "metric_id": "answer.exact",
+      "minimum_samples": 8,
+      "minimum_value": 0.75,
+      "population": "offered"
+    },
+    "require_added_decision_value": true,
+    "require_within_envelope": true
+  },
+  "predictions": [
+    "simpy.json",
+    "fixed.json",
+    "utilization.json"
+  ],
+  "protocol": "protocol.json",
+  "schema_version": "1.0"
+}

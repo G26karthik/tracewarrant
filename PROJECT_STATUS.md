@@ -1,8 +1,10 @@
 # Project status
 
-Updated: 2026-10-01. Selected public name: **TraceWarrant**; former internal codename: Workload Lab.
+Updated: 2026-10-14. Selected public name: **TraceWarrant**; former internal codename: Workload Lab.
 
-**Active direction: [PROJECT_V3.md](PROJECT_V3.md)** — simulator-neutral observation and performance-model validation. Public project: [G26karthik/tracewarrant](https://github.com/G26karthik/tracewarrant); experimental package 0.3.1. [Completion report](docs/v3/completion-0.3.1.md), [short project refresher](START_HERE.md). The initial 0.3.0 report and `validation-toolkit-v3` tag remain preserved.
+**Active direction: [PROJECT_V4.md](PROJECT_V4.md)** — a complete offline validation workflow on the V3 contracts. Public project: [G26karthik/tracewarrant](https://github.com/G26karthik/tracewarrant); 0.4.0 in qualification. Autonomous continuation authorized 2026-10-14. V4-A/B/C are implemented: strict manifests, explicit quality/performance gates, reports and portable verified replay. V4-D/E qualification, hosted CI and public release verification remain the completion gate. [Workflow guide](docs/v4/workflow.md).
+
+## Completed V3 release
 
 **Completion assessment:** the scoped V3 experimental toolkit and first public release are complete. [Prerelease `v0.3.1`](https://github.com/G26karthik/tracewarrant/releases/tag/v0.3.1) is published from qualified source `b0d5c5d`; all five hosted jobs passed that exact source. All eight assets passed unauthenticated public download and checksum verification, and the downloaded wheel passed fresh installed-package qualification. Production suitability, added decision value over the heuristic and external adoption remain unestablished. [Release closeout](docs/v3/public-release-0.3.1.md), [current checkpoint](CONTINUATION.md).
 

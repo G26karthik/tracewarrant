@@ -1,0 +1,26 @@
+{
+  "artifact_type": "protocol",
+  "assumptions": [
+    "preregistered_in_frames_preregistration",
+    "quality_gate_in_separate_study_report"
+  ],
+  "direction": "minimize",
+  "experiment_id": "frames-pilot-v3-1",
+  "material_relative_difference": 0.1,
+  "minimum_samples": 8,
+  "primary_metric": "latency.mean",
+  "require_baseline": true,
+  "scenario_ids": [
+    "BASE",
+    "FETCH2",
+    "CLIENT2"
+  ],
+  "schema_version": "1.0",
+  "unsupported_dimensions": [
+    "p95",
+    "p99",
+    "sustainable_capacity",
+    "gpu_service_demand"
+  ],
+  "workload_id": "frames-oracle-eight-v1"
+}

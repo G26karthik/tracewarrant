@@ -1,4 +1,10 @@
-# First public release
+# Public releases
+
+## Active 0.4.0 qualification
+
+Autonomous completion authorized 2026-10-14. [V4](PROJECT_V4.md) will be experimental prerelease `v0.4.0`, with qualified wheel/source, checksums and replay evidence. Complete exact-source CI and installed-package qualification before publication; verify every public asset and a fresh downloaded-wheel replay afterward. Preserve `v0.3.1` and historical tags/assets. No PyPI, paid/cloud work or outreach is in scope.
+
+## First public release: 0.3.1
 
 The maintainer authorized creation and publication of the repository, documentation and experimental release on 2026-09-29. Completed and verified 2026-09-30: [experimental prerelease `v0.3.1`](https://github.com/G26karthik/tracewarrant/releases/tag/v0.3.1), qualified source `b0d5c5dc2a23589245ad1c6fabdf4d07dd2b51b6`, all five hosted CI jobs successful, eight public assets verified and a fresh downloaded-wheel installation qualified. Private vulnerability reporting is enabled. [Closeout](docs/v3/public-release-0.3.1.md), [machine-readable verification](docs/v3/public-release-0.3.1.json).
 

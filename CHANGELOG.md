@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.4.0 — offline validation workflow
+
+- Add job schema and `validate-job`, `bundle-job`, `verify-bundle`, `job-schema` commands.
+- Explicit CI gates for worst primary error, replications, environment/envelope, material rankings, baselines and optional measured quality; missing required evidence fails closed.
+- Snapshot bounded local files; reject escaping paths, duplicate inputs and invalid bundles.
+- Export self-contained evidence with intact freeze bytes, checksums and recomputed report verification.
+- Escaped standalone HTML/JSON reports, exclusive output and distinct policy/input-error exit codes.
+- Lineage-checked adapter for original FRAMES exact-match labels; preserve historical inputs and negative findings.
+- Application CI example and installed-package workflow qualification; no new runtime dependencies.
+
 ## 0.3.1 — TraceWarrant local open-source candidate
 
 - Select TraceWarrant as the public project/distribution name; add `tracewarrant` CLI while preserving `workload-lab`, Python imports and artifact/telemetry identities.
