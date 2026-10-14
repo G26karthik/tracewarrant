@@ -2,12 +2,13 @@
 
 **Check the evidence behind performance claims.**
 
-Status: Experimental / Research Prototype. The agreed project is [complete](PROJECT_COMPLETION.md), published as 0.7.1. Required remaining stages: zero.
+Status: Experimental / Research Prototype. Current increment: [V10 collection](PROJECT_V10.md), qualifying 0.8.0. The [prior V3–V9 scope](PROJECT_COMPLETION.md) and published 0.7.1 remain complete.
 
-New scope, requested 2026-10-14: [V10 usable observation collection](PROJECT_V10.md).
-[Research](docs/v10/research.md) supports a small framework-neutral collection
-interface and optional OTel/Pydantic integration. This is a plan, not delivered
-0.7.1 functionality; the completed release and failed studies remain preserved.
+Current increment: [V10 usable observation collection](PROJECT_V10.md), preparing
+experimental 0.8.0. A bounded stdlib recorder and explicit optional OTel exporter
+bridge now supply caller-owned lifecycle/edge evidence. [Usage and limits](docs/v10/collection.md).
+The pinned Pydantic example retains partial coverage and UNKNOWN model demand.
+Release qualification is in progress; prior releases and failed studies remain preserved.
 
 Latest application study: [V5 HotpotQA qualification](PROJECT_V5.md) completed
 eight real requests but failed its predeclared quality floor (4/8 exact answers,

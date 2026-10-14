@@ -2,12 +2,13 @@
 
 Updated: 2026-10-14. Selected public name: **TraceWarrant**; former internal codename: Workload Lab.
 
-**New scoped research: [V10 observation collection and framework integration](PROJECT_V10.md).**
+**Active implementation: [V10 observation collection and framework integration](PROJECT_V10.md).**
 The maintainer requested a concrete next requirement. Fresh locked-framework
 probes and primary-source research support a small collection/OTel bridge with a
 first Pydantic integration. Research gate A passed, including a reproducible
-clean-source local probe; B/C/D implementation and qualification are planned,
-not delivered. Existing package/public release remains 0.7.1.
+clean-source local probe. B/C are now implemented with 317 local tests and fresh
+installed SDK qualification; experimental 0.8.0 exact-source/hosted/public
+verification is in progress. [Interface](docs/v10/collection.md).
 
 **Completed V3–V9 scope: [final V9 acceptance](PROJECT_V9.md), zero required stages
 remaining in that scope.** The original ten criteria and V4–V8 increments are accepted with

@@ -3,8 +3,9 @@
 Current new scope: [V10 observation collection and framework integration](PROJECT_V10.md).
 The maintainer requested researched next steps after the completed release.
 Fresh locked-framework probes justify a supported collection interface and
-optional OTel bridge. [Research](docs/v10/research.md). Implementation is planned;
-package remains 0.7.1. The V3–V9 completion below remains valid.
+optional OTel bridge. [Research](docs/v10/research.md), [implemented API](docs/v10/collection.md).
+B/C implementation is complete; D qualification/publication is preparing 0.8.0.
+The V3–V9 completion and published 0.7.1 below remain valid.
 
 The agreed experimental project is **complete**, with **zero required stages
 remaining**. [Final version 0.7.1](docs/v9/public-release-0.7.1.md) includes the

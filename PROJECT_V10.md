@@ -76,9 +76,11 @@ not change the GPU's reported VRAM.
 
 Status: **A complete.** The reproducible probe passed on clean committed source
 `40cff5b545b66a64f083c051733afd8c75dd0fd5` with locked dependencies.
-[Clean-source probe](docs/v10/framework-probe.json). B/C/D are planned, not
-implemented or released. Package remains 0.7.1.
-No new public version is chosen merely to label a plan.
+[Clean-source probe](docs/v10/framework-probe.json). **B/C implemented:** stdlib
+recorder, explicit SDK export and pinned framework companion example. 317 local
+tests passed and fresh installed SDK qualification passed. D exact-source/hosted
+qualification and experimental 0.8.0 public release remain in progress.
+[Implemented interface](docs/v10/collection.md), [decision](docs/adr/ADR-0026-owned-boundaries-and-explicit-export.md).
 
 If the useful evidence can be supplied entirely through an existing framework
 hook with a documented recipe, ship that smaller integration instead of a broad
