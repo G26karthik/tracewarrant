@@ -37,6 +37,10 @@ from workload_lab.qualification import (POLICY_SCHEMA, SAMPLE_SCHEMA,
     PLAN_SCHEMA, FREEZE_SCHEMA, freeze_application_quality, qualify_application)
 from workload_lab.validation import evaluate
 from workload_lab.quality_bundle import bundle_quality, verify_quality_bundle
+from workload_lab.collection import ObservationRecorder
+import workload_lab.otel_collection
+from workload_lab.ir import NodeKind
+import asyncio
 
 root, wheel = map(Path, sys.argv[1:])
 distribution = importlib.metadata.distribution("tracewarrant")
@@ -54,6 +58,22 @@ with ZipFile(wheel) as archive:
             assert digest == hashlib.sha256(archive.read(name)).hexdigest(), "stale installation"
             module_hashes[name] = digest
 assert module_hashes
+async def collect_owned():
+    recorder = ObservationRecorder()
+    pool = recorder.pool(1)
+    semaphore = asyncio.Semaphore(1)
+    with recorder.run(complete=True) as run:
+        with run.operation(NodeKind.TOOL) as operation:
+            async with operation.lease(pool, semaphore.acquire, semaphore.release):
+                pass
+    recorder.write("installed-observations.json")
+    return recorder
+asyncio.run(collect_owned())
+owned = inspect_observations(ingest("installed-observations.json"))
+assert owned["claims"]["queue_wait"]["support"] == "supported"
+assert owned["claims"]["dependency_graph"]["support"] == "supported"
+assert owned["claims"]["inference_service_demand"]["value"] is None
+assert not any(name.startswith("opentelemetry") for name in sys.modules)
 assert SCHEMA == json.loads((root / "schemas/validation-artifact-v1.schema.json").read_bytes())
 assert JOB_SCHEMA == json.loads((root / "schemas/validation-job-v1.schema.json").read_bytes())
 assert SAMPLE_SCHEMA == json.loads(
@@ -183,6 +203,8 @@ print(json.dumps({
     "portable_quality_verified": True,
     "portable_bundle_verified": True,
     "rehashed_job_html_refused": True,
+    "installed_collection_verified": True,
+    "optional_otel_not_imported": True,
 }))
 """
 

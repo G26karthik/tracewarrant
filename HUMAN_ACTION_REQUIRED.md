@@ -1,5 +1,9 @@
 # External actions
 
+The maintainer authorized autonomous V10 implementation and qualification.
+The local recorder/OTel integration needs no credentials, model service or paid
+resource. 0.8.0 release verification is proceeding; no maintainer action is needed.
+
 The agreed experimental project, final V9 acceptance and public patch 0.7.1
 are complete and verified. Required remaining stages: zero. No maintainer action
 is required. [Completion record](PROJECT_COMPLETION.md),

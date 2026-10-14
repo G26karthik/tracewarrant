@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "tracewarrant"
-version = "0.7.1"
+version = "0.8.0"
 description = "TraceWarrant: telemetry conformance and simulator-neutral performance-model validation"
 readme = "README.md"
 requires-python = ">=3.11"

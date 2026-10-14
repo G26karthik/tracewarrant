@@ -10,9 +10,9 @@ V10 observation collection and framework integration. Read PROJECT_V10.md,
 docs/v10/research.md, docs/v10/integration-research.json and ADR-0025 first.
 This phase addresses measured collector duplication and missing native lifecycle
 evidence. It does not reopen closed studies. Research gate A passed on clean
-40cff5b545b66a64f083c051733afd8c75dd0fd5; docs/v10/framework-probe.json records it. B/C/D
-collection/integration/qualification are planned, not implemented. Package is
-still 0.7.1. When asked to implement/continue this new scope, follow its gates.
+40cff5b545b66a64f083c051733afd8c75dd0fd5; docs/v10/framework-probe.json records it.
+B/C are implemented; D exact-source/hosted/public qualification is pending for
+experimental 0.8.0. Read docs/v10/collection.md and ADR-0026. Continue its gates.
 Use caller-owned scheduling, explicit boundaries/roles/edges, bounded opaque
 output and optional OTel imports. Pinned Pydantic 2.51.0 and current upstream
 differ in token ownership. Do not infer release, automatic graph completeness,
