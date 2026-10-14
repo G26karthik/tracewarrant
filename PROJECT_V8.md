@@ -19,5 +19,8 @@ Gates: A bounded snapshot/export/replay; B refusal/compatibility tests and examp
 C installed and hosted qualification; D documentation and verified experimental
 0.7.0 release. No cloud, model rerun or new performance experiment is needed.
 
-Status: A/B implemented, 288 local tests passed. C/D in progress. This document
-does not claim public release or external review until those gates pass.
+**Status: all four scoped stages complete.** 288 tests per hosted matrix job,
+fresh installed qualification and all five source/tag jobs passed. Experimental
+0.7.0 is published; all ten public assets and fresh source-free bundle replay/
+rehashed HTML and omission refusals are verified. [Closeout](docs/v8/public-release-0.7.0.md).
+No V8 code/release gate remains; integrity does not establish independent review.

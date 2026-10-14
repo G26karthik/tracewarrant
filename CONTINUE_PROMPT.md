@@ -8,6 +8,10 @@ Work in C:\Users\saita\OneDrive\Desktop\AI Everyday\Context - Aware.
 Read PROJECT_V8.md, docs/v8/quality-bundles.md, PROJECT_V7.md, PROJECT_STATUS.md,
 CONTINUATION.md, docs/v7/quality-plans.md,
 PROJECT_V5.md and HUMAN_ACTION_REQUIRED.md. Verify Git and GitHub state.
+V8 is complete: native exact quality export, bounded checksum/JSON/HTML replay,
+288 tests per matrix job, installed/hosted qualification and verified public
+0.7.0. Read docs/v8/public-release-0.7.0.md. No V8 code/release gate remains.
+A future increment needs a distinct demonstrated requirement.
 V7 is complete: exact quality plan/policy binding, optional bound qualification,
 compatibility/refusal tests, installed checks and a verified experimental 0.6.0
 GitHub release. Read docs/v7/public-release-0.6.0.md and verify that state. Do not

@@ -1,5 +1,14 @@
 # Public releases
 
+## Completed 0.7.0 portable-quality release
+
+[Experimental v0.7.0](https://github.com/G26karthik/tracewarrant/releases/tag/v0.7.0)
+is published and publicly verified. Native quality evidence export and bounded
+checksum/JSON/HTML replay passed installed/hosted checks (288 tests per matrix
+job), all ten public downloads and fresh source-free replay/rehashed false-report/
+omission refusals. [Closeout](docs/v8/public-release-0.7.0.md),
+[public proof](docs/v8/public-release-0.7.0.json). No V8 maintainer action remains.
+
 ## Completed 0.6.0 quality-plan release
 
 [Experimental v0.6.0](https://github.com/G26karthik/tracewarrant/releases/tag/v0.6.0)

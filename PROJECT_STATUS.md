@@ -2,11 +2,15 @@
 
 Updated: 2026-10-14. Selected public name: **TraceWarrant**; former internal codename: Workload Lab.
 
-**Active stage: [V8 portable quality evidence](PROJECT_V8.md).** Native exact-byte
-export and offline JSON/HTML replay implemented; 288 tests locally passed.
-Installed/hosted qualification and public 0.7.0 verification are pending.
+**Current product: [V8 portable quality evidence](PROJECT_V8.md), complete.**
+[Experimental 0.7.0](https://github.com/G26karthik/tracewarrant/releases/tag/v0.7.0)
+is published and verified: exact quality export, offline checksum/JSON/HTML
+replay, 288 tests per hosted matrix job and all five source/tag jobs passed. Ten
+public downloads and fresh installed/source-free checks, including rehashed
+false HTML and omitted-task refusals, passed. [Closeout](docs/v8/public-release-0.7.0.md).
+No V8 code/release gate remains; historical failures and evidence limits persist.
 
-**Current product: [V7 frozen quality plans](PROJECT_V7.md), complete.**
+**Previous stage: [V7 frozen quality plans](PROJECT_V7.md), complete.**
 [Experimental 0.6.0](https://github.com/G26karthik/tracewarrant/releases/tag/v0.6.0)
 is published and publicly verified. Exact plan/policy/identity/population binding
 preserves unbound semantics and unauthenticated chronology limits. All five
@@ -15,7 +19,7 @@ downloaded-package/source-free bound replay/omission refusal passed.
 [Closeout](docs/v7/public-release-0.6.0.md). No task quality is regraded and the
 retrospective HotpotQA example remains failed. No scoped V7 work remains.
 
-**Current product: [V6 application-quality qualification](PROJECT_V6.md), complete.**
+**Previous stage: [V6 application-quality qualification](PROJECT_V6.md), complete.**
 [Experimental 0.5.0](https://github.com/G26karthik/tracewarrant/releases/tag/v0.5.0)
 is published and publicly verified. The core checks completion and multiple
 mean/binary-fraction criteria before predictions exist. All five source/tag CI

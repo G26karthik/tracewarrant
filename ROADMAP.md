@@ -1,10 +1,12 @@
 # Evidence-gated roadmap
 
-## Active V8 portable quality evidence
+## Completed V8 portable quality evidence
 
-[V8](PROJECT_V8.md) fills a demonstrated gap in sharing quality evidence: native
-bounded export and offline checksum/JSON/HTML replay. A/B implemented; installed,
-hosted and verified experimental 0.7.0 release gates remain. [Guide](docs/v8/quality-bundles.md).
+[V8](PROJECT_V8.md) fills the quality evidence sharing gap: native bounded export
+and offline checksum/JSON/HTML replay. All four scoped stages passed: 288 tests
+per matrix job, installed/hosted qualification and experimental 0.7.0 public
+download/source-free replay/refusal verification. [Guide](docs/v8/quality-bundles.md),
+[closeout](docs/v8/public-release-0.7.0.md). No additional V8 gate is queued.
 
 ## Completed V7 declared-population and policy binding
 

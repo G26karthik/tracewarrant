@@ -1,12 +1,17 @@
 # Continuation checkpoint
 
-## Active V8 portable quality evidence
+## Completed V8 engineering and public release
 
-Read PROJECT_V8.md and docs/v8/quality-bundles.md. Native bounded export/replay
-and 28 new regressions are implemented (288 total locally passed). Installed/
-hosted verification and experimental 0.7.0 publication remain. Verify disk/Git/
-CI before continuing; do not claim those gates passed without their evidence.
-V7/0.6.0 and all older releases remain immutable. No new model or grading study.
+Read PROJECT_V8.md, docs/v8/quality-bundles.md and docs/v8/public-release-0.7.0.md.
+All four V8 stages are complete: exact snapshot/export, bounded checksum and
+JSON/HTML replay, 28 regressions, installed/hosted checks and public 0.7.0 proof.
+Qualified source/tag target is da3da5d799a7c1ed351c40ad45ffc8cd1e381119; source CI
+38569379493 and tag CI 38569663474 passed all five jobs (288 tests per matrix job).
+All ten public downloads and fresh source-free native-bundle replay/rehashed
+false-report/omission refusals passed. PR #4 merged the feature. Current main
+includes later closeout docs; never move immutable tags or restart this release.
+No V8 gate remains. Further work needs a distinct demonstrated requirement.
+V7/0.6.0 and all older releases/studies stay preserved. No model or grading run.
 
 ## Completed V7 engineering and public release
 

@@ -1,0 +1,259 @@
+{
+  "annotated_tag_object": "4c0ac1340988903d4f612e6fd25f8ccc2045946b",
+  "assets": [
+    {
+      "name": "application-quality-example.zip",
+      "sha256": "f6f268ded45e1f29561c2314a4775c13035252ec7cc5777fa774b17601c1c48d",
+      "size": 4772,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.7.0/application-quality-example.zip"
+    },
+    {
+      "name": "hosted-ci-evidence.zip",
+      "sha256": "c3726670a1149a1d547b5ed5052a9eaee3faee62daee3b16e539e94fb274938d",
+      "size": 100455,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.7.0/hosted-ci-evidence.zip"
+    },
+    {
+      "name": "offline-audit.json",
+      "sha256": "9b89cc7c5fbd3a1305de4427385ebe84845959d4b36c853ddf0ac0a55bf68b44",
+      "size": 25917,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.7.0/offline-audit.json"
+    },
+    {
+      "name": "package-qualification.json",
+      "sha256": "54eef5397ce183f1f6ce500c877dc476d3e1c27994263b61dd99482693c6c9ac",
+      "size": 3875,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.7.0/package-qualification.json"
+    },
+    {
+      "name": "release-notes.md",
+      "sha256": "056d5b7ef87144d4f5c7c0d451d4d74a007446b63177a659d203b744471f2058",
+      "size": 2407,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.7.0/release-notes.md"
+    },
+    {
+      "name": "SHA256SUMS",
+      "sha256": "2d9a8680b65d9e5e540bfb784f442938504ce472d10ec92422332f1035999038",
+      "size": 825,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.7.0/SHA256SUMS"
+    },
+    {
+      "name": "source-provenance.json",
+      "sha256": "f0ed49d7e28dfd267435e7f58ef13b99a882f4994159bdbb60ef9ddb669dbc8b",
+      "size": 4985,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.7.0/source-provenance.json"
+    },
+    {
+      "name": "tracewarrant-0.7.0-py3-none-any.whl",
+      "sha256": "a10632d9a38afaa578973e5901a84e3b5fb42d6f8669780e5e4471477361f384",
+      "size": 58890,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.7.0/tracewarrant-0.7.0-py3-none-any.whl"
+    },
+    {
+      "name": "tracewarrant-0.7.0.tar.gz",
+      "sha256": "86a81610fa9586b3b4a05b79a5806d6b1e57225aa49610f8d9d5132ff6166230",
+      "size": 1064393,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.7.0/tracewarrant-0.7.0.tar.gz"
+    },
+    {
+      "name": "workflow-qualification.json",
+      "sha256": "232d259447515c057a27780f200138a94c97210a5c968e5cba5b8488954cb090",
+      "size": 3217,
+      "unauthenticated_http_status": 200,
+      "url": "https://github.com/G26karthik/tracewarrant/releases/download/v0.7.0/workflow-qualification.json"
+    }
+  ],
+  "checksum_manifest_verified": true,
+  "draft": false,
+  "fresh_public_downloaded_pair_qualification": {
+    "checks": {
+      "application_quality_verified": true,
+      "cli_verified": true,
+      "conformance_sources": {
+        "controlled": "supported",
+        "frames_original": "unsupported",
+        "pydantic_ai": "unsupported"
+      },
+      "distribution": "tracewarrant",
+      "evaluation_byte_exact": true,
+      "frozen_quality_verified": true,
+      "installed_bytes_match_wheel": true,
+      "installed_module_sha256": {
+        "workload_lab/__init__.py": "5ff5cae5fb4408188df555b87a31d30de123a589c5b38cf4514328adbd5d12a6",
+        "workload_lab/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+        "workload_lab/analysis.py": "f515db18740eed3d085c45c164cc4233740a4ab89b43aecd6eaa853c2f1c8ee2",
+        "workload_lab/artifact_schema.py": "9fe500346559f2554995934516fec45a96c3a4ede9f5b3b0e6e1caf45d931cd4",
+        "workload_lab/artifacts.py": "289e1d1259099a0467a47602e2cae2e032762dbb6c58028e21d5dfea86b6e27a",
+        "workload_lab/calibration.py": "03cd15a01d0943052a2e43f72fc0488252edb96fe97a17511b44414088a59e05",
+        "workload_lab/cli.py": "eeb3319ad64e97c46ab76f35726b2c1a7d80afb505c25ae1dcd6542c9c6ff056",
+        "workload_lab/conformance.py": "852e8f6a7c7db63c752953a43e64b8b6e5720a4e65cc85285944ed22700120cf",
+        "workload_lab/graph.py": "49dbd2c0e9f0afc705afa28979651b91aa25bc9232c6eb5e95bcf53f237d22d8",
+        "workload_lab/ingest.py": "3b85751875e1070fd230f0d4c53a1e851033aedd65d51196fa61c7ab4afc2ab9",
+        "workload_lab/ir.py": "76cbc15abefc74286846b5239581277ff6c46ddbd57294ee1505aef3806c0b4f",
+        "workload_lab/jobs.py": "9d53991f37c49c2332f46300df8c2a945e10864bf1173dc69191c90e20c537ca",
+        "workload_lab/qualification.py": "91d4be24ae2fb3736e224e9f7a599961b4923c096208fa1725bab479d06c8ad3",
+        "workload_lab/quality_bundle.py": "bf59929428b1ef3a0742c166d7c493ec6bdbb87eba7fa9a00e2c94abc31957ea",
+        "workload_lab/reporting.py": "326fcf2ceef6fd4811007363e9be1e9c0c51f6a725cd7ed62e3e5ead6e21fdb0",
+        "workload_lab/simulation.py": "1f36fe16a09a5d66d95470493e2c589f4f981dc2344ce66fc62fe8c2125c72a4",
+        "workload_lab/validation.py": "7303f9f86391c5018130f56808376cf03ad00fdc32d53666f0178b2d3e341f53"
+      },
+      "installed_workflow_verified": true,
+      "portable_bundle_verified": true,
+      "portable_quality_verified": true,
+      "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+      "runtime_dependencies": [],
+      "simulator_not_imported": true,
+      "version": "0.7.0"
+    },
+    "metadata": {
+      "compiler": "MSC v.1944 64 bit (AMD64)",
+      "configuration": {
+        "model_execution": false,
+        "network": false
+      },
+      "cpp_compiler": "not applicable",
+      "cpu": "AMD Ryzen 9 8945HS w/ Radeon 780M Graphics",
+      "cuda": "not applicable",
+      "date_utc": "2026-10-14T13:14:25.357072+00:00",
+      "dependency_lock_sha256": "ec58202e47ef9ac11178f1cb99cd355857bf9fecc8cdf74ca43c33c076089209",
+      "driver": "not applicable",
+      "git_commit": "da3da5d799a7c1ed351c40ad45ffc8cd1e381119",
+      "git_dirty": false,
+      "gpu": "not used",
+      "harness_sha256": "1d66ea18a239ee988fdbb4a41bd0c2d71f74424d78616a34f245699aa1c4bd8a",
+      "logical_cpus": 16,
+      "os": "Windows-11-10.0.26200-SP0",
+      "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+      "ram_bytes": 33536831488,
+      "seed": 0,
+      "source_tree_sha256": "52eefc904e61109c7f3e165811bea812b733b79436b09f0074f38b49cbaa55bc"
+    },
+    "sdist_code_matches_wheel": true,
+    "sdist_reproducibility_inputs_verified": true,
+    "sdist_sha256": "86a81610fa9586b3b4a05b79a5806d6b1e57225aa49610f8d9d5132ff6166230",
+    "wheel_sha256": "a10632d9a38afaa578973e5901a84e3b5fb42d6f8669780e5e4471477361f384"
+  },
+  "fresh_wheel_only_no_checkout_replay": {
+    "binding": {
+      "chronology": "not_authenticated",
+      "expected_offered": 8,
+      "freeze_sha256": "7edad3bc634c4062a82bdfb94de8790b6f752cde92378933a6d57571b4ac990b",
+      "observed_offered": 8,
+      "plan_sha256": "af4dcc18298cf0afb3ca38b437b9687b48b3c58bfe4d7a4065f0f193aa8d04de",
+      "policy_sha256": "d542c2d74a1b3d69df6cc29b39714723bb032bb906322669e2e2203f27cfc6d0",
+      "status": "verified"
+    },
+    "exit_code": 1,
+    "gates": [
+      {
+        "id": "offered_samples",
+        "observed": 8,
+        "reason": null,
+        "required": 8,
+        "status": "passed"
+      },
+      {
+        "id": "completion_fraction",
+        "observed": 1.0,
+        "reason": null,
+        "required": 1,
+        "status": "passed"
+      },
+      {
+        "id": "quality/answer.exact",
+        "observed": 0.5,
+        "reason": null,
+        "required": 0.75,
+        "status": "failed"
+      },
+      {
+        "id": "quality/answer.f1",
+        "observed": 0.5416666666666666,
+        "reason": null,
+        "required": 0.75,
+        "status": "failed"
+      }
+    ],
+    "native_bundle_verified": true,
+    "no_runtime_dependencies": true,
+    "no_simulator_import": true,
+    "omitted_task_refused_with_exit_2": true,
+    "rehashed_false_html_refused_with_exit_2": true,
+    "report_bytes_match_source_qualified_example": true,
+    "result": "failed"
+  },
+  "hosted_ci": [
+    {
+      "conclusion": "success",
+      "head_sha": "da3da5d799a7c1ed351c40ad45ffc8cd1e381119",
+      "id": 38569379493,
+      "jobs": [
+        {
+          "conclusion": "success",
+          "name": "analytic"
+        },
+        {
+          "conclusion": "success",
+          "name": "test (windows-latest, 3.13)"
+        },
+        {
+          "conclusion": "success",
+          "name": "test (ubuntu-latest, 3.11)"
+        },
+        {
+          "conclusion": "success",
+          "name": "test (windows-latest, 3.11)"
+        },
+        {
+          "conclusion": "success",
+          "name": "test (ubuntu-latest, 3.13)"
+        }
+      ],
+      "url": "https://github.com/G26karthik/tracewarrant/actions/runs/38569379493"
+    },
+    {
+      "conclusion": "success",
+      "head_sha": "da3da5d799a7c1ed351c40ad45ffc8cd1e381119",
+      "id": 38569663474,
+      "jobs": [
+        {
+          "conclusion": "success",
+          "name": "analytic"
+        },
+        {
+          "conclusion": "success",
+          "name": "test (windows-latest, 3.13)"
+        },
+        {
+          "conclusion": "success",
+          "name": "test (windows-latest, 3.11)"
+        },
+        {
+          "conclusion": "success",
+          "name": "test (ubuntu-latest, 3.11)"
+        },
+        {
+          "conclusion": "success",
+          "name": "test (ubuntu-latest, 3.13)"
+        }
+      ],
+      "url": "https://github.com/G26karthik/tracewarrant/actions/runs/38569663474"
+    }
+  ],
+  "prerelease": true,
+  "published_at": "2026-10-14T13:13:26Z",
+  "qualified_source": "da3da5d799a7c1ed351c40ad45ffc8cd1e381119",
+  "release_id": 412732542,
+  "release_url": "https://github.com/G26karthik/tracewarrant/releases/tag/v0.7.0",
+  "verified_at_utc": "2026-10-14T13:14:08.757475+00:00",
+  "wheel_version": "TraceWarrant 0.7.0 (experimental)"
+}
