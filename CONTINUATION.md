@@ -1,5 +1,17 @@
 # Continuation checkpoint
 
+## New V10 research and implementation plan
+
+Read PROJECT_V10.md, docs/v10/research.md and ADR-0025. The maintainer asked for
+research of a concrete new requirement after completing V3–V9. A local locked
+Pydantic probe reproduces missing lifecycle/topology evidence and native wait
+attributes discarded by the importer. Recommendation: reusable caller-owned
+observation boundaries plus optional OTel bridge and one pinned framework example.
+Research qualification is being recorded; B/C/D are planned, not implemented.
+The tested version is Pydantic AI 2.51.0; reviewed upstream differs in token
+ownership. Reuse actual scheduling; do not infer release or auto-complete graphs.
+No version bump, model rerun, paid service or scientific success is implied.
+
 ## Final project completion — no remaining stages
 
 Read PROJECT_COMPLETION.md, PROJECT_V9.md and docs/v9/acceptance.md. All original

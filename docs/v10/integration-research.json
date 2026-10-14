@@ -1,0 +1,770 @@
+{
+  "artifact_type": "next_phase_integration_research",
+  "captured_at_utc": "2026-10-14T14:35:47.983505+00:00",
+  "codebase_python_inventory": {
+    "benchmarks": [
+      {
+        "lines": 1,
+        "path": "benchmarks/__init__.py",
+        "sha256": "97dfefa88ab800fa2871c9d658029aacc1e2304ad4c80e3a0e119cef8bd33e67"
+      },
+      {
+        "lines": 149,
+        "path": "benchmarks/analysis_benchmark.py",
+        "sha256": "7502b3f8bbf52dfddd1560a12088ab41c9ec02f18ef489e6ab869060acb9df94"
+      },
+      {
+        "lines": 118,
+        "path": "benchmarks/controlled_experiment.py",
+        "sha256": "a320f7ec1b1817155d3a7e1b9a2d13a9d2c5fead9796c43d0dc467b651085a70"
+      },
+      {
+        "lines": 235,
+        "path": "benchmarks/evaluate_controlled.py",
+        "sha256": "b6e58d6b124b1e717edb24440f7f9ef5bd5eb2936fc606110908c584cf1af798"
+      },
+      {
+        "lines": 441,
+        "path": "benchmarks/frames_validation.py",
+        "sha256": "9895f4588fe4beafad307ac9f6542ad8f9a4b8bb6c8d3e1b2a87d7acad03fe06"
+      },
+      {
+        "lines": 230,
+        "path": "benchmarks/hotpot_validation.py",
+        "sha256": "fc27944d429b329a2bbe77af3a501f5631b910eb18fe44343932f5b80520a6bb"
+      },
+      {
+        "lines": 143,
+        "path": "benchmarks/predict_controlled.py",
+        "sha256": "5c81957f8c72ddb1c8ced088505d64bc303a043bdd48502afe43efece944c046"
+      },
+      {
+        "lines": 118,
+        "path": "benchmarks/probe_framework_integration.py",
+        "sha256": "01589ee63f6f765982fd4063717f6fa43440388d434f13a484e2b0728c04de21"
+      },
+      {
+        "lines": 53,
+        "path": "benchmarks/provenance.py",
+        "sha256": "a766fd990830090174a8843c7268c217d4aaa44b18ec82f49432524293d39f5a"
+      },
+      {
+        "lines": 301,
+        "path": "benchmarks/qualify_package.py",
+        "sha256": "2506f4e88b1af42c8abd264289ca6ac5531f7639e8874fd2e1eef0f5927c2109"
+      },
+      {
+        "lines": 151,
+        "path": "benchmarks/simulation_benchmark.py",
+        "sha256": "edfbf2db187cd08d2aa10c8735b9fa75da407fb93fd79e415f91e7dc9483b5f2"
+      },
+      {
+        "lines": 93,
+        "path": "benchmarks/summarize_real_probe.py",
+        "sha256": "e3c3e431601d42f77cf81e3bebd88c9404f04f573377c4cb90acce86de6813fc"
+      },
+      {
+        "lines": 100,
+        "path": "benchmarks/v3_audit.py",
+        "sha256": "3285d93b57a19394425f44189ddfceaac03ce04e28c3e62f97b398a7a231dff6"
+      },
+      {
+        "lines": 130,
+        "path": "benchmarks/validate_simulation.py",
+        "sha256": "ae8f2ff53276fda41c793e6605d98ca72e1ae88eab7c53fab1a4af70aa1d8d2a"
+      },
+      {
+        "lines": 115,
+        "path": "benchmarks/validate_workflow.py",
+        "sha256": "376d54bf9cfb8d980c54dafedf3675075725df8f39011954d55087e47f8f59df"
+      }
+    ],
+    "examples": [
+      {
+        "lines": 1,
+        "path": "examples/__init__.py",
+        "sha256": "e3e26fde87888864710324bc48a91d50cd7bd6c3aea4fb14385e0848fe0f03ce"
+      },
+      {
+        "lines": 48,
+        "path": "examples/adapt_frames_trace.py",
+        "sha256": "73125f4776a95068fdbce903b44451a00041582cd8e56c73e6935c7307696c73"
+      },
+      {
+        "lines": 242,
+        "path": "examples/capture_controlled.py",
+        "sha256": "7a48c98b66f4d429c10f4be6ddcefbe0e95f9d218b3f0d8e311eaa00c272d6cf"
+      },
+      {
+        "lines": 103,
+        "path": "examples/capture_pydantic_ai.py",
+        "sha256": "b288f3cf92ed3062a5abd6f39ff6f5b51e99a79ff0442674367bf121e509a62a"
+      },
+      {
+        "lines": 93,
+        "path": "examples/frames_quality.py",
+        "sha256": "7d364e943dc2e83275007d77ae9bd4b2af3abf6f82589483d553db5179332ca4"
+      },
+      {
+        "lines": 422,
+        "path": "examples/frames_workload.py",
+        "sha256": "2f45e353c2f184ac33e1894783788e61c0ed6cd49c4ce42ef8a7a7b30ec5feab"
+      },
+      {
+        "lines": 72,
+        "path": "examples/hotpot_quality.py",
+        "sha256": "c99939274f43e5aa323f2ab6cdef446734013e6b95e98368286fe76b369d4e56"
+      },
+      {
+        "lines": 449,
+        "path": "examples/hotpot_workload.py",
+        "sha256": "404fcc3b5bf3d090c1c9f9bb4dcc60479ed903f99534e80194776fecab017b16"
+      },
+      {
+        "lines": 326,
+        "path": "examples/local_research_agent.py",
+        "sha256": "806bc6a628c442825fd7efeee7cc6e53fbbce55b697c85b2fd87bff4b1654754"
+      },
+      {
+        "lines": 117,
+        "path": "examples/make_fixture.py",
+        "sha256": "a692898a2c07e1d643ec22165f05eab46e7307d49fbb6f15a2b2c06a375df74e"
+      }
+    ],
+    "tests": [
+      {
+        "lines": 39,
+        "path": "tests/conftest.py",
+        "sha256": "37d47cecf9085e489385a54c73a718e4661e3e8dfd763546f4e3499413f5d87f"
+      },
+      {
+        "lines": 132,
+        "path": "tests/test_analysis.py",
+        "sha256": "e5a17a36a653ee82391eb6165d3d28addb50afc13041aaff4ab257eba6a55df8"
+      },
+      {
+        "lines": 43,
+        "path": "tests/test_calibration.py",
+        "sha256": "16b32a9df2013365cde057280530085c6d30aadc3e5aece3e545cb62f4267c09"
+      },
+      {
+        "lines": 39,
+        "path": "tests/test_cli.py",
+        "sha256": "15fabc2b59c79004061e4119cc6de3d7ba1b1d07e6acfa67c910e2ca9e41b525"
+      },
+      {
+        "lines": 268,
+        "path": "tests/test_hotpot_application.py",
+        "sha256": "e06bc500da9b5d8e9e4bc5c1383ad912656700e791cfcaf7fa25aab2c91c0a77"
+      },
+      {
+        "lines": 206,
+        "path": "tests/test_ingest.py",
+        "sha256": "73d835552d4a6a9533367ebe15a05fdea8946d182063246d329efb91151286aa"
+      },
+      {
+        "lines": 473,
+        "path": "tests/test_jobs.py",
+        "sha256": "f454ca4061d26d4d8016400d814462996cc32b3fcc42402e811f7305b1c75050"
+      },
+      {
+        "lines": 89,
+        "path": "tests/test_observation.py",
+        "sha256": "05dce2a78fa19e990af8fc7e2f58925441cb1232ff94cc57a1254aefce4dc252"
+      },
+      {
+        "lines": 22,
+        "path": "tests/test_package_qualification.py",
+        "sha256": "51ef4ac8e773df54e607d0170dd6c86e754b19c6b0a08f5460397c07cc74eba6"
+      },
+      {
+        "lines": 72,
+        "path": "tests/test_properties.py",
+        "sha256": "eb37b634bd3e42b933674d90fb6168df436eba51a5154fe756b3bb08e8aefc22"
+      },
+      {
+        "lines": 240,
+        "path": "tests/test_qualification.py",
+        "sha256": "b46189bb83cbc581a6b684013f8131630bbeb11a177f6929fc2ce386981c34de"
+      },
+      {
+        "lines": 234,
+        "path": "tests/test_quality_bundle.py",
+        "sha256": "2502bbf7a04a80555941932877eed51be296561e2c568501cff63d026d289d55"
+      },
+      {
+        "lines": 185,
+        "path": "tests/test_quality_freeze.py",
+        "sha256": "f99c1fde7a72528570fa40ea324a490f208cf117c47df21027fba8252bd13600"
+      },
+      {
+        "lines": 178,
+        "path": "tests/test_simulation.py",
+        "sha256": "bac80055b631ecad3cbc0f666eca1ef64dbc2ee56a603b0989ae59abff0068f4"
+      },
+      {
+        "lines": 68,
+        "path": "tests/test_simulation_contract.py",
+        "sha256": "87495fb4a73c4992813e576d27bcf14026d04eb78e6089f51e8e2fe623286d32"
+      },
+      {
+        "lines": 63,
+        "path": "tests/test_v3_conformance.py",
+        "sha256": "7336da6bb88465cf93eb9c02e0dc893fc75003eff5e2220eb9d4a441bb2de0b9"
+      },
+      {
+        "lines": 429,
+        "path": "tests/test_v3_validation.py",
+        "sha256": "81bcf0608703be5b028c6ed70548b805d78d2695b30d8804848f3be13165a905"
+      }
+    ]
+  },
+  "core_module_inventory": [
+    {
+      "definitions": [
+        "__getattr__"
+      ],
+      "lines": 29,
+      "path": "src/workload_lab/__init__.py",
+      "purpose": "Experimental framework-neutral workload analysis library.",
+      "sha256": "5ff5cae5fb4408188df555b87a31d30de123a589c5b38cf4514328adbd5d12a6"
+    },
+    {
+      "definitions": [],
+      "lines": 3,
+      "path": "src/workload_lab/__main__.py",
+      "purpose": null,
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    {
+      "definitions": [
+        "Contribution",
+        "AnalysisReport",
+        "interval_union",
+        "analyze"
+      ],
+      "lines": 138,
+      "path": "src/workload_lab/analysis.py",
+      "purpose": "Fixed-weight instance analysis; no utilization or capacity inference.",
+      "sha256": "f515db18740eed3d085c45c164cc4233740a4ab89b43aecd6eaa853c2f1c8ee2"
+    },
+    {
+      "definitions": [
+        "obj",
+        "array",
+        "enum",
+        "nullable",
+        "ref"
+      ],
+      "lines": 179,
+      "path": "src/workload_lab/artifact_schema.py",
+      "purpose": "Open JSON Schema 2020-12, independent of a simulator or framework.",
+      "sha256": "9fe500346559f2554995934516fec45a96c3a4ede9f5b3b0e6e1caf45d931cd4"
+    },
+    {
+      "definitions": [
+        "canonical_bytes",
+        "sha256",
+        "timestamp",
+        "parse_time",
+        "_matches",
+        "validate_artifact",
+        "load_artifact",
+        "write_new",
+        "freeze_predictions",
+        "validate_bundle"
+      ],
+      "lines": 244,
+      "path": "src/workload_lab/artifacts.py",
+      "purpose": "Bounded artifacts and integrity receipts; no model execution or remote references.",
+      "sha256": "289e1d1259099a0467a47602e2cae2e032762dbb6c58028e21d5dfea86b6e27a"
+    },
+    {
+      "definitions": [
+        "fit_cohort",
+        "scenario_for"
+      ],
+      "lines": 145,
+      "path": "src/workload_lab/calibration.py",
+      "purpose": "Narrow empirical calibration of complete, single-acquisition, fixed-DAG cohorts.",
+      "sha256": "03cd15a01d0943052a2e43f72fc0488252edb96fe97a17511b44414088a59e05"
+    },
+    {
+      "definitions": [
+        "_text",
+        "main"
+      ],
+      "lines": 282,
+      "path": "src/workload_lab/cli.py",
+      "purpose": "File interface for the experimental library.",
+      "sha256": "936a4d708279eb02d53a7bf4bba88d04dd14db34bc11735cd64b645739e558f5"
+    },
+    {
+      "definitions": [
+        "inspect_observations"
+      ],
+      "lines": 215,
+      "path": "src/workload_lab/conformance.py",
+      "purpose": "Observation contract inspection. No simulator or application execution.",
+      "sha256": "852e8f6a7c7db63c752953a43e64b8b6e5720a4e65cc85285944ed22700120cf"
+    },
+    {
+      "definitions": [
+        "topological_order",
+        "validate_workflow",
+        "compile_workload",
+        "longest_path"
+      ],
+      "lines": 187,
+      "path": "src/workload_lab/graph.py",
+      "purpose": "Iterative graph validation and deterministic longest path; no runtime IO.",
+      "sha256": "49dbd2c0e9f0afc705afa28979651b91aa25bc9232c6eb5e95bcf53f237d22d8"
+    },
+    {
+      "definitions": [
+        "_object",
+        "_array",
+        "_string",
+        "_number",
+        "_attributes",
+        "_pairs",
+        "_nonfinite",
+        "_float",
+        "_decode",
+        "_classify",
+        "_dropped",
+        "ingest"
+      ],
+      "lines": 330,
+      "path": "src/workload_lab/ingest.py",
+      "purpose": "Bounded local OTLP/JSON import with content exclusion by allowlist.",
+      "sha256": "3b85751875e1070fd230f0d4c53a1e851033aedd65d51196fa61c7ab4afc2ab9"
+    },
+    {
+      "definitions": [
+        "ValidationError",
+        "Provenance",
+        "NodeKind",
+        "integer",
+        "identifier",
+        "origin_check",
+        "Evidence",
+        "Quantity",
+        "quantity",
+        "Metadata",
+        "Observation",
+        "Span",
+        "Dataset",
+        "Node",
+        "Edge",
+        "Workflow",
+        "TraceImporter",
+        "WorkloadCompiler"
+      ],
+      "lines": 345,
+      "path": "src/workload_lab/ir.py",
+      "purpose": "Versioned observed execution types. Containment and dependency are distinct.",
+      "sha256": "76cbc15abefc74286846b5239581277ff6c46ddbd57294ee1505aef3806c0b4f"
+    },
+    {
+      "definitions": [
+        "_read",
+        "_capture",
+        "_gate",
+        "_not_required",
+        "_quality_gate",
+        "_evaluate",
+        "run_job",
+        "_write_directory",
+        "_reports",
+        "write_job_report",
+        "bundle_job",
+        "verify_bundle"
+      ],
+      "lines": 439,
+      "path": "src/workload_lab/jobs.py",
+      "purpose": "Bounded offline validation jobs and portable evidence directories.",
+      "sha256": "d7594b644d4265a898e30ecb5c4be90124d25e1b624d53511a3ad650acf6142b"
+    },
+    {
+      "definitions": [
+        "_load",
+        "_validate_plan_policy",
+        "freeze_application_quality",
+        "_binding",
+        "qualify_application",
+        "qualification_html",
+        "write_qualification_report"
+      ],
+      "lines": 336,
+      "path": "src/workload_lab/qualification.py",
+      "purpose": "Content-free application sample qualification, independent of performance models.",
+      "sha256": "91d4be24ae2fb3736e224e9f7a599961b4923c096208fa1725bab479d06c8ad3"
+    },
+    {
+      "definitions": [
+        "_read",
+        "_replay",
+        "_reports",
+        "bundle_quality",
+        "verify_quality_bundle"
+      ],
+      "lines": 126,
+      "path": "src/workload_lab/quality_bundle.py",
+      "purpose": "Bounded offline snapshots for application quality; integrity is not authenticity.",
+      "sha256": "bf59929428b1ef3a0742c166d7c493ec6bdbb87eba7fa9a00e2c94abc31957ea"
+    },
+    {
+      "definitions": [
+        "job_html"
+      ],
+      "lines": 83,
+      "path": "src/workload_lab/reporting.py",
+      "purpose": "Standalone escaped reports; no executable content or remote resources.",
+      "sha256": "326fcf2ceef6fd4811007363e9be1e9c0c51f6a725cd7ed62e3e5ead6e21fdb0"
+    },
+    {
+      "definitions": [
+        "label",
+        "RandomStream",
+        "Task",
+        "PoolSpec",
+        "Arrival",
+        "Scenario",
+        "_Work",
+        "_Session",
+        "_Pool",
+        "percentile",
+        "_Engine",
+        "simulate",
+        "scenario_from_dict",
+        "scenario_dict"
+      ],
+      "lines": 535,
+      "path": "src/workload_lab/simulation.py",
+      "purpose": "Pure integer-time reference DES. Never executes a source application's tools.",
+      "sha256": "1f36fe16a09a5d66d95470493e2c589f4f981dc2344ce66fc62fe8c2125c72a4"
+    },
+    {
+      "definitions": [
+        "envelope_violations",
+        "metric_error",
+        "_rank",
+        "evaluate"
+      ],
+      "lines": 368,
+      "path": "src/workload_lab/validation.py",
+      "purpose": "Independent prediction evaluation. Imports neither simulator nor calibrator.",
+      "sha256": "7303f9f86391c5018130f56808376cf03ad00fdc32d53666f0178b2d3e341f53"
+    }
+  ],
+  "exploratory_harness_sha256": "d21ad886debe9b5d37d664fad59dd108ddaaa285656995b5eb03325446a23570",
+  "fresh_pydantic": {
+    "claims": {
+      "cancellation_release": {
+        "eligible": 0,
+        "observed": 0,
+        "support": "unsupported"
+      },
+      "dependency_graph": {
+        "eligible": 1,
+        "observed": 0,
+        "support": "unsupported"
+      },
+      "external_wait": {
+        "eligible": 4,
+        "observed": 0,
+        "support": "unsupported"
+      },
+      "fan_out_fan_in": {
+        "support": "unsupported"
+      },
+      "finite_pool_capacity": {
+        "eligible": 4,
+        "observed": 0,
+        "support": "unsupported"
+      },
+      "inference_client_occupancy": {
+        "eligible": 2,
+        "observed": 0,
+        "support": "unsupported"
+      },
+      "inference_service_demand": {
+        "support": "unsupported"
+      },
+      "prediction_suitability": {
+        "support": "unsupported"
+      },
+      "queue_wait": {
+        "eligible": 4,
+        "observed": 0,
+        "support": "unsupported"
+      },
+      "resource_occupancy": {
+        "eligible": 4,
+        "observed": 0,
+        "support": "unsupported"
+      },
+      "retry_attempts": {
+        "eligible": 4,
+        "observed": 0,
+        "support": "unsupported"
+      },
+      "service_interval": {
+        "eligible": 4,
+        "observed": 0,
+        "support": "unsupported"
+      },
+      "timeout_semantics": {
+        "support": "unsupported"
+      }
+    },
+    "node_kinds": {
+      "llm": 2,
+      "tool": 2,
+      "workflow": 1
+    },
+    "source_sha256": "7fdeab1c3ed03b8f47b52c92ff389f69175c1a8807ae9a1e4036c500570bf50e",
+    "span_count": 5
+  },
+  "hardware": {
+    "free_memory_kib": 9350640,
+    "gpu_summary": "NVIDIA GeForce RTX 4060 Laptop GPU, 8188 MiB, 7956 MiB",
+    "logical_cpus": 16,
+    "physical_memory_bytes": 33536831488
+  },
+  "inventory_note": "Core hashes and exploratory probe are from clean 0.7.1 closeout source; added research harness inventory is planning work, not shipped core capability.",
+  "limiter_version_review": {
+    "cross_task_release_assumption_invalid_for_locked_version": true,
+    "installed_concurrency_bytes_match_pinned_upstream": true,
+    "latest_upstream_not_runtime_tested": true,
+    "locked_primitive": "anyio.CapacityLimiter",
+    "locked_source_commit": "39328d5b0d4cce94d513b6afcd2b3191bd5708d5",
+    "locked_version": "2.51.0",
+    "reviewed_current_primitive": "anyio.Semaphore"
+  },
+  "limits": [
+    "research_probe_not_implemented_adapter",
+    "testmodel_not_real_task_quality",
+    "synchronization_probe_not_performance_benchmark",
+    "no_model_service_or_paid_calls",
+    "no_upstream_adoption_or_uniqueness_claim"
+  ],
+  "locked_integration_versions": {
+    "anyio": "4.15.1",
+    "opentelemetry-sdk": "1.45.0",
+    "pydantic-ai-slim": "2.51.0"
+  },
+  "native_concurrency": {
+    "attribute_keys": [
+      "limiter_name",
+      "max_running",
+      "source",
+      "waiting_count"
+    ],
+    "final_running": 0,
+    "final_waiting": 0,
+    "keys_current_importer_retains": [],
+    "lease_release_boundary_emitted": false,
+    "max_running": 1,
+    "note": "Boundary absence confirmed by pinned source review; no occupancy inferred.",
+    "wait_spans": 1
+  },
+  "preserved_fixture_replay": {
+    "controlled": {
+      "claims": {
+        "cancellation_release": {
+          "eligible": 1,
+          "observed": 1,
+          "support": "supported"
+        },
+        "dependency_graph": {
+          "eligible": 8,
+          "observed": 8,
+          "support": "supported"
+        },
+        "external_wait": {
+          "eligible": 61,
+          "observed": 17,
+          "support": "partial"
+        },
+        "fan_out_fan_in": {
+          "support": "supported"
+        },
+        "finite_pool_capacity": {
+          "eligible": 61,
+          "observed": 44,
+          "support": "unsupported"
+        },
+        "inference_client_occupancy": {
+          "eligible": 16,
+          "observed": 16,
+          "support": "supported"
+        },
+        "inference_service_demand": {
+          "support": "unsupported"
+        },
+        "prediction_suitability": {
+          "support": "unsupported"
+        },
+        "queue_wait": {
+          "eligible": 61,
+          "observed": 44,
+          "support": "partial"
+        },
+        "resource_occupancy": {
+          "eligible": 61,
+          "observed": 44,
+          "support": "partial"
+        },
+        "retry_attempts": {
+          "eligible": 61,
+          "observed": 2,
+          "support": "partial"
+        },
+        "service_interval": {
+          "eligible": 61,
+          "observed": 44,
+          "support": "partial"
+        },
+        "timeout_semantics": {
+          "support": "partial"
+        }
+      },
+      "source_sha256": "49244670659129b2e5e6b78fa24818b50e17a7a60bf510fb7060fec7e0ced5e0",
+      "span_count": 77
+    },
+    "pydantic_preserved": {
+      "claims": {
+        "cancellation_release": {
+          "eligible": 0,
+          "observed": 0,
+          "support": "unsupported"
+        },
+        "dependency_graph": {
+          "eligible": 1,
+          "observed": 0,
+          "support": "unsupported"
+        },
+        "external_wait": {
+          "eligible": 4,
+          "observed": 0,
+          "support": "unsupported"
+        },
+        "fan_out_fan_in": {
+          "support": "unsupported"
+        },
+        "finite_pool_capacity": {
+          "eligible": 4,
+          "observed": 0,
+          "support": "unsupported"
+        },
+        "inference_client_occupancy": {
+          "eligible": 2,
+          "observed": 0,
+          "support": "unsupported"
+        },
+        "inference_service_demand": {
+          "support": "unsupported"
+        },
+        "prediction_suitability": {
+          "support": "unsupported"
+        },
+        "queue_wait": {
+          "eligible": 4,
+          "observed": 0,
+          "support": "unsupported"
+        },
+        "resource_occupancy": {
+          "eligible": 4,
+          "observed": 0,
+          "support": "unsupported"
+        },
+        "retry_attempts": {
+          "eligible": 4,
+          "observed": 0,
+          "support": "unsupported"
+        },
+        "service_interval": {
+          "eligible": 4,
+          "observed": 0,
+          "support": "unsupported"
+        },
+        "timeout_semantics": {
+          "support": "unsupported"
+        }
+      },
+      "source_sha256": "7251357859d23938a6bc2d33e637d3445cc3760d8ea585d2fea3510e0c983181",
+      "span_count": 5
+    }
+  },
+  "schema_version": "1.0",
+  "source_commit": "88b7aabcf4e4c3291a43cc3ea72bb84e30b9f3e0",
+  "source_dirty": false,
+  "upstream_primary_sources": [
+    {
+      "bytes": 11246,
+      "commit": "17423c0592f3a9beb648c7989a59b7652c45bae4",
+      "path": "pydantic_ai_slim/pydantic_ai/concurrency.py",
+      "repository": "pydantic/pydantic-ai",
+      "sha256": "c68f3719db4292f43f268eadc48236214f528c07e01b8f37251cecd0a5bb444b",
+      "url": "https://github.com/pydantic/pydantic-ai/blob/17423c0592f3a9beb648c7989a59b7652c45bae4/pydantic_ai_slim/pydantic_ai/concurrency.py"
+    },
+    {
+      "bytes": 1759,
+      "commit": "17423c0592f3a9beb648c7989a59b7652c45bae4",
+      "path": "docs/capabilities/instrumentation.md",
+      "repository": "pydantic/pydantic-ai",
+      "sha256": "e61b3c07073360be5a5949ccdfb1c9762f3a5a13643f22c48205d264a0511eb1",
+      "url": "https://github.com/pydantic/pydantic-ai/blob/17423c0592f3a9beb648c7989a59b7652c45bae4/docs/capabilities/instrumentation.md"
+    },
+    {
+      "bytes": 146984,
+      "commit": "07794021bfe46e1c241408b6f55cb4354bd28318",
+      "path": "docs/gen-ai/gen-ai-agent-spans.md",
+      "repository": "open-telemetry/semantic-conventions-genai",
+      "sha256": "018ffd339be99c7e56ddba7265dd3095ca0735ddf680d28f96036043641384f4",
+      "url": "https://github.com/open-telemetry/semantic-conventions-genai/blob/07794021bfe46e1c241408b6f55cb4354bd28318/docs/gen-ai/gen-ai-agent-spans.md"
+    },
+    {
+      "bytes": 14567,
+      "commit": "618c9422ea6b3e08fccb9b94711061775f39cab3",
+      "path": "README.md",
+      "repository": "agentevals-dev/agentevals",
+      "sha256": "3435b277ad531cc1787f0d09475b1e6cd99864771f68a5d122af25d073be3793",
+      "url": "https://github.com/agentevals-dev/agentevals/blob/618c9422ea6b3e08fccb9b94711061775f39cab3/README.md"
+    },
+    {
+      "bytes": 10499,
+      "commit": "246838d474114b41e5d3d68bb327e5c462a65d92",
+      "path": "README.md",
+      "repository": "Krishnachaitanyakc/AgentTelemetry",
+      "sha256": "7900a6d31fbaba4a16324537715cd883d22e9bd956839f7ddc56fb4905fab07f",
+      "url": "https://github.com/Krishnachaitanyakc/AgentTelemetry/blob/246838d474114b41e5d3d68bb327e5c462a65d92/README.md"
+    },
+    {
+      "bytes": 22768,
+      "commit": "532a0235d43fbf67ab18d44963c096bb8772340d",
+      "path": "README.md",
+      "repository": "ai-dynamo/aisimulate",
+      "sha256": "a8b17d3db59a649db8bb1299e364daac7756aff8498be972cdadcb893b2fbeb7",
+      "url": "https://github.com/ai-dynamo/aisimulate/blob/532a0235d43fbf67ab18d44963c096bb8772340d/README.md"
+    },
+    {
+      "bytes": 36098,
+      "commit": "95feea605dbbe879f678602585c76fdb5a963b63",
+      "path": "python/samples/02-agents/observability/README.md",
+      "repository": "microsoft/agent-framework",
+      "sha256": "6b1bac23d33b4c7ce2294d9d51944dcc8b095125b8e4b4aaad840e99b8a2afdf",
+      "url": "https://github.com/microsoft/agent-framework/blob/95feea605dbbe879f678602585c76fdb5a963b63/python/samples/02-agents/observability/README.md"
+    },
+    {
+      "bytes": 10725,
+      "commit": "39328d5b0d4cce94d513b6afcd2b3191bd5708d5",
+      "path": "pydantic_ai_slim/pydantic_ai/concurrency.py",
+      "repository": "pydantic/pydantic-ai",
+      "sha256": "83956b61cbf03711ff54750d002af1a757badd68c6e09ae0808a63f6978116fe",
+      "url": "https://github.com/pydantic/pydantic-ai/blob/39328d5b0d4cce94d513b6afcd2b3191bd5708d5/pydantic_ai_slim/pydantic_ai/concurrency.py"
+    }
+  ]
+}

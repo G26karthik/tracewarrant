@@ -30,3 +30,8 @@ completed-scope finish line. No requirement demands that complex modeling win.
 FRAMES showed no added intervention decision value beyond utilization; HotpotQA
 failed its quality gate. Preserve those results. No paid/cloud resource, model
 rerun, private answer publication, PyPI upload or outreach is needed for closure.
+
+Later authorized scope: on 2026-10-14 the maintainer requested concrete new-phase
+research. [V10](PROJECT_V10.md) separately plans usable observation collection and
+framework integration. Its research/probe is new work; implementation is not
+claimed by 0.7.1. This does not reopen or reinterpret V3–V9 acceptance.

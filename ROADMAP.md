@@ -1,6 +1,15 @@
 # Evidence-gated roadmap
 
-## Project complete — zero remaining required stages
+## New V10 scope — usable observation collection
+
+On 2026-10-14 the maintainer requested concrete next-phase research. [V10](PROJECT_V10.md)
+targets a reusable caller-owned collection primitive, optional OTel bridge and
+pinned Pydantic integration. Fresh interface probes demonstrate the need;
+[research and alternatives](docs/v10/research.md). Research is prepared; B/C/D
+implementation/qualification are planned. Package remains 0.7.1. The completed
+V3–V9 acceptance below remains valid; this is a separately authorized scope.
+
+## Completed V3–V9 scope — zero remaining required stages in that scope
 
 [V9](PROJECT_V9.md) passed all four final gates: original requirement acceptance,
 performance-HTML integrity fix, installed/hosted qualification and verified

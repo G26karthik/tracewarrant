@@ -2,8 +2,14 @@
 
 Updated: 2026-10-14. Selected public name: **TraceWarrant**; former internal codename: Workload Lab.
 
-**Project complete: [final V9 acceptance](PROJECT_V9.md), zero required stages
-remaining.** The original ten criteria and V4–V8 increments are accepted with
+**New scoped research: [V10 observation collection and framework integration](PROJECT_V10.md).**
+The maintainer requested a concrete next requirement. Fresh locked-framework
+probes and primary-source research support a small collection/OTel bridge with a
+first Pydantic integration. Research evidence is being recorded; implementation
+is planned, not delivered. Existing package/public release remains 0.7.1.
+
+**Completed V3–V9 scope: [final V9 acceptance](PROJECT_V9.md), zero required stages
+remaining in that scope.** The original ten criteria and V4–V8 increments are accepted with
 preserved evidence. The performance-HTML defect is fixed, 292 tests per matrix
 job and all five source/tag CI jobs passed; all ten public 0.7.1 downloads and
 fresh installed/source-free performance/quality replay/refusals are verified.

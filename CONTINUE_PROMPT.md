@@ -5,6 +5,18 @@ Use the following in a coding session opened in this repository:
 ```text
 Work in C:\Users\saita\OneDrive\Desktop\AI Everyday\Context - Aware.
 
+The maintainer has now authorized a new researched scope after V3-V9 completion:
+V10 observation collection and framework integration. Read PROJECT_V10.md,
+docs/v10/research.md, docs/v10/integration-research.json and ADR-0025 first.
+This phase addresses measured collector duplication and missing native lifecycle
+evidence. It does not reopen closed studies. Research is being recorded; B/C/D
+collection/integration/qualification are planned, not implemented. Package is
+still 0.7.1. When asked to implement/continue this new scope, follow its gates.
+Use caller-owned scheduling, explicit boundaries/roles/edges, bounded opaque
+output and optional OTel imports. Pinned Pydantic 2.51.0 and current upstream
+differ in token ownership. Do not infer release, automatic graph completeness,
+remote cancellation or GPU demand. Keep all historical acceptance/evidence intact.
+
 Read PROJECT_V9.md, PROJECT_COMPLETION.md, docs/v9/acceptance.md, PROJECT_V8.md,
 docs/v8/quality-bundles.md, PROJECT_V7.md, PROJECT_STATUS.md,
 CONTINUATION.md, docs/v7/quality-plans.md,
