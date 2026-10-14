@@ -1,5 +1,9 @@
 # Project refresher
 
+The final remaining stage is [V9 acceptance](PROJECT_V9.md): fix one reproduced
+performance-report integrity gap and verify patch 0.7.1. [Requirements and evidence](docs/v9/acceptance.md),
+[completion boundary](PROJECT_COMPLETION.md). No new feature roadmap is scheduled.
+
 Current product: [V8 portable quality evidence](PROJECT_V8.md), completed and
 published as experimental [0.7.0](https://github.com/G26karthik/tracewarrant/releases/tag/v0.7.0).
 Export exact quality inputs/reports, then replay their checksums and JSON/HTML

@@ -142,6 +142,16 @@ for manifest, code, output in (("job.json", 1, "strict-report"),
     assert (Path(output) / "report.html").is_file()
 assert subprocess.run([*command, "verify-bundle", str(bundle), "--output", "verified-report"],
                       capture_output=True).returncode == 0
+(bundle / "report.html").write_bytes(b"<h1>certified</h1>")
+sum_path = bundle / "SHA256SUMS"
+sum_path.write_text("\n".join(
+    hashlib.sha256((bundle / "report.html").read_bytes()).hexdigest() + "  report.html"
+    if line.endswith("  report.html") else line
+    for line in sum_path.read_text().splitlines()
+) + "\n", encoding="ascii")
+assert subprocess.run([*command, "verify-bundle", str(bundle), "--output", "forged-job-report"],
+                      capture_output=True).returncode == 2
+assert not Path("forged-job-report").exists()
 assert subprocess.run([*command, "bundle-quality", str(frozen_quality / "sample.json"),
     "--policy", str(frozen_quality / "policy.json"), "--plan", str(frozen_quality / "plan.json"),
     "--freeze", str(frozen_quality / "freeze.json"), "--output", "quality-bundle"],
@@ -172,6 +182,7 @@ print(json.dumps({
     "frozen_quality_verified": True,
     "portable_quality_verified": True,
     "portable_bundle_verified": True,
+    "rehashed_job_html_refused": True,
 }))
 """
 

@@ -1,5 +1,12 @@
 # Continuation checkpoint
 
+## Final V9 acceptance in progress
+
+Read PROJECT_V9.md, PROJECT_COMPLETION.md and docs/v9/acceptance.md. No further
+feature stages are scheduled. Finish the integrity patch's tests, installed and
+exact-source/hosted/public 0.7.1 qualification, then record zero remaining stages.
+Keep all historical releases/studies immutable. No model rerun or regrading.
+
 ## Completed V8 engineering and public release
 
 Read PROJECT_V8.md, docs/v8/quality-bundles.md and docs/v8/public-release-0.7.0.md.

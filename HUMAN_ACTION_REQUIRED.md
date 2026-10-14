@@ -1,5 +1,9 @@
 # External actions
 
+Final V9 acceptance and patch 0.7.1 qualification are proceeding autonomously.
+No maintainer action is required. V8/0.7.0 is complete and publicly verified.
+No external service, new study or paid/cloud resource is needed for closure.
+
 V7 quality-plan binding and experimental 0.6.0 publication are complete and
 publicly verified. No maintainer action is required. No paid/cloud service, model
 rerun or private answer publication occurred. A local receipt remains an untrusted

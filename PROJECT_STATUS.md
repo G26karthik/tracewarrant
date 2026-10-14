@@ -2,6 +2,11 @@
 
 Updated: 2026-10-14. Selected public name: **TraceWarrant**; former internal codename: Workload Lab.
 
+**Final stage: [V9 acceptance and integrity patch](PROJECT_V9.md).** The original
+requirements and V4–V8 increments are mapped to evidence. One reproduced
+performance-HTML verification gap is fixed; patch 0.7.1 installed/hosted/public
+qualification remains. [Finite completion boundary](PROJECT_COMPLETION.md).
+
 **Current product: [V8 portable quality evidence](PROJECT_V8.md), complete.**
 [Experimental 0.7.0](https://github.com/G26karthik/tracewarrant/releases/tag/v0.7.0)
 is published and verified: exact quality export, offline checksum/JSON/HTML
