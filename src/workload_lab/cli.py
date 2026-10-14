@@ -16,6 +16,12 @@ from .graph import compile_workload
 from .ingest import DEFAULT_MAX_BYTES, DEFAULT_MAX_SPANS, _decode, ingest
 from .ir import SCHEMA_VERSION, ValidationError
 from .jobs import JOB_SCHEMA, bundle_job, run_job, verify_bundle, write_job_report
+from .qualification import (
+    POLICY_SCHEMA,
+    SAMPLE_SCHEMA,
+    qualify_application,
+    write_qualification_report,
+)
 from .validation import evaluate
 
 
@@ -59,8 +65,17 @@ def _text(report: AnalysisReport) -> str:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="tracewarrant", description=__doc__)
-    parser.add_argument("--version", action="version", version="TraceWarrant 0.4.0 (experimental)")
+    parser.add_argument("--version", action="version", version="TraceWarrant 0.5.0 (experimental)")
     commands = parser.add_subparsers(dest="command", required=True)
+    quality_schema = commands.add_parser("quality-schema", help="emit application quality schemas")
+    quality_schema.add_argument("kind", choices=("sample", "policy"))
+    quality_schema.add_argument("--output", type=Path)
+    qualify = commands.add_parser(
+        "qualify-application", help="check offered-population quality before modeling"
+    )
+    qualify.add_argument("input", type=Path)
+    qualify.add_argument("--policy", type=Path, required=True)
+    qualify.add_argument("--output", type=Path, required=True)
     job_schema = commands.add_parser("job-schema", help="emit validation job JSON Schema")
     job_schema.add_argument("--output", type=Path)
     for name in ("validate-job", "bundle-job", "verify-bundle"):
@@ -102,6 +117,18 @@ def main(argv: list[str] | None = None) -> int:
             sub.add_argument("--format", choices=("text", "json"), default="text")
     args = parser.parse_args(argv)
     try:
+        if args.command == "quality-schema":
+            result = SAMPLE_SCHEMA if args.kind == "sample" else POLICY_SCHEMA
+            if args.output:
+                write_new(args.output, result)
+            else:
+                print(json.dumps(result, indent=2, sort_keys=True))
+            return 0
+        if args.command == "qualify-application":
+            report = qualify_application(args.input, args.policy)
+            write_qualification_report(args.output, report)
+            print(json.dumps({"result": report["result"], "claim_scope": report["claim_scope"]}))
+            return 0 if report["result"] == "passed" else 1
         if args.command == "job-schema":
             if args.output:
                 write_new(args.output, JOB_SCHEMA)

@@ -2,7 +2,7 @@
 
 **Check the evidence behind performance claims.**
 
-Status: Experimental / Research Prototype. Active increment: [V4 offline validation workflow](PROJECT_V4.md).
+Status: Experimental / Research Prototype. Active increment: [V6 application-quality qualification](PROJECT_V6.md).
 
 Latest application study: [V5 HotpotQA qualification](PROJECT_V5.md) completed
 eight real requests but failed its predeclared quality floor (4/8 exact answers,
@@ -20,6 +20,15 @@ Publication status, checked 2026-10-14: [experimental prerelease `v0.4.0`](https
 V3 accepts the pilot's **PIVOT RECOMMENDED** conclusion. [V2](PROJECT_V2.md), [its final report](FINAL_PROJECT_REPORT.md), `research-pilot-1` and all frozen evidence remain unchanged. This is a local research prototype, not a capacity planner or production release. [Refreshed research](docs/v3/research.md) establishes substantial overlap; no uniqueness is claimed.
 
 ## Run an explicit validation policy
+
+Check application quality before creating performance predictions:
+
+```sh
+uv run tracewarrant qualify-application examples/qualification/hotpot/sample.json --policy examples/qualification/hotpot/policy.json --output artifacts/quality-report
+```
+
+This retained sample correctly returns **1** for its failed exact/F1 quality
+gate. It needs no model or prediction freeze. [Quality workflow and schemas](docs/v6/qualification.md).
 
 The 0.4.0 workflow adds one manifest, CI pass/fail, standalone HTML/JSON and portable evidence verification. [Complete guide](docs/v4/workflow.md), [job schema](schemas/validation-job-v1.schema.json), [application CI example](examples/ci/tracewarrant.yml).
 

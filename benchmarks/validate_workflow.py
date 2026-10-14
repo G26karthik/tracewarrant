@@ -9,11 +9,16 @@ from pathlib import Path
 from benchmarks.provenance import metadata
 from workload_lab.artifacts import canonical_bytes, write_new
 from workload_lab.jobs import bundle_job, run_job, verify_bundle
+from workload_lab.qualification import qualify_application
 
 ROOT = Path(__file__).parents[1]
 
 
 def qualify():
+    quality_root = ROOT / "examples/qualification/hotpot"
+    quality = qualify_application(quality_root / "sample.json", quality_root / "policy.json")
+    assert quality["result"] == "failed"
+    assert [g["status"] for g in quality["gates"]] == ["passed", "passed", "failed", "failed"]
     example = ROOT / "examples/validation/frames"
     strict = run_job(example / "job.json")
     performance = run_job(example / "performance-job.json")
@@ -57,6 +62,13 @@ def qualify():
         "missing_quality_refused": True,
         "frozen_evaluation_byte_exact": True,
         "portable_replay_verified": True,
+        "application_quality_qualification": {
+            "result": quality["result"],
+            "counts": quality["counts"],
+            "gates": quality["gates"],
+            "sample_sha256": quality["sample_sha256"],
+            "policy_sha256": quality["policy_sha256"],
+        },
         "portable_checksums_sha256": checksums,
         "note": "Retrospective workflow qualification; no new task quality or added-value result.",
     }
