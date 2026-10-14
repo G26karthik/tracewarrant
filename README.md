@@ -2,6 +2,9 @@
 
 **Check the evidence behind performance claims.**
 
+Maintenance: collector exception handling is qualifying patch 0.8.1.
+[Reproduced defects and finite plan](docs/v10/maintenance-0.8.1.md).
+
 Status: Experimental / Research Prototype. [V10 collection](PROJECT_V10.md) is complete and published as 0.8.0. All agreed stages are [complete](PROJECT_COMPLETION.md); prior releases and negative results remain preserved.
 
 Latest increment: [V10 usable observation collection](PROJECT_V10.md), verified

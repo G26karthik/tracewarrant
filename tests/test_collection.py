@@ -374,3 +374,159 @@ def test_handle_budget_is_global_across_runs_and_pool_types():
             recorder.pool(1)
     with pytest.raises(ValidationError, match="active run"):
         second.attempt_group()
+
+
+@pytest.mark.parametrize("base", [RuntimeError, TimeoutError, asyncio.CancelledError])
+def test_falsey_exceptions_are_recorded_as_errors_and_cleanup_runs(tmp_path, base):
+    class FalseyError(base):
+        def __bool__(self):
+            return False
+
+    recorder = ObservationRecorder()
+    pool = recorder.pool(1)
+    semaphore = asyncio.Semaphore(1)
+    original = FalseyError("PRIVATE_EXCEPTION")
+
+    async def work():
+        with recorder.run(complete=True) as run:
+            with run.operation(NodeKind.TOOL) as op:
+                async with op.lease(pool, semaphore.acquire, semaphore.release):
+                    raise original
+
+    with pytest.raises(base) as caught:
+        asyncio.run(work())
+    assert caught.value is original and semaphore._value == 1
+    spans = recorder.spans()
+    assert all(span.status == "ERROR" for span in spans)
+    operation = next(span for span in spans if span.role == "work")
+    expected = {
+        RuntimeError: "failed",
+        TimeoutError: "timeout",
+        asyncio.CancelledError: "cancelled",
+    }
+    assert operation.observation.outcome == expected[base]
+    assert operation.observation.released_ns is not None
+    assert inspect(recorder, tmp_path)["claims"]["dependency_graph"]["support"] == "unsupported"
+
+
+def test_exception_truthiness_is_never_evaluated(tmp_path):
+    class UnbooleanError(RuntimeError):
+        def __bool__(self):
+            raise AssertionError("exception truthiness must not be evaluated")
+
+    recorder = ObservationRecorder()
+    original = UnbooleanError("PRIVATE_EXCEPTION")
+    with pytest.raises(UnbooleanError) as caught:
+        with recorder.run(complete=True) as run:
+            with run.operation(NodeKind.TOOL):
+                raise original
+    assert caught.value is original
+    assert all(span.status == "ERROR" for span in recorder.spans())
+    assert not inspect(recorder, tmp_path)["violations"]
+
+
+@pytest.mark.parametrize("cleanup_failure", [False, True, "awaitable"])
+def test_post_acquisition_clock_fault_preserves_original_and_checks_cleanup(
+    tmp_path, monkeypatch, cleanup_failure
+):
+    recorder = ObservationRecorder()
+    pool = recorder.pool(1)
+    semaphore = asyncio.Semaphore(1)
+    original = RuntimeError("observer clock failed")
+    cleanup = ValueError("PRIVATE_CLEANUP")
+    released = []
+    pending = []
+    clock = recorder._now
+
+    def fail():
+        raise original
+
+    async def acquire():
+        await semaphore.acquire()
+        monkeypatch.setattr(recorder, "_now", fail)
+
+    async def deferred_release():
+        pytest.fail("async release cannot be used as synchronous cleanup")
+
+    def release():
+        released.append(True)
+        semaphore.release()
+        if cleanup_failure == "awaitable":
+            pending.append(deferred_release())
+            return pending[-1]
+        if cleanup_failure:
+            raise cleanup
+
+    async def work():
+        with recorder.run() as run:
+            with run.operation(NodeKind.TOOL) as op:
+                async with op.lease(pool, acquire, release):
+                    pytest.fail("body ran after observer failure")
+
+    try:
+        with pytest.raises(RuntimeError) as caught:
+            asyncio.run(work())
+        assert caught.value is original and released == [True] and semaphore._value == 1
+        if cleanup_failure is True:
+            assert original.__cause__ is cleanup
+        elif cleanup_failure == "awaitable":
+            assert isinstance(original.__cause__, ValidationError)
+            assert pending[0].cr_frame is None
+        else:
+            assert original.__cause__ is None
+        monkeypatch.setattr(recorder, "_now", clock)
+        with pytest.raises(ValidationError):
+            recorder.write(tmp_path / "invalid.json")
+        assert not (tmp_path / "invalid.json").exists()
+    finally:
+        for coroutine in pending:
+            coroutine.close()
+
+
+@pytest.mark.parametrize("boolean_raises", [False, True])
+@pytest.mark.parametrize("cleanup_failure", [False, True])
+def test_first_release_clock_fault_is_preserved_without_truthiness(
+    tmp_path, monkeypatch, boolean_raises, cleanup_failure
+):
+    class ClockError(RuntimeError):
+        def __bool__(self):
+            if boolean_raises:
+                raise AssertionError("exception truthiness must not be evaluated")
+            return False
+
+    recorder = ObservationRecorder()
+    pool = recorder.pool(1)
+    semaphore = asyncio.Semaphore(1)
+    first, second = ClockError("first clock fault"), RuntimeError("second clock fault")
+    cleanup = ValueError("PRIVATE_CLEANUP")
+    clock = recorder._now
+    calls = 0
+
+    def faulty_clock():
+        nonlocal calls
+        calls += 1
+        if calls == 1:
+            raise first
+        if calls == 2:
+            raise second
+        return clock()
+
+    def release():
+        semaphore.release()
+        if cleanup_failure:
+            raise cleanup
+
+    async def work():
+        with recorder.run() as run:
+            with run.operation(NodeKind.TOOL) as op:
+                async with op.lease(pool, semaphore.acquire, release):
+                    monkeypatch.setattr(recorder, "_now", faulty_clock)
+
+    with pytest.raises(RuntimeError) as caught:
+        asyncio.run(work())
+    assert caught.value is first and semaphore._value == 1
+    if cleanup_failure:
+        assert first.__cause__ is cleanup
+    with pytest.raises(ValidationError):
+        recorder.write(tmp_path / "invalid.json")
+    assert not (tmp_path / "invalid.json").exists()

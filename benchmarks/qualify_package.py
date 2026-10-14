@@ -74,6 +74,30 @@ assert owned["claims"]["queue_wait"]["support"] == "supported"
 assert owned["claims"]["dependency_graph"]["support"] == "supported"
 assert owned["claims"]["inference_service_demand"]["value"] is None
 assert not any(name.startswith("opentelemetry") for name in sys.modules)
+class FalseyFailure(RuntimeError):
+    def __bool__(self):
+        return False
+failure_capture=ObservationRecorder()
+failure_pool=failure_capture.pool(1)
+failure_semaphore=asyncio.Semaphore(1)
+original_failure=FalseyFailure("body failed")
+async def fail_owned():
+    with failure_capture.run(complete=True) as run:
+        with run.operation(NodeKind.TOOL) as operation:
+            async with operation.lease(
+                failure_pool, failure_semaphore.acquire, failure_semaphore.release
+            ):
+                raise original_failure
+try:
+    asyncio.run(fail_owned())
+except FalseyFailure as error:
+    assert error is original_failure
+else:
+    raise AssertionError("body failure swallowed")
+assert failure_semaphore._value==1
+assert all(span.status=="ERROR" for span in failure_capture.spans())
+failed_operation=next(span for span in failure_capture.spans() if span.role=="work")
+assert failed_operation.observation.outcome=="failed"
 assert SCHEMA == json.loads((root / "schemas/validation-artifact-v1.schema.json").read_bytes())
 assert JOB_SCHEMA == json.loads((root / "schemas/validation-job-v1.schema.json").read_bytes())
 assert SAMPLE_SCHEMA == json.loads(
@@ -204,6 +228,7 @@ print(json.dumps({
     "portable_bundle_verified": True,
     "rehashed_job_html_refused": True,
     "installed_collection_verified": True,
+    "falsey_exception_recorded_as_failure": True,
     "optional_otel_not_imported": True,
 }))
 """

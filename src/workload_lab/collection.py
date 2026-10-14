@@ -185,7 +185,7 @@ class _RecordedRun:
                 kind=NodeKind.WORKFLOW,
                 role="container",
                 graph_complete=self._complete and not self._incomplete and exc is None,
-                status="ERROR" if exc else "OK",
+                status="ERROR" if exc is not None else "OK",
             )
             self._recorder._finish(span)
         except BaseException:
@@ -273,7 +273,11 @@ class _RecordedOperation:
                 "cancelled"
                 if isinstance(exc, asyncio.CancelledError)
                 else (
-                    "timeout" if isinstance(exc, TimeoutError) else "failed" if exc else "completed"
+                    "timeout"
+                    if isinstance(exc, TimeoutError)
+                    else "failed"
+                    if exc is not None
+                    else "completed"
                 )
             )
             if outcome == "cancelled":
@@ -289,7 +293,7 @@ class _RecordedOperation:
                 role="work",
                 depends_on=tuple(d.identity for d in self._deps),
                 observation=Observation(**self._observation, outcome=outcome),
-                status="ERROR" if exc else "OK",
+                status="ERROR" if exc is not None else "OK",
             )
             recorder._finish(span)
         except BaseException:
@@ -332,6 +336,13 @@ class _ObservedLease:
         self._acquire, self._release = acquire, release
         self._entered = False
 
+    def _release_owned(self):
+        result = self._release()
+        if inspect.isawaitable(result):
+            if inspect.iscoroutine(result):
+                result.close()
+            raise ValidationError("lease release must be synchronous")
+
     async def __aenter__(self):
         if self._entered or self._op._end is not None or self._op._run._end is not None:
             raise ValidationError("lease requires an active operation and cannot be reused")
@@ -349,9 +360,12 @@ class _ObservedLease:
             now = recorder._now()
             op._observation.update(acquired_ns=now, service_start_ns=now)
             op._lease_active = True
-        except BaseException:
+        except BaseException as recording_error:
             recorder._invalid = True
-            self._release()
+            try:
+                self._release_owned()
+            except BaseException as cleanup:
+                raise recording_error from cleanup
             raise
         return self
 
@@ -370,15 +384,13 @@ class _ObservedLease:
             recorder._invalid = True
             recording_error = error
         try:
-            result = self._release()
-            if inspect.isawaitable(result):
-                if inspect.iscoroutine(result):
-                    result.close()
-                raise ValidationError("lease release must be synchronous")
+            self._release_owned()
         except BaseException as cleanup:
             recorder._invalid = True
             if exc is not None:
                 raise exc from cleanup
+            if recording_error is not None:
+                raise recording_error from cleanup
             raise
         finally:
             op._lease_active = False
@@ -386,7 +398,8 @@ class _ObservedLease:
             op._observation["released_ns"] = recorder._now()
         except BaseException as error:
             recorder._invalid = True
-            recording_error = recording_error or error
+            if recording_error is None:
+                recording_error = error
         if recording_error is not None:
             if exc is not None:
                 raise exc from recording_error
