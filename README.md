@@ -2,16 +2,17 @@
 
 **Check the evidence behind performance claims.**
 
-Maintenance: collector exception handling is qualifying patch 0.8.1.
-[Reproduced defects and finite plan](docs/v10/maintenance-0.8.1.md).
+Latest maintenance: [verified experimental 0.8.1](docs/v10/public-release-0.8.1.md)
+preserves failed outcomes and original exceptions through competing observer/
+cleanup faults. Eleven new regressions; 328 tests per hosted matrix passed.
 
-Status: Experimental / Research Prototype. [V10 collection](PROJECT_V10.md) is complete and published as 0.8.0. All agreed stages are [complete](PROJECT_COMPLETION.md); prior releases and negative results remain preserved.
+Status: Experimental / Research Prototype. [V10 collection](PROJECT_V10.md) is complete; latest verified release is 0.8.1. All agreed stages are [complete](PROJECT_COMPLETION.md); prior releases and negative results remain preserved.
 
 Latest increment: [V10 usable observation collection](PROJECT_V10.md), verified
-experimental 0.8.0. A bounded stdlib recorder and explicit optional OTel exporter
+experimental 0.8.1. A bounded stdlib recorder and explicit optional OTel exporter
 bridge supply caller-owned lifecycle/edge evidence. [Usage and limits](docs/v10/collection.md).
 The pinned Pydantic example retains partial coverage and UNKNOWN model demand.
-[Release proof and measured collection cost](docs/v10/public-release-0.8.0.md).
+[Release proof and measured collection cost](docs/v10/public-release-0.8.1.md).
 
 Latest application study: [V5 HotpotQA qualification](PROJECT_V5.md) completed
 eight real requests but failed its predeclared quality floor (4/8 exact answers,
@@ -24,7 +25,7 @@ TraceWarrant checks whether observations support a performance model and whether
 
 Former internal name: Workload Lab. Source is available at [G26karthik/tracewarrant](https://github.com/G26karthik/tracewarrant), licensed Apache-2.0. The `workload-lab` command, `workload_lab` Python imports and versioned artifact/telemetry bindings remain compatible. [GitHub releases](https://github.com/G26karthik/tracewarrant/releases), [release qualification](docs/v3/release-qualification.md).
 
-Publication status, checked 2026-10-14: [experimental prerelease `v0.8.0`](https://github.com/G26karthik/tracewarrant/releases/tag/v0.8.0) is verified. [All five exact-source CI jobs passed](https://github.com/G26karthik/tracewarrant/actions/runs/38592818864), with 317 tests per matrix job. All thirteen public downloads, fresh installed core/SDK qualification, new stdlib collection and exact trace/bundle replay passed. [Evidence, measured overhead and limits](docs/v10/public-release-0.8.0.md). Private security reporting is enabled.
+Publication status, checked 2026-10-15: [experimental prerelease `v0.8.1`](https://github.com/G26karthik/tracewarrant/releases/tag/v0.8.1) is verified. [All five exact-source CI jobs passed](https://github.com/G26karthik/tracewarrant/actions/runs/38596956524), with 328 tests per matrix job. All thirteen public downloads, fresh installed core/SDK and failure checks, new stdlib collection and exact trace/bundle replay passed. [Proof, cost and limits](docs/v10/public-release-0.8.1.md). Private security reporting is enabled.
 
 V3 accepts the pilot's **PIVOT RECOMMENDED** conclusion. [V2](PROJECT_V2.md), [its final report](FINAL_PROJECT_REPORT.md), `research-pilot-1` and all frozen evidence remain unchanged. This is a local research prototype, not a capacity planner or production release. [Refreshed research](docs/v3/research.md) establishes substantial overlap; no uniqueness is claimed.
 

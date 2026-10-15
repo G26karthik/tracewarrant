@@ -140,3 +140,10 @@ local added cost: 114.919 us/operation, 29.21% loop overhead,
 35.29 MiB process peak; locked-SDK peak 116.07 MiB. Raw paired
 samples and hosted variation are public. This is a short SQLite microbenchmark
 on about 31.2 GiB hardware, not a general agent-performance or 16 GiB deployment claim.
+
+[Maintenance 0.8.1](public-release-0.8.1.md) fixes exception truthiness and
+competing clock/cleanup failures. Exception presence is explicit; original body
+error takes priority, otherwise the first recording error, with cleanup failure
+as cause. Synchronous release validation also applies to post-acquisition observer
+failure. Eleven new regression cases and fresh installed failure checks passed;
+interfaces and wire formats remain compatible.

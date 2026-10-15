@@ -1,5 +1,9 @@
 # External actions
 
+Collector maintenance 0.8.1 is complete and publicly verified, with zero
+required stages or maintainer actions remaining. [Latest proof](docs/v10/public-release-0.8.1.md).
+Original V10 and prior completed scopes below remain unchanged.
+
 Autonomous V10 implementation, qualification and experimental 0.8.0 publication
 are complete. All thirteen public downloads and fresh installed core/SDK capture
 and replay are verified. No maintainer action or required stage remains.

@@ -1,0 +1,62 @@
+{
+  "artifact_type": "experimental_collector_maintenance_acceptance",
+  "gates": [
+    {
+      "evidence": [
+        "tests/test_collection.py",
+        "docs/v10/maintenance-0.8.1.md"
+      ],
+      "id": "1",
+      "status": "complete"
+    },
+    {
+      "evidence": [
+        "src/workload_lab/collection.py",
+        "benchmarks/qualify_package.py"
+      ],
+      "id": "2",
+      "status": "complete"
+    },
+    {
+      "evidence": [
+        "docs/v10/public-release-0.8.1.json"
+      ],
+      "id": "3",
+      "status": "complete"
+    },
+    {
+      "evidence": [
+        "docs/v10/public-release-0.8.1.md",
+        "docs/v10/public-release-0.8.1.json"
+      ],
+      "id": "4",
+      "status": "complete"
+    }
+  ],
+  "limits": [
+    "internal_review_not_independent",
+    "experimental_not_production",
+    "partial_native_resource_coverage",
+    "caller_declarations_not_authenticated",
+    "material_short_operation_recording_cost",
+    "no_new_scientific_success"
+  ],
+  "qualified_source": "4a2577524924bded8daa9d51eea240812e65c2b2",
+  "release_url": "https://github.com/G26karthik/tracewarrant/releases/tag/v0.8.1",
+  "remaining_required_stage_count": 0,
+  "remaining_required_stages": [],
+  "schema_version": "1.0",
+  "status": "complete",
+  "validation": {
+    "falsey_failure_installed_check": true,
+    "frozen_evaluation_byte_exact": true,
+    "new_cases": 11,
+    "pre_fix_failing_cases": 10,
+    "protected_files": 64,
+    "public_assets": 13,
+    "source_and_tag_ci_jobs": 5,
+    "tests_per_matrix": 328
+  },
+  "verified_at_utc": "2026-10-15T03:35:26.311249+00:00",
+  "version": "0.8.1"
+}

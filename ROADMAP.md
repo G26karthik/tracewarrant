@@ -1,5 +1,11 @@
 # Evidence-gated roadmap
 
+Latest completed maintenance: [0.8.1 collector exception fix](docs/v10/maintenance-0.8.1.md).
+All four gates passed, 328 tests per hosted matrix and all five source/tag jobs;
+thirteen public downloads and fresh installed failure/capture/replay checks are
+verified. [Public proof](docs/v10/public-release-0.8.1.md). Required remaining
+feature/maintenance/release stages: zero. Prior completed scopes below are preserved.
+
 ## Completed V10 collection — zero remaining required stages
 
 The researched [V10 requirement](PROJECT_V10.md) delivers a bounded caller-owned

@@ -28,10 +28,14 @@ captures still refuse export; real cleanup is called once.
 4. Publish experimental 0.8.1 from that clean immutable source; verify every
    public asset and fresh downloaded-wheel collection/replay, then close out.
 
-Status: reproductions and implementation complete. Full installed, hosted and
-public-release qualification in progress. The eight original reproductions and
-two later release-clock/cleanup combinations failed before their respective
-fixes; one success-cleanup control passes before and after.
+**Status: all four maintenance gates complete; required remaining stages: zero.**
+328 tests per hosted matrix, all five source/tag jobs, fresh installed core/SDK
+qualification and all thirteen public downloads passed. Both supplied trace
+reports replay byte for byte; new downloaded-wheel SQLite capture passed.
+Qualified source: `4a2577524924bded8daa9d51eea240812e65c2b2`. [Public proof](public-release-0.8.1.md),
+[acceptance](maintenance-acceptance-0.8.1.json). The eight original reproductions
+and two later clock/cleanup cases failed before their respective fixes; one
+success-cleanup control passes before and after.
 
 Native framework coverage remains 2/4; complete graph, backend GPU demand,
 remote cancellation, production readiness and model superiority remain

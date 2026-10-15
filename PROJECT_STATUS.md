@@ -1,6 +1,12 @@
 # Project status
 
-Updated: 2026-10-14. Selected public name: **TraceWarrant**; former internal codename: Workload Lab.
+Latest completed maintenance: [0.8.1 collector exception fix](docs/v10/maintenance-0.8.1.md).
+All four gates passed, 328 tests per hosted matrix and all five source/tag jobs;
+thirteen public downloads and fresh installed failure/capture/replay checks are
+verified. [Public proof](docs/v10/public-release-0.8.1.md). Required remaining
+feature/maintenance/release stages: zero. Prior completed scopes below are preserved.
+
+Updated: 2026-10-15. Selected public name: **TraceWarrant**; former internal codename: Workload Lab.
 
 **Latest V10 scope complete: [observation collection and framework integration](PROJECT_V10.md).**
 All four gates passed; experimental 0.8.0 is public and verified. 317 tests per

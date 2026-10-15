@@ -8,6 +8,15 @@ Read PROJECT_COMPLETION.md, PROJECT_V10.md, PROJECT_STATUS.md, CONTINUATION.md,
 docs/v10/collection.md, docs/v10/public-release-0.8.0.md/json and docs/v10/acceptance.json.
 Verify disk/Git/GitHub state rather than trusting this checkpoint alone.
 
+Latest maintenance 0.8.1 is complete: exception truthiness and competing clock/
+cleanup errors fixed, eleven new regressions, 328 tests per matrix, all five
+source/tag jobs, thirteen public downloads and fresh installed failure/capture/
+replay passed. Source: 4a2577524924bded8daa9d51eea240812e65c2b2; source CI 38596956524, tag CI 38597483063.
+Read docs/v10/maintenance-0.8.1.md, docs/v10/public-release-0.8.1.md/json and
+docs/v10/maintenance-acceptance-0.8.1.json. Prior 0.8.0 feature acceptance below
+remains valid. No feature, maintenance or release gate remains; do not repeat
+closed release work or move tags. Further work needs a new requirement/defect.
+
 V3-V9 and all four separately authorized V10 gates are complete. Experimental
 0.8.0 is public; all thirteen unauthenticated assets, installed core/SDK checks,
 new stdlib collection and exact supplied trace/bundle replay passed. Qualified

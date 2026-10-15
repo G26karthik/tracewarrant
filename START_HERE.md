@@ -7,7 +7,7 @@ pinned framework companion example. [Usage](docs/v10/collection.md).
 
 The original toolkit and all four authorized [V10 gates](PROJECT_V10.md) are
 **complete**, with **zero required stages remaining**. Latest public version:
-[verified 0.8.0](docs/v10/public-release-0.8.0.md), 317 tests per matrix job, all
+[verified 0.8.1](docs/v10/public-release-0.8.1.md), 328 tests per matrix job, all
 five source/tag CI jobs and thirteen public downloads passed. Native framework
 coverage stays partial; the short-operation collector cost is material. Version
 numbers are release labels, not progress percentages. Production readiness,

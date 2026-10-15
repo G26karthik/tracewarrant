@@ -1,12 +1,18 @@
 # Continuation checkpoint
 
-## Collector maintenance 0.8.1 in progress
+## Collector maintenance 0.8.1 complete
 
-Remaining-work review reproduced exception-truthiness and clock/cleanup-priority
-defects. The fixes and eleven new regressions are implemented; installed failure
-qualification is added. Read docs/v10/maintenance-0.8.1.md. Finish 328-test,
-installed/hosted/exact-source and public patch qualification, then close out.
-V10/0.8.0 acceptance below remains valid; do not move its immutable tag.
+Remaining-work review reproduced and fixed exception-truthiness and clock/
+cleanup-priority defects. Eleven new cases; 328 tests per source matrix and all
+five source/tag jobs passed. All thirteen unauthenticated public assets match
+qualified bytes; fresh core/SDK installs, explicit failed-outcome checks, new
+SQLite capture and exact supplied trace/bundle replay passed.
+Source/peeled tag: 4a2577524924bded8daa9d51eea240812e65c2b2; annotated tag: e8eed3c07f3deb96c81e5e487e5137b66d4a6657.
+Source CI 38596956524; tag CI 38597483063. PR #8 merged the patch.
+Read docs/v10/maintenance-0.8.1.md and docs/v10/public-release-0.8.1.md/json.
+All four maintenance gates complete; required remaining stages zero. Main has
+later closeout documentation; never move immutable release tags. V10/0.8.0 and
+all prior acceptance below remain valid. No new feature/study is queued.
 
 ## V10 complete — no required stages remain
 
